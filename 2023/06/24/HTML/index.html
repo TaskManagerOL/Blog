@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HTML | Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>HTML</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-06-24T10:01:35.000Z" id="date"> 2023-06-24</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-13T07:09:09.361Z" id="updated"> 2023-11-13</time></div></span></div></div><hr><div id="post-content"><h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><ul>
+<li>单标签</li>
+<li>双标签</li>
+</ul>
+<h1 id="文字样式变形"><a href="#文字样式变形" class="headerlink" title="文字样式变形"></a>文字样式变形</h1><ul>
+<li>strong <strong>加粗</strong></li>
+<li>em <em>倾斜</em></li>
+<li>del <del>删除线</del></li>
+<li>ins 下划线</li>
+<li>p&gt; </p>换行</li>
+</ul>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><ul>
+<li><pre><code>img src=&quot;链接&quot; alt=&quot;若显示失败输入的字符&quot; width=&quot;左右大小&quot; height=&quot;高低&quot;  title=&quot;鼠标放在图片上显示的字&quot;/&gt;	(src必须)
+</code></pre>
+</li>
+</ul>
+<h1 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h1><ul>
+<li>相对路径<ul>
+<li>下一条路径	img src&#x3D;”本路径中含有图片的文件夹&#x2F;图片名称（包含后缀）”&#x2F;&gt;</li>
+<li>上一条路径	img src&#x3D;”..&#x2F;图片名称（包含后缀）”&#x2F;&gt;</li>
+</ul>
+</li>
+<li>绝对路径</li>
+<li>此电脑中的文件	img src&#x3D;”C.........\图片名称（包含后缀）”&gt;	(注意相对和绝对的斜杠不一样)</li>
+<li>完整的网络地址	img src&#x3D;”直接将网址输入”&#x2F;&gt;</li>
+</ul>
+<h1 id="链接标签"><a href="#链接标签" class="headerlink" title="链接标签"></a>链接标签</h1><table>
+<thead>
+<tr>
+<th>链接类型</th>
+<th>说明</th>
+<th>标签</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外部链接</td>
+<td>target中为下划线self就是关本界面开新界面，下划线blank就是直接开一个新界面</td>
+<td>a href&#x3D;”直接将网址输入” target&#x3D;”…”&gt;显示出的字符</a></td>
+</tr>
+<tr>
+<td>内部链接</td>
+<td>即自己多个网页之间转跳的链接</td>
+<td>a href&#x3D;”直接输入html的名字（加后缀”&gt;显示出的字符</a></td>
+</tr>
+<tr>
+<td>空链接</td>
+<td>常用于页面尚未完善时的框架</td>
+<td>a href&#x3D;”#”&gt;显示出的字符</a></td>
+</tr>
+<tr>
+<td>下载链接</td>
+<td>当href指向一个zip或exe文件时，点击链接会直接下载</td>
+<td></td>
+</tr>
+<tr>
+<td>网页元素链接</td>
+<td>文本、表格、音频、视频都能进行超链接</td>
+<td>a href&#x3D;”…”&gt; img src&#x3D;”…”&#x2F;&gt;</a></td>
+</tr>
+<tr>
+<td>锚点链接</td>
+<td>可以直接转跳到页面内上下文 首先要对跳的地方进行设置 然后进行设置超链接</td>
+<td>h1 id&#x3D;”…”&gt;显示出的字符</h1> a href&#x3D;”#…”&gt;	显示出的字符</a></td>
+</tr>
+<tr>
+<td>注释</td>
+<td>ctrl+&#x2F;</td>
+<td>!–输入想要输入的注释–&gt;</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>特殊字符</th>
+<th>描述</th>
+<th>字符的代码(前面都加&amp;)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>空格</td>
+<td>nbsp;</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于号</td>
+<td>lt;</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于号</td>
+<td>gt;</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>和号</td>
+<td>amp;</td>
+</tr>
+<tr>
+<td>￥</td>
+<td>人民币号</td>
+<td>yen;</td>
+</tr>
+<tr>
+<td>©</td>
+<td>版权</td>
+<td>copy;</td>
+</tr>
+<tr>
+<td></td>
+<td>注册商标</td>
+<td>reg;</td>
+</tr>
+<tr>
+<td>°</td>
+<td>摄氏度</td>
+<td>deg;</td>
+</tr>
+<tr>
+<td>+-</td>
+<td>正负号</td>
+<td>plusmn;</td>
+</tr>
+<tr>
+<td>×</td>
+<td>乘号</td>
+<td>times;</td>
+</tr>
+<tr>
+<td>➗</td>
+<td>除号</td>
+<td>divide;</td>
+</tr>
+<tr>
+<td>^2^</td>
+<td>二次方</td>
+<td>sup2;</td>
+</tr>
+<tr>
+<td>^3^</td>
+<td>三次方</td>
+<td>sup3;</td>
+</tr>
+</tbody></table>
+<h1 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h1><ul>
+<li><p>表格的基本语法 </p>
+<ul>
+<li>table&gt;</table>是用于定义表格的标签。</li>
+<li>tr&gt;</tr>标签用于定义表格中的行，必须嵌套在table标签中。</li>
+<li>td&gt;</td>标签用于定义表格中的单元格，必须嵌套在tr标签中。</li>
+<li>th&gt;</th>标签用于制作表头，必须嵌套在tr标签中。</li>
+<li>thead&gt;</thead>标签用于制作表头区域，必须嵌套在table标签中。</li>
+<li>tbody&gt;</tbody>用于制作表格主体部分，必须嵌套在table标签中。</li>
+</ul>
+</li>
+<li><p>表格属性（都要写到table标签中，CSS还会学，小小掌握即可）</p>
+<ul>
+<li>align&#x3D;”…”表示表格与文字的对齐方式</li>
+<li>border&#x3D;”…”表示边框厚度</li>
+<li>cellpadding&#x3D;”…” 规定文字与表格之间的空白，默认为一像素</li>
+<li>cellspacing&#x3D;”…”规定单元格之间的空隙，默认为2像素</li>
+<li>width、height&#x3D;”…” 规定单元格的宽度、高度</li>
+</ul>
+</li>
+<li><p>合并单元格（必须在第一行和第一列添加标签 且记得删除多余的单元格，必须用于td标签中）</p>
+<ul>
+<li><p>rowspan&#x3D;”要合并的行”</p>
+</li>
+<li><p>colspan&#x3D;”要合并的列”</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h1><ul>
+<li>无序列表（重点）–&gt;整齐简单不要求顺序用无需列表<ul>
+<li>ul&gt;</ul>表示无序列表，一般以项目符号呈现列表项（ul标签中只能存放li标签）</li>
+<li>li&gt;</li>定义列表项 可以存放任何元素 相当于一个容器</li>
+</ul>
+</li>
+<li>有序列表<ul>
+<li>ol&gt;</ol>表示有序列表 同样使用li标签</li>
+</ul>
+</li>
+<li>自定义列表（重点）–&gt;当有很多小分支对一个大分支进行说明时使用自定义列表<ul>
+<li>dl&gt;</dl>用于描述自定义列表（dl标签中只能存在dt和dd标签）</li>
+<li>dt&gt;</dt>用于描述名词</li>
+<li>dd&gt;</dd>用于对名词进行解释</li>
+</ul>
+</li>
+</ul>
+<h1 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h1><h5 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h5><ul>
+<li>form action&#x3D;”url地址” method&#x3D;”提交方式” name&#x3D;”表单域名称”&gt;</form><ul>
+<li>action属性用于指定接收并处理表单数据的服务器程序的url地址 <strong>还没学完后面会扩展</strong></li>
+<li>method属性用于设置表单数据的提交方式，其取值为get或post</li>
+<li>name属性用于指定表单的名称，以区分同一个页面中的多个表单域</li>
+</ul>
+</li>
+</ul>
+<h5 id="表单控件（表单元素）"><a href="#表单控件（表单元素）" class="headerlink" title="表单控件（表单元素）"></a>表单控件（表单元素）</h5><ul>
+<li><p>input type&#x3D;”属性值” name&#x3D;”名称” value&#x3D;”用户自定义” checked&#x3D;”checked” maxlength&#x3D;”一个正整数”&gt;输入表单元素</p>
+<ul>
+<li><p>type的属性值：</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>button</td>
+<td>定义可点击按钮（多数情况下用于通过javascript启动脚本）</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>定义复选框（与radio相对）</td>
+</tr>
+<tr>
+<td>file</td>
+<td>定义输入字段和浏览按钮，供文件上传</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>定义隐藏的输入字段</td>
+</tr>
+<tr>
+<td>image</td>
+<td>定义图像形式的提交按钮</td>
+</tr>
+<tr>
+<td>password</td>
+<td>定义密码字段，该字段中的字符被掩码</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮（与checkbox相对，多选一必须有相同name）</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>定义重置按钮，重置按钮会清除表单中的所有数据</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>定义提交按钮，提交按钮会把表单数据发送到服务器</td>
+</tr>
+<tr>
+<td>text</td>
+<td>定义单行的输入字段，用户可在其中输入文本，默认宽度为20个字符</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>name属性：定义input元素的名称</p>
+</li>
+<li><p>value属性：规定input元素的值</p>
+</li>
+<li><p>checked属性：规定此input元素首次加载时应当被选中 （用于单选和多选按钮 页面一打开就被选中就加这个属性）</p>
+</li>
+<li><p>maxlength属性：规定输入字段中的字符的最大长度</p>
+</li>
+</ul>
+</li>
+<li><p>label for&#x3D;”名称”&gt;要点击的字符或图片</label>标签：用于绑定一个表单元素，当点击label标签内的文本时，浏览器就会自动将焦点（光标）转到或者选择对应的表单元素上，增加用户体验。</p>
+<ul>
+<li>id属性：与label标签搭配使用 放在input里面</li>
+</ul>
+</li>
+<li><p>select&gt;</select>下拉表单元素用于多个选项选一个简洁页面 </p>
+<ul>
+<li>option&gt;选项</option>只能嵌套在select元素中 （在option标签中定义selected&#x3D;”selected”，当前项为默认选项）</li>
+</ul>
+</li>
+<li><p>textarea&gt;</textarea>文本域元素用于键入大量内容时</p>
+</li>
+</ul>
+<h5 id="提示信息"><a href="#提示信息" class="headerlink" title="提示信息"></a>提示信息</h5><ul>
+<li>记得添加增加用户体验的提示信息</li>
+</ul>
+<h1 id="emmet语法"><a href="#emmet语法" class="headerlink" title="emmet语法"></a>emmet语法</h1><ul>
+<li>标签*n+tab可以快速生成n个标签</li>
+<li>父子级关系输入标签一&gt;标签二+tab可以快速生成父子级标签</li>
+<li>兄弟级关系输入标签1+标签二+tab可以快速生成兄弟级标签</li>
+<li>输入标签.类名可以快速生成有类名的标签（类名后面加$*n可以生成很多不同的类名）</li>
+</ul>
+<h1 id="HTML5新特性"><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h1><p>新特性虽然强大 但是都有兼容问题 基本是IE9+以上的版本才支持，如果不考虑兼容性问题，可以大量使用这些新特性</p>
+<h3 id="HTML5新增的语义化标签"><a href="#HTML5新增的语义化标签" class="headerlink" title="HTML5新增的语义化标签"></a>HTML5新增的语义化标签</h3><p>参见CSS规范使用标签 打*的是语义化</p>
+<h3 id="HTML5新增的多媒体文件"><a href="#HTML5新增的多媒体文件" class="headerlink" title="HTML5新增的多媒体文件"></a>HTML5新增的多媒体文件</h3><h5 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h5><ul>
+<li><p>尽量放mp4文件</p>
+</li>
+<li><p>样式为video src&#x3D;””是一个双标签</p>
+</li>
+<li><p>常见属性为autoplay（自动播放）&#x2F;controls（播放控件显示）&#x2F;width&#x2F;height&#x2F;loop（循环播放）&#x2F;preload（是否预加载 属性值为auto&#x2F;none）&#x2F;src&#x2F;poster（等待加载的画面图片）&#x2F;muted（静音播放）</p>
+</li>
+</ul>
+<h5 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h5><ul>
+<li>尽量放mp3文件</li>
+<li>样式基本同视频 属性只有autoplay&#x2F;controls&#x2F;loop&#x2F;src</li>
+</ul>
+<h3 id="HTML新增的表单类型"><a href="#HTML新增的表单类型" class="headerlink" title="HTML新增的表单类型"></a>HTML新增的表单类型</h3><ul>
+<li><p>input type后面的属性值增加了很多 例如email&#x2F;url&#x2F;date&#x2F;time&#x2F;month&#x2F;week&#x2F;number&#x2F;tel&#x2F;search&#x2F;color</p>
+</li>
+<li><p>新增了很多表单属性 </p>
+<ul>
+<li>required:required；表示该表单不能为空  </li>
+<li>placeholder:提示文本； 表示表单的提示信息  </li>
+<li>autofocus:autofocus;自动聚焦</li>
+<li>autocomplete:on&#x2F;off; 当用户在字段开始键入时，浏览器基于之前键入过的值，显示出字段中填写的选项</li>
+<li>mutiple:mutiple; 可以多选文件提交</li>
+</ul>
+</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/06/24/JQuery/">← Next JQuery</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/06/24/ES6/">ES6 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-number">1.</span> <span class="toc-text">标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%A0%B7%E5%BC%8F%E5%8F%98%E5%BD%A2"><span class="toc-number">2.</span> <span class="toc-text">文字样式变形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-number">3.</span> <span class="toc-text">插入图片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84"><span class="toc-number">4.</span> <span class="toc-text">路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE"><span class="toc-number">5.</span> <span class="toc-text">链接标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="toc-number">6.</span> <span class="toc-text">表格标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">7.</span> <span class="toc-text">列表标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">8.</span> <span class="toc-text">表单标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%9F%9F"><span class="toc-number">8.0.0.0.1.</span> <span class="toc-text">表单域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%8E%A7%E4%BB%B6%EF%BC%88%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%EF%BC%89"><span class="toc-number">8.0.0.0.2.</span> <span class="toc-text">表单控件（表单元素）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF"><span class="toc-number">8.0.0.0.3.</span> <span class="toc-text">提示信息</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#emmet%E8%AF%AD%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">emmet语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">10.</span> <span class="toc-text">HTML5新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5%E6%96%B0%E5%A2%9E%E7%9A%84%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">10.0.1.</span> <span class="toc-text">HTML5新增的语义化标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5%E6%96%B0%E5%A2%9E%E7%9A%84%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6"><span class="toc-number">10.0.2.</span> <span class="toc-text">HTML5新增的多媒体文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%86%E9%A2%91"><span class="toc-number">10.0.2.0.1.</span> <span class="toc-text">视频</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9F%B3%E9%A2%91"><span class="toc-number">10.0.2.0.2.</span> <span class="toc-text">音频</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E6%96%B0%E5%A2%9E%E7%9A%84%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B"><span class="toc-number">10.0.3.</span> <span class="toc-text">HTML新增的表单类型</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

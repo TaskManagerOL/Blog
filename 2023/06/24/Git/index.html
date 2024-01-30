@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Git | Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Git</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-06-24T09:57:48.000Z" id="date"> 2023-06-24</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-13T07:08:51.819Z" id="updated"> 2023-11-13</time></div></span></div></div><hr><div id="post-content"><p>[TOC]</p>
+<h1 id="工作图"><a href="#工作图" class="headerlink" title="工作图"></a>工作图</h1><p class='item-img' data-src='https://xiaomai-aliyunoss.oss-cn-shenzhen.aliyuncs.com/img/20210903142324.png'><img src="https://xiaomai-aliyunoss.oss-cn-shenzhen.aliyuncs.com/img/20210903142324.png" alt="image-20210903142316730"></p>
+<hr>
+<h1 id="初始化（工作区）"><a href="#初始化（工作区）" class="headerlink" title="初始化（工作区）"></a>初始化（工作区）</h1><ol>
+<li>使用 git init 初始化</li>
+<li>新建 .gitignore文件来忽略不上传的文件</li>
+<li>也可以在github上初始化之后，git clone <repo> <dir></li>
+</ol>
+<hr>
+<h1 id="缓存区"><a href="#缓存区" class="headerlink" title="缓存区"></a>缓存区</h1><blockquote>
+<p>git add <file></p>
+</blockquote>
+<p>如果你想上传所有文件  </p>
+<p>setting <file>  to .</p>
+<p>如果你想让你上传的文件有着相同的后缀</p>
+<p>setting <file> to *.(suffix)</p>
+<hr>
+<h1 id="提交区（本地git库-x2F-版本库）"><a href="#提交区（本地git库-x2F-版本库）" class="headerlink" title="提交区（本地git库&#x2F;版本库）"></a>提交区（本地git库&#x2F;版本库）</h1><blockquote>
+<p>git commit </p>
+</blockquote>
+<p>-m  “该次提交的提交信息”</p>
+<hr>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><blockquote>
+<p>git remote </p>
+</blockquote>
+<p>-v 显示所有仓库</p>
+<p>show [remote]显示远程仓库信息</p>
+<p>add [origin(shortname) [url]] 添加远程版本库，shortname为远程库名字（一般默认origin），url为远程仓库地址</p>
+<p>rm name 删除远程仓库</p>
+<p>rename old_name new_name 修改仓库名</p>
+<blockquote>
+<p>在使用远程仓库之前建议配置一个ssh连接 教程 – <a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-remote-repo.html">菜鸟教程</a> </p>
+</blockquote>
+<hr>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><blockquote>
+<p>分支系统是版本控制系统中最为重要的部分，使用其意味着你可以从开发主线当中分出来一条支线，从而在不影响主线开发的同时继续开发</p>
+</blockquote>
+<p>创建分支命令（无分支名时，命令效果为查看当前的本地分支）</p>
+<blockquote>
+<p>git branch （branch_name）</p>
+</blockquote>
+<p>切换分支命令</p>
+<blockquote>
+<p>git checkout  -(参数)（branch_name）</p>
+</blockquote>
+<p> -b 创建新分支的同时进入分支</p>
+<p>-d 删除该分支</p>
+<blockquote>
+<p>git merge</p>
+</blockquote>
+<p>合并分支至当前分支命令</p>
+<hr>
+<h1 id="提交-拉取"><a href="#提交-拉取" class="headerlink" title="提交 拉取"></a>提交 拉取</h1><blockquote>
+<p>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</p>
+</blockquote>
+<p>提交操作 提交本地的git库 中的本地分支至远程分支 </p>
+<p>当然，一般来说本地分支和远程分支名字相同，所以可以省略冒号及其后面的部分</p>
+<p>若本地和远程版本有差异，则可以使用–force进行强制推送（或者-f）</p>
+<p>第一次上传可以使用-u以设置默认值之后就可以使用不带任何参数的git push了</p>
+<blockquote>
+<p>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</p>
+</blockquote>
+<p>将远程主机 的 远程分支拉过来与本地的分支合并</p>
+<p>若远程分支是和当前分支合并，则可以省略冒号后面的部分</p>
+<hr>
+<h1 id="撤销-删除"><a href="#撤销-删除" class="headerlink" title="撤销 删除"></a>撤销 删除</h1><blockquote>
+<p>git restore <file></p>
+</blockquote>
+<p>单使用该命令会将工作区更改了且未上传缓存区的文件撤销更改</p>
+<p>–staged 将上传缓存区的对应文件撤出，且不会撤销工作区文件的更改</p>
+<blockquote>
+<p>git rm <file></p>
+</blockquote>
+<p>单使用该命令会将工作区的对应文件删除</p>
+<p>–cached 将缓存区中的对应文件删除</p>
+<p> -r 用于遍历删除文件夹及其下的子文件夹 </p>
+<p> -f 用于删除文件夹</p>
+<blockquote>
+<p>git reset </p>
+</blockquote>
+<p>用于回退你上传到提交区(本地git库)的操作</p>
+<p>–soft &lt;提交信息&#x2F;版本号&gt;</p>
+<p>只撤销该次git commit，并将文件回退到git add中</p>
+<p>–mixed &lt;提交信息&#x2F;版本号&gt;</p>
+<p>撤销git commit和git add</p>
+<p>–hard &lt;提交信息&#x2F;版本号&gt;</p>
+<p>将一切返回到上次git commit提交时的状态，包括工作区文件</p>
+<hr>
+<h1 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h1><blockquote>
+<p>git status</p>
+</blockquote>
+<p>查看当前的git状态</p>
+<blockquote>
+<p>git log</p>
+</blockquote>
+<p>查看提交区的历史提交信息</p>
+<p>–oneline 使得提交信息较为简单紧凑</p>
+<p>-n<em>x</em> 其中<em>x</em>为查看日志的数量</p>
+<hr>
+<h1 id="pull-request"><a href="#pull-request" class="headerlink" title="pull request"></a>pull request</h1><ol>
+<li>fork你需要修改的仓库</li>
+<li>git clone将仓库置于本地</li>
+<li>根据issue或者自身需求来修改代码</li>
+<li>git add <changed files>将修改后的代码add置于缓存区</li>
+<li></li>
+<li>git commit -m “update introduction”确认上传文件无误的前提下将代码commit至提交区</li>
+<li>git push <local git repository name> <brance>将提交区的代码push至远程fork仓库</li>
+<li>在远程自己的fork仓库提出pr</li>
+<li>等待仓库所有者通过pr</li>
+</ol>
+<hr>
+<h1 id="fork-amp-local仓库更新"><a href="#fork-amp-local仓库更新" class="headerlink" title="fork &amp; local仓库更新"></a>fork &amp; local仓库更新</h1><p class='item-img' data-src='https://xiaomai-aliyunoss.oss-cn-shenzhen.aliyuncs.com/img/20220427225848.png'><img src="https://xiaomai-aliyunoss.oss-cn-shenzhen.aliyuncs.com/img/20220427225848.png" alt="GitHub Workflow"></p>
+<ol>
+<li>在自己的fork库中Fetch and merge将他人的fork库更新至自己的fork库</li>
+<li>cd进自己的工作区</li>
+<li>git fetch -all将自己fork库的修改更新到自己的本地git库</li>
+<li>git status查看自己工作区状态</li>
+<li>git pull拉取自己fork库的更改到本地</li>
+<li>将自己的修改置于工作区</li>
+<li>git status查看自己的工作区状态</li>
+</ol>
+<hr>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/06/24/Ajax/">← Next Ajax</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/06/11/Locked%20ROOM/">Locked ROOM Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">工作图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8C%BA%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">初始化（工作区）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E5%8C%BA"><span class="toc-number">3.</span> <span class="toc-text">缓存区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%8C%BA%EF%BC%88%E6%9C%AC%E5%9C%B0git%E5%BA%93-x2F-%E7%89%88%E6%9C%AC%E5%BA%93%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">提交区（本地git库&#x2F;版本库）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">5.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF"><span class="toc-number">6.</span> <span class="toc-text">分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4-%E6%8B%89%E5%8F%96"><span class="toc-number">7.</span> <span class="toc-text">提交 拉取</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%92%A4%E9%94%80-%E5%88%A0%E9%99%A4"><span class="toc-number">8.</span> <span class="toc-text">撤销 删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B"><span class="toc-number">9.</span> <span class="toc-text">查看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pull-request"><span class="toc-number">10.</span> <span class="toc-text">pull request</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fork-amp-local%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0"><span class="toc-number">11.</span> <span class="toc-text">fork &amp; local仓库更新</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

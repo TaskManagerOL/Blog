@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ajax | Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Ajax</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-06-24T10:01:12.000Z" id="date"> 2023-06-24</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-13T07:08:11.051Z" id="updated"> 2023-11-13</time></div></span></div></div><hr><div id="post-content"><h1 id="客户端和服务端"><a href="#客户端和服务端" class="headerlink" title="客户端和服务端"></a>客户端和服务端</h1><p>服务器：上网过程中，负责存放和对外提供资源的电脑，叫做服务器</p>
+<p>客户端：上网过程中负责获取和消费资源的电脑，叫做客户端</p>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h3 id="地址的概念"><a href="#地址的概念" class="headerlink" title="地址的概念"></a>地址的概念</h3><p>URL中文叫统一资源定位符，用于标识互联网上的每个资源的唯一存放位置。浏览器只有通过URL地址，才能正确定位资源的存放位置，从而正确的访问到对应的资源</p>
+<h3 id="地址的组成部分"><a href="#地址的组成部分" class="headerlink" title="地址的组成部分"></a>地址的组成部分</h3><p>URL地址一般由三部分组成：</p>
+<ul>
+<li>客户端与服务器之间的通信协议（协议）</li>
+<li>存有该资源的服务器名称（域名）</li>
+<li>资源在服务器上具体的存放位置（路径）</li>
+</ul>
+<h1 id="了解Ajax"><a href="#了解Ajax" class="headerlink" title="了解Ajax"></a>了解Ajax</h1><h3 id="什么是Ajax"><a href="#什么是Ajax" class="headerlink" title="什么是Ajax"></a>什么是Ajax</h3><p>Ajax的全程是异步 Javascript 和 XML</p>
+<p>通俗的理解是：在网页中利用XMLHttpRequest对象和服务进行数据交互的方式就是Ajax</p>
+<h3 id="为什么要学Ajax"><a href="#为什么要学Ajax" class="headerlink" title="为什么要学Ajax"></a>为什么要学Ajax</h3><p>之前所学的技术，只能把网页做得更美观。但是Ajax能让我们轻松实现网页与服务器之间的数据交互</p>
+<h3 id="Ajax的典型应用场景"><a href="#Ajax的典型应用场景" class="headerlink" title="Ajax的典型应用场景"></a>Ajax的典型应用场景</h3><ul>
+<li>数据分页显示：当点击页码值的时候，通过ajax的形式，根据页码值动态刷新表格的数据</li>
+<li>数据的增删改查：数据的添加、删除、修改、查询操作，都需要通过ajax的形式，来实现数据的交互</li>
+</ul>
+<h1 id="JQuery中的Ajax"><a href="#JQuery中的Ajax" class="headerlink" title="JQuery中的Ajax"></a>JQuery中的Ajax</h1><h3 id="了解JQuery中的Ajax"><a href="#了解JQuery中的Ajax" class="headerlink" title="了解JQuery中的Ajax"></a>了解JQuery中的Ajax</h3><p>浏览器中提供的XMLHttpRequest用法比较复杂，所以jQuery对XMLHttpRequest进行了封装，提供了一系列Ajax相关的函数，极大地降低了Ajax的使用难度</p>
+<p>jQuery中发送Ajax请求最常用的三个方法如下：</p>
+<ul>
+<li>$.get()</li>
+<li>$.post()</li>
+<li>$.ajax()</li>
+</ul>
+<h3 id="get-函数的语法"><a href="#get-函数的语法" class="headerlink" title="$.get()函数的语法"></a>$.get()函数的语法</h3><p>jQuery中此函数功能单一，专门用来发起get请求，从而将服务器上的资源请求到客户端来使用。</p>
+<p>语法：$.get(url,{data},[callback])</p>
+<ul>
+<li>url：类型为字符串，必选项，指要请求的资源地址</li>
+<li>data：类型为对象，非必选项，指请求资源期间要携带的参数</li>
+<li>callback：类型为函数，非必选项，指请求成功时的回调函数</li>
+</ul>
+<h3 id="post-函数的语法"><a href="#post-函数的语法" class="headerlink" title="$.post()函数的语法"></a>$.post()函数的语法</h3><p>jQuery中此函数功能单一，专门用来发起post请求，从而向服务器提交数据</p>
+<p>语法：$.post(url,{data},[callback])</p>
+<ul>
+<li>url：类型为字符串，必选项，指要请求的资源地址</li>
+<li>data：类型为对象，非必选项，指请求资源期间要携带的参数</li>
+<li>callback：类型为函数，非必选项，指请求成功时的回调函数</li>
+</ul>
+<h3 id="ajax-函数的语法"><a href="#ajax-函数的语法" class="headerlink" title="$.ajax()函数的语法"></a>$.ajax()函数的语法</h3><p>相比于前两个函数，jQuery中提供的此函数，是一个功能比较综合的函数，它允许我们对Ajax请求进行更详细的配置</p>
+<p>$.ajax()函数的基本语法如下：</p>
+<p>$.ajax({<br>    type:’	‘,		&#x2F;&#x2F;请求的方式，如 GET or POST<br>    url:’	‘,		&#x2F;&#x2F;请求的URL地址<br>    data:{	},		&#x2F;&#x2F;这次请求要携带的数据<br>    success:function(res){	}		 &#x2F;&#x2F;请求成功之后的回调函数<br>})</p>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h3 id="接口的概念"><a href="#接口的概念" class="headerlink" title="接口的概念"></a>接口的概念</h3><p>使用Ajax请求数据时，被请求的URL地址，就叫做数据接口，同时每个接口必须有请求方式</p>
+<h3 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h3><h5 id="接口文档的概念"><a href="#接口文档的概念" class="headerlink" title="接口文档的概念"></a>接口文档的概念</h5><p>接口文档，顾名思义就是接口的说明文档，它是我们调用接口的依据。好的接口文档包含了对接口URL，参数以及输出内容的说明，我们参照接口文档就能方便的知道接口的作用，以及接口如何进行调用</p>
+<h5 id="接口文档的组成部分"><a href="#接口文档的组成部分" class="headerlink" title="接口文档的组成部分"></a>接口文档的组成部分</h5><p>接口文档可以包含很多信息，一般包含一下内容</p>
+<ul>
+<li>接口名称：用于标识各个接口的简单说明</li>
+<li>接口URL：接口的调用地址</li>
+<li>调用方式：接口的调用方式</li>
+<li>参数格式：接口需要传递的参数</li>
+<li>响应格式：接口的返回值的详细描述</li>
+<li>返回示例：举个成功的例子</li>
+</ul>
+<h1 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h1><h3 id="表单的概念"><a href="#表单的概念" class="headerlink" title="表单的概念"></a>表单的概念</h3><p>表单在网页中主要负责数据采集。HTML的form就是用于采集用户输入的信息，并通过form标签的提交操作，把采集到的信息提交到服务器端中进行处理。</p>
+<h3 id="表单的组成部分"><a href="#表单的组成部分" class="headerlink" title="表单的组成部分"></a>表单的组成部分</h3><ul>
+<li>表单标签</li>
+<li>表单域</li>
+<li>表单按钮</li>
+</ul>
+<h3 id="form标签的属性"><a href="#form标签的属性" class="headerlink" title="form标签的属性"></a>form标签的属性</h3><h5 id="action"><a href="#action" class="headerlink" title="action"></a>action</h5><ul>
+<li>值：URL地址</li>
+<li>描述：规定当提交表单时，向何处发送表单数据</li>
+</ul>
+<h5 id="method"><a href="#method" class="headerlink" title="method"></a>method</h5><ul>
+<li>值：get或者post</li>
+<li>描述：规定以何种方法把表单数据提交到action URL</li>
+</ul>
+<h5 id="target"><a href="#target" class="headerlink" title="target"></a>target</h5><ul>
+<li>_blank:在新窗口中打开</li>
+<li>_self:默认，在相同的框架中打开</li>
+<li>_parent:在父框架集中打开</li>
+<li>_top:在整个窗口中打开</li>
+<li>framename:在指定框架中打开</li>
+</ul>
+<h5 id="enctype"><a href="#enctype" class="headerlink" title="enctype"></a>enctype</h5><ul>
+<li>application&#x2F;x-www-form-urlencoded：默认的编码方式。基于uri的percent-encoding编码的，表单里的数据被编码为名称&#x2F;值对，但是在用文本的传输和MP3等大型文件的时候，使用这种编码就显得 效率低下</li>
+<li>multipart&#x2F;form-data：指定传输数据为二进制类型，比如图片、mp3、文件。 这个一般文件上传时用。它告诉我们传输的数据要用到多媒体传输协议，由于多媒体传输的都是大量的数据，所以规定上传文件必须是post方法，type&#x3D;”file”，浏览器会把整个表单以控件为单位分割。并为每个部分加上Content-Disposition(form-data或者file),Content-Type(默认为text&#x2F;plain),name(控件name)等信息，并加上分割符(boundary)。</li>
+<li>text&#x2F;plain：纯文体的传输。空格转换为 “+” 加号，但不对特殊字符编码。</li>
+</ul>
+<h3 id="表单的缺点"><a href="#表单的缺点" class="headerlink" title="表单的缺点"></a>表单的缺点</h3><p>如果使用表单提交数据，则会导致页面之前的状态和数据丢失</p>
+<p>解决方案是：表单只负责采集数据，Ajax负责将数据提交到服务器</p>
+<h3 id="快速获取表单中的数据"><a href="#快速获取表单中的数据" class="headerlink" title="快速获取表单中的数据"></a>快速获取表单中的数据</h3><ul>
+<li>serialize函数</li>
+</ul>
+<h1 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h1><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>可以根据程序员指定的模板结构和数据，自动生成一个完整的HTML页面</p>
+<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><ul>
+<li>减少了字符串的拼接操作</li>
+<li>使代码结构更加清晰</li>
+<li>使代码更易于阅读和维护</li>
+</ul>
+<h3 id="art-template模板引擎"><a href="#art-template模板引擎" class="headerlink" title="art-template模板引擎"></a>art-template模板引擎</h3><ul>
+<li>导入art-template<ul>
+<li>只要导入模板引擎，在window全局多一个函数，叫做template(‘模板的id’,需要渲染的数据对象)</li>
+</ul>
+</li>
+<li>定义数据</li>
+<li>定义模板<ul>
+<li>例如script type&#x3D;”text&#x2F;html”  这样就可以在script里面写html且不报错</li>
+<li>在双括号里面写你调用数据的名字</li>
+</ul>
+</li>
+<li>调用template函数</li>
+<li>渲染HTML<ul>
+<li>再用你要放html的box渲染，element.html()即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="art-template标准语法"><a href="#art-template标准语法" class="headerlink" title="art-template标准语法"></a>art-template标准语法</h3><p>p30</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/06/24/CSS/">← Next CSS</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/06/24/Git/">Git Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">1.</span> <span class="toc-text">客户端和服务端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#URL"><span class="toc-number">2.</span> <span class="toc-text">URL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">2.0.1.</span> <span class="toc-text">地址的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">2.0.2.</span> <span class="toc-text">地址的组成部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3Ajax"><span class="toc-number">3.</span> <span class="toc-text">了解Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFAjax"><span class="toc-number">3.0.1.</span> <span class="toc-text">什么是Ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6Ajax"><span class="toc-number">3.0.2.</span> <span class="toc-text">为什么要学Ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax%E7%9A%84%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">3.0.3.</span> <span class="toc-text">Ajax的典型应用场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JQuery%E4%B8%AD%E7%9A%84Ajax"><span class="toc-number">4.</span> <span class="toc-text">JQuery中的Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3JQuery%E4%B8%AD%E7%9A%84Ajax"><span class="toc-number">4.0.1.</span> <span class="toc-text">了解JQuery中的Ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get-%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">4.0.2.</span> <span class="toc-text">$.get()函数的语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#post-%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">4.0.3.</span> <span class="toc-text">$.post()函数的语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax-%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">4.0.4.</span> <span class="toc-text">$.ajax()函数的语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">5.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">5.0.1.</span> <span class="toc-text">接口的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3"><span class="toc-number">5.0.2.</span> <span class="toc-text">接口文档</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">5.0.2.0.1.</span> <span class="toc-text">接口文档的概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">5.0.2.0.2.</span> <span class="toc-text">接口文档的组成部分</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#form%E8%A1%A8%E5%8D%95"><span class="toc-number">6.</span> <span class="toc-text">form表单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">6.0.1.</span> <span class="toc-text">表单的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">6.0.2.</span> <span class="toc-text">表单的组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#form%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">6.0.3.</span> <span class="toc-text">form标签的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#action"><span class="toc-number">6.0.3.0.1.</span> <span class="toc-text">action</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#method"><span class="toc-number">6.0.3.0.2.</span> <span class="toc-text">method</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#target"><span class="toc-number">6.0.3.0.3.</span> <span class="toc-text">target</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#enctype"><span class="toc-number">6.0.3.0.4.</span> <span class="toc-text">enctype</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">6.0.4.</span> <span class="toc-text">表单的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">6.0.5.</span> <span class="toc-text">快速获取表单中的数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="toc-number">7.</span> <span class="toc-text">模板引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">7.0.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E5%A4%84"><span class="toc-number">7.0.2.</span> <span class="toc-text">好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#art-template%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="toc-number">7.0.3.</span> <span class="toc-text">art-template模板引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#art-template%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95"><span class="toc-number">7.0.4.</span> <span class="toc-text">art-template标准语法</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Postman | Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Postman</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-06-24T10:02:02.000Z" id="date"> 2023-06-24</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-13T07:10:50.131Z" id="updated"> 2023-11-13</time></div></span></div></div><hr><div id="post-content"><h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h3 id="接口简介"><a href="#接口简介" class="headerlink" title="接口简介"></a>接口简介</h3><p>接口：就是软件提供给外部的一种服务。用作数据传输。 在硬件方面USB、投影机被称为接口，在软件方面统称API，如微信的支付和提现。（统称鉴权码，有token、key、appkey）</p>
+<p>内部接口：开发人员自己开发的对自身系统提供的接口</p>
+<p>外部接口：开发系统调用外部的，微信、支付宝，其它的接口</p>
+<p>接口测试的本质：就是测试接口能否正常的交互数据，权限控制以及异常场景。</p>
+<h3 id="软件为什么需要接口"><a href="#软件为什么需要接口" class="headerlink" title="软件为什么需要接口"></a>软件为什么需要接口</h3><p>因为接口能够让内部的数据被外部进行修改</p>
+<h3 id="为什么要做接口测试"><a href="#为什么要做接口测试" class="headerlink" title="为什么要做接口测试"></a>为什么要做接口测试</h3><ul>
+<li>现在很多系统都是前后端分离，开发的进度不一样，需要把一开始开发出来的接口进行测试</li>
+<li>基于安全考虑，前端有验证很容易绕过，直接请求接口</li>
+<li>测试推崇的是测试左移，即尽早测试。</li>
+</ul>
+<h3 id="接口测试的简介和分类"><a href="#接口测试的简介和分类" class="headerlink" title="接口测试的简介和分类"></a>接口测试的简介和分类</h3><p>接口测试就是测试系统组件接口之间的一种测试</p>
+<p>分类：</p>
+<ul>
+<li>测试外部接口：测试被测系统和外部系统之间的接口（只需要测试正例即可）</li>
+<li>测试内部接口：<ul>
+<li>内部接口只提供给内部系统使用。（预算系统，承保系统）（只需要测试正例即可）</li>
+<li>内部接口提供给外部系统使用（测试必须非常全面）</li>
+</ul>
+</li>
+</ul>
+<h3 id="接口测试的流程以及用例的设计"><a href="#接口测试的流程以及用例的设计" class="headerlink" title="接口测试的流程以及用例的设计"></a>接口测试的流程以及用例的设计</h3><ul>
+<li>拿到接口api文档（通过抓包工具获取），熟悉接口业务，接口地址，鉴权方式，入参，码</li>
+<li>编写接口用例以及评审</li>
+<li>使用接口测试工具Postman实现接口测试</li>
+<li>Postman-+Newman+Jenkins实现持续集成，并且输出测试报告并且发送邮件，并且输出测试报告并且发送邮件</li>
+</ul>
+<h3 id="接口返回数据和JSON详解"><a href="#接口返回数据和JSON详解" class="headerlink" title="接口返回数据和JSON详解"></a>接口返回数据和JSON详解</h3><ul>
+<li>json格式：三组数据<ul>
+<li>{error_code:0,msg:”0”,data:[]}</li>
+<li>error_code:错误码</li>
+<li>msg:对错误码的中文说明</li>
+<li>data：真正的返回的数据</li>
+</ul>
+</li>
+<li>jsonj就是一种数据类型，整形，小数，字符串</li>
+<li>JSON由两组数据组成<ul>
+<li>MAP对象，键值对</li>
+<li>数组</li>
+</ul>
+</li>
+</ul>
+<h1 id="Postman界面介绍"><a href="#Postman界面介绍" class="headerlink" title="Postman界面介绍"></a>Postman界面介绍</h1><ul>
+<li>Home主页</li>
+<li>workspaces 工作空间<ul>
+<li>Collections 项目集合</li>
+<li>ApiS api文档</li>
+<li>Environments 全局变量</li>
+<li>Mock Server 虚拟服务器</li>
+<li>Monitors 监听器</li>
+<li>History 历史记录</li>
+</ul>
+</li>
+</ul>
+<h1 id="常见的请求头"><a href="#常见的请求头" class="headerlink" title="常见的请求头"></a>常见的请求头</h1><h3 id="Accept"><a href="#Accept" class="headerlink" title="Accept"></a>Accept</h3><p>常用，它的作用是：客户端接收的数据格式；</p>
+<p>比方说你的参数值填写的是application&#x2F;json，就说明浏览器所接收的数据是json类型的数据，当你加了Accept请求头之后，你会发现你得到的数据和你没有加Accept请求头的数据是完全不一样的。如果你没有加Accept这个请求头，你得到的数据可能就是一个简单的网页。Accept它可以影响你返回的数据。</p>
+<h3 id="X-Requested-With"><a href="#X-Requested-With" class="headerlink" title="X-Requested-With"></a>X-Requested-With</h3><p>它的作用是：异步请求；</p>
+<p>如果对开发有一定的了解的话，前端里面有这样一个技术Ajax异步请求。现在很多的功能都会用到这个异步请求，比如说登录。</p>
+<p>简单的举个列子：如果现在你想去上海，只有一条路的话，你只能走唯一的一条路。那么如果有两条路或者多条路，可以坐飞机，高铁，汽车等等。那么它们就相当于异步，也就是说你可以通过飞机到上海，也可以坐高铁到上海，这样通俗的理解异步请求。</p>
+<p>异步请求的特点：无刷新。就是说登录的时候是需要进行页面跳转的，而异步请求它不需要跳转也可以做到这样的请求。</p>
+<h3 id="User-Aget"><a href="#User-Aget" class="headerlink" title="User-Aget"></a>User-Aget</h3><p>它的作用是：发送请求的客户端的类型；</p>
+<p>比如说我们可以通过postman去发送请求类型，也可通过浏览器去发送请求等等，那么有的接口你通过非浏览器去请求它是无法通过的</p>
+<h3 id="Content-type"><a href="#Content-type" class="headerlink" title="Content-type"></a>Content-type</h3><p>它的作用是：请求的报文格式；</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>Cookie信息；</p>
+<p>有的接口需要登录之后才会生成Cookie信息，必须要保持登录的状态。这种情况我们就需要对Cookie信息进行管理。</p>
+<h1 id="Postman执行接口测试"><a href="#Postman执行接口测试" class="headerlink" title="Postman执行接口测试"></a>Postman执行接口测试</h1><h3 id="请求页签"><a href="#请求页签" class="headerlink" title="请求页签"></a>请求页签</h3><ul>
+<li>Params：get请求传参</li>
+<li>authorization：鉴权</li>
+<li>headers：请求头</li>
+<li>Body：<ul>
+<li>post  请求传参</li>
+<li>none 没有参数</li>
+<li>form-data：既可以传键值对参数也可以传文件</li>
+<li>x-www-from-urlencoded：只能够传键值对参数</li>
+<li>raw：json，text，xml，html，javascript</li>
+<li>binary：把文件以二进制的方式传参</li>
+</ul>
+</li>
+<li>pre-request-script：请求之前的脚本</li>
+<li>tests：请求之后的断言</li>
+<li>cookies：用于管理cookie信息</li>
+</ul>
+<h3 id="响应页签"><a href="#响应页签" class="headerlink" title="响应页签"></a>响应页签</h3><ul>
+<li>Body：接口返回的数据<ul>
+<li>Pretty：以Json、html、XML…不同格式查看返回的数据</li>
+<li>Raw：以文本的方式查看返回的数据</li>
+<li>PreView：以网页的方式查看返回的数据</li>
+</ul>
+</li>
+<li>Cookies：响应的cookies信息</li>
+<li>Headers：响应头</li>
+<li>Test Results：断言的结果</li>
+<li>200是状态码 Ok是状态信息 681MS是响应的时间  343B是响应的字节数</li>
+</ul>
+<h1 id="环境变量和全局变量"><a href="#环境变量和全局变量" class="headerlink" title="环境变量和全局变量"></a>环境变量和全局变量</h1><p>可以在Environments那里设置不同情况的环境</p>
+<p>比如开发环境、测试环境、生成环境</p>
+<p>并且使用来使用你的环境</p>
+<p>比如：https:&#x2F;&#x2F;&#x2F;路径</p>
+<p>然后再在右上角选择你需要的环境即可</p>
+<p>环境变量：环境变量就是全局变量</p>
+<p>全局变量：全局变量就是能够在任何接口里面访问的变量</p>
+<h1 id="接口关联"><a href="#接口关联" class="headerlink" title="接口关联"></a>接口关联</h1><ul>
+<li>json提取器实现接口关联<ul>
+<li>在请求页签：Tests中使用var 变量名&#x3D;JSON.parse(responseBody)，json提取器将得到数据提取成json格式，这样可以设置一个全局变量，然后使用</li>
+</ul>
+</li>
+<li>使用正则表达式提取器实现接口关联<ul>
+<li>在请求页签：Tests中使用var 变量名&#x3D;responseBody.match(new RegExp(‘复制Raw并把Value改为(*?)’))，这样可以设置一个全局变量，然后使用（记得是变量名[1]）</li>
+</ul>
+</li>
+</ul>
+<h1 id="postman内置动态参数以及自定义的动态参数"><a href="#postman内置动态参数以及自定义的动态参数" class="headerlink" title="postman内置动态参数以及自定义的动态参数"></a>postman内置动态参数以及自定义的动态参数</h1><ul>
+<li>          生成当前时间的时间戳</li>
+<li>          生成0-1000之间的随机数</li>
+<li>                   生成速记GUID字符串</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/06/24/VUE/">← Next VUE</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/06/24/JavaScript/">JavaScript Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B"><span class="toc-number">1.0.1.</span> <span class="toc-text">接口简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.0.2.</span> <span class="toc-text">软件为什么需要接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-number">1.0.3.</span> <span class="toc-text">为什么要做接口测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E7%9A%84%E7%AE%80%E4%BB%8B%E5%92%8C%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.4.</span> <span class="toc-text">接口测试的简介和分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E7%9A%84%E6%B5%81%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%94%A8%E4%BE%8B%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.0.5.</span> <span class="toc-text">接口测试的流程以及用例的设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E5%92%8CJSON%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.6.</span> <span class="toc-text">接口返回数据和JSON详解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Postman%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">Postman界面介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-number">3.</span> <span class="toc-text">常见的请求头</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Accept"><span class="toc-number">3.0.1.</span> <span class="toc-text">Accept</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-Requested-With"><span class="toc-number">3.0.2.</span> <span class="toc-text">X-Requested-With</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#User-Aget"><span class="toc-number">3.0.3.</span> <span class="toc-text">User-Aget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Content-type"><span class="toc-number">3.0.4.</span> <span class="toc-text">Content-type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie"><span class="toc-number">3.0.5.</span> <span class="toc-text">Cookie</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Postman%E6%89%A7%E8%A1%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">Postman执行接口测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E9%A1%B5%E7%AD%BE"><span class="toc-number">4.0.1.</span> <span class="toc-text">请求页签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E9%A1%B5%E7%AD%BE"><span class="toc-number">4.0.2.</span> <span class="toc-text">响应页签</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">环境变量和全局变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%85%B3%E8%81%94"><span class="toc-number">6.</span> <span class="toc-text">接口关联</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#postman%E5%86%85%E7%BD%AE%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">postman内置动态参数以及自定义的动态参数</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

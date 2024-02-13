@@ -1,38 +1,974 @@
-<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
-if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
- font-family: BenderLight;
- src: local('Bender'), url("/font/BenderLight.ttf");
-}
-@font-face {
- font-family: 'JetBrains Mono';
- src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}
-@font-face {
- font-family: 'Font Awesome 6 Brands';
- src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
-}
-@font-face {
- font-family: 'Font Awesome 6 Free';
- src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
-}</style><style>:root {
-  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
-  --light-background: url('/img/bk.jpg');
-}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
-</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div class="posts"><a class="recent-post" href="/2024/02/13/NodeJs/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></object></span><time datetime="2024-02-13T09:36:08.000Z">2024-02-13</time></div><h1 class="recent-title">NodeJs</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/01/30/Nginx/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></object><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object><object><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></object></span><time datetime="2024-01-30T12:53:18.000Z">2024-01-30</time></div><h1 class="recent-title">Nginx</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/01/30/Problem/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></object></span><span class="tags"><object><a href="/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/">😶‍🌫️</a></object></span><time datetime="2024-01-30T12:05:30.000Z">2024-01-30</time></div><h1 class="recent-title">Problem</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/01/30/TypeScript/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></object><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object></span><time datetime="2024-01-30T04:17:40.000Z">2024-01-30</time></div><h1 class="recent-title">TypeScript</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2023/12/06/Interview-Knowledge-about-Web-Front/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></object></span><span class="tags"><object><a href="/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/">😶‍🌫️</a></object></span><time datetime="2023-12-06T04:28:54.000Z">2023-12-06</time></div><h1 class="recent-title">Interview&amp;Knowledge about Web-Front</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2023/11/13/MITT/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></object><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object></span><time datetime="2023-11-13T06:58:08.000Z">2023-11-13</time></div><h1 class="recent-title">MITT</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2023/11/13/Vue.Config/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object></span><time datetime="2023-11-13T06:57:44.000Z">2023-11-13</time></div><h1 class="recent-title">Vue.Config</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2023/07/21/Canvas/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object></span><time datetime="2023-07-21T07:53:10.000Z">2023-07-21</time></div><h1 class="recent-title">Canvas</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2023/06/29/TailwindCSS/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a></object></span><span class="tags"><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object><object><a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a></object><object><a href="/tags/%E9%80%9F%E9%80%9A/">速通</a></object></span><time datetime="2023-06-29T02:31:19.000Z">2023-06-29</time></div><h1 class="recent-title">TailwindCSS</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2023/06/24/VUE/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></object></span><span class="tags"><object><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></object><object><a href="/tags/%E8%BF%81%E7%A7%BB/">迁移</a></object><object><a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></object></span><time datetime="2023-06-24T10:02:16.000Z">2023-06-24</time></div><h1 class="recent-title">VUE</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a></div><div id="paginator"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next</a></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><section id="total"><a id="total-archives" href="/archives"><span class="total-title">文章 总数:</span><span class="total-number">21</span></a><div id="total-tags"><span class="total-title">标签:</span><span class="total-number">7</span></div><div id="total-categories"><span class="total-title">分类:</span><span class="total-number">3</span></div></section></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
-document.querySelector('.lg-container')?.remove()
-lightGallery(document.getElementById('post-bg'), {
-  plugins: [lgZoom,lgThumbnail],
-  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
- cacheBust: false,
- selectors: ['title','article','#aside-block','.pjax-js'],
- switches: {'article': Pjax.switches.sideBySide},
- switchesOptions: {
-   'article': {
-     classNames: {
-       remove: "pjax-out",
-       add: "pjax-in"
-     }
-   }
- }
-});
-document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="TaskManagerOL">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Don&#39;t Fall Asleep Now.">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Don&#39;t Fall Asleep Now.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="TaskManagerOL">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Don&#39;t Fall Asleep Now.</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/02/13/NodeJs/" target="_self">
+          NodeJs
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/02/13/NodeJs/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-02-13 17:36" pubdate>
+              2024-02-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/01/30/Nginx/" target="_self">
+          Nginx
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/30/Nginx/" target="_self">
+        <div>
+          下载路径：nginx下载 Nginx是目前最流行的web服务器，同类型的还有Apache、Cloudflare、OpenResty。最开始是由⼀个叫做igor的俄罗斯的程序员开发的，2019年3⽉11⽇被美国的F5公司以6.7亿美元的价格收购，现在Nginx是F5公司旗下的⼀款产品了。 Nginx进程模型 Master进程是Nginx的主进程，负责读取和验证配置文件。 worker进程就是ngin
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-01-30 20:53" pubdate>
+              2024-01-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+              <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">#服务器</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/01/30/Problem/" target="_self">
+          Problem
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/30/Problem/" target="_self">
+        <div>
+          Git -&gt; Time out用于解决git上传Time out的情况。无论是用git的push还是hexo的deploy，经常会出现Time out的情况。  解决方法一： 重启+开开关关梯子+更换网络  这个的话完全看玄学，我之前经常开开关关梯子+换网就解决了，很抽象。   解决方法二： 12git config --global https.proxy //使用代理git config
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-01-30 20:05" pubdate>
+              2024-01-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9A%8F%E7%AC%94/" class="category-chain-item">随笔</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/">#😶‍🌫️</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/01/30/TypeScript/" target="_self">
+          TypeScript
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/30/TypeScript/" target="_self">
+        <div>
+          TypeScript前言：很久之前就想着学Typescript了，但是一直在嘴上说没有时间学，说是没有但实际上学习这个也不会花费太久时间，只要肯挤时间并强制去完成就肯定可以完成。 TypeScript 中文手册  TS其实就是JS Plus，笔记中只写我觉得和JS不一样的很多的地方详细需要自己参考文档。 TypeScript相比JS的优势 更早(写代码的同时)发现错误，减少找Bug、改Bug时间，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-01-30 12:17" pubdate>
+              2024-01-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/12/06/Interview-Knowledge-about-Web-Front/" target="_self">
+          Interview&amp;Knowledge about Web-Front
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/06/Interview-Knowledge-about-Web-Front/" target="_self">
+        <div>
+          前端未来的展望✨当前PC和Mobile端前端都开发得差不多了，渐渐趋于一个稳态的状态，我们不妨展望一下未来：  ChatGPT在短期内很快就兴起了，最为容易看到的就是我去年这个时间节点还在自己手搓代码，但是这一届的学弟学妹已经开始使用GPT进行查找代码错误和提供代码思路了🤕。所以GPTwith前端、也可以推广到AIwith前端是一个大方向，但是前端这个东西似乎不是很适合机器学习，目前能做的好像我
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-12-06 12:28" pubdate>
+              2023-12-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9A%8F%E7%AC%94/" class="category-chain-item">随笔</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/">#😶‍🌫️</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/11/13/MITT/" target="_self">
+          MITT
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/11/13/MITT/" target="_self">
+        <div>
+          在Vue3中为了优化代码会使用全局事件总线bus去在不同组件之间传值。 首先先安装一下mitt 1npm install mitt  添加一个bus.js的文件里面放这些 12import mitt from &#x27;mitt&#x27;export const events = mitt()  在需要使用bus的组件里引入依赖 1import &#123; events &#125; fro
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-11-13 14:58" pubdate>
+              2023-11-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/11/13/Vue.Config/" target="_self">
+          Vue.Config
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/11/13/Vue.Config/" target="_self">
+        <div>
+          每次新建项目都得配置不少东西，在这里标记一下防止遗忘。 Vite框架项目创建1234npm create vite@latestnpm installnpm run dev//(别忘记在package.json中&quot;scripts&quot;对象中&quot;dev&quot;后面把&quot;vite&quot;改成&quot;vite --open&quot;)  Vue Router
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-11-13 14:57" pubdate>
+              2023-11-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/07/21/Canvas/" target="_self">
+          Canvas
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/21/Canvas/" target="_self">
+        <div>
+          canvas画布使用——CSS进阶​		在大一的时候学的一些高数、线性代数都可以用于canvas画布，所以还是很重要的，能好好学就好好学。 ​		文章参考：在canvas上绘制3d图形 - 简书 (jianshu.com)(写得真的很好，少见的好文章) 简单绘制三维图形​		因为canvas是一个二维的东西，所以我们想要画出三维的图形就要考虑把这个三维图形给投影到二维上，进而给造成一种三维的错觉。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-21 15:53" pubdate>
+              2023-07-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/06/29/TailwindCSS/" target="_self">
+          TailwindCSS
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/29/TailwindCSS/" target="_self">
+        <div>
+          Tailwindcss介绍Tailwindcss是一种简单好用的css框架，我们在项目中经常遇见只需要赋一次样式的div。 要么在div上写class后再到css部分去修改样式，这样会相当麻烦（前端人想要6块屏幕呜呜呜），需要上下滑动或者分屏什么什么的。 要么就在div中使用style去进行修改，但是这样会有两个问题：一个是div中的style不可以配合vscode的插件进行一个自动补全，需要自己
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-29 10:31" pubdate>
+              2023-06-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="category-chain-item">工具使用</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+              <a href="/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+            
+              <a href="/tags/%E9%80%9F%E9%80%9A/">#速通</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/06/24/VUE/" target="_self">
+          VUE
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/24/VUE/" target="_self">
+        <div>
+          &#x3D;&#x3D;更多是直接看文档&#x3D;&#x3D; Webpack前端工程化（本来记录这个没什么意义，但是很符合我，就记下来了） 实际的前端开发：  模块化（js的模块化，css模块化，资源的模块化） 组件化（复用现有的UI结构、样式、行为） 规范化（目录结构的划分、编码规范化、接口规范化、文档规范化、Git分支管理） 自动化（自动化构建、自动部署、自动化测试）  而不是一开始所以为
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-24 18:02" pubdate>
+              2023-06-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+            
+              <a href="/tags/%E8%BF%81%E7%A7%BB/">#迁移</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,24 +1,282 @@
-<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JQuery | Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
-if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
- font-family: BenderLight;
- src: local('Bender'), url("/font/BenderLight.ttf");
-}
-@font-face {
- font-family: 'JetBrains Mono';
- src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}
-@font-face {
- font-family: 'Font Awesome 6 Brands';
- src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
-}
-@font-face {
- font-family: 'Font Awesome 6 Free';
- src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
-}</style><style>:root {
-  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
-  --light-background: url('/img/bk.jpg');
-}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
-</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>JQuery</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-06-24T10:01:47.000Z" id="date"> 2023-06-24</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-01-31T05:53:23.190Z" id="updated"> 2024-01-31</time></div></span></div></div><hr><div id="post-content"><h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><p>但是他已经过时了，不建议去学，了解即可（2024）</p>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="TaskManagerOL">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JQuery但是他已经过时了，不建议去学，了解即可（2024） jQuery API 中文文档链接 JavaScript库即library，是一个封装好的特定的集合（方法和函数）。从封装一大堆函数的角度理解库，就是在这个库中，封装了很多预先定义好的函数在里面，比如动画animate、hide、show。 简单理解：就是一个JS文件，里面对我们原生的JS代码进行了封装，存放到里面。这样我们可以快速高">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JQuery">
+<meta property="og:url" content="http://example.com/2023/06/24/JQuery/index.html">
+<meta property="og:site_name" content="Don&#39;t Fall Asleep Now.">
+<meta property="og:description" content="JQuery但是他已经过时了，不建议去学，了解即可（2024） jQuery API 中文文档链接 JavaScript库即library，是一个封装好的特定的集合（方法和函数）。从封装一大堆函数的角度理解库，就是在这个库中，封装了很多预先定义好的函数在里面，比如动画animate、hide、show。 简单理解：就是一个JS文件，里面对我们原生的JS代码进行了封装，存放到里面。这样我们可以快速高">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-24T10:01:47.000Z">
+<meta property="article:modified_time" content="2024-01-31T05:53:23.190Z">
+<meta property="article:author" content="TaskManagerOL">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="迁移">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>JQuery - Don&#39;t Fall Asleep Now.</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JQuery"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-24 18:01" pubdate>
+          2023年6月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">JQuery</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><p>但是他已经过时了，不建议去学，了解即可（2024）</p>
 <p><a target="_blank" rel="noopener" href="https://jquery.cuishifeng.cn/">jQuery API 中文文档链接</a></p>
 <h3 id="JavaScript库"><a href="#JavaScript库" class="headerlink" title="JavaScript库"></a>JavaScript库</h3><p>即library，是一个封装好的特定的集合（方法和函数）。从封装一大堆函数的角度理解库，就是在这个库中，封装了很多预先定义好的函数在里面，比如动画animate、hide、show。</p>
 <p>简单理解：就是一个JS文件，里面对我们原生的JS代码进行了封装，存放到里面。这样我们可以快速高效的使用封装好的功能。</p>
@@ -327,21 +585,377 @@ if (window.localStorage.getItem('theme-mode') === 'dark') document.documentEleme
 <li><p>bootstrap JS插件：bootstrap插件也是依赖于jQuery开发的，因此里面的js插件使用，也必须引入jQuery文件。<a target="_blank" rel="noopener" href="https://v3.bootcss.com">Bootstrap中文文档</a></p>
 </li>
 </ul>
-<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/06/24/JavaScript/">← Next JavaScript</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/06/24/HTML/">HTML Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JQuery"><span class="toc-number">1.</span> <span class="toc-text">JQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E5%BA%93"><span class="toc-number">1.0.1.</span> <span class="toc-text">JavaScript库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">1.0.2.</span> <span class="toc-text">jQuery的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E7%9A%84%E9%A1%B6%E7%BA%A7%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">jQuery的顶级对象$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%AF%B9%E8%B1%A1%E5%92%8CDOM%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.0.4.</span> <span class="toc-text">jQuery对象和DOM对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.0.5.</span> <span class="toc-text">jQuery选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.0.5.0.1.</span> <span class="toc-text">jQuery基础选择器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E8%AE%BE%E7%BD%AE%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.0.5.0.2.</span> <span class="toc-text">jQuery设置样式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%BF%AD%E4%BB%A3%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">1.0.5.0.3.</span> <span class="toc-text">隐式迭代（重要）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E7%AD%9B%E9%80%89%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.0.5.0.4.</span> <span class="toc-text">jQuery筛选选择器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E7%AD%9B%E9%80%89%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.5.0.5.</span> <span class="toc-text">jQuery筛选方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-number">1.0.5.0.6.</span> <span class="toc-text">链式编程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.6.</span> <span class="toc-text">jQuery样式操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%93%8D%E4%BD%9CCSS%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.6.0.1.</span> <span class="toc-text">操作CSS方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%B1%BB%E6%A0%B7%E5%BC%8F%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.6.0.2.</span> <span class="toc-text">设置类样式方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E6%93%8D%E4%BD%9C%E4%B8%8EclassName%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.6.0.3.</span> <span class="toc-text">类操作与className区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E6%95%88%E6%9E%9C"><span class="toc-number">1.0.7.</span> <span class="toc-text">jQuery效果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F"><span class="toc-number">1.0.7.0.1.</span> <span class="toc-text">显示隐藏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8"><span class="toc-number">1.0.7.0.2.</span> <span class="toc-text">滑动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA"><span class="toc-number">1.0.7.0.3.</span> <span class="toc-text">淡入淡出</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB"><span class="toc-number">1.0.7.0.4.</span> <span class="toc-text">自定义动画</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%88%87%E6%8D%A2"><span class="toc-number">1.0.7.0.5.</span> <span class="toc-text">事件切换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E5%81%9C%E6%AD%A2%E6%8E%92%E9%98%9F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.7.0.6.</span> <span class="toc-text">动画队列以及停止排队的方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.8.</span> <span class="toc-text">jQuery属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%88%96%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E5%9B%BA%E6%9C%89%E5%B1%9E%E6%80%A7%E5%80%BCprop"><span class="toc-number">1.0.8.0.1.</span> <span class="toc-text">设置或获取元素固有属性值prop()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%88%96%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%80%BCattr"><span class="toc-number">1.0.8.0.2.</span> <span class="toc-text">设置或获取元素自定义属性值attr()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%86%85%E5%AE%B9%E6%96%87%E6%9C%AC%E5%80%BC"><span class="toc-number">1.0.9.</span> <span class="toc-text">jQuery内容文本值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9html-%EF%BC%88%E7%9B%B8%E5%BD%93%E4%BA%8Einner-HTML%EF%BC%89"><span class="toc-number">1.0.9.0.1.</span> <span class="toc-text">普通元素内容html()（相当于inner HTML）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%85%83%E7%B4%A0%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9text-%EF%BC%88%E7%9B%B8%E5%BD%93%E4%BA%8Einner-Text%EF%BC%89"><span class="toc-number">1.0.9.0.2.</span> <span class="toc-text">普通元素文本内容text()（相当于inner Text）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E7%9A%84%E5%80%BCval-%EF%BC%88%E7%9B%B8%E5%BD%93%E4%BA%8E%E5%8E%9F%E7%94%9Fvalue%EF%BC%89"><span class="toc-number">1.0.9.0.3.</span> <span class="toc-text">表单的值val()（相当于原生value）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.10.</span> <span class="toc-text">jQuery元素操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%85%83%E7%B4%A0"><span class="toc-number">1.0.10.0.1.</span> <span class="toc-text">遍历元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0"><span class="toc-number">1.0.10.0.2.</span> <span class="toc-text">创建元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">1.0.10.0.3.</span> <span class="toc-text">添加元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">1.0.10.0.4.</span> <span class="toc-text">删除元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%B0%BA%E5%AF%B8%E3%80%81%E4%BD%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.11.</span> <span class="toc-text">jQuery尺寸、位置操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.0.11.0.1.</span> <span class="toc-text">jQuery尺寸</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.0.11.0.2.</span> <span class="toc-text">jQuery位置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.0.12.</span> <span class="toc-text">jQuery事件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E4%BA%8B%E4%BB%B6%E6%B3%A8%E5%86%8C"><span class="toc-number">1.0.12.0.1.</span> <span class="toc-text">单个事件注册</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">1.0.12.0.2.</span> <span class="toc-text">单个事件处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6trigger"><span class="toc-number">1.0.12.0.3.</span> <span class="toc-text">自动触发事件trigger()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.0.13.</span> <span class="toc-text">jQuery事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.14.</span> <span class="toc-text">jQuery其他方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.0.14.0.1.</span> <span class="toc-text">jQuery对象拷贝</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E5%A4%9A%E5%BA%93%E5%85%B1%E5%AD%98"><span class="toc-number">1.0.14.0.2.</span> <span class="toc-text">jQuery多库共存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jQuery%E6%8F%92%E4%BB%B6"><span class="toc-number">1.0.14.0.3.</span> <span class="toc-text">jQuery插件</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
-document.querySelector('.lg-container')?.remove()
-lightGallery(document.getElementById('post-bg'), {
-  plugins: [lgZoom,lgThumbnail],
-  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
- cacheBust: false,
- selectors: ['title','article','#aside-block','.pjax-js'],
- switches: {'article': Pjax.switches.sideBySide},
- switchesOptions: {
-   'article': {
-     classNames: {
-       remove: "pjax-out",
-       add: "pjax-in"
-     }
-   }
- }
-});
-document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="category-chain-item">技术栈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+      
+        <a href="/tags/%E8%BF%81%E7%A7%BB/" class="print-no-link">#迁移</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JQuery</div>
+      <div>http://example.com/2023/06/24/JQuery/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>TaskManagerOL</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/24/JavaScript/" title="JavaScript">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaScript</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/24/HTML/" title="HTML">
+                        <span class="hidden-mobile">HTML</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

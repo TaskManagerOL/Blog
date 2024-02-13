@@ -1,4 +1,9 @@
-http://example.com/2024/01/30/Java/
+http://example.com/TestPage/index.html
+http://example.com/2024/02/13/NodeJs/
+http://example.com/2024/01/30/Nginx/
+http://example.com/2023/11/13/MITT/
+http://example.com/2023/06/24/JQuery/
+http://example.com/2024/01/30/Problem/
 http://example.com/2024/01/30/TypeScript/
 http://example.com/2023/12/06/Interview-Knowledge-about-Web-Front/
 http://example.com/2023/06/11/Locked%20ROOM/
@@ -8,10 +13,8 @@ http://example.com/2023/11/13/Vue.Config/
 http://example.com/2023/06/24/VUE/
 http://example.com/2023/06/29/TailwindCSS/
 http://example.com/2023/06/24/Postman/
-http://example.com/2023/11/13/MITT/
 http://example.com/2023/07/21/Canvas/
 http://example.com/2023/06/24/JavaScript/
-http://example.com/2023/06/24/JQuery/
 http://example.com/2023/06/24/HTML/
 http://example.com/2023/06/24/Git/
 http://example.com/2023/06/24/ES6/
@@ -24,7 +27,7 @@ http://example.com/tags/%E8%BF%81%E7%A7%BB/
 http://example.com/tags/%E5%89%8D%E7%AB%AF/
 http://example.com/tags/%E5%B7%A5%E5%85%B7/
 http://example.com/tags/%E9%80%9F%E9%80%9A/
-http://example.com/tags/%E5%90%8E%E7%AB%AF/
+http://example.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/
 http://example.com/categories/%E9%9A%8F%E7%AC%94/
 http://example.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/
 http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/

@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nginx | Don't Fall Asleep Now.</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light') document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark') document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Don't Fall Asleep Now." type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Nginx</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-01-30T12:53:18.000Z" id="date"> 2024-01-30</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-01-31T08:53:42.601Z" id="updated"> 2024-01-31</time></div></span></div></div><hr><div id="post-content"><p>下载路径：<a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">nginx下载</a></p>
+<p>Nginx是目前最流行的web服务器，同类型的还有Apache、Cloudflare、OpenResty。最开始是由⼀个叫做igor的俄罗斯的程序员开发的，2019年3⽉11⽇被美国的F5公司以6.7亿美元的价格收购，现在Nginx是F5公司旗下的⼀款产品了。</p>
+<h1 id="Nginx进程模型"><a href="#Nginx进程模型" class="headerlink" title="Nginx进程模型"></a>Nginx进程模型</h1><ul>
+<li>Master进程是Nginx的主进程，负责读取和验证配置文件。</li>
+<li>worker进程就是nginx的工作进程，负责处理实际的请求。</li>
+<li>master进程只可以有一个，但是worker进程可以有很多个。</li>
+</ul>
+<h1 id="Nginx部署静态资源"><a href="#Nginx部署静态资源" class="headerlink" title="Nginx部署静态资源"></a>Nginx部署静态资源</h1><p>nginx静态资源部署运行时需要开任务管理器检查是否存在。</p>
+<p>子文件夹：</p>
+<ul>
+<li>html：用于放你需要部署的、打包好的静态资源。tips：直接放有html的那一堆不要再多包一个文件夹了。</li>
+<li>logs：用于放每次运行的情况。</li>
+<li>conf：是配置，可以在nginx.conf中修改端口号，默认80，如果占用就会报错，可修改。<ul>
+<li>端口号：需要修改时打开nginx.conf文件，找到server-&gt;listen 修改后面端口号即可</li>
+</ul>
+</li>
+</ul>
+<h1 id="Nginx配置文件"><a href="#Nginx配置文件" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h1><h3 id="配置文件的结构"><a href="#配置文件的结构" class="headerlink" title="配置文件的结构"></a>配置文件的结构</h3><p>Nginx的配置⽂件是由⼀系列的指令组成的，每个指令都是由⼀个指令名和⼀个或者多个参数组成的。</p>
+<p>指令和参数之间使⽤空格来分隔，指令以分号 ; 结尾，参数可以使⽤单引号或者双引号来包裹。</p>
+<p>配置⽂件分为以下⼏个部分：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局块</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">worker_processes</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="section">events</span> &#123;</span><br><span class="line">	<span class="comment"># events块</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="comment"># http块</span></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">		<span class="comment"># server块</span></span><br><span class="line">         <span class="section">location</span> / &#123;</span><br><span class="line">            <span class="comment"># location块</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="全局块"><a href="#全局块" class="headerlink" title="全局块"></a>全局块</h5><ul>
+<li>worker_processes是用于控制worker进程数量的，也可以设置auto，worker进程数量保持同服务器CPU内核数量相同比较合适</li>
+<li>其他一些能配置的东西包括运行Nginx服务器的用户组、进程PID存放路径、日志存放路径和类型以及配置文件引入等。</li>
+</ul>
+<h5 id="events块"><a href="#events块" class="headerlink" title="events块"></a>events块</h5><blockquote>
+<p>用于配置客户端和服务器网络连接的一些配置。比如指定每个worker进程可以接收多少个网络连接、网络IO模型等。</p>
+</blockquote>
+<ul>
+<li>use：指定使用哪种网络IO模型，只能在events块中进行配置。</li>
+<li>worker_connections：每个worker process允许链接的最大连接数。</li>
+</ul>
+<h5 id="http块"><a href="#http块" class="headerlink" title="http块"></a>http块</h5><blockquote>
+<p>虚拟主机、反向代理、负载均衡等都在这里配置，http块可以包含很多server块又叫虚拟主机。</p>
+</blockquote>
+<ul>
+<li>include：nginx可以使用include指令引入其他配置文件。</li>
+<li>default_type：默认类型，如果请求的URL没有包含文件类型，会使用默认类型。</li>
+<li>sendflie：开启高效文件传输模式。</li>
+<li>keepalive_timeout：连接超时时间。</li>
+<li>access_log：日志的存放路径和类型。</li>
+<li>log_format：自定义日志格式。</li>
+<li>sendfile_max_chunk：设置sendfile最⼤传输⽚段⼤⼩，默认为0，表示不限制。</li>
+<li>keepalive_requests：每个连接的请求次数。</li>
+<li>keepalive_timeout： keepalive超时时间。</li>
+<li>gzip：开启gzip压缩。</li>
+<li>gzip_min_length： 开启gzip压缩的最⼩⽂件⼤⼩。</li>
+<li>gzip_comp_level：gzip压缩级别，1-9，级别越⾼压缩率越⾼，但是消耗CPU资源也越多。</li>
+<li>gzip_types：gzip压缩⽂件类型。</li>
+<li>upstream： upstream指令⽤于定义⼀组服务器，⼀般⽤来配置反向代理和负载均衡。</li>
+<li>ip_hash指令⽤于设置负载均衡的⽅式，ip_hash表示使⽤客户端的IP进⾏hash，这样可以保证同⼀个客户端的请求每次都会分配到同⼀个服务器，解决了session共享的问题。</li>
+<li>weight ⽤于设置权重，权重越⾼被分配到的⼏率越⼤</li>
+</ul>
+<h5 id="server块"><a href="#server块" class="headerlink" title="server块"></a>server块</h5><ul>
+<li><p>listen：监听IP和端⼝。</p>
+<ul>
+<li>listen指令⾮常灵活，可以指定多个IP和端⼝，也可以使⽤通配符</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">下⾯是⼏个实际的例⼦：</span><br><span class="line"># listen 127.0.0.1:80; # 监听来⾃127.0.0.1的80端⼝的请求</span><br><span class="line"># listen 80; # 监听来⾃所有IP的80端⼝的请求</span><br><span class="line"># listen *:80; # 监听来⾃所有IP的80端⼝的请求，同上</span><br><span class="line"># listen 127.0.0.1; # 监听来⾃来⾃127.0.0.1的80端⼝，默认端⼝为80</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>server_name：⽤来指定虚拟主机的域名，可以使⽤精确匹配、通配符匹配和正则匹配等⽅式</p>
+</li>
+<li><p>location：location块⽤来配置请求的路由，⼀个server块可以包含多个location块，每个location块就是⼀个请求路由。</p>
+<ul>
+<li>root：root指令⽤于指定请求的根⽬录，可以是绝对路径，也可以是相对路径</li>
+<li>index：index指令⽤于指定默认⽂件，如果请求的是⽬录，则会在⽬录下查找默认⽂件</li>
+</ul>
+</li>
+<li><p>error_page：⽤于指定错误⻚⾯，可以指定多个，按照优先级从⾼到低依次查找</p>
+</li>
+</ul>
+<h1 id="Nginx的常用模块"><a href="#Nginx的常用模块" class="headerlink" title="Nginx的常用模块"></a>Nginx的常用模块</h1><ul>
+<li><p>http_access_module ：接受或者拒绝特定的客户端请求</p>
+</li>
+<li><p>http_auth_basic_module ：HTTP基本认证，使用用户名和密码来限制对资源的访问</p>
+</li>
+<li><p>http_autoindex_module ：⾃动索引，⽤于显示⽬录列表</p>
+</li>
+<li><p>http_browser_module ：从 User-Agent 请求头中获取和识别客户端浏览器</p>
+</li>
+<li><p>http_charset_module ：添加特定的字符集到 Content-Type 响应头中</p>
+</li>
+<li><p>http_empty_gif_module ：返回⼀个1像素的透明GIF图⽚</p>
+</li>
+<li><p>http_fastcgi_module ：FastCGI⽀持</p>
+</li>
+<li><p>http_geo_module ：从IP地址中获取地理位置信息</p>
+</li>
+<li><p>http_gzip_module ：Gzip压缩⽀持</p>
+</li>
+<li><p>http_limit_conn_module ：限制并发连接数</p>
+</li>
+<li><p>http_limit_req_module ：限制请求速率</p>
+</li>
+<li><p>http_map_module ：从变量中获取值</p>
+</li>
+<li><p>http_memcached_module ：Memcached⽀持</p>
+</li>
+<li><p>http_proxy_module ：反向代理⽀持</p>
+</li>
+<li><p>http_referer_module ：防盗链</p>
+</li>
+<li><p>http_rewrite_module ：URL重写</p>
+</li>
+<li><p>http_scgi_module ：转发请求到SCGI服务器</p>
+</li>
+<li><p>http_ssi_module ：处理和⽀持SSI（Server Side Includes）</p>
+</li>
+<li><p>http_split_clients_module ：根据客户端IP地址或者其他变量将客户端分配到组中，⼀般⽤于A&#x2F;B测试</p>
+</li>
+<li><p>http_upstream_hash_module ：启⽤⼀致性哈希负载均衡</p>
+</li>
+<li><p>http_upstream_ip_hash_module ：启⽤IP哈希负载均衡</p>
+</li>
+<li><p>http_upstream_keepalive_module ：启⽤⻓连接负载均衡</p>
+</li>
+<li><p>http_upstream_least_conn_module ：启⽤最少连接负载均衡</p>
+</li>
+<li><p>http_upstream_zone_module ：启⽤共享内存负载均衡</p>
+</li>
+<li><p>http_userid_module ：为客户端设置⼀个唯⼀的ID（UID、cookie）</p>
+</li>
+<li><p>http_uwsgi_module ：转发请求到uWSGI服务器，⼀般⽤于Python应⽤</p>
+</li>
+</ul>
+<h1 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h1><blockquote>
+<p>正向代理：正向代理就是代理客户端，比如想访问某些国外网站的时候访问不了，这个时候就需要VPN代理服务器进行正向代理，帮你代理客户端</p>
+</blockquote>
+<blockquote>
+<p>反向代理：反向代理就是代理服务端，比如访问一个网站的时候，比如访问咕噜咕噜（Google），他有很多很多服务器，但是对外暴露的只有一个域名，那我们访问的请求会被转发到后面的服务器上，真实的端口IP服务器信息被隐藏。</p>
+</blockquote>
+<h3 id="第一步：在upstream里面放服务器配置："><a href="#第一步：在upstream里面放服务器配置：" class="headerlink" title="第一步：在upstream里面放服务器配置："></a>第一步：在upstream里面放服务器配置：</h3><p>在upstream后面是一个名字类似Vue路由配置中的name，可以随便取。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">upstream</span> name &#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8000</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">127.0.0.1:8001</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">127.0.0.1:8002</span>;</span><br><span class="line">    ...(启动的服务)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有时候后台服务器的性能可能不同，以下为两种策略：</p>
+<ul>
+<li>ip_hash指令⽤于设置负载均衡的⽅式，ip_hash表示使⽤客户端的IP进⾏hash，这样可以保证同⼀个客户端的请求每次都会分配到同⼀个服务器，解决了session共享的问题。</li>
+<li>weight：⽤于设置权重，权重越⾼被分配到的⼏率越⼤，用于分流。</li>
+</ul>
+<h3 id="第二步：在localtion中配置："><a href="#第二步：在localtion中配置：" class="headerlink" title="第二步：在localtion中配置："></a>第二步：在localtion中配置：</h3><p>localtion后面的&#x2F;…是自己取的名字，意思是将所有访问<a target="_blank" rel="noopener" href="http://app的请求发送到前面取的name里,/">http://app的请求发送到前面取的name里，</a></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">localtion</span> /route &#123;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样请求都被代理到我们所有服务器中，默认是以轮询的方式来代理。</p>
+<h1 id="HTTPS配置"><a href="#HTTPS配置" class="headerlink" title="HTTPS配置"></a>HTTPS配置</h1><h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><p>HTTP默认端口是80，HTTPS默认端口是443。</p>
+<p>HTTPS协议需要使用到SSL证书，主流云平台上都可以申请到SSL证书，也可以通过openssl生成一个自签名的证书。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">生成私钥文件：</span><br><span class="line">	openssl genrsa -out private.key 2048</span><br><span class="line">根据私钥生成证书签名请求文件：</span><br><span class="line">	openssl req -new -key private.key -out cert.csr</span><br><span class="line">使用私钥对证书申请进行签名从而生成证书文件：</span><br><span class="line">	openssl x509 -req -in cert.csr -out cacert.pem -signkey private.key</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在server中修改listen监听端口，改为 <code>443 ssl</code></p>
+<ul>
+<li>ssl_certificate：用于放证书文件路径（填入完整证书链可以不报红）</li>
+<li>ssl_certificate_key：用于放证书私钥文件路径（填入完整证书链可以不报红）</li>
+<li>ssl_session_timeout：缓存有效期</li>
+<li>ssl_protocols：安全链接可选的加密协议</li>
+<li>ssl_ciphers：配置加密套件&#x2F;加密算法</li>
+<li>ssl_prefer_server_ciphers：使用服务器端的首选算法</li>
+</ul>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p>在http的server上加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return 301 https://$server_name$request_url</span><br></pre></td></tr></table></figure>
+
+<h1 id="虚拟主机"><a href="#虚拟主机" class="headerlink" title="虚拟主机"></a>虚拟主机</h1><p>虚拟主机可以在一台服务器上部署多个站点，nginx的虚拟主机是通过server块来实现的，每个server块就是一个虚拟主机，通过server_name来指定这个虚拟主机的域名。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/02/13/NodeJs/">← Next NodeJs</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/01/30/Problem/">Problem Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">TaskManagerOL</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">Nginx进程模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">Nginx部署静态资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">Nginx配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">3.0.1.</span> <span class="toc-text">配置文件的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%9D%97"><span class="toc-number">3.0.1.0.1.</span> <span class="toc-text">全局块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#events%E5%9D%97"><span class="toc-number">3.0.1.0.2.</span> <span class="toc-text">events块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#http%E5%9D%97"><span class="toc-number">3.0.1.0.3.</span> <span class="toc-text">http块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#server%E5%9D%97"><span class="toc-number">3.0.1.0.4.</span> <span class="toc-text">server块</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx%E7%9A%84%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">Nginx的常用模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">Nginx反向代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%9C%A8upstream%E9%87%8C%E9%9D%A2%E6%94%BE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">5.0.1.</span> <span class="toc-text">第一步：在upstream里面放服务器配置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%9C%A8localtion%E4%B8%AD%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">5.0.2.</span> <span class="toc-text">第二步：在localtion中配置：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTPS%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">HTTPS配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E4%B9%A6"><span class="toc-number">6.0.1.</span> <span class="toc-text">证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">6.0.2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">6.0.3.</span> <span class="toc-text">重定向</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-number">7.</span> <span class="toc-text">虚拟主机</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

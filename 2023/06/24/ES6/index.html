@@ -26,9 +26,9 @@
 <meta property="article:published_time" content="2023-06-24T10:01:27.000Z">
 <meta property="article:modified_time" content="2023-11-13T07:08:39.822Z">
 <meta property="article:author" content="TaskManagerOL">
+<meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="迁移">
-<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -378,16 +378,16 @@
 <ul>
 <li>export 命令用于规范模块的对外接口</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="title function_">teach</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;name,teach&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;name&quot;</span>;<br><span class="hljs-keyword">let</span> <span class="hljs-title function_">teach</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);<br>&#125;<br><span class="hljs-keyword">export</span> &#123;name,teach&#125;;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="attr">name</span>:<span class="string">&quot;name&quot;</span>;</span><br><span class="line">    <span class="attr">teach</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>	<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;name&quot;</span>;<br>    <span class="hljs-attr">teach</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
 <ul>
 <li>import 命令用于输入其他模块提供的功能</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;name,teach&#125; <span class="keyword">from</span> <span class="string">&quot;url&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">import</span> &#123;name,teach&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;url&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>&#x3D;&#x3D;ES7~ES11没学&#x3D;&#x3D;</p>
 
@@ -423,11 +423,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
         <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
         <a href="/tags/%E8%BF%81%E7%A7%BB/" class="print-no-link">#迁移</a>
-      
-        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
       
     </div>
   

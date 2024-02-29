@@ -26,8 +26,8 @@
 <meta property="article:published_time" content="2023-11-13T06:58:08.000Z">
 <meta property="article:modified_time" content="2024-01-31T05:53:55.157Z">
 <meta property="article:author" content="TaskManagerOL">
-<meta property="article:tag" content="笔记">
 <meta property="article:tag" content="前端">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -294,24 +294,24 @@
                 
                 <p>在Vue3中为了优化代码会使用全局事件总线bus去在不同组件之间传值。</p>
 <p>首先先安装一下mitt</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mitt</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> mitt<br></code></pre></td></tr></table></figure>
 
 <p>添加一个bus.js的文件里面放这些</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mitt from &#x27;mitt&#x27;</span><br><span class="line">export const events = mitt()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> mitt <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mitt&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> events = <span class="hljs-title function_">mitt</span>()<br></code></pre></td></tr></table></figure>
 
 <p>在需要使用bus的组件里引入依赖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; events &#125; from &#x27;.../.../bus.js&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean"><span class="hljs-keyword">import</span> &#123; events &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;.../.../bus.js&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <p>使用方法主要是三种：</p>
 <ul>
 <li><p>emit：想要传出值或函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">events.<span class="title function_">emit</span>(<span class="string">&#x27;functionName&#x27;</span>, postValue)</span><br><span class="line"><span class="comment">//其中functionName是你绑定的一个函数名，相当于一个标识，可以在不同组件中靠这个来判定来源和目的地，postValue是你要传的值。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">events.<span class="hljs-title function_">emit</span>(<span class="hljs-string">&#x27;functionName&#x27;</span>, postValue)<br><span class="hljs-comment">//其中functionName是你绑定的一个函数名，相当于一个标识，可以在不同组件中靠这个来判定来源和目的地，postValue是你要传的值。</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>on：想要接受传入值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">events.on(&#x27;functionName&#x27;, (val) =&gt; &#123; ... &#125;)</span><br><span class="line">//其中functionName是你绑定的一个函数名，相当于一个标识，可以在不同组件中靠这个来判定来源和目的地，val是你上面传出来的postValue，要干什么自己写在...里。</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">events.<span class="hljs-literal">on</span>(<span class="hljs-string">&#x27;functionName&#x27;</span>, <span class="hljs-function"><span class="hljs-params">(val)</span> =&gt;</span> &#123; ... &#125;)<br><span class="hljs-regexp">//</span>其中functionName是你绑定的一个函数名，相当于一个标识，可以在不同组件中靠这个来判定来源和目的地，val是你上面传出来的postValue，要干什么自己写在...里。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>off：想要解绑事件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//某些情况可能要解绑</span><br><span class="line">events.off(&quot;functionName&quot;)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>某些情况可能要解绑<br>events.off(<span class="hljs-string">&quot;functionName&quot;</span>)<br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>&#x2F;&#x2F;在ICT比赛中有出现错误，需要再进行测试</p>
 
@@ -347,9 +347,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
-      
         <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
     </div>
   

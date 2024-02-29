@@ -301,17 +301,17 @@
 </blockquote>
 <p>使用hexo搭建一个属于自己的Blog非常快捷，对于有web基础的同学可以1~2h内完成搭建并熟练使用。</p>
 <h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>建立一个存放blog的文件夹，然后使用以下指令进行全局安装。（使用cmd并定位到该目录下）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">$ npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
 
 <p>安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。(<folder>是文件夹的名称，用于后续工作)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> hexo init &lt;folder&gt;<br><span class="hljs-variable">$</span> <span class="hljs-built_in">cd</span> &lt;folder&gt;<br><span class="hljs-variable">$</span> npm install<br></code></pre></td></tr></table></figure>
 
 <h3 id="Hexo基础使用"><a href="#Hexo基础使用" class="headerlink" title="Hexo基础使用"></a>Hexo基础使用</h3><p>如果有部署网站，所有操作之后需要执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>hexo g<br><span class="hljs-variable">$ </span>hexo deploy<br></code></pre></td></tr></table></figure>
 
 <p>上传 <strong>建筑</strong></p>
 <h5 id="增加建筑"><a href="#增加建筑" class="headerlink" title="增加建筑"></a>增加建筑</h5><p>可以在目标文件夹执行下列命令来创造一幢新的 <strong>建筑</strong> 。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ hexo <span class="hljs-keyword">new</span> [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p>其中 <strong>layout</strong> 是建筑的类型，有 <strong>post</strong> 、 <strong>page</strong> 、 <strong>draft</strong></p>
 <p>一般只使用 <strong>post</strong> 。</p>
@@ -384,16 +384,16 @@
 <h5 id="修改建筑"><a href="#修改建筑" class="headerlink" title="修改建筑"></a>修改建筑</h5><p>直接在source&#x2F;_post中修改markdown即可</p>
 <h5 id="删除建筑"><a href="#删除建筑" class="headerlink" title="删除建筑"></a>删除建筑</h5><p>直接在source&#x2F;_post中删除markdown即可</p>
 <p>之后输入一次以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>hexo clean<br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="Hexo搭建效果展示"><a href="#Hexo搭建效果展示" class="headerlink" title="Hexo搭建效果展示"></a>Hexo搭建效果展示</h3><p>在搭建有关 <strong>建筑</strong> 后，需要进行展示</p>
 <p>先生成静态文件（每次更新 <strong>建筑</strong> 时都需要此步，便于页面部署，类似于vue中的dist）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>hexo g<br></code></pre></td></tr></table></figure>
 
 <p>在本地使用服务器展示使用如下指令即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
 
 <p>接着就可以在网址为  <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>  访问到</p>
 <h1 id="Hexo配置项"><a href="#Hexo配置项" class="headerlink" title="Hexo配置项"></a>Hexo配置项</h1><p>Hexo中用户可修改的配置放在 <strong>_config.yml</strong> 文件中，可根据官网描述修改。</p>
@@ -408,10 +408,10 @@
 <p>接着在创建的文件夹的子文件夹public中使用git连接该仓库，push所有的文件。</p>
 <p>等待几分钟页面部署，即可在 <strong>https:&#x2F;&#x2F;你的githubID.github.io</strong> 中访问到。</p>
 <h3 id="使用hexo快速完成git更改"><a href="#使用hexo快速完成git更改" class="headerlink" title="使用hexo快速完成git更改"></a>使用hexo快速完成git更改</h3><p>为了方便 <strong>建筑</strong> 搭建修改 需要在目标文件夹中运行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">$ npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
 
 <p>在配置文件中更改</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt; #https://github.com/TaskManagerOL/TaskManagerOL.github.io</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> <span class="hljs-params">&lt;repository url&gt;</span> <span class="hljs-meta">#https:<span class="hljs-comment">//github.com/TaskManagerOL/TaskManagerOL.github.io</span></span><br><span class="hljs-symbol">  branch:</span> [branch]<br><span class="hljs-symbol">  message:</span> [message]<br></code></pre></td></tr></table></figure>
 
 
 
@@ -445,16 +445,16 @@
 </tr>
 </tbody></table>
 <p>完成配置后每次只需执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>hexo g<br><span class="hljs-variable">$ </span>hexo deploy<br></code></pre></td></tr></table></figure>
 
 <p>即可快速上传文件</p>
 <h1 id="Hexo主题"><a href="#Hexo主题" class="headerlink" title="Hexo主题"></a><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo主题</a></h1><p>在上述网站中可以寻找自己喜欢的主题，点击大图可以预览，点击蓝字可以进入该作者的仓库。</p>
 <p>在<strong>hexo</strong>目录下的<strong>themes</strong>文件夹下打开<strong>git bash</strong>，输入以下命令，下载主题:</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 复制主题的网址</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">git clone 复制主题的网址<br></code></pre></td></tr></table></figure>
 
 <p>配置_config.yml文件 修改theme 改为主题的名字</p>
 <p>在hexo目录下，打开git bash，输入以下命令，清除缓存，生成静态文件，查看效果</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">hexo clean<br>hexo g<br>hexo s<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>你对这座Blog的一些疑惑在此刻被解答，你对这么庞大华美的Blog原先抱有一丝惊讶，但是现在，你暗自笑了一下。</p>

@@ -24,7 +24,7 @@
 <meta property="og:description" content="Git -&gt; Time out用于解决git上传Time out的情况。无论是用git的push还是hexo的deploy，经常会出现Time out的情况。  解决方法一： 重启+开开关关梯子+更换网络  这个的话完全看玄学，我之前经常开开关关梯子+换网就解决了，很抽象。   解决方法二： 12git config --global https.proxy &#x2F;&#x2F;使用代理git config">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-30T12:05:30.000Z">
-<meta property="article:modified_time" content="2024-01-30T12:18:54.606Z">
+<meta property="article:modified_time" content="2024-02-26T10:37:56.443Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          190 字
+          711 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          2 分钟
+          6 分钟
         
       </span>
     
@@ -300,7 +300,7 @@
 </blockquote>
 </li>
 <li><p>解决方法二：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy //使用代理</span><br><span class="line">git config --global --unset https.proxy //取消代理</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> https<span class="hljs-selector-class">.proxy</span> <span class="hljs-comment">//使用代理</span><br>git config <span class="hljs-attr">--global</span> <span class="hljs-attr">--unset</span> https<span class="hljs-selector-class">.proxy</span> <span class="hljs-comment">//取消代理</span><br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>这个我用过很多很多很多很多次，都把他背下来了，有时候确实有用</p>
@@ -310,6 +310,29 @@
 <p>在传TS笔记的时候家里的网死活传不上去，尝试过网上所有的方法了整了一下午，很抽象的是可以去外网。</p>
 <p>那不妨直接用git自己内置的update flies，即拖动上传。</p>
 </li>
+</ul>
+<h1 id="TypeScript-gt-“Could-not-find-a-declaration-file-for-module-‘xxx-js’-‘xxx-js’-implicitly-has-an-‘any’-type"><a href="#TypeScript-gt-“Could-not-find-a-declaration-file-for-module-‘xxx-js’-‘xxx-js’-implicitly-has-an-‘any’-type" class="headerlink" title="TypeScript -&gt; “Could not find a declaration file for module ‘xxx.js’. ‘xxx.js’ implicitly has an ‘any’ type."></a>TypeScript -&gt; “Could not find a declaration file for module ‘xxx.js’. ‘xxx.js’ implicitly has an ‘any’ type.</h1><p>尝试使用TS的时候呢，遇到了一些问题，在main.ts中引用已经写好的js文件时(旧版本已经写好的配置文件，详见blog中的vue.config)发生报错，错误代码为ts(7016)，一眼ts和原生起冲突了。</p>
+<ul>
+<li><p>解决方法一：</p>
+<p>我没试过这个方法，但是Vue2的可以试试（也许）。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">//将import引入改为require引入</span><br><span class="hljs-keyword">import</span> <span class="hljs-variable language_">module</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;module.js&quot;</span><br><span class="hljs-comment">//改为=&gt;</span><br><span class="hljs-keyword">const</span> <span class="hljs-variable language_">module</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;module.js&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>为啥我没试过呢，因为在Vue3中，require语法已经不能使用了，在Vue3版本中，直接使用上述的require语法会导致报错，提示require不是一个函数。这是因为Vue3及以上版本使用了ES Module语法，不再支持使用CommonJS语法来引入模块。</p>
+<blockquote>
+<p>小知识：require和import的性能比较</p>
+<p><code>require</code> 的性能相对于 <code>import</code> 稍低。</p>
+<p>因为 <code>require</code> 是在运行时才引入模块并且还赋值给某个变量，而 <code>import</code> 只需要依据 <code>import</code> 中的接口在编译时引入指定模块所以性能稍高</p>
+</blockquote>
+</li>
+<li><p>解决方法二：</p>
+<p>也是我自己琢磨出来的方法，适用性比较低吧可能。</p>
+<p>问题既然出在 TS 和 JS 对接上，那我向上兼容，把 JS 文件更新成 TS 的不就完事了，在修改引用的文件后缀和文件内容后果然还是不报错了。</p>
+</li>
+<li><p>解决方法三：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">//先在项目目录(也就是和众多config同目录)下创建一个modules.d.ts</span><br><span class="hljs-comment">//modules.d.ts (modules可以自己取名字)</span><br><span class="hljs-keyword">declare</span> <span class="hljs-variable language_">module</span> <span class="hljs-string">&#x27;*.js&#x27;</span>;<br><br><span class="hljs-comment">//然后在 tsconfig.json 中的 &quot;include&quot; 配置下添加一个 &quot;modules.d.ts&quot;</span><br><span class="hljs-comment">// tsconfig.json</span><br><span class="hljs-string">&quot;include&quot;</span>: [<span class="hljs-string">&quot;src/**/*.ts&quot;</span>, <span class="hljs-string">&quot;src/**/*.tsx&quot;</span>, <span class="hljs-string">&quot;src/**/*.vue&quot;</span>, <span class="hljs-string">&quot;module.d.ts&quot;</span>]<br><br><span class="hljs-comment">//然后在你的main.ts中用正常的import xx from &#x27;xx.js&#x27; 即可</span><br><span class="hljs-comment">//main.ts</span><br><span class="hljs-keyword">import</span> xxx <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xx.js&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>推荐使用的方法，无论是你自己的Js文件还是引的依赖包都可以从这里引入到main.ts中，如果引依赖。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">//modules.d.ts</span><br><span class="hljs-keyword">declare</span> <span class="hljs-variable language_">module</span> <span class="hljs-string">&#x27;依赖名&#x27;</span>;<br><br><span class="hljs-comment">//main.ts</span><br><span class="hljs-keyword">import</span> xxx <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;依赖名&#x27;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 

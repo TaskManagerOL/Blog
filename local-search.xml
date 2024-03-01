@@ -4,9 +4,9 @@
   
   
   <entry>
-    <title>ShortcutsForFolder</title>
-    <link href="/2024/03/01/ShortcutsForFolder/"/>
-    <url>/2024/03/01/ShortcutsForFolder/</url>
+    <title>AutoHotKey</title>
+    <link href="/2024/03/01/AutoHotKey/"/>
+    <url>/2024/03/01/AutoHotKey/</url>
     
     <content type="html"><![CDATA[<h1 id="文件夹-x2F-软件全局快捷键设置"><a href="#文件夹-x2F-软件全局快捷键设置" class="headerlink" title="文件夹&#x2F;软件全局快捷键设置"></a>文件夹&#x2F;软件全局快捷键设置</h1><p>工作的时候手碰着键盘就不想去动鼠标了，但是有一些常用的文件夹或者软件需要点点点点开，就算把他放在桌面或者开始界面都还是需要点点点，那么对于我们这种快捷键爱好者应该怎么设置一个全局快捷键呢。</p><p>Step1：</p><ul><li><p>找到你需要用的 文件夹&#x2F;软件</p></li><li><p>创建一个 快捷方式 </p></li><li><p>放在找得到的地方等下要用</p></li></ul><p>Step2：</p><ul><li>打开 控制面板</li><li>打开 系统与安全</li><li>打开 Windows工具</li></ul><p>Step3：</p><ul><li>把刚刚的快捷方式放进来</li><li>右键属性</li><li>设置快捷键</li></ul><blockquote><p>tips：有关于win键的快捷键没办法设置(win11)，非得设置也不是不行，可以寻找有关软件</p></blockquote>]]></content>
     

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-01T10:47:55.235Z</updated>
+  <updated>2024-03-01T11:32:47.075Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="http://example.com/2024/03/01/AutoHotKey/"/>
     <id>http://example.com/2024/03/01/AutoHotKey/</id>
     <published>2024-03-01T05:33:37.000Z</published>
-    <updated>2024-03-01T10:47:55.235Z</updated>
+    <updated>2024-03-01T11:32:47.075Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="文件夹-x2F-软件全局快捷键设置"><a href="#文件夹-x2F-软件全局快捷键设置" class="headerlink" title="文件夹&#x2F;软件全局快捷键设置"></a>文件夹&#x2F;软件全局快捷键设置</h1><p>工作的时候手碰着键盘就不想去动鼠标了，但是有一些常用的文件夹或者软件需要点点点点开，就算把他放在桌面或者开始界面都还是需要点点点，那么对于我们这种快捷键爱好者应该怎么设置一个全局快捷键呢。</p><p>Step1：</p><ul><li><p>找到你需要用的 文件夹&#x2F;软件</p></li><li><p>创建一个 快捷方式 </p></li><li><p>放在找得到的地方等下要用</p></li></ul><p>Step2：</p><ul><li>打开 控制面板</li><li>打开 系统与安全</li><li>打开 Windows工具</li></ul><p>Step3：</p><ul><li>把刚刚的快捷方式放进来</li><li>右键属性</li><li>设置快捷键</li></ul><blockquote><p>tips：有关于win键的快捷键没办法设置(win11)，非得设置也不是不行，可以寻找有关软件</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>工作的时候手碰着键盘就不想去动鼠标了，但是有一些常用的文件夹或者软件需要点点点点开，就算把他放在桌面或者开始界面都还是需要点点点，那么对于我们这种快捷键爱好者应该怎么设置一个全局快捷键呢。</p><p>本来呢这篇文章是关于 文件夹&#x2F;软件全局快捷键设置的 但是我使用的方法吧他时灵时不灵</p><blockquote><p>就是创快捷方式点属性改快捷键</p></blockquote><p>虽然偶尔能打开，但是更多的是按完快捷键卡顿很久才打开或者干脆开不开了，很蠢。</p><p>干脆去找桌面脚本语言了。</p><h1 id="AutoHotKey"><a href="#AutoHotKey" class="headerlink" title="AutoHotKey"></a>AutoHotKey</h1><p>找到了这个，这玩意好用啊，无论是文件还是网站都可以快速打开，真的很爽。</p><p>现在只是探索了一个简单的使用方法，还有很多可以尝试来着。</p><p><a href="https://www.autohotkey.com/">AutoHotkey</a> </p><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ul><li><p>首先就是进行一个2.0版本的下载。</p></li><li><p>下载完成之后是一个autohotkey dash，新建一个empty文件，直接用右键啥方式打开都行（我是vscode），进去编写。</p></li><li><p>编写好了右键使用其他方式打开，找到autohotkey目录下的<code>AutoHotkeyU64.exe</code>打开 一路确定</p></li><li><p>然后双击你写的脚本文件，就开始运行了。</p></li></ul><h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><ul><li><p><code>;</code>是注释</p></li><li><p>热键：</p><ul><li><code>#</code>:win键</li><li><code>!</code>:alt键</li><li><code>^</code>:ctrl键</li><li><code>+</code>:shift键</li></ul></li><li><p>连接符是<code>::</code> 用于连接热键和运行</p></li><li><p>运行是 <code>Run</code> 运行后面跟文件路径、网址、程序</p></li><li><p>示例：</p><figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ahk"><span class="hljs-comment">;ctrl+shift+z 打开c盘</span><br><span class="hljs-title">^+z::</span>Run C:\<br></code></pre></td></tr></table></figure></li></ul><h3 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h3><p>如果需要不双击运行而是一开机就运行，那么执行以下操作</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">把写好的脚本放到<br>&#123;C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&#125;<br>或者也可能是<br>&#123;C:\用户\用户名\AppData\Roaming\Microsoft\Windows\开始菜单\程序\启动&#125;<br></code></pre></td></tr></table></figure><p>这样之后每次开电脑就会打开，虽然不是马上开，等个几秒就可以了</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;文件夹-x2F-软件全局快捷键设置&quot;&gt;&lt;a href=&quot;#文件夹-x2F-软件全局快捷键设置&quot; class=&quot;headerlink&quot; title=&quot;文件夹&amp;#x2F;软件全局快捷键设置&quot;&gt;&lt;/a&gt;文件夹&amp;#x2F;软件全局快捷键设置&lt;/h1&gt;&lt;p&gt;工作的时候手碰着</summary>
+    <summary type="html">&lt;p&gt;工作的时候手碰着键盘就不想去动鼠标了，但是有一些常用的文件夹或者软件需要点点点点开，就算把他放在桌面或者开始界面都还是需要点点点，那么对于我们这种快捷键爱好者应该怎么设置一个全局快捷键呢。&lt;/p&gt;
+&lt;p&gt;本来呢这篇文章是关于 文件夹&amp;#x2F;软件全局快捷键设置的 但是我使</summary>
       
     
     

@@ -256,9 +256,9 @@
     <category term="工具使用" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
-    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
     <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="速通" scheme="http://example.com/tags/%E9%80%9F%E9%80%9A/"/>
     
@@ -313,11 +313,11 @@
     <category term="工具使用" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
     <category term="迁移" scheme="http://example.com/tags/%E8%BF%81%E7%A7%BB/"/>
     
     <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -518,9 +518,9 @@
     <category term="工具使用" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
-    <category term="迁移" scheme="http://example.com/tags/%E8%BF%81%E7%A7%BB/"/>
-    
     <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="迁移" scheme="http://example.com/tags/%E8%BF%81%E7%A7%BB/"/>
     
   </entry>
   

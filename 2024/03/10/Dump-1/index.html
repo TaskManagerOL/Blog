@@ -16,25 +16,24 @@
   <meta name="author" content="TaskManagerOL">
   <meta name="keywords" content="">
   
-    <meta name="description" content="AutoHotKey是一个脚本语言，用来编写一个简单的脚本还是很方便的。">
+    <meta name="description" content="这个房间似乎上了锁？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AutoHotKey">
-<meta property="og:url" content="http://example.com/2024/03/01/AutoHotKey/index.html">
+<meta property="og:title" content="Dump">
+<meta property="og:url" content="http://example.com/2024/03/10/Dump-1/index.html">
 <meta property="og:site_name" content="Don&#39;t Fall Asleep Now.">
-<meta property="og:description" content="AutoHotKey是一个脚本语言，用来编写一个简单的脚本还是很方便的。">
+<meta property="og:description" content="这个房间似乎上了锁？">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-01T05:33:37.000Z">
-<meta property="article:modified_time" content="2024-03-09T07:00:54.242Z">
+<meta property="article:published_time" content="2024-03-10T10:17:50.000Z">
+<meta property="article:modified_time" content="2024-03-10T10:27:23.471Z">
 <meta property="article:author" content="TaskManagerOL">
-<meta property="article:tag" content="工具">
-<meta property="article:tag" content="快捷使用">
+<meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>AutoHotKey - Don&#39;t Fall Asleep Now.</title>
+  <title>Dump - Don&#39;t Fall Asleep Now.</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="AutoHotKey"></span>
+            <span id="subtitle" data-typed-text="Dump"></span>
           
         </div>
 
@@ -227,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-01 13:33" pubdate>
-          2024年3月1日 下午
+        <time datetime="2024-03-10 18:17" pubdate>
+          2024年3月10日 晚上
         </time>
       </span>
     
@@ -239,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          512 字
+          360 字
         
       </span>
     
@@ -250,7 +249,7 @@
         
         
         
-          5 分钟
+          4 分钟
         
       </span>
     
@@ -295,12 +294,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">AutoHotKey</h1>
+            <h1 id="seo-header">Dump</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-03-09T15:00:54+08:00
+                    本文最后更新于 2024-03-10T18:27:23+08:00
                   
                   
 
@@ -308,53 +307,22 @@
               </p>
             
             
-              <div class="markdown-body">
-                
-                <p>工作的时候手碰着键盘就不想去动鼠标了，但是有一些常用的文件夹或者软件需要点点点点开，就算把他放在桌面或者开始界面都还是需要点点点，那么对于我们这种快捷键爱好者应该怎么设置一个全局快捷键呢。</p>
-<p>本来呢这篇文章是关于 文件夹&#x2F;软件全局快捷键设置的 但是我使用的方法吧他时灵时不灵</p>
-<blockquote>
-<p>就是创快捷方式点属性改快捷键</p>
-</blockquote>
-<p>虽然偶尔能打开，但是更多的是按完快捷键卡顿很久才打开或者干脆开不开了，很蠢。</p>
-<p>干脆去找桌面脚本语言了。</p>
-<h1 id="AutoHotKey"><a href="#AutoHotKey" class="headerlink" title="AutoHotKey"></a>AutoHotKey</h1><p>找到了这个，这玩意好用啊，无论是文件还是网站都可以快速打开，真的很爽。</p>
-<p>现在只是探索了一个简单的使用方法，还有很多可以尝试来着。</p>
-<p><a target="_blank" rel="noopener" href="https://www.autohotkey.com/">AutoHotkey</a> </p>
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ul>
-<li><p>首先就是进行一个2.0版本的下载。</p>
-</li>
-<li><p>下载完成之后是一个autohotkey dash，新建一个empty文件，直接用右键啥方式打开都行（我是vscode），进去编写。</p>
-</li>
-<li><p>编写好了右键使用其他方式打开，找到autohotkey目录下的<code>AutoHotkeyU64.exe</code>打开 一路确定</p>
-</li>
-<li><p>然后双击你写的脚本文件，就开始运行了。</p>
-</li>
-</ul>
-<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><ul>
-<li><p><code>;</code>是注释</p>
-</li>
-<li><p>热键：</p>
-<ul>
-<li><code>#</code>:win键</li>
-<li><code>!</code>:alt键</li>
-<li><code>^</code>:ctrl键</li>
-<li><code>+</code>:shift键</li>
-</ul>
-</li>
-<li><p>连接符是<code>::</code> 用于连接热键和运行</p>
-</li>
-<li><p>运行是 <code>Run</code> 运行后面跟文件路径、网址、程序</p>
-</li>
-<li><p>示例：</p>
-<figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ahk"><span class="hljs-comment">;ctrl+shift+z 打开c盘</span><br><span class="hljs-title">^+z::</span>Run C:\<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h3><p>如果需要不双击运行而是一开机就运行，那么执行以下操作</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">把写好的脚本放到<br>&#123;C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&#125;<br>或者也可能是<br>&#123;C:\用户\用户名\AppData\Roaming\Microsoft\Windows\开始菜单\程序\启动&#125;<br></code></pre></td></tr></table></figure>
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="貌似不对，或许你可以找一下作者？" data-whm="抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="6ce37d2fb8cde8372addf6affa5a053d45e7028e46773c4511a8e0018e8c3029">8d08290574b52ce9f714a288b754f3f1ad6d58e5605e9a460cd9359caf400e431f4de1e4e0c3db9c2c6a09c42164ae4b4ca02b365ab2300a5fa93262127197fcaa818016bc71048b8d4e3d22599875dbf2acfa744ceae0e56fe4020bd2981fe586e6463de1a4a9f7194c21c73258c4061a1ac15a411b830306576b36b6b5f82decf5f9d2010f5d1c68926827fc2ff7cf438d78e7d3b2e037a109e79440c26764d2382bbbc684fcb7535d6c8155f4f26f67cc9f10edd8171ec63922ce9754a2bd2f55eff4ba61fdfdcb90ff057043473ca645a8d5b8deb2c9b277c003d771775b0c2e2d93f8eb1fe982f7ca3c1198976075d280f8c7d58b5733e47be941fed309361ac1e69c76b4d9859460f3ed463bd8356a1e6799ef2eda49b1467be963e4c17763458ffab2cccf4b9faa828d8f3f0adf13d98e0cd89bc79c66644d554b7f5eac7fb8d54e32c673247c48b2d9ea3e8942f547f94ead04aa69266420a1decb59ef873dba23761e857a4bf91128d403d12f55e9ad654c6d93e8066140d0f879b7a697f252ebd90dcfc3b8743e0ff07ab375155931ec4aa7f732be4e30e43ee60f8eb8903e9671ce52dbe044c62e2d55514f6d39f3e3ca46cc18354b79163fd380858e8f19bf5c8ef13836d24bad6da22899ef0112908882d3b27ff10b0303c18a327079794f74dfe95aea7eeeb36e9484bbd3dcee2e35718cd3c72bb441a650b35829b18024e3ba8269d684fcd105264d611094d2b9dc821a038514fe6015c839d14188fb25cc060dfa98a809c2544d24faab61f99cc940184d3151beeaa5f3c9e999edec705f7766ea61ec682ed5c1100a948fd7b4119d5c6c4f988937102f86180770a52a9c794fe4c9913533093fea53a48ba5ef9b437636d1a782946043985f8e32c277102b8917d69930d447df699feefe484d46578c9b397e7552eb43fcba6108d434dc0c19fbc551c4debc419c66994f74388ad219fe73a8093ad73d2a48083c05a2127274065beda0ef49e4589bf39a5487b38689cfaff9681b27f26f8838adddf4560d34c67810e754702af60c728e35defc75676c1197b4e4330b9c3e69314802a5c0dcac174ad51a489bc9fbc527d67ebe6b535786548e9f17cd7ea09af5a6ffc97c0f01c0616672d4890a1e01981bc39a6055261925f38550d9b8bfdd968d0ec8b7623f06c80da096f9d0d76d03538f56ea7fae49b6da697933ec061af9db04fc3635efceb203e70f4594b885336a115552ef91a746d74d57ee890fbd668ffca8032fa18d1ae105f47547b28fe80b9010ad13da84363e427932feb39f5b65d7dd5f0ca60d758940abc98bb5815de246c0682b53f6b4e68e1dc215ad58aafeb04f498e20f1cd652984f2a3467dffdc9833ec435d2cd700c0ec5770dd2840e25d0e93728e130046272c9e05fa4866d47fed59a5cdd39756e557a5e52a5f67bcf317833f3c5a8b0069d6c6e53d3294d24bd9cbd95f59344716f1378902cf8ce22c28764645f251db9d44ff72d66a9aba65c6945cdfcd5c4307055a78fcce2c50d72fe29d9a18fccf46d62ffd00a7442949e350b64877468b5f8857204020370d64464a088ece281d728941a255d55242706f839198ca864af3a1f60bc671a9c134d0a34e953a406a4e6cc21def508d6161ff68ccb456debb4cf765619747ad90abd2738d8a738870668be65f99396e864f1a246ca22b2f3560f0e23916d988dd2e6a0b8f57653fbb5600bcdbd81031fd05dc4248c786c56fc0e4cb2f187e833cd08226faa2dcfc56eea351fda56ed07fad5fa22027aed3dec9b4a532e10b7155fc6c67ae58f7eaf1234f193af6f1b7c88f7163ce92bf5c734ba8e5bb108fea8a5dc2906c405cbfab1227a1561957ff007a2d778b51f8c7bd08e238530df20777f1be3cdd9a2d141e34bd4bfcb0effad1165be588c35ec4ddf389ece393d4df801449f084be4c5062fd3f6b710f5e648ca7ea2c44abbb459862cf02e61763c01d9c6ee8ad0cec069c1a71fef282ea75aaad055fdbf2afd6143617f628a7ec76a77908058d2eb6285b75c3cc56</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">右边眼睛字体图标显示时回车插入🔑</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
 
-<p>这样之后每次开电脑就会打开，虽然不是马上开，等个几秒就可以了</p>
-
-                
-              </div>
+              
             
             <hr/>
             <div>
@@ -370,7 +338,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="category-chain-item">工具使用</a>
+  <a href="/categories/%E9%9A%8F%E7%AC%94/" class="category-chain-item">随笔</a>
   
   
 
@@ -385,9 +353,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7/" class="print-no-link">#工具</a>
-      
-        <a href="/tags/%E5%BF%AB%E6%8D%B7%E4%BD%BF%E7%94%A8/" class="print-no-link">#快捷使用</a>
+        <a href="/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/" class="print-no-link">#😶‍🌫️</a>
       
     </div>
   
@@ -399,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>AutoHotKey</div>
-      <div>http://example.com/2024/03/01/AutoHotKey/</div>
+      <div>Dump</div>
+      <div>http://example.com/2024/03/10/Dump-1/</div>
     </div>
     <div class="license-meta">
       
@@ -412,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月1日</div>
+          <div>2024年3月10日</div>
         </div>
       
       
@@ -444,18 +410,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/10/Dump-1/" title="Dump">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Dump</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/30/Nginx/" title="Nginx">
-                        <span class="hidden-mobile">Nginx</span>
+                      <a href="/2024/03/01/AutoHotKey/" title="AutoHotKey">
+                        <span class="hidden-mobile">AutoHotKey</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -662,6 +622,23 @@
     }
   });
 </script>
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass') || document.querySelector('hbe-prefix')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
 
 
   

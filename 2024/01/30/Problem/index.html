@@ -24,7 +24,7 @@
 <meta property="og:description" content="这里是一些我遇到的问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-30T12:05:30.000Z">
-<meta property="article:modified_time" content="2024-03-08T15:43:03.864Z">
+<meta property="article:modified_time" content="2024-03-10T10:15:24.419Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          16 分钟
+          17 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-03-08T23:43:03+08:00
+                    本文最后更新于 2024-03-10T18:15:24+08:00
                   
                   
 
@@ -429,6 +429,17 @@
 <p>不要在 <code>label</code> 元素内部放置可交互的元素，这样做会让用户更难激活&#x2F;触发与 <code>label</code> 相关联的表单输入元素。</p>
 </blockquote>
 </li>
+</ul>
+<h1 id="HTML-amp-Javascript-gt-“input标签使用”"><a href="#HTML-amp-Javascript-gt-“input标签使用”" class="headerlink" title="HTML&amp;Javascript -&gt; “input标签使用”"></a>HTML&amp;Javascript -&gt; “input标签使用”</h1><ul>
+<li><p>背景：</p>
+<p>需求是上传图片、显示、点icon删除、点icon预览。</p>
+<p>但是卡在删除上面了，有一个小bug——每次点击icon删除后就会没办法上传之前上传的那一张图片。</p>
+</li>
+<li><p>解决方法：</p>
+<p>其实很简单只不过说我把input标签隐藏起来了，每次删除都是把显示的图片删掉，原本传到input里图片的没删掉。</p>
+<p>但为什么还要写到Problem中呢？</p>
+<p>因为我发现input里图片删除也很有意思：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>	&lt;input ref=&quot;inputRef&quot;&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>    const inputRef = ref(&#x27;&#x27;)<br>    //inputRef.value 对应的是他的页面标签<br>    //inputRef.value.value 对应的是他的图片(路径)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 

@@ -24,7 +24,7 @@
 <meta property="og:description" content="这里是一些我遇到的问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-30T12:05:30.000Z">
-<meta property="article:modified_time" content="2024-03-18T07:14:01.845Z">
+<meta property="article:modified_time" content="2024-03-20T09:45:32.084Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          2.5k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          20 分钟
+          21 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-03-18T15:14:01+08:00
+                    本文最后更新于 2024-03-20T17:45:32+08:00
                   
                   
 
@@ -453,6 +453,25 @@
 <li><code>onMounted</code> 生命周期钩子函数是在 Vue 3 中的 Composition API 中使用的，它在组件挂载到 DOM 后执行。在 Vue 3 的生命周期中，类似于 <code>onMounted</code> 的生命周期钩子函数会在合适的时机被调用。这意味着它在组件渲染后执行。</li>
 </ul>
 <p>因为定义的ref在script中还未访问到DOM元素，就自然还为空，为空的话后续函数就没办法执行咯。</p>
+</li>
+</ul>
+<h1 id="MITT-gt-onAPI使用问题"><a href="#MITT-gt-onAPI使用问题" class="headerlink" title="MITT -&gt; onAPI使用问题"></a>MITT -&gt; onAPI使用问题</h1><ul>
+<li><p>背景：</p>
+<p>在兄弟组件中调用全局事件总线MITT的时候，emit和on都是可以使用的，但是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> test = <span class="hljs-title function_">ref</span>()<br>event.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">val</span>)=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(val);<span class="hljs-comment">//可以得到值</span><br>    test.<span class="hljs-property">value</span> = val;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(test.<span class="hljs-property">value</span>);<span class="hljs-comment">//可以得到值</span><br>&#125;)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(test.<span class="hljs-property">value</span>);<span class="hljs-comment">//不可以得到值</span><br></code></pre></td></tr></table></figure>
+
+<p>这就很抽象了，那我调用on的意义不久完全失去了嘛。</p>
+<p>经过尝试ref -&gt; reactive、生命周期等等都没用。</p>
+<p>讨论了一下能看出是渲染顺序问题或者深拷贝问题，但是就是不知道怎么解决。</p>
+</li>
+<li><p>解决方法一：</p>
+<p>最原始的方法就是存到localstorage里面🤣。</p>
+</li>
+<li><p>解决方法二：</p>
+<p>换用pinia Vue状态管理库。</p>
+</li>
+<li><p>解决方法三：</p>
+<p>先用emit传到父组件中，然后再用defineprops传到目的组件中。</p>
 </li>
 </ul>
 

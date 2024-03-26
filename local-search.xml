@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Pinia</title>
+    <link href="/2024/03/25/Pinia/"/>
+    <url>/2024/03/25/Pinia/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Pinia简介"><a href="#Pinia简介" class="headerlink" title="Pinia简介"></a>Pinia简介</h1><p>Pinia 是 Vue 的专属状态管理库，可以同时支持vue2和vue3，它允许你跨组件或页面共享状态。如果你熟悉组合式 API 的话，你可能会认为可以通过一行简单的 <code>export const state = reactive(&#123;&#125;)</code> 来共享一个全局状态。对于单页应用来说确实可以，但如果应用在服务器端渲染，这可能会使你的应用暴露出一些<a href="https://cn.vuejs.org/guide/scaling-up/ssr#cross-request-state-pollution">安全漏洞</a>。 而如果使用 Pinia，即使在小型单页应用中，你也可以获得如下功能：</p><ul><li>Devtools 支持<ul><li>追踪 actions、mutations 的时间线</li><li>在组件中展示它们所用到的 Store</li><li>让调试更容易的 Time travel</li></ul></li><li>热更新<ul><li>不必重载页面即可修改 Store</li><li>开发时可保持当前的 State</li></ul></li><li>插件：可通过插件扩展 Pinia 功能</li><li>为 JS 开发者提供适当的 TypeScript 支持以及<strong>自动补全</strong>功能。</li><li>支持服务端渲染</li></ul><p>它拥有比MITT更多的功能。而且也没有遇到兄弟组件传值出现的问题。好用。</p><h1 id="Pinia安装"><a href="#Pinia安装" class="headerlink" title="Pinia安装"></a>Pinia安装</h1><p><a href="https://pinia.vuejs.org/zh/getting-started.html">Pinia官网</a></p><p>Nodejs包管理器下载：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install pinia<br></code></pre></td></tr></table></figure><p>vite配置</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//main.js</span><br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> &#123; createPinia &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><span class="hljs-keyword">const</span> pinia = <span class="hljs-title function_">createPinia</span>()<br><span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>).<span class="hljs-title function_">use</span>(pinia).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure><h1 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h1><h3 id="Store简介"><a href="#Store简介" class="headerlink" title="Store简介"></a>Store简介</h3><p>Store (如 Pinia) 是一个保存状态和业务逻辑的实体，它并不与你的组件树绑定。换句话说，<strong>它承载着全局状态</strong>。它有点像一个永远存在的组件，每个组件都可以读取和写入它。它有<strong>三个概念</strong>，<a href="https://pinia.vuejs.org/zh/core-concepts/state.html">state</a>、<a href="https://pinia.vuejs.org/zh/core-concepts/getters.html">getter</a> 和 <a href="https://pinia.vuejs.org/zh/core-concepts/actions.html">action</a>，我们可以假设这些概念相当于组件中的 <code>data</code>、 <code>computed</code> 和 <code>methods</code>。</p><h3 id="Store使用"><a href="#Store使用" class="headerlink" title="Store使用"></a>Store使用</h3><p>先创建一个js&#x2F;ts文件。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//我是直接创到了public目录下  /public/store/user.js</span><br><span class="hljs-keyword">import</span> &#123; defineStore &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ref,computed &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useCounterStore = <span class="hljs-title function_">defineStore</span>(<span class="hljs-string">&#x27;counter&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> count = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>)<br>  <span class="hljs-keyword">const</span> doubleCount = <span class="hljs-title function_">computed</span>(<span class="hljs-function">() =&gt;</span> count.<span class="hljs-property">value</span> * <span class="hljs-number">2</span>)<br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">increment</span>(<span class="hljs-params"></span>) &#123;<br>    count.<span class="hljs-property">value</span>++<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> &#123; count, doubleCount, increment &#125;<br>&#125;)<br></code></pre></td></tr></table></figure><p>然后直接使用：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; useCounterStore &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;/public/stores/user.js&#x27;</span><br><span class="hljs-keyword">const</span> store = <span class="hljs-title function_">useCounterStore</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(store.<span class="hljs-property">count</span>)<br></code></pre></td></tr></table></figure><p>就行了，感觉比MITT方便不少，store似乎就是一个reactive对象。可以解构。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术栈</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>笔记</tag>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Dump</title>
     <link href="/2024/03/10/Dump-1/"/>
     <url>/2024/03/10/Dump-1/</url>
@@ -231,6 +258,8 @@
     
     
     <tags>
+      
+      <tag>笔记</tag>
       
       <tag>前端</tag>
       

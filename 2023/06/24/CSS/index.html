@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-24T10:01:20.000Z">
-<meta property="article:modified_time" content="2024-04-03T08:03:58.857Z">
+<meta property="article:modified_time" content="2024-04-06T13:18:21.593Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="迁移">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.2k 字
+          8.9k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          69 分钟
+          74 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-04-03T16:03:58+08:00
+                    本文最后更新于 2024-04-06T21:18:21+08:00
                   
                   
 
@@ -312,7 +312,69 @@
               <div class="markdown-body">
                 
                 <p>CSS参考手册：<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/index.asp">Ctrl+单击</a></p>
-<h1 id="特殊样式制作方案"><a href="#特殊样式制作方案" class="headerlink" title="特殊样式制作方案"></a>特殊样式制作方案</h1><h1 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h1><ul>
+<h1 id="特殊样式制作方案"><a href="#特殊样式制作方案" class="headerlink" title="特殊样式制作方案"></a>特殊样式制作方案</h1><p>这里是一些CSS特殊样式设计的方案。</p>
+<h3 id="CSS三角形绘制"><a href="#CSS三角形绘制" class="headerlink" title="CSS三角形绘制"></a>CSS三角形绘制</h3><ul>
+<li><p>方案一🎯：<strong>使用边框实现三角形</strong>：</p>
+<p>原理：设置一个高宽为0的div，然后设置border-方向即可。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">border-top</span>: <span class="hljs-number">50px</span> solid yellowgreen;<br>  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">50px</span> solid deeppink;<br>  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">50px</span> solid bisque;<br>  <span class="hljs-attribute">border-right</span>: <span class="hljs-number">50px</span> solid chocolate;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>优点：快捷简单。</p>
+<p>缺点：只能实现45deg的三角形。</p>
+</li>
+<li><p>方案二🎯：<strong>使用背景渐变颜色实现三角形</strong></p>
+<p>原理：使用渐变色让其颜色变成固定的两种颜色，也可以是透明。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 线性渐变 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">45deg</span>, deeppink, deeppink <span class="hljs-number">50%</span>, yellowgreen <span class="hljs-number">50%</span>, yellowgreen <span class="hljs-number">100%</span>);<br>&#125;<br><br><span class="hljs-comment">/* 角向渐变 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>   <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>   <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>   <span class="hljs-attribute">background</span>: <span class="hljs-built_in">conic-gradient</span>(from <span class="hljs-number">90deg</span> at <span class="hljs-number">50%</span> <span class="hljs-number">0</span>, deeppink <span class="hljs-number">0</span>, deeppink <span class="hljs-number">45deg</span>, transparent <span class="hljs-number">45.1deg</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>优点：可以多角度自由斜角。</p>
+<p>缺点：三角形形态比较难以调试。</p>
+</li>
+<li><p>方案三🎯：<strong>使用盒子旋转实现三角形</strong></p>
+<p>原理：通过伪元素或内置盒子旋转和隐藏子元素溢出来实现三角形。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.triangle</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">overflow</span>: hidden;<br>    <br>    &amp;<span class="hljs-selector-pseudo">::before</span> &#123;<br>        <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-attribute">position</span>: absolute;<br>        <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;<br>        <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;<br>        <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;<br>        <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;<br>        <span class="hljs-attribute">background</span>: deeppink;<br>        <span class="hljs-attribute">transform-origin</span>: left bottom;<br>        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>优点：直观、可塑性高。</p>
+<p>缺点：盒子容易偏移。</p>
+</li>
+<li><p>方案四🎯：<strong>使用容器剪裁实现三角形</strong></p>
+<p>原理：有一个css属性叫做clip-path，适用于创建一个只有元素部分区域可以显示的剪切区域。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>    <span class="hljs-attribute">background</span>: deeppink;<br>    <span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">polygon</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span>, <span class="hljs-number">100%</span> <span class="hljs-number">0</span>, <span class="hljs-number">0</span> <span class="hljs-number">100%</span>, <span class="hljs-number">0</span> <span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>优点：不只是三角形，能剪裁出任何想要的图形。</p>
+<p>缺点：操作量大。</p>
+</li>
+<li><p>方案五🎯：<strong>使用icon实现三角形</strong></p>
+<p>原理：直接使用字体中的icon。</p>
+<p>优点：太快了，什么都不用想直接输入一个字符即可。</p>
+<p>缺点：三角形不可调整，三角形可能随着不同字体变形。</p>
+</li>
+</ul>
+<h3 id="缺角盒子实现"><a href="#缺角盒子实现" class="headerlink" title="缺角盒子实现"></a>缺角盒子实现</h3><ul>
+<li><p>方案一：<strong>盒子遮挡实现</strong></p>
+<p>原理：做两个同背景颜色的三角形进行遮挡。</p>
+<p>优点：快速。</p>
+<p>缺点：颜色死板，背景是图片则没办法。</p>
+</li>
+<li><p>方案二：<strong>使用背景渐变颜色实现三角形</strong></p>
+<p>原理：同三角形绘制。</p>
+<p>优点：不用定位。</p>
+<p>缺点：同上方案。</p>
+</li>
+<li><p>方案三：<strong>使用盒子旋转实现缺角盒子</strong></p>
+<p>原理：使用一个较长的div和元素溢出隐藏样式。</p>
+<p>优点：可以设置缺角的边框。</p>
+<p>缺点：调试麻烦。</p>
+</li>
+</ul>
+<h3 id="计算器类型数码字体实现"><a href="#计算器类型数码字体实现" class="headerlink" title="计算器类型数码字体实现"></a>计算器类型数码字体实现</h3><ul>
+<li><p>方案：<strong>直接去寻找对应字体</strong></p>
+<p>原理：使用字体更改数字字体比自己手写js+css容易太多了。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">1.可以在https://www.dafont.com/上找到喜欢的字体。<br>2.字体的文件一般都是以.tff为后缀，可以改成.eot或者.woff格式，兼容浏览器。<br>3.在CSS中使用@font-face选择器使用。<br></code></pre></td></tr></table></figure>
+
+<p>优点：快速有效。</p>
+<p>缺点：字体寻找花费时间。</p>
+</li>
+</ul>
+<h1 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h1><ul>
 <li>CSS规则由两个主要的部分构成：选择器及一条或多条声明。</li>
 <li>属性和属性值以”键值对“的形式出现。</li>
 <li>属性和属性值之间用英文冒号来分割。</li>

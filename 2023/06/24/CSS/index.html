@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-24T10:01:20.000Z">
-<meta property="article:modified_time" content="2024-04-06T13:18:21.593Z">
+<meta property="article:modified_time" content="2024-04-08T08:18:58.558Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="迁移">
@@ -251,7 +251,7 @@
         
         
         
-          74 分钟
+          75 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-04-06T21:18:21+08:00
+                    本文最后更新于 2024-04-08T16:18:58+08:00
                   
                   
 
@@ -368,7 +368,7 @@
 <h3 id="计算器类型数码字体实现"><a href="#计算器类型数码字体实现" class="headerlink" title="计算器类型数码字体实现"></a>计算器类型数码字体实现</h3><ul>
 <li><p>方案：<strong>直接去寻找对应字体</strong></p>
 <p>原理：使用字体更改数字字体比自己手写js+css容易太多了。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">1.可以在https://www.dafont.com/上找到喜欢的字体。<br>2.字体的文件一般都是以.tff为后缀，可以改成.eot或者.woff格式，兼容浏览器。<br>3.在CSS中使用@font-face选择器使用。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">1.可以在https://www.dafont.com/上找到喜欢的字体。<br>2.字体的文件一般都是以.tff为后缀，可以改成.eot或者.woff格式，兼容浏览器。<br>3.在style.css中使用@font-face配置，如<br>@font-face&#123;font-family: &#x27;digital&#x27;;src:url(&#x27;/public/DS-DIGIT.woff&#x27;) format(&#x27;woff&#x27;)&#125;<br>4.在需要使用的地方使用font-family属性。<br></code></pre></td></tr></table></figure>
 
 <p>优点：快速有效。</p>
 <p>缺点：字体寻找花费时间。</p>

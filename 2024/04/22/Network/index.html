@@ -16,25 +16,25 @@
   <meta name="author" content="TaskManagerOL">
   <meta name="keywords" content="">
   
-    <meta name="description" content="每次新建项目都得配置不少东西，在这里标记一下防止遗忘。">
+    <meta name="description" content="网络协议HTTP（HyperText Transfer Protocol，超文本传输协议） 五层模型 应用层 为应用软件提供了很多服务，构建于协议之上。   传输层 数据的传输都是在这层定义的，数据过大分包分片。   网络层 为数据在节点之间传输创建逻辑链路   数据链路层 通讯实体间建立数据链路连接。   物理层 主要作用是定义物理设备如何传输数据（光缆、网线）    发展 HTTP 0.9">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue.Config">
-<meta property="og:url" content="http://example.com/2023/11/13/Vue.Config/index.html">
+<meta property="og:title" content="Network">
+<meta property="og:url" content="http://example.com/2024/04/22/Network/index.html">
 <meta property="og:site_name" content="Don&#39;t Fall Asleep Now.">
-<meta property="og:description" content="每次新建项目都得配置不少东西，在这里标记一下防止遗忘。">
+<meta property="og:description" content="网络协议HTTP（HyperText Transfer Protocol，超文本传输协议） 五层模型 应用层 为应用软件提供了很多服务，构建于协议之上。   传输层 数据的传输都是在这层定义的，数据过大分包分片。   网络层 为数据在节点之间传输创建逻辑链路   数据链路层 通讯实体间建立数据链路连接。   物理层 主要作用是定义物理设备如何传输数据（光缆、网线）    发展 HTTP 0.9">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-13T06:57:44.000Z">
-<meta property="article:modified_time" content="2024-04-08T09:33:03.586Z">
+<meta property="article:published_time" content="2024-04-22T03:30:16.000Z">
+<meta property="article:modified_time" content="2024-04-22T09:47:48.126Z">
 <meta property="article:author" content="TaskManagerOL">
+<meta property="article:tag" content="笔记">
 <meta property="article:tag" content="前端">
-<meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Vue.Config - Don&#39;t Fall Asleep Now.</title>
+  <title>Network - Don&#39;t Fall Asleep Now.</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vue.Config"></span>
+            <span id="subtitle" data-typed-text="Network"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-13 14:57" pubdate>
-          2023年11月13日 下午
+        <time datetime="2024-04-22 11:30" pubdate>
+          2024年4月22日 中午
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          342 字
+          2.2k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          3 分钟
+          19 分钟
         
       </span>
     
@@ -295,12 +295,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Vue.Config</h1>
+            <h1 id="seo-header">Network</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-04-08T17:33:03+08:00
+                    本文最后更新于 2024-04-22T17:47:48+08:00
                   
                   
 
@@ -310,20 +310,187 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Vite框架项目创建"><a href="#Vite框架项目创建" class="headerlink" title="Vite框架项目创建"></a>Vite框架项目创建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm create vite@latest<br>npm install<br>npm run dev<br>//(别忘记在package.json中<span class="hljs-string">&quot;scripts&quot;</span>对象中<span class="hljs-string">&quot;dev&quot;</span>后面把<span class="hljs-string">&quot;vite&quot;</span>改成<span class="hljs-string">&quot;vite --open&quot;</span>)<br></code></pre></td></tr></table></figure>
-
-<h2 id="Vue-Router路由安装"><a href="#Vue-Router路由安装" class="headerlink" title="Vue Router路由安装"></a>Vue Router路由安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install vue-router@4<br>//安装后别忘记在src下新建一个router子文件夹和index.js、routes.js子文件<br></code></pre></td></tr></table></figure>
-
-<h3 id="index-js（直接复制粘贴即可）"><a href="#index-js（直接复制粘贴即可）" class="headerlink" title="index.js（直接复制粘贴即可）"></a>index.js（直接复制粘贴即可）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 导入router所需的方法</span><br><span class="hljs-keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span><br><br><span class="hljs-comment">// 导入路由页面的配置</span><br><span class="hljs-keyword">import</span> routes <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./routes.js&#x27;</span><br><br><span class="hljs-comment">// 路由参数配置</span><br><span class="hljs-keyword">const</span> router = <span class="hljs-title function_">createRouter</span>(&#123;<br>    <span class="hljs-comment">// 使用hash(createWebHashHistory)模式，(createWebHistory是HTML5历史模式，支持SEO)</span><br>    <span class="hljs-attr">history</span>: <span class="hljs-title function_">createWebHistory</span>(),<br>    <span class="hljs-attr">routes</span>: routes,<br>&#125;)<br><br><span class="hljs-comment">// 全局前置守卫，这里可以加入用户登录判断</span><br>router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-function">(<span class="hljs-params">to, <span class="hljs-keyword">from</span>, next</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// 继续前进 next()</span><br>    <span class="hljs-comment">// 返回 false 以取消导航</span><br>    <span class="hljs-title function_">next</span>()<br>&#125;)<br><br><span class="hljs-comment">// 全局后置钩子，这里可以加入改变页面标题等操作</span><br>router.<span class="hljs-title function_">afterEach</span>(<span class="hljs-function">(<span class="hljs-params">to, <span class="hljs-keyword">from</span></span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// const _title = to.meta.title</span><br>    <span class="hljs-comment">// if (_title) &#123;</span><br>    <span class="hljs-comment">//     window.document.title = _title</span><br>    <span class="hljs-comment">// &#125;</span><br>&#125;)<br><br><span class="hljs-comment">// 导出默认值</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router<br></code></pre></td></tr></table></figure>
-
-<h3 id="routes-js（直接复制粘贴即可）"><a href="#routes-js（直接复制粘贴即可）" class="headerlink" title="routes.js（直接复制粘贴即可）"></a>routes.js（直接复制粘贴即可）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> routes = [<br>    &#123;<br>        <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/&#x27;</span>,<br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;HOME&#x27;</span>,<br>        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    &#125;<br>]<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> routes<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//最后就是别忘记在main.js里添加引入依赖</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./router/index.js&#x27;</span><br><span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>).<span class="hljs-title function_">use</span>(router).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<span class="hljs-comment">//.use(router)</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="APP-vue初始化"><a href="#APP-vue初始化" class="headerlink" title="APP.vue初始化"></a>APP.vue初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup&gt;&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;router-view&gt;&lt;/router-view&gt;<br>&lt;/template&gt;<br><br>&lt;style scoped&gt;&lt;/style&gt;<br></code></pre></td></tr></table></figure>
-
-<h2 id="style-css初始化"><a href="#style-css初始化" class="headerlink" title="style.css初始化"></a>style.css初始化</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 部分标签修改 */</span><br><span class="hljs-selector-tag">body</span> &#123;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">display</span>: flex;<br>  place-items: center;<br>&#125;<br><br><span class="hljs-selector-id">#app</span> &#123;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">1280px</span>;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;<br>  <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+                <h2 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h2><h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p><strong>（HyperText Transfer Protocol，超文本传输协议）</strong></p>
+<h4 id="五层模型"><a href="#五层模型" class="headerlink" title="五层模型"></a>五层模型</h4><ul>
+<li>应用层<ul>
+<li>为应用软件提供了很多服务，构建于协议之上。</li>
+</ul>
+</li>
+<li>传输层<ul>
+<li>数据的传输都是在这层定义的，数据过大分包分片。</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>为数据在节点之间传输创建逻辑链路</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>通讯实体间建立数据链路连接。</li>
+</ul>
+</li>
+<li>物理层<ul>
+<li>主要作用是定义物理设备如何传输数据（光缆、网线）</li>
+</ul>
+</li>
+</ul>
+<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><ul>
+<li><p>HTTP 0.9</p>
+<ul>
+<li>只有一个GET，发送完毕就关闭tcp协议。</li>
+</ul>
+</li>
+<li><p>HTTP 1.0</p>
+<ul>
+<li>增加了GET POST HEAD</li>
+<li>Status Code</li>
+<li>Header</li>
+<li>多字符集支持</li>
+<li>权限</li>
+<li>缓存</li>
+<li>内容编码</li>
+<li>多部分发送</li>
+</ul>
+<blockquote>
+<p>缺点：每个TCP连接都只能发送一个请求，发送数据完毕连接就关闭。如果还要请求其他资源就必须再新建一个连接。但是TCP新建连接的成本很高，因为客户端和服务器需要三次握手，而且刚开始发送的时候效率很慢。有些浏览器为了解决这个问题使用了一个非标准的Connection字段<code>Connection:Keep-alive</code>这个字段要求服务器不要关闭TCP连接，以便其他请求复用。</p>
+</blockquote>
+</li>
+<li><p>HTTP 1.1</p>
+<ul>
+<li>增加了OPTIONS、PUT、PATCH、DELETE、TRACE、CONNECT</li>
+<li>持久连接</li>
+<li>增加host</li>
+</ul>
+<blockquote>
+<p>缺点：虽然1.1版本支持TCP复用，但是同一个TCP连接中，所有数据通信是按照次序进行的，服务器只有处理完一个回应才会进行下一个回应。会造成<strong>队头堵塞</strong>，这就导致一些网页优化技巧：合并脚本和样式表、图片嵌入CSS代码、域名分片等。</p>
+</blockquote>
+</li>
+<li><p>HTTP 2.0</p>
+<ul>
+<li>二进制传输</li>
+<li>信道复用</li>
+<li>分帧传输</li>
+<li>Sever Push</li>
+</ul>
+</li>
+</ul>
+<h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ul>
+<li>第一次握手: 发送SYN报文, 传达信息: “你好, 我想建立连接”</li>
+<li>第二次握手: 回传SYN+ACK报文, 传达信息: “好的, 可以建立链接”;</li>
+<li>第三次握手: 回传ACK报文, 传到信息: “好的, 我知道了, 那我们连接”。然后建立连接</li>
+</ul>
+<blockquote>
+<p>TCP为什么要进行三次握手：因为网络传输有延迟，客户端发送请求到服务器端要求建立连接，如果服务器端直接返回的话可能会产生丢 包的情况导致客户端接收不到数据，客户端会因为超时就关闭了，可能就去发送新的请求了，然而服务端并不知道丢包导致客户端没有接收数据，服务端端口就一直开着，造成了额外的开销。所以需要三次握手确认 这个过程。</p>
+</blockquote>
+<h4 id="报文"><a href="#报文" class="headerlink" title="报文"></a>报文</h4><ul>
+<li>请求报文<ul>
+<li>请求组成：请求行，消息报头，请求正文</li>
+</ul>
+</li>
+<li>响应报文<ul>
+<li>响应组成：状态行，消息报头，响应正文</li>
+</ul>
+</li>
+</ul>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><ul>
+<li>1XX：指示信息–表示请求已接收，继续处理。</li>
+<li>2XX：成功–表示请求已被成功接受、理解、接受。</li>
+<li>3XX：重定向–要完成请求必须进一步操作。</li>
+<li>4XX：客户端错误–请求有语法错误或无法实现。</li>
+<li>5XX：服务端错误–服务端未能实现合法的请求。</li>
+</ul>
+<h4 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h4><p>Cache-Control 是一个 <strong>HTTP 协议中关于缓存的响应头</strong>，它由一些能够允许你定义一个响应资源应该何时、如何被缓存以及缓存多长时间的指令组成。 当浏览器保存了资源的副本从而达到 快速访问的目的 的时候也就是 HTTP 发生了缓存。</p>
+<ul>
+<li>可缓存性：<ul>
+<li>public 任何都可以</li>
+<li>private 只有它发起浏览器可以缓存</li>
+<li>no-cache 去服务端验证才能使用</li>
+<li>no-store 彻底不能</li>
+<li>no-transform 代理服务器、客户端实体不能改动返回内容</li>
+</ul>
+</li>
+<li>到期时间<ul>
+<li>max-age 最大时间</li>
+<li>s-maxage 只有在代理服务器才会生效</li>
+<li>max-stale 只能在发起端设置 就算max-age时间过期 max-stale时间没过期也会走缓存</li>
+</ul>
+</li>
+</ul>
+<h4 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h4><p>Connection：keep-alive&#x2F;close 打开关闭</p>
+<p>打开的话就是TCP连接上把HTTP请求的内容发送并接受完返回，不需要多次握手。</p>
+<p>这里可以设置关闭时间，也有些浏览器会有TCP并发限制，比如Chrome浏览器就是6次并发请求限制。</p>
+<h4 id="数据协商"><a href="#数据协商" class="headerlink" title="数据协商"></a>数据协商</h4><ul>
+<li><p>请求</p>
+<ul>
+<li><p>Accept 什么类型</p>
+</li>
+<li><p>Accept-Encoding 压缩方式</p>
+</li>
+<li><p>Accept-Language 语言 </p>
+</li>
+<li><p>user-Agent 浏览器信息</p>
+</li>
+</ul>
+</li>
+<li><p>返回</p>
+<ul>
+<li><p>Content-type 类型</p>
+</li>
+<li><p>Content-Encoding 压缩类型</p>
+</li>
+<li><p>Content-Language 语言</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="CSP-内容安全策略"><a href="#CSP-内容安全策略" class="headerlink" title="CSP 内容安全策略"></a>CSP 内容安全策略</h4><ul>
+<li>限制方式：Content-Security-Policy:””</li>
+</ul>
+<p>如果没有按照限制的方式加载会发回一个错误信息</p>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><p>HTTPS是通过握手进行加密，通过公钥进行加密，通过私钥进行解密。</p>
+<ul>
+<li>流程<ul>
+<li>客户端请求服务器获取<code>证书公钥</code></li>
+<li>客户端解析证书</li>
+<li>生成随机值</li>
+<li>用<code>公钥加密</code>随机值生成密钥</li>
+<li>客户端将<code>秘钥</code>发送给服务器</li>
+<li>服务器用<code>私钥</code>解密得到随机值</li>
+<li>将信息和随机值混合在一起进行对称加密</li>
+<li>将加密的内容发送给客户端</li>
+<li>客户端用<code>秘钥</code>解密信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><h4 id="跨域原因"><a href="#跨域原因" class="headerlink" title="跨域原因"></a>跨域原因</h4><p>浏览器的同源策略限制了跨域请求资源。</p>
+<h4 id="JSONP跨域"><a href="#JSONP跨域" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h4><p>JSONP（JSON with Padding）是一个非官方的协议，它允许在服务器端集成Script tags返回至客户端，通过javascript callback的形式实现跨域访问。具体来说，当一个网页想要从另一个域名获取数据时，它会向那个域名发送一个请求，然后在返回的响应中插入一段script标签，这段标签的src属性就是数据所在的URL。这样，浏览器就会去执行这段script标签中的JavaScript代码，从而获取到数据。但是这种方法存在一定的安全风险，因为它绕过了浏览器的同源策略。</p>
+<h4 id="跨域的限制"><a href="#跨域的限制" class="headerlink" title="跨域的限制"></a>跨域的限制</h4><ul>
+<li>默认跨域允许的方法只有GET、POST、HEAD，其他的方法都不允许。</li>
+<li>默认允许Content-type以下三个，其他的预请求验证，通过就能发送。<ul>
+<li>text&#x2F;plain</li>
+<li>multipart&#x2F;form-data</li>
+<li>application&#x2F;x-www-form-urlencoded</li>
+</ul>
+</li>
+<li>请求头限制，自定义的请求头是不允许的，预请求验证才能通过。</li>
+</ul>
+<h2 id="Cookie-amp-Session-amp-Token-的区别"><a href="#Cookie-amp-Session-amp-Token-的区别" class="headerlink" title="Cookie &amp; Session &amp; Token 的区别"></a>Cookie &amp; Session &amp; Token 的区别</h2><h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><p>客户端的浏览器发出HTTP请求，服务器会进行Cookie设置，也就是set-Cookie，Cookie发送给浏览器之后，浏览器会保存起来，之后发送的每一个请求都会附上这个Cookie。</p>
+<p>但是Cookie本身是有有被篡改风险的，同时用户可能禁用、容量限制4KB。</p>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>相当于加密版的Cookie，首先也是浏览器发出HTTP请求，服务器这边会设置一个SessionID，并把此ID和会话结束时间一起记录到Cookie返回到客户端，然后不带有用户的密码，只带有SessionID和会话结束时间，在结束时间到的时候就删除cookie，然后由于cookie性质，每次访问都会附上cookie，所以就可以实现长时间登录了。</p>
+<p>但是如果多很多用户，那么SessionID对于服务器将是一个巨大的负担；如果拥有多台服务器的话，那么SessionID又需要去共享给每一台服务器。太笨拙了。</p>
+<h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><p>多服务器的情况下，如果想要存储SessionID的话，可以放到数据库中，但是如果数据库和后端连接的某个地方又炸了呢。种种情况下催生出了JWT(JSON Web Token)</p>
+<p>也是像上面那样的，首先是浏览器发出HTTP请求，给到一个JSON格式的账号密码给服务端，服务端将其转化为JWT签名密文发给客户端，根据Cookie的性质，每次都会把JWT密文发回给服务端，这样就可以认证登录了。</p>
+<blockquote>
+<p>JWT是由三个部分构成的 <code>header</code>.<code>payload</code>.<code>signature</code></p>
+<p><code>header</code>部分声明需要用什么算法来生成签名。<br><code>payload</code>部分是一些特殊的数据，比如有效期之类的。</p>
+<p><code>header</code> <code>payload</code>的JSON格式Base64编码之后 服务器保存的一段密码对这俩进行算法运算，算出来的东西就是<code>signature</code></p>
+</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Cookie是一个载体，Session是保存在服务器那边的下信息，Token是诞生于服务器但是保存在浏览器这边。</p>
+<h2 id="Session-Storage-amp-Local-Storage-amp-Cookie-的区别"><a href="#Session-Storage-amp-Local-Storage-amp-Cookie-的区别" class="headerlink" title="Session Storage &amp; Local Storage &amp; Cookie 的区别"></a>Session Storage &amp; Local Storage &amp; Cookie 的区别</h2><h3 id="Session-Storage"><a href="#Session-Storage" class="headerlink" title="Session Storage"></a>Session Storage</h3><p>Session Storage 是用于本地存储一个会话中的数据，当会话结束时数据就会被销毁，也就是浏览器关闭的时候就会被销毁。<strong>Session Storage 和 Session 不是一个东西</strong> 。</p>
+<p>是 Web Storage 用于本地存储的一个方式。</p>
+<h3 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h3><p>Local Storage 是持久化的存储数据，不删除j（通过各种方式）是不会消失的。</p>
+<p>是 Web Storage 用于本地存储的一个方式。</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>Cookie 是存储在浏览器端的一小段文本数据，每次向服务端发送请求的时候Cookie都会被发送过去。故Cookie不能作为前端的数据缓存。</p>
+<p>是HTTP规范的一部分。</p>
 
                 
               </div>
@@ -357,9 +524,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
-        <a href="/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/" class="print-no-link">#😶‍🌫️</a>
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
       
     </div>
   
@@ -371,8 +538,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vue.Config</div>
-      <div>http://example.com/2023/11/13/Vue.Config/</div>
+      <div>Network</div>
+      <div>http://example.com/2024/04/22/Network/</div>
     </div>
     <div class="license-meta">
       
@@ -384,7 +551,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月13日</div>
+          <div>2024年4月22日</div>
         </div>
       
       
@@ -416,18 +583,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/13/MITT/" title="MITT">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MITT</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/21/Canvas/" title="Canvas">
-                        <span class="hidden-mobile">Canvas</span>
+                      <a href="/2024/04/08/Amap/" title="Amap">
+                        <span class="hidden-mobile">Amap</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

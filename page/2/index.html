@@ -1000,13 +1000,13 @@
       
         jQuery.ajax({
           type: 'GET',
-          url: 'https://tenapi.cn/v2/yiyan?format=json',
+          url: 'https://v1.hitokoto.cn/?c=j',
           headers: {},
           dataType: 'json',
           success: function(result) {
             var apiText;
             if (result) {
-              var keys = 'data,hitokoto'.split(',');
+              var keys = 'hitokoto'.split(',');
               if (result instanceof Array) {
                 result = result[0];
               }
@@ -1024,7 +1024,7 @@
           },
           error: function(xhr, status, error) {
             if (error) {
-              console.error('Failed to request https://tenapi.cn/v2/yiyan?format=json:', error);
+              console.error('Failed to request https://v1.hitokoto.cn/?c=j:', error);
             }
             typing(text);
           }

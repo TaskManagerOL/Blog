@@ -24,7 +24,7 @@
 <meta property="og:description" content="这里是一些我遇到的问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-30T12:05:30.000Z">
-<meta property="article:modified_time" content="2024-04-03T08:00:16.040Z">
+<meta property="article:modified_time" content="2024-04-24T11:22:18.798Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          2.6k 字
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-04-03T16:00:16+08:00
+                    本文最后更新于 2024-04-24T19:22:18+08:00
                   
                   
 
@@ -480,6 +480,17 @@
 </li>
 <li><p>解决方法：</p>
 <p>加一下z-index。</p>
+</li>
+</ul>
+<h1 id="Pack-gt-打包的时候index-html无法打开"><a href="#Pack-gt-打包的时候index-html无法打开" class="headerlink" title="Pack -&gt; 打包的时候index.html无法打开"></a>Pack -&gt; 打包的时候index.html无法打开</h1><ul>
+<li><p>背景：</p>
+<p>需要把写好的文件给队友调试，但是发现index.html无法打开。</p>
+</li>
+<li><p>解决方法：</p>
+<p>在vite.config.js下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//添加如下代码</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">plugins</span>: [<span class="hljs-title function_">vue</span>()],<br>  <span class="hljs-attr">base</span>:<span class="hljs-string">&#x27;./&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>然后index.html不要直接打开，会有跨域问题，使用vscode 的<code>Live Server</code>插件打开。</p>
 </li>
 </ul>
 

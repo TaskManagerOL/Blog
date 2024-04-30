@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-23T08:36:44.563Z</updated>
+  <updated>2024-04-30T11:58:14.923Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MiniProgram</title>
+    <link href="http://example.com/2024/04/30/MiniProgram/"/>
+    <id>http://example.com/2024/04/30/MiniProgram/</id>
+    <published>2024-04-30T11:56:30.000Z</published>
+    <updated>2024-04-30T11:58:14.923Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="本篇笔记还会重新排版"><a href="#本篇笔记还会重新排版" class="headerlink" title="本篇笔记还会重新排版"></a>本篇笔记还会重新排版</h2><p>发现运行打不开，说要配置好小程序的AppId，一个身份证号、一个手机号只能注册5个小程序。</p><blockquote><p>管理员身份验证还卡了我一下，说是要重新绑定一遍银行卡，成了。</p></blockquote><p>uniapp运行又打不开，要到微信开发者工具那里设置端口开放，全部关掉重开才行。</p><p>想用element-plus 好，他不给用；想用pinia，好，还是报错，刚刚问了一下，tailwind也是不能用的。哈哈。</p><p>去网上搜索了一下，原来uniapp本来就没什么好用的UI库，难绷。uniapp的风评更是依托。看到这我打算直接转回原生开发平台开发了。</p><p><img src="C:\Users\Shark\AppData\Roaming\Typora\typora-user-images\image-20240430172205975.png" alt="image-20240430172205975"></p><p>哈哈。原本以为可以爽复制粘贴的项目，重构吧。</p><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>问题一：阿里的icon引不了，需要去icon库里下载，然后将download好的文件放入工作区，新建一个<code>iconfont.wxss</code>复制<code>iconfont.css</code>的内容。在<code>app.wxss</code>中<code>@import</code>引入<code>iconfont.wxss</code>。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html">//在wxml文件中 iconfont表示iconfont.wxss中默认引入源 icon-name表示图标类名，可以在下载的包的html中查看<br><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconfont icon-name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">小程序就是依托，我说的。</summary>
+    
+    
+    
+    <category term="技术栈" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Network</title>
@@ -445,31 +468,6 @@
     
     
     <summary type="html">前端三剑客之一</summary>
-    
-    
-    
-    <category term="技术栈" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="迁移" scheme="http://example.com/tags/%E8%BF%81%E7%A7%BB/"/>
-    
-    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6</title>
-    <link href="http://example.com/2023/06/24/ES6/"/>
-    <id>http://example.com/2023/06/24/ES6/</id>
-    <published>2023-06-24T10:01:27.000Z</published>
-    <updated>2024-03-16T11:53:36.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES 是脚本语言的规范，而平时经常编写的 JS 是 ES 的一种体现，所以 ES 的新特性其实指的就是 JS 的新特性</p><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>相当于局部变量</p><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>常量，不可修改</p><h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>可以用 let [ …… ] &#x3D; 数组名、let { ……. } &#x3D; 对象名 ，这样的方式来快速取值</p><h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通常情况下你str是没办法换行的，想要换行的话就要用”” + 这样 但是 ES6 中给到了&#96;&#96;反引号 在反引号中可以随便换行 :laughing:</p><h3 id="对象的简便写法"><a href="#对象的简便写法" class="headerlink" title="对象的简便写法"></a>对象的简便写法</h3><p>如果对象的名字和值一样 就可以直接写一个</p><p>还有就是对象函数 可以省略function 直接写 名字(){} 这样</p><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>函数声明 变成了</p><blockquote><p>let fn &#x3D; (a,b) &#x3D;&gt; {<br>    return a+b;<br>} </p></blockquote><p>这样 省略了function</p><ul><li><p>this 是静态的 this 始终指向函数声明时所在作用域下的 this 的值</p></li><li><p>不能作为构造函数实名化对象</p></li><li><p>不能使用 arguments 变量</p></li><li><p>当形参只有一个的时候可以省略小括号，当代码体只有一个的时候可以省略花括号</p></li></ul><h3 id="函数参数的默认值设置"><a href="#函数参数的默认值设置" class="headerlink" title="函数参数的默认值设置"></a>函数参数的默认值设置</h3><p>在小括号里可以直接等于</p><blockquote><p>add &#x3D; (c&#x3D;1) &#x3D;&gt;<br>    return c;</p><p>结果是1 </p></blockquote><p>与结构赋值结合</p><blockquote><p>connect &#x3D; (username,password)  &#x3D;&gt; {<br>    console.log(username)<br>}<br>connect({<br>    username:”111”<br>    password:”222”<br>})</p></blockquote><p>可以这样使用</p><h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>ES6引用 rest 参数，用于获取函数的实参，用来代替 arguments </p><p>用法如下</p><blockquote><p>fn &#x3D; (a,b,…args){<br>    输出…<br>}<br>fn(传值)</p></blockquote><p>值得一提的是 rest 函数必须要放到参数最后</p><h3 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h3><p>… 运算符可以把数组转化为逗号分割的参数序列</p><h3 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h3><p>symbol是一种类似于字符串的数据类型</p><h3 id="迭代器-interator"><a href="#迭代器-interator" class="headerlink" title="迭代器 interator"></a>迭代器 interator</h3><p>一个用于快速遍历数组的 新属性<br>next()会迭代调用数组元素，每次迭代一个，直到用完</p><blockquote><p>const num &#x3D; [1,2,3,4];<br>let it &#x3D; num[Symbol.interator] ();&#x2F;&#x2F;调用必须<br>console.log(it.next());<br>console.log(it.next());<br>console.log(it.next());<br>console.log(it.next());&#x2F;&#x2F; 这样就会快速生成四个对象 value 会遍历 对象中还有一个 done 值 如果被遍历完了 done 就会变成true</p></blockquote><h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>其实就是一个特殊的函数，异步编程 纯回调函数</p><blockquote><p>function * gen(){<br>    part1;<br>    yield ‘sign1’;<br>    part2;<br>    yield ‘sign2’;<br>    part3;<br>}</p><p>let it &#x3D; gen();<br>it.next();<br>it.next();<br>it.next();</p></blockquote><p>这样的话会逐渐执行part1，然后part2，然后part3</p><p>甚至可以用 yield 来传参，这里截取片段来展示</p><blockquote><p>let one &#x3D; yield 111;<br>console.log(one);</p><p>…</p><p>it.next(‘AAA’) &#x2F;&#x2F;这样就会输出AAA</p></blockquote><h3 id="Promise-比较重要-面试常问"><a href="#Promise-比较重要-面试常问" class="headerlink" title="Promise (比较重要 面试常问)"></a>Promise (比较重要 面试常问)</h3><p>Promise 是 ES6 引入的异步编程的新解决方案。语法上 Promise 是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果</p><p>使用Promise方案主要有以下好处</p><ul><li>可以很好的解决回调地狱的问题（避免了层层嵌套的回调函数</li><li>语法非常简洁。promise对象提供了简洁的API 使得控制异步操作更加容易</li></ul><p>&#x3D;&#x3D;简单学学 如果想要了解还可以再看&#x3D;&#x3D;</p><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>ES6提供了新的数据结构 Set (集合)。类似于数组，但是成员的值都是唯一的，集合实现了 iterator 接口 所以可以使用扩展运算符和for of进行遍历</p><p>会自动去重 类似数学中的集合 </p><p>.size是个数 .add增加 .delete删除 .has检测 .clear清空</p><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合。但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。Map也实现了 iterator 接口，所以可以使用 扩展运算符 和 for  of 进行遍历</p><h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><p>ES6 提供了更接近传统语言的写法，引入了 Class 这个概念，作为对象的模板。通过 class 关键字，可以定义类。基本上 ES6 的 class 可以看作 只是一个语法糖，它的绝大部分功能，ES5 都可以做到，新的 class 写法只是让对象原型的写法更加清晰、更面向对象编程的语法而已。</p><h3 id="对象方法扩展"><a href="#对象方法扩展" class="headerlink" title="对象方法扩展"></a>对象方法扩展</h3><ul><li><p>Object.assign(a,b) 对象的合并<br>该方法可以使两个对象合并 由后面的覆盖前面的 </p></li><li><p>Object.setPrototypeOf 设置原型对象 可以放到_proto_中去</p></li></ul><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>模块化是指将一个大的程序文件，拆分成许多小的文件，然后将小的文件组合起来</p><p>模块化的优势有以下几点：</p><ul><li>防止命名冲突</li><li>代码复用</li><li>高维护性</li></ul><h5 id="ES6模块化语法"><a href="#ES6模块化语法" class="headerlink" title="ES6模块化语法"></a>ES6模块化语法</h5><p>模块化语法主要由两个命令构成：export 和 import</p><ul><li>export 命令用于规范模块的对外接口</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;name&quot;</span>;<br><span class="hljs-keyword">let</span> <span class="hljs-title function_">teach</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);<br>&#125;<br><span class="hljs-keyword">export</span> &#123;name,teach&#125;;<br></code></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br><span class="hljs-attr">name</span>:<span class="hljs-string">&quot;name&quot;</span>;<br>    <span class="hljs-attr">teach</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>import 命令用于输入其他模块提供的功能</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">import</span> &#123;name,teach&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;url&quot;</span><br></code></pre></td></tr></table></figure><p>&#x3D;&#x3D;ES7~ES11没学&#x3D;&#x3D;</p>]]></content>
-    
-    
-    <summary type="html">Javascript自我进阶</summary>
     
     
     

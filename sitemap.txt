@@ -1,3 +1,4 @@
+http://example.com/2024/04/30/MiniProgram/
 http://example.com/2023/06/24/JavaScript/
 http://example.com/2023/06/24/Git/
 http://example.com/2023/06/24/CSS/

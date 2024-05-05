@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="c:\Users\Shark\AppData\Roaming\Typora\typora-user-images\image-20240430172205975.png">
 <meta property="article:published_time" content="2024-04-30T11:56:30.000Z">
-<meta property="article:modified_time" content="2024-04-30T11:58:14.923Z">
+<meta property="article:modified_time" content="2024-05-05T13:45:33.435Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="前端">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          302 字
+          410 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -302,7 +302,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-04-30T19:58:14+08:00
+                    本文最后更新于 2024-05-05T21:45:33+08:00
                   
                   
 
@@ -323,6 +323,12 @@
 <p>哈哈。原本以为可以爽复制粘贴的项目，重构吧。</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>问题一：阿里的icon引不了，需要去icon库里下载，然后将download好的文件放入工作区，新建一个<code>iconfont.wxss</code>复制<code>iconfont.css</code>的内容。在<code>app.wxss</code>中<code>@import</code>引入<code>iconfont.wxss</code>。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html">//在wxml文件中 iconfont表示iconfont.wxss中默认引入源 icon-name表示图标类名，可以在下载的包的html中查看<br><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconfont icon-name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p>问题二：模拟器和真机调试的显示内容不一样。</p>
+<h2 id="页面路由"><a href="#页面路由" class="headerlink" title="页面路由"></a>页面路由</h2><p>app.json下pages配置，页面内使用navigator标签进行跳转，一个文件夹下的wxml、wxss、js直接放一起打包了。</p>
+<h2 id="高德地图"><a href="#高德地图" class="headerlink" title="高德地图"></a>高德地图</h2><p><a target="_blank" rel="noopener" href="https://lbs.amap.com/api/wx/gettingstarted">入门指南-微信小程序插件 | 高德地图API (amap.com)</a></p>
+<p>logo隐藏找了几篇都不行，决定overflowhidden完事。</p>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><p>引入JS文件需要让文件名大写。</p>
 
                 
               </div>

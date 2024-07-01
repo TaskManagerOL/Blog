@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-26T14:20:37.720Z</updated>
+  <updated>2024-07-01T07:30:23.237Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Eventstorm</title>
+    <link href="http://example.com/2024/07/01/Eventstorm/"/>
+    <id>http://example.com/2024/07/01/Eventstorm/</id>
+    <published>2024-07-01T04:11:49.000Z</published>
+    <updated>2024-07-01T07:30:23.237Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介及概念"><a href="#简介及概念" class="headerlink" title="简介及概念"></a>简介及概念</h1><p>什么是事件风暴？</p><p>事件风暴是一场发现事件模型的头脑风暴会议，通过领域专家、产品经理和技术人员共同头碰头的群策群力，以事件模型为主要线索，发现业务系统中发生的代表重要事实的重要事件。</p><p>事件风暴是Alberto Brandolini的心血结晶，它是Gamestorming和领域驱动设计（DDD）原则的综合学习实践。</p><blockquote><p>领域驱动设计（DDD,Domain-Driven Design）是一种通过将实现连接到持续进化的模型来满足复杂需求的软件开发方法。</p><p>领域驱动设计的前提是:</p><ul><li>把项目的主要重点放在核心领域（core domain）和域逻辑。</li><li>把复杂的设计放在有界域（bounded context）的模型上。</li><li>发起一个创造性的合作之间的技术和域界专家以迭代地完善的概念模式，解决特定领域的问题。</li></ul></blockquote><p>事件风暴催化并加速小组学习，通常在几小时或几天内实现更传统的建模技术从未做过的事情。</p><p>事件风暴使用简单的便利贴来实现。</p><h1 id="特点及用处"><a href="#特点及用处" class="headerlink" title="特点及用处"></a>特点及用处</h1><h2 id="快速"><a href="#快速" class="headerlink" title="快速"></a>快速</h2><p>事件风暴能够很快的（通常只需几天或几个小时）搭建出业务流程的模型。</p><h2 id="清晰"><a href="#清晰" class="headerlink" title="清晰"></a>清晰</h2><p>通过多角色对于业务流程的完善，事件风暴使得整个模型显得尤为清晰，在我看来，他更像是把业务专注于“业务”本身。</p><p>我为什么这么说呢 -&gt; 如果我们正常对模型进行搭建的时候，可能是靠自己（或者是某个部门）对整个业务进行模拟：我需要什么，我要做什么。虽然这是我们能够做到最好的情况了，但是因为业务不止需要一个部门去实现，这样做往往会导致我们一开始看起来很合适的的某个部分，在别的人眼里显得非常的怪异。</p><p>这就催生出了事件风暴，对于业务模型中的事件，不同的人有不同的答案。</p><h2 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h2><p>事件风暴具有简单的特性，对于没有编程背景的人，只需一点点的逻辑性就可以参与进来，这对于业务开发是十分高效且合理的。</p><h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><h2 id="领域事件-Event"><a href="#领域事件-Event" class="headerlink" title="领域事件 Event"></a>领域事件 Event</h2><ul><li>指正在探索的领域的相关事件，命名需要代表深刻的业务领域含义。</li></ul><h2 id="参与者-Actor"><a href="#参与者-Actor" class="headerlink" title="参与者 Actor"></a>参与者 Actor</h2><ul><li>指涉及领域事件的的人员，一组人、一个团队或者某个人。（也可以说是对应探索领域的用户）</li></ul><h2 id="外部系统-External-System"><a href="#外部系统-External-System" class="headerlink" title="外部系统 External System"></a>外部系统 External System</h2><ul><li>可部署的IT系统，我认为是用于补充actor，比如事件的触发可能是通过外部第三方系统产生。</li></ul><h2 id="策略-Policy"><a href="#策略-Policy" class="headerlink" title="策略 Policy"></a>策略 Policy</h2><ul><li>根据业务约束或者是规则自动或手动触发。</li></ul><h2 id="命令-Command"><a href="#命令-Command" class="headerlink" title="命令 Command"></a>命令 Command</h2><ul><li>代表行动、意图，指一个触发器。</li></ul><h2 id="读模型-Read-Model"><a href="#读模型-Read-Model" class="headerlink" title="读模型 Read Model"></a>读模型 Read Model</h2><ul><li>参与者需要某些信息做出决策，通过读模型来获取这些信息。</li></ul><h2 id="聚合-Aggregate"><a href="#聚合-Aggregate" class="headerlink" title="聚合 Aggregate"></a>聚合 Aggregate</h2><ul><li>一个对象群体、一类对象的总称。</li></ul><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><h2 id="事件风暴会议开始"><a href="#事件风暴会议开始" class="headerlink" title="事件风暴会议开始"></a>事件风暴会议开始</h2><p>在主持人的指导下，与业务专家开始梳理当前的业务中有哪些领域事件。（即已经发生需要保存下来的那些事实）。</p><p>只有先找到发生的事实，将其标记为领域事件，才能发现这些事实涉及哪些对象，对象之间的结构边界才能得到划分，而划分了边界的对象才可能是DDD中的限界上下文。</p><p>针对每一个领域事件，项目组成员围绕它进行业务分析，增加各种命令与事件，进行思考与之相关的资源、外部系统与时间。</p><h2 id="按照时间线组织事件"><a href="#按照时间线组织事件" class="headerlink" title="按照时间线组织事件"></a>按照时间线组织事件</h2><p>按照用户使用业务的时间线进行事件组织，由这些事件组成合理的故事。</p><h2 id="加入界面以及命令"><a href="#加入界面以及命令" class="headerlink" title="加入界面以及命令"></a>加入界面以及命令</h2><p>事件由命令触发，来源可以是用户或者是外部系统。</p><h2 id="加入聚合关联命令和事件"><a href="#加入聚合关联命令和事件" class="headerlink" title="加入聚合关联命令和事件"></a>加入聚合关联命令和事件</h2><p>加入聚合后，可以继续完善缺失的事件。</p><h2 id="识别核心子域"><a href="#识别核心子域" class="headerlink" title="识别核心子域"></a>识别核心子域</h2><p>每一个核心子域都是一个完善的微服务，我们要做的是把这些子域分开，各子域之间不能相互依赖太多，修改时会相互牵扯。</p>]]></content>
+    
+    
+    <summary type="html">有一篇新的笔记✨</summary>
+    
+    
+    
+    <category term="工具使用" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="架构" scheme="http://example.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>React</title>
@@ -449,31 +474,6 @@
     
     
     <summary type="html">前端三剑客之一</summary>
-    
-    
-    
-    <category term="技术栈" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="迁移" scheme="http://example.com/tags/%E8%BF%81%E7%A7%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6</title>
-    <link href="http://example.com/2023/06/24/ES6/"/>
-    <id>http://example.com/2023/06/24/ES6/</id>
-    <published>2023-06-24T10:01:27.000Z</published>
-    <updated>2024-03-16T11:53:36.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES 是脚本语言的规范，而平时经常编写的 JS 是 ES 的一种体现，所以 ES 的新特性其实指的就是 JS 的新特性</p><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>相当于局部变量</p><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>常量，不可修改</p><h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>可以用 let [ …… ] &#x3D; 数组名、let { ……. } &#x3D; 对象名 ，这样的方式来快速取值</p><h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>通常情况下你str是没办法换行的，想要换行的话就要用”” + 这样 但是 ES6 中给到了&#96;&#96;反引号 在反引号中可以随便换行 :laughing:</p><h3 id="对象的简便写法"><a href="#对象的简便写法" class="headerlink" title="对象的简便写法"></a>对象的简便写法</h3><p>如果对象的名字和值一样 就可以直接写一个</p><p>还有就是对象函数 可以省略function 直接写 名字(){} 这样</p><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>函数声明 变成了</p><blockquote><p>let fn &#x3D; (a,b) &#x3D;&gt; {<br>    return a+b;<br>} </p></blockquote><p>这样 省略了function</p><ul><li><p>this 是静态的 this 始终指向函数声明时所在作用域下的 this 的值</p></li><li><p>不能作为构造函数实名化对象</p></li><li><p>不能使用 arguments 变量</p></li><li><p>当形参只有一个的时候可以省略小括号，当代码体只有一个的时候可以省略花括号</p></li></ul><h3 id="函数参数的默认值设置"><a href="#函数参数的默认值设置" class="headerlink" title="函数参数的默认值设置"></a>函数参数的默认值设置</h3><p>在小括号里可以直接等于</p><blockquote><p>add &#x3D; (c&#x3D;1) &#x3D;&gt;<br>    return c;</p><p>结果是1 </p></blockquote><p>与结构赋值结合</p><blockquote><p>connect &#x3D; (username,password)  &#x3D;&gt; {<br>    console.log(username)<br>}<br>connect({<br>    username:”111”<br>    password:”222”<br>})</p></blockquote><p>可以这样使用</p><h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>ES6引用 rest 参数，用于获取函数的实参，用来代替 arguments </p><p>用法如下</p><blockquote><p>fn &#x3D; (a,b,…args){<br>    输出…<br>}<br>fn(传值)</p></blockquote><p>值得一提的是 rest 函数必须要放到参数最后</p><h3 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h3><p>… 运算符可以把数组转化为逗号分割的参数序列</p><h3 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h3><p>symbol是一种类似于字符串的数据类型</p><h3 id="迭代器-interator"><a href="#迭代器-interator" class="headerlink" title="迭代器 interator"></a>迭代器 interator</h3><p>一个用于快速遍历数组的 新属性<br>next()会迭代调用数组元素，每次迭代一个，直到用完</p><blockquote><p>const num &#x3D; [1,2,3,4];<br>let it &#x3D; num[Symbol.interator] ();&#x2F;&#x2F;调用必须<br>console.log(it.next());<br>console.log(it.next());<br>console.log(it.next());<br>console.log(it.next());&#x2F;&#x2F; 这样就会快速生成四个对象 value 会遍历 对象中还有一个 done 值 如果被遍历完了 done 就会变成true</p></blockquote><h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>其实就是一个特殊的函数，异步编程 纯回调函数</p><blockquote><p>function * gen(){<br>    part1;<br>    yield ‘sign1’;<br>    part2;<br>    yield ‘sign2’;<br>    part3;<br>}</p><p>let it &#x3D; gen();<br>it.next();<br>it.next();<br>it.next();</p></blockquote><p>这样的话会逐渐执行part1，然后part2，然后part3</p><p>甚至可以用 yield 来传参，这里截取片段来展示</p><blockquote><p>let one &#x3D; yield 111;<br>console.log(one);</p><p>…</p><p>it.next(‘AAA’) &#x2F;&#x2F;这样就会输出AAA</p></blockquote><h3 id="Promise-比较重要-面试常问"><a href="#Promise-比较重要-面试常问" class="headerlink" title="Promise (比较重要 面试常问)"></a>Promise (比较重要 面试常问)</h3><p>Promise 是 ES6 引入的异步编程的新解决方案。语法上 Promise 是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果</p><p>使用Promise方案主要有以下好处</p><ul><li>可以很好的解决回调地狱的问题（避免了层层嵌套的回调函数</li><li>语法非常简洁。promise对象提供了简洁的API 使得控制异步操作更加容易</li></ul><p>&#x3D;&#x3D;简单学学 如果想要了解还可以再看&#x3D;&#x3D;</p><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>ES6提供了新的数据结构 Set (集合)。类似于数组，但是成员的值都是唯一的，集合实现了 iterator 接口 所以可以使用扩展运算符和for of进行遍历</p><p>会自动去重 类似数学中的集合 </p><p>.size是个数 .add增加 .delete删除 .has检测 .clear清空</p><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合。但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。Map也实现了 iterator 接口，所以可以使用 扩展运算符 和 for  of 进行遍历</p><h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><p>ES6 提供了更接近传统语言的写法，引入了 Class 这个概念，作为对象的模板。通过 class 关键字，可以定义类。基本上 ES6 的 class 可以看作 只是一个语法糖，它的绝大部分功能，ES5 都可以做到，新的 class 写法只是让对象原型的写法更加清晰、更面向对象编程的语法而已。</p><h3 id="对象方法扩展"><a href="#对象方法扩展" class="headerlink" title="对象方法扩展"></a>对象方法扩展</h3><ul><li><p>Object.assign(a,b) 对象的合并<br>该方法可以使两个对象合并 由后面的覆盖前面的 </p></li><li><p>Object.setPrototypeOf 设置原型对象 可以放到_proto_中去</p></li></ul><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>模块化是指将一个大的程序文件，拆分成许多小的文件，然后将小的文件组合起来</p><p>模块化的优势有以下几点：</p><ul><li>防止命名冲突</li><li>代码复用</li><li>高维护性</li></ul><h5 id="ES6模块化语法"><a href="#ES6模块化语法" class="headerlink" title="ES6模块化语法"></a>ES6模块化语法</h5><p>模块化语法主要由两个命令构成：export 和 import</p><ul><li>export 命令用于规范模块的对外接口</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;name&quot;</span>;<br><span class="hljs-keyword">let</span> <span class="hljs-title function_">teach</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);<br>&#125;<br><span class="hljs-keyword">export</span> &#123;name,teach&#125;;<br></code></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br><span class="hljs-attr">name</span>:<span class="hljs-string">&quot;name&quot;</span>;<br>    <span class="hljs-attr">teach</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>import 命令用于输入其他模块提供的功能</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">import</span> &#123;name,teach&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;url&quot;</span><br></code></pre></td></tr></table></figure><p>&#x3D;&#x3D;ES7~ES11没学&#x3D;&#x3D;</p>]]></content>
-    
-    
-    <summary type="html">Javascript自我进阶</summary>
     
     
     

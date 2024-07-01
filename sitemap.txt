@@ -1,3 +1,4 @@
+http://example.com/2024/07/01/Eventstorm/
 http://example.com/2024/06/24/React/
 http://example.com/2023/06/24/Vue/
 http://example.com/2024/01/30/Problem/
@@ -31,6 +32,7 @@ http://example.com/tags/%E8%BF%81%E7%A7%BB/
 http://example.com/tags/%F0%9F%98%B6%E2%80%8D%F0%9F%8C%AB%EF%B8%8F/
 http://example.com/tags/%E9%80%9F%E9%80%9A/
 http://example.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/
+http://example.com/tags/%E6%9E%B6%E6%9E%84/
 http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/
 http://example.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/
 http://example.com/categories/%E9%9A%8F%E7%AC%94/

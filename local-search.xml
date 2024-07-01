@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Eventstorm</title>
+    <link href="/2024/07/01/Eventstorm/"/>
+    <url>/2024/07/01/Eventstorm/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简介及概念"><a href="#简介及概念" class="headerlink" title="简介及概念"></a>简介及概念</h1><p>什么是事件风暴？</p><p>事件风暴是一场发现事件模型的头脑风暴会议，通过领域专家、产品经理和技术人员共同头碰头的群策群力，以事件模型为主要线索，发现业务系统中发生的代表重要事实的重要事件。</p><p>事件风暴是Alberto Brandolini的心血结晶，它是Gamestorming和领域驱动设计（DDD）原则的综合学习实践。</p><blockquote><p>领域驱动设计（DDD,Domain-Driven Design）是一种通过将实现连接到持续进化的模型来满足复杂需求的软件开发方法。</p><p>领域驱动设计的前提是:</p><ul><li>把项目的主要重点放在核心领域（core domain）和域逻辑。</li><li>把复杂的设计放在有界域（bounded context）的模型上。</li><li>发起一个创造性的合作之间的技术和域界专家以迭代地完善的概念模式，解决特定领域的问题。</li></ul></blockquote><p>事件风暴催化并加速小组学习，通常在几小时或几天内实现更传统的建模技术从未做过的事情。</p><p>事件风暴使用简单的便利贴来实现。</p><h1 id="特点及用处"><a href="#特点及用处" class="headerlink" title="特点及用处"></a>特点及用处</h1><h2 id="快速"><a href="#快速" class="headerlink" title="快速"></a>快速</h2><p>事件风暴能够很快的（通常只需几天或几个小时）搭建出业务流程的模型。</p><h2 id="清晰"><a href="#清晰" class="headerlink" title="清晰"></a>清晰</h2><p>通过多角色对于业务流程的完善，事件风暴使得整个模型显得尤为清晰，在我看来，他更像是把业务专注于“业务”本身。</p><p>我为什么这么说呢 -&gt; 如果我们正常对模型进行搭建的时候，可能是靠自己（或者是某个部门）对整个业务进行模拟：我需要什么，我要做什么。虽然这是我们能够做到最好的情况了，但是因为业务不止需要一个部门去实现，这样做往往会导致我们一开始看起来很合适的的某个部分，在别的人眼里显得非常的怪异。</p><p>这就催生出了事件风暴，对于业务模型中的事件，不同的人有不同的答案。</p><h2 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h2><p>事件风暴具有简单的特性，对于没有编程背景的人，只需一点点的逻辑性就可以参与进来，这对于业务开发是十分高效且合理的。</p><h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><h2 id="领域事件-Event"><a href="#领域事件-Event" class="headerlink" title="领域事件 Event"></a>领域事件 Event</h2><ul><li>指正在探索的领域的相关事件，命名需要代表深刻的业务领域含义。</li></ul><h2 id="参与者-Actor"><a href="#参与者-Actor" class="headerlink" title="参与者 Actor"></a>参与者 Actor</h2><ul><li>指涉及领域事件的的人员，一组人、一个团队或者某个人。（也可以说是对应探索领域的用户）</li></ul><h2 id="外部系统-External-System"><a href="#外部系统-External-System" class="headerlink" title="外部系统 External System"></a>外部系统 External System</h2><ul><li>可部署的IT系统，我认为是用于补充actor，比如事件的触发可能是通过外部第三方系统产生。</li></ul><h2 id="策略-Policy"><a href="#策略-Policy" class="headerlink" title="策略 Policy"></a>策略 Policy</h2><ul><li>根据业务约束或者是规则自动或手动触发。</li></ul><h2 id="命令-Command"><a href="#命令-Command" class="headerlink" title="命令 Command"></a>命令 Command</h2><ul><li>代表行动、意图，指一个触发器。</li></ul><h2 id="读模型-Read-Model"><a href="#读模型-Read-Model" class="headerlink" title="读模型 Read Model"></a>读模型 Read Model</h2><ul><li>参与者需要某些信息做出决策，通过读模型来获取这些信息。</li></ul><h2 id="聚合-Aggregate"><a href="#聚合-Aggregate" class="headerlink" title="聚合 Aggregate"></a>聚合 Aggregate</h2><ul><li>一个对象群体、一类对象的总称。</li></ul><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><h2 id="事件风暴会议开始"><a href="#事件风暴会议开始" class="headerlink" title="事件风暴会议开始"></a>事件风暴会议开始</h2><p>在主持人的指导下，与业务专家开始梳理当前的业务中有哪些领域事件。（即已经发生需要保存下来的那些事实）。</p><p>只有先找到发生的事实，将其标记为领域事件，才能发现这些事实涉及哪些对象，对象之间的结构边界才能得到划分，而划分了边界的对象才可能是DDD中的限界上下文。</p><p>针对每一个领域事件，项目组成员围绕它进行业务分析，增加各种命令与事件，进行思考与之相关的资源、外部系统与时间。</p><h2 id="按照时间线组织事件"><a href="#按照时间线组织事件" class="headerlink" title="按照时间线组织事件"></a>按照时间线组织事件</h2><p>按照用户使用业务的时间线进行事件组织，由这些事件组成合理的故事。</p><h2 id="加入界面以及命令"><a href="#加入界面以及命令" class="headerlink" title="加入界面以及命令"></a>加入界面以及命令</h2><p>事件由命令触发，来源可以是用户或者是外部系统。</p><h2 id="加入聚合关联命令和事件"><a href="#加入聚合关联命令和事件" class="headerlink" title="加入聚合关联命令和事件"></a>加入聚合关联命令和事件</h2><p>加入聚合后，可以继续完善缺失的事件。</p><h2 id="识别核心子域"><a href="#识别核心子域" class="headerlink" title="识别核心子域"></a>识别核心子域</h2><p>每一个核心子域都是一个完善的微服务，我们要做的是把这些子域分开，各子域之间不能相互依赖太多，修改时会相互牵扯。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>工具使用</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>工具</tag>
+      
+      <tag>笔记</tag>
+      
+      <tag>架构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>React</title>
     <link href="/2024/06/24/React/"/>
     <url>/2024/06/24/React/</url>

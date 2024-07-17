@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-24T10:01:20.000Z">
-<meta property="article:modified_time" content="2024-07-17T11:02:04.694Z">
+<meta property="article:modified_time" content="2024-07-17T13:23:23.375Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8k 字
+          8.4k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          67 分钟
+          70 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-17T19:02:04+08:00
+                    本文最后更新于 2024-07-17T21:23:23+08:00
                   
                   
 
@@ -398,7 +398,7 @@
 <li>其他(animation, transition等)</li>
 </ul>
 <blockquote>
-<p>尽量缩写，例如margin-left、margin-right可以合并成一句。</p>
+<p>尽量缩写，例如margin-left、margin-right可以合并成一句margin-inline。</p>
 </blockquote>
 <h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 群组选择器：同时编写多个选择器 */</span><br><span class="hljs-selector-tag">p</span>,<span class="hljs-selector-class">.nav</span> &#123;<span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>&#125;<br><br><span class="hljs-comment">/* 后代选择器：用于命中某一块选择器,注意后代选择器是可以跨盒子的，如</span><br><span class="hljs-comment">&lt;h1&gt;</span><br><span class="hljs-comment">	&lt;p&gt;样式生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;div&gt;</span><br><span class="hljs-comment">		&lt;p&gt;样式生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;/div&gt;</span><br><span class="hljs-comment">&lt;/h1&gt;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-selector-tag">h1</span> <span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br><br><span class="hljs-comment">/* 子代选择器：用于精确命中某一块选择器,后代选择器不可跨盒子，如</span><br><span class="hljs-comment">&lt;h1&gt;</span><br><span class="hljs-comment">	&lt;p&gt;样式生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;div&gt;</span><br><span class="hljs-comment">		&lt;p&gt;样式不生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;/div&gt;</span><br><span class="hljs-comment">&lt;/h1&gt;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-selector-tag">h1</span>&gt;<span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br><br><span class="hljs-comment">/* 兄弟选择器：同时选中所有兄弟盒子 */</span><br><span class="hljs-selector-tag">h1</span>~<span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br><br><span class="hljs-comment">/* 相邻兄弟选择器：同时选中两个兄弟盒子,只选择h1后紧挨着的p标签 */</span><br><span class="hljs-selector-tag">h1</span>+<span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -463,7 +463,16 @@
 <h1 id="CSS引入方式"><a href="#CSS引入方式" class="headerlink" title="CSS引入方式"></a>CSS引入方式</h1><h2 id="行内样式表"><a href="#行内样式表" class="headerlink" title="行内样式表"></a>行内样式表</h2><p>在某个标签内写入style，优先级非常高。原子类同理。</p>
 <h2 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h2><p>放在head的style 新手练习时使用的方式</p>
 <h2 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h2><p>单独写一个CSS文件，再将此文件引入到HTML中。（使用方法为建一个CSS的文件，直接在里面写样式，但要在引用的HTML文件中加入link标签） </p>
-<h1 id="CSS的三大特性"><a href="#CSS的三大特性" class="headerlink" title="CSS的三大特性"></a>CSS的三大特性</h1><h5 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h5><ul>
+<h1 id="CSS背景相关处理"><a href="#CSS背景相关处理" class="headerlink" title="CSS背景相关处理"></a>CSS背景相关处理</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 复合写法 */</span><br><span class="hljs-attribute">background</span>:：&lt;background-clip&gt; &lt;background-color&gt; &lt;background-image&gt; &lt;background-origin&gt; &lt;background-position&gt; &lt;background-repeat&gt; &lt;background-size&gt; &lt;background-attachment&gt;<br><br><span class="hljs-comment">/* 设置背景延伸情况 */</span><br>background-clip: <span class="hljs-built_in">border-box</span>(延伸到边框外沿，在边框下方)/<span class="hljs-built_in">padding-box</span>(到内边距外沿)/<span class="hljs-built_in">content-box</span>(到内容外沿)/<span class="hljs-built_in">text</span>(剪影成文字);<br><br><span class="hljs-comment">/* 设置背景颜色 */</span><br><span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">value</span>(对应颜色的英文)/#<span class="hljs-built_in">xxxxxx</span>(对应颜色的十六进制码)/<span class="hljs-built_in">rgba</span>(x,x,x,x)(对应颜色的RGBA值)/<span class="hljs-built_in">hsla</span>(x,x,x,x)(对应颜色的HSLA值);<br><br><span class="hljs-comment">/* 设置背景图像 */</span><br><span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>()(图片url，可以使用多个，靠前的z-index值大)/<span class="hljs-built_in">linear-gradient</span>()(特殊的image格式，颜色渐变)<br><br><span class="hljs-comment">/* 设置背景起始点 */</span><br>background-origin: <span class="hljs-built_in">border-box</span>(延伸到边框外沿，在边框下方)/<span class="hljs-built_in">padding-box</span>(到内边距外沿)/<span class="hljs-built_in">content-box</span>(到内容外沿)<br><br><span class="hljs-comment">/* 设置背景位置 */</span><br>background-position: X/Y X/Y.Client Y/X Y/X.Client (X/Y指关键字top/left/bottom/right/center X/Y.Client指对应偏移量)<br><br><span class="hljs-comment">/* 设置背景重复设置 */</span><br>background-repeat: <span class="hljs-built_in">repeat-x</span>(X轴平铺)/<span class="hljs-built_in">repeat-y</span>(Y轴平铺)/<span class="hljs-built_in">repeat</span>(重复平铺)/<span class="hljs-built_in">space</span>(尽可能重复，不会被剪裁)/<span class="hljs-built_in">round</span>(尽可能重复，允许图像改变尺寸)/<span class="hljs-built_in">no-repeat</span>(不重复)<br><br><span class="hljs-comment">/* 设置背景大小 */</span><br>background-size: <span class="hljs-built_in">value</span>(实际取值)/auto/<span class="hljs-built_in">cover</span>(缩放，尽可能覆盖)/<span class="hljs-built_in">contain</span>(缩放，尽可能完全装入)<br><br><span class="hljs-comment">/* 设置背景固定 */</span><br>background-attachment: <span class="hljs-built_in">fixed</span>(表示背景相对于视口固定)/<span class="hljs-built_in">local</span>(表示背景相对于元素的内容固定)/<span class="hljs-built_in">scroll</span>(表示背景相对于元素本身固定)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>background-attachment</code> <code>scroll-padding</code> 这些属性一般用于视差滚动。</p>
+</blockquote>
+<p>对于背景图片我们一般使用background-size的cover和contain有时候都不是很符合我们的要求，现代化的CSS新属性<code>object-fit</code>和<code>aspect-ratio</code>解决这个问题。</p>
+<p>这两个属性是对于img标签来说的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">object-fit</span>:<span class="hljs-built_in">cover</span>(覆盖整个元素)/<span class="hljs-built_in">scale-down</span>(保持原来的大小)<br>aspect-ratio: <span class="hljs-built_in">value</span>(屏幕的长宽比)<br></code></pre></td></tr></table></figure>
+
+<h1 id="CSS的三大特性"><a href="#CSS的三大特性" class="headerlink" title="CSS的三大特性"></a>CSS的三大特性</h1><h2 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h2><ul>
 <li><p>相同选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。</p>
 </li>
 <li><p>样式冲突，遵循的是就近原则，哪个样式离结构近，就执行哪个样式。</p>
@@ -471,7 +480,7 @@
 <li><p>样式不冲突，不层叠。</p>
 </li>
 </ul>
-<h5 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h5><ul>
+<h2 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h2><ul>
 <li><p>子标签会继承父标签中的某些样式。（恰当使用可以降低CSS的复杂性）</p>
 </li>
 <li><p>通常继承：text font line color这些属性</p>
@@ -479,7 +488,7 @@
 <li><p>特殊继承：font: 12px&#x2F;24px;表示行高为24px，但可以写成font:12px&#x2F;1.5;表示行高为当前字体的1.5倍，子代继承同样适用1.5倍。</p>
 </li>
 </ul>
-<h5 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h5><ul>
+<h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><ul>
 <li><p>当同一个元素指定多个选择器，就会有优先级的产生</p>
 </li>
 <li><p>选择器相同，则执行层叠性</p>
@@ -498,8 +507,7 @@
 <li><p>往盒子里转内容</p>
 </li>
 </ul>
-<h3 id="常见网页布局"><a href="#常见网页布局" class="headerlink" title="常见网页布局"></a>常见网页布局</h3><p>+ </p>
-<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><ul>
+<h3 id="常见网页布局"><a href="#常见网页布局" class="headerlink" title="常见网页布局"></a>常见网页布局</h3><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><ul>
 <li><p>所谓盒子模型：就是将HTML页面中的布局元素看作是一个矩形的盒子，也就是一个盛装内容的容器</p>
 </li>
 <li><p>CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括：边框、外边距、内边距和实际内容</p>
@@ -613,15 +621,6 @@
 <li>双伪元素清除浮动：在新盒子的内部前面后面都插入一个盒子。</li>
 </ul>
 </li>
-</ul>
-<h3 id="ps切图"><a href="#ps切图" class="headerlink" title="ps切图"></a>ps切图</h3><h5 id="常见的图片格式"><a href="#常见的图片格式" class="headerlink" title="常见的图片格式"></a>常见的图片格式</h5><ul>
-<li>jpg图片格式：jpg对色彩的信息保留较好，高清，颜色较多，我们产品类的图片经常用jpg格式的</li>
-<li>gif图像格式：GIF格式最多只能存储256色，所以通常用来显示简单图形及字体，但是可以保存透明背景和动画效果，实际通常用于一些图片动画效果。</li>
-<li>png图像格式：是一种新兴的网络图形格式，结合了jpg和gif的特点，能够保持透明背景，如果想要切成透明背景的图片，就选用png格式的图像。</li>
-<li>PSD图像格式：是Photoshop的专用格式，里面可以存放图层、通道、遮罩等多种设计稿，对前端人员来说最大的优点就是可以直接从上面复制文字、测量距离和大小。</li>
-</ul>
-<h5 id="常见的切图方式"><a href="#常见的切图方式" class="headerlink" title="常见的切图方式"></a>常见的切图方式</h5><ul>
-<li>图层切图： 选中图层右键快速导出为PNG</li>
 </ul>
 <h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h5 id="定位的应用"><a href="#定位的应用" class="headerlink" title="定位的应用"></a>定位的应用</h5><p>用于使盒子自由的在某个盒子内移动位置或者固定屏幕中的某个位置，并且可以压住盒子。</p>
 <h5 id="定位的组成"><a href="#定位的组成" class="headerlink" title="定位的组成"></a>定位的组成</h5><ul>
@@ -753,7 +752,14 @@
 <h2 id="阶梯值函数"><a href="#阶梯值函数" class="headerlink" title="阶梯值函数"></a>阶梯值函数</h2><p>在2023年年底增加的<code>round()</code>、<code>rem()</code>、<code>mod()</code>阶梯值函数适用于流体设计，流体设计概念则建议使用相对单位和 CSS 数学函数，根据视口大小动态调整整个网站元素。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;style&gt;<br><span class="hljs-selector-pseudo">:root</span> &#123; <span class="hljs-attr">--width</span>: <span class="hljs-number">527px</span> &#125;<br><span class="hljs-comment">/* round函数让容器更新为可以被25px整除的像素值 */</span><br><span class="hljs-selector-class">.round</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">round</span>(<span class="hljs-built_in">var</span>(--width), <span class="hljs-number">25px</span>); <span class="hljs-comment">/* 525px */</span><br>&#125;<br><br><span class="hljs-comment">/* rem函数取余 */</span><br><span class="hljs-selector-class">.rem</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">rem</span>(<span class="hljs-built_in">var</span>(--width), <span class="hljs-number">25px</span>); <span class="hljs-comment">/* 2px */</span><br>&#125;<br><br><span class="hljs-comment">/* mod函数取模，同取余，但符号取除数的符号 */</span><br><span class="hljs-selector-class">.mod</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">mod</span>(<span class="hljs-built_in">var</span>(--width), -<span class="hljs-number">25px</span>); <span class="hljs-comment">/* -2px */</span><br>&#125;<br>&lt;/style&gt;   <br></code></pre></td></tr></table></figure>
 
-<h3 id="CSS边框图片"><a href="#CSS边框图片" class="headerlink" title="CSS边框图片"></a>CSS边框图片</h3><ul>
+<h2 id="主题切换"><a href="#主题切换" class="headerlink" title="主题切换"></a>主题切换</h2><p>除了使用<code>:root</code>选择器设置初值一点一点更改之外，浏览器提供了一种简单的方式用于适配光暗主题颜色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>    <span class="hljs-attribute">color</span>-scheme: dark light;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以在单个元素上使用这个属性。</p>
+<h2 id="表单元素颜色定制"><a href="#表单元素颜色定制" class="headerlink" title="表单元素颜色定制"></a>表单元素颜色定制</h2><p>对于表单元素而言我们可以用<code>accent-color</code>值来控制主题色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>    accent-<span class="hljs-attribute">color</span>: mediumvioletred;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="大小自适应包裹"><a href="#大小自适应包裹" class="headerlink" title="大小自适应包裹"></a>大小自适应包裹</h2><h3 id="CSS边框图片"><a href="#CSS边框图片" class="headerlink" title="CSS边框图片"></a>CSS边框图片</h3><ul>
 <li>border-image-source ：定义边框图像的路径；</li>
 <li>border-image-slice ：定义边框图像从什么位置开始分割；</li>
 <li>border-image-width ：定义边框图像的厚度（宽度）；</li>

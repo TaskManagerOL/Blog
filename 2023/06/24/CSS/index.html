@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-24T10:01:20.000Z">
-<meta property="article:modified_time" content="2024-07-17T13:23:23.375Z">
+<meta property="article:modified_time" content="2024-07-18T11:02:19.493Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.4k 字
+          7.4k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          70 分钟
+          62 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-17T21:23:23+08:00
+                    本文最后更新于 2024-07-18T19:02:19+08:00
                   
                   
 
@@ -680,188 +680,73 @@
 </ul>
 </li>
 </ul>
-<h1 id="CSS高级技术"><a href="#CSS高级技术" class="headerlink" title="CSS高级技术"></a>CSS高级技术</h1><h3 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h3><p>为什么使用精灵图：为了有效的减少服务器接受和发送请求的次数，提高页面的加载速度，出现了CSS精灵技术（也称CSS Sprites）（CSS 雪碧）</p>
-<p>核心原理 将全部图片加载到一个大图片中 包含所有需要请求的小图片</p>
-<h5 id="精灵图的使用"><a href="#精灵图的使用" class="headerlink" title="精灵图的使用"></a>精灵图的使用</h5><ul>
-<li><p>精灵技术主要针对背景图片使用，就是将多个小背景图片整合到一张大的图片中</p>
-</li>
-<li><p>通过移动背景图片的位置，此时可以使用background-position</p>
-</li>
-<li><p>移动的距离就是这个目标图片的x和y坐标。注意网页中的坐标有所不同</p>
-</li>
-<li><p>坐标系有所不同 往上往左走都是负值</p>
-</li>
+<h1 id="滚动"><a href="#滚动" class="headerlink" title="滚动"></a>滚动</h1><p>有不少专门处理滚动行为的属性，在这里特别列出来：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 一整块一整块的滑动 */</span><br><span class="hljs-attribute">scroll-padding</span>/<span class="hljs-attribute">scroll-margin</span>: <span class="hljs-number">0</span>;<br><br><span class="hljs-comment">/* 元素竖向采用滑动格式 */</span><br><span class="hljs-attribute">overflow-y</span>: scroll;<br><br><span class="hljs-comment">/* 滑动条调色，前面是滑条颜色，后面是背景色 */</span><br><span class="hljs-attribute">scrollbar-color</span>: <span class="hljs-number">#007</span> <span class="hljs-number">#bada55</span>;<br><br><span class="hljs-comment">/* 在内嵌滑动条元素滑到底时大滑动条不跟随滑动 */</span><br>overscroll-behavior: contain;<br><br><span class="hljs-comment">/* 留出滑动条位置，不让出现滑动条改变样式 */</span><br><span class="hljs-attribute">scrollbar-gutter</span>: stable both-edges;<br></code></pre></td></tr></table></figure>
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h2><p>为了有效的减少服务器接受和发送请求的次数，提高页面的加载速度，出现了CSS精灵技术（也称CSS Sprites）核心原理 将全部图片加载到一个大图片中 包含所有需要请求的小图片</p>
+<h2 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h2><p>主要用于显示网页中通用的、常用的一些小图标，一般采用SVG&#x2F;Unicode格式</p>
+<ul>
+<li>轻量：一个字体图标要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，减少了服务器请求</li>
+<li>灵活性：本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等</li>
+<li>兼容性：几乎支持所有浏览器</li>
 </ul>
-<h3 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h3><p>主要用于显示网页中通用的、常用的一些小图标</p>
-<h5 id="字体图标的优点"><a href="#字体图标的优点" class="headerlink" title="字体图标的优点"></a>字体图标的优点</h5><ul>
-<li><p>轻量：一个字体图标要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，减少了服务器请求</p>
-</li>
-<li><p>灵活性：本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等</p>
-</li>
-<li><p>兼容性：几乎支持所有浏览器</p>
-</li>
-</ul>
-<h5 id="字体图标的使用"><a href="#字体图标的使用" class="headerlink" title="字体图标的使用"></a>字体图标的使用</h5><ul>
-<li><p>在相应网站选择需要的图标后下载 将font文件复制一份安装到放HTML文件的目录里</p>
-</li>
-<li><p>将压缩包中的style.css文件中第一个大括号所包含的复制到CSS中</p>
-</li>
-<li><p>需要字体图标的地方点击demo.html后选择需要的字体图标进行复制</p>
-</li>
-<li><p>最后再写一个font-family:’icomoon’;就可以了</p>
-</li>
-</ul>
-<h5 id="字体图标的追加"><a href="#字体图标的追加" class="headerlink" title="字体图标的追加"></a>字体图标的追加</h5><ul>
-<li>点击import icons点击selection.json 就可以重新加载</li>
-<li>重新加载后需要重新下载，就要把以前的删除</li>
-</ul>
-<h3 id="CSS用户界面样式"><a href="#CSS用户界面样式" class="headerlink" title="CSS用户界面样式"></a>CSS用户界面样式</h3><h5 id="如何更改用户鼠标的样式"><a href="#如何更改用户鼠标的样式" class="headerlink" title="如何更改用户鼠标的样式"></a>如何更改用户鼠标的样式</h5><ul>
-<li>鼠标样式的属性为cursor 常用属性值为default&#x2F;pointer&#x2F;move&#x2F;text&#x2F;not-allow</li>
-</ul>
-<h5 id="表单轮廓"><a href="#表单轮廓" class="headerlink" title="表单轮廓"></a>表单轮廓</h5><ul>
-<li>表单轮廓的属性为outline 可以改变表单轮廓</li>
-</ul>
-<h5 id="防止表单域进行拖拽"><a href="#防止表单域进行拖拽" class="headerlink" title="防止表单域进行拖拽"></a>防止表单域进行拖拽</h5><ul>
-<li>防止拖拽文本域resize 右下角的小拖拽可以取消掉</li>
-</ul>
-<h3 id="图片文字居中对其"><a href="#图片文字居中对其" class="headerlink" title="图片文字居中对其"></a>图片文字居中对其</h3><p>vertical-align属性常用于设置图片或者表单（行内块元素）和文字垂直对齐</p>
-<p>属性值常为baseline（默认）&#x2F;top&#x2F;middle&#x2F;bottom</p>
-<p>也可用于消除图片和border之间的空白线</p>
-<h3 id="文字溢出用省略号表示"><a href="#文字溢出用省略号表示" class="headerlink" title="文字溢出用省略号表示"></a>文字溢出用省略号表示</h3><h5 id="单行溢出"><a href="#单行溢出" class="headerlink" title="单行溢出"></a>单行溢出</h5><p>想要完成这样的操作–必须满足三个条件</p>
-<p>先强制一行内显示文本：white-space:nowrap;（默认normal自动换行）</p>
-<p>超出的部分隐藏：overflow:hidden;</p>
-<p>文字用省略号代替超出的部分：text-overflow:ellipsis;</p>
-<h5 id="多行溢出"><a href="#多行溢出" class="headerlink" title="多行溢出"></a>多行溢出</h5><p>多行文本溢出显示省略号，有较大兼容性问题。</p>
-<p>代码如下：</p>
-<p>overflow:hidden;</p>
-<p>text-overflow:ellipsis;</p>
-<p>弹性伸缩盒子模型显示：display:-webkit-box;</p>
-<p>限制在一个块元素显示的文本的行数：-webkit-line-clamp:(number);</p>
-<p>设置或检索伸缩盒子对象的子元素的排列方式：-webkit-box-orient:vertical;</p>
-<p>（通常是后台人员制作）</p>
-<h3 id="常见布局技巧"><a href="#常见布局技巧" class="headerlink" title="常见布局技巧"></a>常见布局技巧</h3><h5 id="margin负值的运用"><a href="#margin负值的运用" class="headerlink" title="margin负值的运用"></a>margin负值的运用</h5><p>两个盒子之间只有一条border 可以通过margin取负值（border宽度）来实现</p>
-<p>当使用margin负值的时候 如果需要使用hover可以使用z-index来增加显示顺序</p>
-<h5 id="行内块的巧妙运用"><a href="#行内块的巧妙运用" class="headerlink" title="行内块的巧妙运用"></a>行内块的巧妙运用</h5><p>有些多个小盒子水平对齐而且有空格 可以考虑用行内块元素制作</p>
-<h1 id="CSS3的新特性"><a href="#CSS3的新特性" class="headerlink" title="CSS3的新特性"></a>CSS3的新特性</h1><ul>
-<li>新增的CSS3特性有兼容性问题，ie9+才支持</li>
-<li>移动端支持有优于PC端</li>
-</ul>
-<h2 id="Clamp函数"><a href="#Clamp函数" class="headerlink" title="Clamp函数"></a>Clamp函数</h2><p>如果需要动态调整字体大小、盒子大小，可以使用<code>clamp</code>函数解决：</p>
+<h2 id="计算规格"><a href="#计算规格" class="headerlink" title="计算规格"></a>计算规格</h2><p><code>calc</code>函数可以允许宽度进行运算：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">width</span>:<span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span>-<span class="hljs-number">30px</span>);<br></code></pre></td></tr></table></figure>
+
+<p>如果需要同时设置最大最小值，可以使用<code>clamp</code>函数解决：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;style&gt;<br>  <span class="hljs-selector-tag">h1</span> &#123; <span class="hljs-attribute">font-size</span>: <span class="hljs-built_in">clamp</span>(<span class="hljs-number">2.2em</span>, <span class="hljs-number">3vw</span> + <span class="hljs-number">1em</span>, <span class="hljs-number">2.5em</span>) &#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
 
 <h2 id="阶梯值函数"><a href="#阶梯值函数" class="headerlink" title="阶梯值函数"></a>阶梯值函数</h2><p>在2023年年底增加的<code>round()</code>、<code>rem()</code>、<code>mod()</code>阶梯值函数适用于流体设计，流体设计概念则建议使用相对单位和 CSS 数学函数，根据视口大小动态调整整个网站元素。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;style&gt;<br><span class="hljs-selector-pseudo">:root</span> &#123; <span class="hljs-attr">--width</span>: <span class="hljs-number">527px</span> &#125;<br><span class="hljs-comment">/* round函数让容器更新为可以被25px整除的像素值 */</span><br><span class="hljs-selector-class">.round</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">round</span>(<span class="hljs-built_in">var</span>(--width), <span class="hljs-number">25px</span>); <span class="hljs-comment">/* 525px */</span><br>&#125;<br><br><span class="hljs-comment">/* rem函数取余 */</span><br><span class="hljs-selector-class">.rem</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">rem</span>(<span class="hljs-built_in">var</span>(--width), <span class="hljs-number">25px</span>); <span class="hljs-comment">/* 2px */</span><br>&#125;<br><br><span class="hljs-comment">/* mod函数取模，同取余，但符号取除数的符号 */</span><br><span class="hljs-selector-class">.mod</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">mod</span>(<span class="hljs-built_in">var</span>(--width), -<span class="hljs-number">25px</span>); <span class="hljs-comment">/* -2px */</span><br>&#125;<br>&lt;/style&gt;   <br></code></pre></td></tr></table></figure>
 
 <h2 id="主题切换"><a href="#主题切换" class="headerlink" title="主题切换"></a>主题切换</h2><p>除了使用<code>:root</code>选择器设置初值一点一点更改之外，浏览器提供了一种简单的方式用于适配光暗主题颜色：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>    <span class="hljs-attribute">color</span>-scheme: dark light;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>    <span class="hljs-attribute">color</span>-scheme: dark/light;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>可以在单个元素上使用这个属性。</p>
 <h2 id="表单元素颜色定制"><a href="#表单元素颜色定制" class="headerlink" title="表单元素颜色定制"></a>表单元素颜色定制</h2><p>对于表单元素而言我们可以用<code>accent-color</code>值来控制主题色：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>    accent-<span class="hljs-attribute">color</span>: mediumvioletred;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="大小自适应包裹"><a href="#大小自适应包裹" class="headerlink" title="大小自适应包裹"></a>大小自适应包裹</h2><h3 id="CSS边框图片"><a href="#CSS边框图片" class="headerlink" title="CSS边框图片"></a>CSS边框图片</h3><ul>
-<li>border-image-source ：定义边框图像的路径；</li>
-<li>border-image-slice ：定义边框图像从什么位置开始分割；</li>
-<li>border-image-width ：定义边框图像的厚度（宽度）；</li>
-<li>border-image-outset ：定义边框图像的外延尺寸（边框图像区域超出边框的量）；</li>
-<li>border-image-repeat ：定义边框图像的平铺方式。</li>
-</ul>
-<h3 id="CSS3盒子模型"><a href="#CSS3盒子模型" class="headerlink" title="CSS3盒子模型"></a>CSS3盒子模型</h3><p>CSS3中可以通过box-sizing来指定盒子模型，有2个值：即可指定为content-box、border-box，这样我们计算盒子大小的方式就发生了改变。</p>
-<p>可以分为两种情况：</p>
-<p>1.box-sizing:content-box 盒子大小为width+padding+border (默认)</p>
-<p>2.box-sizing:border-box 盒子大小为width  以后可以在*中加这个</p>
-<h3 id="CSS其他特性"><a href="#CSS其他特性" class="headerlink" title="CSS其他特性"></a>CSS其他特性</h3><h5 id="使图片变模糊"><a href="#使图片变模糊" class="headerlink" title="使图片变模糊"></a>使图片变模糊</h5><ul>
-<li>样式 filter:函数();</li>
-<li>例如blur函数 数值越大图像越模糊 有单位</li>
-</ul>
-<h5 id="计算盒子宽度width-calc函数"><a href="#计算盒子宽度width-calc函数" class="headerlink" title="计算盒子宽度width:calc函数"></a>计算盒子宽度width:calc函数</h5><ul>
-<li>calc函数可以允许宽度进行运算 如width:calc(100%-30px);</li>
-</ul>
-<h3 id="CSS过渡"><a href="#CSS过渡" class="headerlink" title="CSS过渡"></a>CSS过渡</h3><p>过渡：是从一个状态 慢慢的过渡到另一个状态 </p>
-<p>可以让我们的页面更好看，更动感十足 常与hover搭配使用</p>
-<ul>
-<li>属性为transition:要过渡的属性 花费时间 运动曲线 何时开始;</li>
-<li>过渡属性：选择自己想要的属性</li>
-<li>花费时间：需要写单位</li>
-<li>运动曲线：linear（匀速）&#x2F;ease（逐渐慢下来）&#x2F;ease-in（加速）&#x2F;ease-out（减速）&#x2F;ease-in-out（先加速后减速）  可以省略</li>
-<li>何时开始：默认是0s 可以延迟触发 必须写单位 可以省略</li>
-<li>如果想要写多个属性 用，分开</li>
-</ul>
-<h3 id="CSS3-2D转换"><a href="#CSS3-2D转换" class="headerlink" title="CSS3 2D转换"></a>CSS3 2D转换</h3><ul>
-<li><p>转换是CSS3中具有颠覆性的特征之一，可以实现元素的位移、旋转、缩放等效果</p>
-</li>
-<li><p>属性为transfrom</p>
-<ul>
-<li>可以设置元素转换的中心点 transform-origin：x y；</li>
-</ul>
-</li>
-<li><p>属性值为translate（x，y）</p>
-<ul>
-<li>优点 不会影响到其他的元素位置</li>
-<li>translate的百分比单位是相对于自身元素的translate</li>
-<li>对行内标签没有效果</li>
-</ul>
-</li>
-<li><p>属性值为rotate（度数）    单位为deg</p>
-<ul>
-<li>可以配合别的属性做出表单下拉效果</li>
-</ul>
-</li>
-<li><p>属性值为scale（x，y）表示放大缩小</p>
-<ul>
-<li>x为宽 y为高 （2，1）为宽两倍高不变</li>
-</ul>
-</li>
-</ul>
-<h3 id="CSS3-动画"><a href="#CSS3-动画" class="headerlink" title="CSS3 动画"></a>CSS3 动画</h3><p>动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，通常用于实现复杂的动画效果、相比较过渡，动画可以实现更多变化，更多控制，连续自动播放等效果。</p>
-<p>动画分两步，先<strong>定义</strong>动画，再<strong>使用</strong>动画</p>
-<h5 id="用keyframes定义动画（类似定义类选择器）"><a href="#用keyframes定义动画（类似定义类选择器）" class="headerlink" title="用keyframes定义动画（类似定义类选择器）"></a>用keyframes定义动画（类似定义类选择器）</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> 动画名称&#123;<br><br><span class="hljs-number">0%</span>&#123;... : ... ;&#125;<br><br>...<br><br><span class="hljs-number">100%</span>&#123;... : ... ;&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="大小自适应包裹"><a href="#大小自适应包裹" class="headerlink" title="大小自适应包裹"></a>大小自适应包裹</h2><p>有时候遇到需要盒子里面有文字，希望直接进行一个包裹的，将其宽度自动调整为恰好适应其内容的大小，可以使用以下属性：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">width</span>: fit-content;<br></code></pre></td></tr></table></figure>
 
-<h5 id="用animation调用动画"><a href="#用animation调用动画" class="headerlink" title="用animation调用动画"></a>用animation调用动画</h5><p>太帅啦</p>
-<ul>
-<li>animation-name:动画名称</li>
-<li>animation-duration:持续时间</li>
-<li>animation-timing-function:规定动画的速度曲线，默认是”ease”<ul>
-<li>除了之前过渡的属性值 还增加了一个属性值 steps（）指定了时间函数中的间隔数量（步长）–&gt;可以用于制作打字机效果</li>
-</ul>
-</li>
-<li>animation-delay:规定动画何时开始</li>
-<li>animation-iteration-count:规定动画被播放的次数（无数次infinite）</li>
-<li>animation-direction:规定下一周期是否逆播放（alternate逆播放）</li>
-<li>animation-play-state:规定动画是否正在运行或暂停 默认是running还有paused （可以用于hover）</li>
-<li>animation-fill-mode:规定动画结束后状态，保持forwards回到初始backwards</li>
-<li>动画简写属性：animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 动画起始或者结束的状态</li>
-</ul>
-<h3 id="CSS3-3D转换"><a href="#CSS3-3D转换" class="headerlink" title="CSS3 3D转换"></a>CSS3 3D转换</h3><p>特点 近大远小</p>
-<p>物体后面遮挡不可见</p>
-<p>x轴水平向右 y轴垂直向下 z轴垂直向屏幕外</p>
-<h5 id="3D位移"><a href="#3D位移" class="headerlink" title="3D位移"></a>3D位移</h5><ul>
-<li>样式 transform:translate3d(x,y,z);   其中z通常使用px</li>
-</ul>
-<h5 id="3D旋转"><a href="#3D旋转" class="headerlink" title="3D旋转"></a>3D旋转</h5><p>3D可以让元素在三维平面内沿着x轴，y轴，z轴或者自定义轴进行旋转</p>
-<p>语法</p>
-<ul>
-<li>transforms:rotate3d(x,y,z,deg)</li>
-<li>transforms:rotateX(deg)</li>
-<li>transforms:rotateY(deg)</li>
-<li>transforms:rotateZ( deg) —&gt;这个和2D旋转效果一样</li>
-</ul>
-<h5 id="透视"><a href="#透视" class="headerlink" title="透视"></a>透视</h5><p>perspective</p>
-<ul>
-<li>如果想要在网页中产生3D效果需要透视（理解成3D物体投影在2D平面中）</li>
-<li>模拟人类的视觉位置 可认为安排一只眼睛去看</li>
-<li>透视我们也称为视距：视距就是人的眼睛到屏幕的距离</li>
-<li>距离视觉点越近的在电脑平面成像就越大，越远成像越小</li>
-<li>透视的单位是像素</li>
-<li>&#x3D;&#x3D;透视写在被观察元素的父盒子上&#x3D;&#x3D;</li>
-<li>样式为perspective:…px;</li>
-</ul>
-<h5 id="3D呈现"><a href="#3D呈现" class="headerlink" title="3D呈现"></a>3D呈现</h5><p>属性为transform-style</p>
-<ul>
-<li>控制子元素是否开启三维立体环境</li>
-<li>属性值为flat不开启、属性值为preserve-3d子元素开启立体空间</li>
-<li>代码写给父级但影响的是子级</li>
-</ul>
+<h2 id="边框图片"><a href="#边框图片" class="headerlink" title="边框图片"></a>边框图片</h2><p>边框如果需要用到背景图片，可以采用<code>border-image</code>相关属性。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-image</span>: &lt;border-image-outset&gt; &lt;border-image-repeat&gt; &lt;border-image-slice&gt; &lt;border-image-source&gt; &lt;border-image-width&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="CSS计数器"><a href="#CSS计数器" class="headerlink" title="CSS计数器"></a>CSS计数器</h2><p>随容器出现次数而增长的计数器。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123; <span class="hljs-attribute">counter-reset</span>: references &#125;<br><br><span class="hljs-comment">/* 带href的a标签出现过几次after伪元素就会显示对应的值 */</span><br><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">:empty</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>    <span class="hljs-attribute">counter-increment</span>: references;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;[&#x27;</span> <span class="hljs-built_in">counter</span>(references) <span class="hljs-string">&#x27;]&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="盒子模型计算"><a href="#盒子模型计算" class="headerlink" title="盒子模型计算"></a>盒子模型计算</h2><p>通过<code>box-sizing</code>来指定盒子模型：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-built_in">content-box</span>(默认值，盒子大小按照width和height计算)/<span class="hljs-built_in">border-box</span>(算上padding&amp;border，便于布局用);<br></code></pre></td></tr></table></figure>
+
+<h2 id="图片滤镜"><a href="#图片滤镜" class="headerlink" title="图片滤镜"></a>图片滤镜</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">filter</span>: <span class="hljs-built_in">url</span>()/<span class="hljs-built_in">blur</span>()(高斯模糊)/<span class="hljs-built_in">constrast</span>()(对比度)/<span class="hljs-built_in">brightness</span>()(亮度)/<span class="hljs-built_in">drop-shadow</span>()(沿图像的轮廓生成阴影效果，语法类box-shadow)/<span class="hljs-built_in">grayscale</span>()(转灰度图)/<span class="hljs-built_in">hue-rotate</span>()(应用色相旋转)/<span class="hljs-built_in">invert</span>()(反转输入图像)/<span class="hljs-built_in">opacity</span>()(透明度)/<span class="hljs-built_in">saturate</span>()(饱和度)/<span class="hljs-built_in">sepia</span>()(改为深褐色)<br></code></pre></td></tr></table></figure>
+
+<h2 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h2><p>盒子执行动作更加自然。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">transition</span>: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function&gt; &lt;transition-delay&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p>转换<code>transform</code>是CSS3中具有颠覆性的特征之一，可以实现元素的位移、旋转、缩放等效果</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform">transform</a></p>
+<blockquote>
+<p>如果想要在网页中产生3D效果需要透视（理解成3D物体投影在2D平面中）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 两个写法作用一样 */</span><br><span class="hljs-attribute">perspective</span>: val;<br><span class="hljs-attribute">transform</span>: <span class="hljs-built_in">perspective</span>();<br></code></pre></td></tr></table></figure>
+
+<p>透视我们也称为视距：视距就是人的眼睛到屏幕的距离，距离视觉点越近的在电脑平面成像就越大，越远成像越小，&#x3D;&#x3D;透视写在被观察元素的父盒子上&#x3D;&#x3D;</p>
+</blockquote>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">transform-style</span>: flat/preserve-<span class="hljs-number">3</span>d;<br></code></pre></td></tr></table></figure>
+
+<p>设置元素的子元素是位于 3D 空间中还是平面中.</p>
+</blockquote>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，通常用于实现复杂的动画效果、相比较过渡，动画可以实现更多变化，更多控制，连续自动播放等效果。</p>
+<p>动画分两步，先<strong>定义</strong>动画，再<strong>使用</strong>动画</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 定义动画 */</span><br><span class="hljs-keyword">@keyframes</span> 动画名称&#123;<br><span class="hljs-number">0%</span>&#123;... : ... ;&#125;<br><span class="hljs-number">100%</span>&#123;... : ... ;&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 使用动画 */</span><br><span class="hljs-attribute">animation</span>: &lt;animation-name&gt; &lt;animation-duration&gt; &lt;animation-timing-function&gt; &lt;animation-delay&gt; &lt;animation-iteration-count&gt; &lt;animation-direction&gt; &lt;animation-fill-mode&gt; &lt;animation-play-state&gt;<br></code></pre></td></tr></table></figure>
+
+<p>我们也可以在关键帧中更新css变量<code>@property</code>，这样就可以快速动画化多个元素，无需自己手写多个关键帧。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 定义--t */</span><br><span class="hljs-keyword">@property</span> --t &#123;<br>  syntax: <span class="hljs-string">&quot;&lt;number&gt;&quot;</span>;<br>  initial-value: <span class="hljs-number">0</span>;<br>  inherits: true;<br>&#125;<br><br><span class="hljs-comment">/* 写--t动画逻辑 */</span><br><span class="hljs-keyword">@keyframes</span> tick &#123;<br>  <span class="hljs-selector-tag">from</span> &#123; <span class="hljs-attr">--t</span>: <span class="hljs-number">0</span> &#125;<br>  <span class="hljs-selector-tag">to</span>   &#123; <span class="hljs-attr">--t</span>: <span class="hljs-number">100000</span> &#125;<br>&#125;<br><br><span class="hljs-comment">/* 使--t动画一直运行 */</span><br><span class="hljs-selector-pseudo">:root</span> &#123; <span class="hljs-attribute">animation</span>: tick <span class="hljs-number">86400s</span> linear infinite &#125;<br><br><span class="hljs-comment">/* 进而使盒子位置平滑发生循环移动 */</span><br> <span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:first</span>-child &#123; translate: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">sin</span>(<span class="hljs-built_in">var</span>(--t)) * <span class="hljs-number">200px</span> + <span class="hljs-number">200px</span>) &#125;<br> <span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:last-child</span> &#123; translate: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">cos</span>(<span class="hljs-built_in">var</span>(--t)) * <span class="hljs-number">200px</span> + <span class="hljs-number">200px</span>) &#125;<br></code></pre></td></tr></table></figure>
+
 <h1 id="项目规划"><a href="#项目规划" class="headerlink" title="项目规划"></a>项目规划</h1><h3 id="样式的模块化开发"><a href="#样式的模块化开发" class="headerlink" title="样式的模块化开发"></a>样式的模块化开发</h3><p>可以写部分CSS用于多个HTML文件 每当使用时就引用</p>
 <h3 id="制作网站favicon图标"><a href="#制作网站favicon图标" class="headerlink" title="制作网站favicon图标"></a>制作网站favicon图标</h3><p>将准备的图标切成png图片</p>
 <p>将png图片转化为ico图标，这需要借助第三方的转化网站</p>

@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-24T10:01:20.000Z">
-<meta property="article:modified_time" content="2024-07-18T11:02:19.493Z">
+<meta property="article:modified_time" content="2024-07-19T08:34:58.074Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.4k 字
+          7.8k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          62 分钟
+          65 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-18T19:02:19+08:00
+                    本文最后更新于 2024-07-19T16:34:58+08:00
                   
                   
 
@@ -498,16 +498,19 @@
 <li><p>复合选择器有权重叠加的问题，如子元素选择器就会相当于两个标签选择器的叠加。</p>
 </li>
 </ul>
-<h1 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h1><p>网页布局的本质：利用CSS摆盒子</p>
-<ul>
-<li><p>先准备好相应的网页元素，网页元素基本都是盒子box</p>
-</li>
-<li><p>利用CSS设置好盒子样式，然后摆放到相应位置</p>
-</li>
-<li><p>往盒子里转内容</p>
-</li>
-</ul>
-<h3 id="常见网页布局"><a href="#常见网页布局" class="headerlink" title="常见网页布局"></a>常见网页布局</h3><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><ul>
+<h1 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h1><h2 id="常见网页布局"><a href="#常见网页布局" class="headerlink" title="常见网页布局"></a>常见网页布局</h2><p>常见布局有 流式布局&#x2F;网格布局&#x2F;弹性布局.</p>
+<blockquote>
+<p>流式布局中 行&#x2F;块&#x2F;行内块级元素的区别：</p>
+<p>行级元素可以与其他元素保持在同一行，不可以自动换行，但是不能设置他的宽高(例如a\span\strong\u\em\i\sub\sup)；</p>
+<p>块级元素不可以和其他元素保持在同一行（独占一行），可以自动换行，可以设置宽高(例如div\p\h1~6\ui\li)；</p>
+<p>行内块元素可以与其他元素保持在一行，还能设置宽高(例如textarea\input\img\button)</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 关键值可以被分为六个种类 */</span><br><span class="hljs-comment">/* 外部表现，指这个盒子和这个盒子之外的元素的布局情况 */</span><br><span class="hljs-attribute">display</span>: <span class="hljs-built_in">block</span>(该元素之前和之后产生换行)/<span class="hljs-built_in">inline</span>(该元素之前和之后不产生换行)<br><br><span class="hljs-comment">/* 内部表现，指这个盒子内的元素布局情况 */</span><br>display: <span class="hljs-built_in">flow</span>(使用流式布局)/<span class="hljs-built_in">flow-root</span>(生成一个块级元素盒，会建立一个新的区块格式化上下文[<span class="hljs-number">1</span>])/<span class="hljs-built_in">table</span>(类似于table标签)/<span class="hljs-built_in">flex</span>(使用弹性布局)/<span class="hljs-built_in">grid</span>(使用网格布局)/<span class="hljs-built_in">ruby</span>(同ruby标签，用于注音)<br><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[1]:<strong>区块格式化上下文</strong>（Block Formatting Context，BFC），是为了解决外边距折叠(区块上下外边距折叠为单个边距，取上下两个的最大值)、浮动元素覆盖、高度塌陷(子元素为浮动且高于父元素就会撑出去)而出现的，触发BFC的方式有浮动元素、绝对定位、overflow不为visible、display为flow-root等。</p>
+</blockquote>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><ul>
 <li><p>所谓盒子模型：就是将HTML页面中的布局元素看作是一个矩形的盒子，也就是一个盛装内容的容器</p>
 </li>
 <li><p>CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括：边框、外边距、内边距和实际内容</p>

@@ -24,7 +24,7 @@
 <meta property="og:description" content="这里是一些我遇到的问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-30T12:05:30.000Z">
-<meta property="article:modified_time" content="2024-08-04T15:09:49.815Z">
+<meta property="article:modified_time" content="2024-08-15T09:26:22.683Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.9k 字
+          3.2k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          25 分钟
+          27 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-08-04T23:09:49+08:00
+                    本文最后更新于 2024-08-15T17:26:22+08:00
                   
                   
 
@@ -533,6 +533,22 @@
 <p>把<code>server-&gt;root</code>重写为新clone的目录下。</p>
 <p>重新启动nginx：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo nginx -t<br>sudo systemctl restart nginx<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="服务器搭建-gt-如何部署SSL证书"><a href="#服务器搭建-gt-如何部署SSL证书" class="headerlink" title="服务器搭建 -&gt; 如何部署SSL证书"></a>服务器搭建 -&gt; 如何部署SSL证书</h1><p>经过备案，获取到SSL证书之后，下载到本地。</p>
+<p>先通过ssh传文件到服务器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh root@&lt;ip&gt;<br></code></pre></td></tr></table></figure>
+
+<p>然后传文件，将证书文件传到nginx安装目录下（默认&#x2F;etc&#x2F;nginx）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -r &lt;上传文件目录地址&gt; root@&lt;ip&gt;:&lt;服务器安放地址&gt;<br></code></pre></td></tr></table></figure>
+
+<p>然后配置nginx：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">将端口设置为443</span><br>sudo nano /etc/nginx/sites-enabled/default<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">修改配置</span><br>sudo nano /etc/nginx/nginx.conf<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">在http间添加</span><br>server &#123;<br>     #SSL 默认访问端口号为 443<br>     listen 443 ssl default; <br>     #请填写绑定证书的域名<br>     server_name &lt;&gt;; <br>     #请填写证书文件的相对路径或绝对路径<br>     ssl_certificate xxx.crt; <br>     #请填写私钥文件的相对路径或绝对路径<br>     ssl_certificate_key xxx.key; <br>     ssl_session_timeout 5m;<br>     #请按照以下协议配置<br>     ssl_protocols TLSv1.2 TLSv1.3; <br>     #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。<br>     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE; <br>     ssl_prefer_server_ciphers on;<br>     location / &#123;<br>         #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。<br>         #例如，您的网站主页在 Nginx 服务器的 /etc/www 目录下，则请修改 root 后面的 html 为 /etc/www。<br>         root html; <br>         index  index.html index.htm;<br>     &#125;<br> &#125;<br></code></pre></td></tr></table></figure>
+
+<p>再运行一次</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">nginx -t<br>nginx -s reload<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>

@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Interview</title>
+    <link href="/2024/08/31/Interview/"/>
+    <url>/2024/08/31/Interview/</url>
+    
+    <content type="html"><![CDATA[<h1 id="VUE3项目目录结构"><a href="#VUE3项目目录结构" class="headerlink" title="VUE3项目目录结构"></a>VUE3项目目录结构</h1><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">| node_modules</span><span class="hljs-literal">--</span><span class="hljs-comment">项目依赖</span><br><span class="hljs-comment">| public      </span><span class="hljs-literal">--</span><span class="hljs-comment">公共文件夹</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| favicon</span><span class="hljs-string">.</span><span class="hljs-comment">ico</span><span class="hljs-literal">--</span><span class="hljs-comment">网站图标</span><br><span class="hljs-comment">| src             </span><span class="hljs-literal">--</span><span class="hljs-comment">源文件目录</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| assets</span>    <span class="hljs-literal">--</span><span class="hljs-comment">静态文件</span><br><span class="hljs-comment"></span><span class="hljs-literal">---</span><span class="hljs-comment">| utils</span>    <span class="hljs-literal">--</span><span class="hljs-comment">工具类JS</span><br><span class="hljs-comment"></span><span class="hljs-literal">---</span><span class="hljs-comment">| api</span>    <span class="hljs-literal">--</span><span class="hljs-comment">接口类JS</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| components</span><span class="hljs-literal">--</span><span class="hljs-comment">组件</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| router</span><span class="hljs-literal">--</span><span class="hljs-comment">路由配置</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| store</span><span class="hljs-literal">--</span><span class="hljs-comment">状态管理器</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| views</span><span class="hljs-literal">--</span><span class="hljs-comment">视图文件，与路由结构对应</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| App</span><span class="hljs-string">.</span><span class="hljs-comment">vue</span><span class="hljs-literal">--</span><span class="hljs-comment">根组件</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| main</span><span class="hljs-string">.</span><span class="hljs-comment">js </span><span class="hljs-literal">--</span><span class="hljs-comment">入口文件</span><br><span class="hljs-comment">| index</span><span class="hljs-string">.</span><span class="hljs-comment">html</span><span class="hljs-literal">--</span><span class="hljs-comment">入口html</span><br><span class="hljs-comment">| package</span><span class="hljs-string">.</span><span class="hljs-comment">json</span><span class="hljs-literal">--</span><span class="hljs-comment">命令配置及依赖管理</span><br><span class="hljs-comment">| package</span><span class="hljs-literal">-</span><span class="hljs-comment">lock</span><span class="hljs-string">.</span><span class="hljs-comment">json</span><span class="hljs-literal">--</span><span class="hljs-comment">依赖版本及更完整的依赖树</span><br><span class="hljs-comment">| README</span><span class="hljs-string">.</span><span class="hljs-comment">md</span><span class="hljs-literal">--</span><span class="hljs-comment">说明文件</span><br><span class="hljs-comment">| vue</span><span class="hljs-string">.</span><span class="hljs-comment">config</span><span class="hljs-string">.</span><span class="hljs-comment">json </span> <span class="hljs-literal">--</span><span class="hljs-comment">代理、打包等配置文件</span><br></code></pre></td></tr></table></figure><blockquote><h3 id="public和assets区别："><a href="#public和assets区别：" class="headerlink" title="public和assets区别："></a>public和assets区别：</h3><p>​同样用于存放静态文件的文件夹。由于vue-cli、vite等工具打包时，public下的文件会原封不动的添加到dist中，而assets下的文件会被合并压缩。</p><p>​两者的区别是public下一般用于放有更新需求的第三方插件、图片且需要使用绝对路径来引用(否则会warning)，而assets下适合用于存放项目中所必须的图标、JS文件只支持相对路径。<a href="https://vitejs.cn/vite3-cn/guide/assets.html#importing-asset-as-url">相关文档</a></p></blockquote><blockquote><h3 id="有了package-json为什么还需要package-lock-json："><a href="#有了package-json为什么还需要package-lock-json：" class="headerlink" title="有了package.json为什么还需要package-lock.json："></a>有了package.json为什么还需要package-lock.json：</h3><p>​前者声明依赖的种类而后者决定实际安装的版本，使用<code>npm install</code>时就是根据package-lock.json进行安装。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>随笔</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>😶‍🌫️</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Eventstorm</title>
     <link href="/2024/07/01/Eventstorm/"/>
     <url>/2024/07/01/Eventstorm/</url>

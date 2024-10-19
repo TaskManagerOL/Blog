@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://static.vue-js.com/60825aa0-725e-11eb-85f6-6fac77c0c9b3.png">
 <meta property="article:published_time" content="2024-08-31T08:17:29.000Z">
-<meta property="article:modified_time" content="2024-10-19T08:30:08.171Z">
+<meta property="article:modified_time" content="2024-10-19T13:49:20.139Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9k 字
+          9.3k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          75 分钟
+          78 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-10-19T16:30:08+08:00
+                    本文最后更新于 2024-10-19T21:49:20+08:00
                   
                   
 
@@ -671,7 +671,31 @@
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">原答：<span class="hljs-built_in">key</span>是用于和v-<span class="hljs-keyword">for</span>一起去遍历盒子的<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>如果你的vue项目中遇到兄弟组件之间的通信，你会用什么方法呢？</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">原答：用一些相关的插件比如pinia，可以让父传子<span class="hljs-built_in">props</span>再用子传父emit<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>有部署过项目嘛，用什么Web容器呢？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：直接把文件传到服务器中，然后用nginx去部署的<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>那你改过nginx的配置嘛？</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs glsl">原答：改过端口号和<span class="hljs-keyword">index</span>页面和<span class="hljs-keyword">location</span>指向我的文件夹。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>平常有接触linux？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：接触得少<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>听说过docker容器嘛？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：听说过，相当于我这边写好了，然后用docker把我这边的环境什么的打包给别人。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>有没有用过集成持续部署的软件，比如说Jenkins</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：没有用过<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>平常CSS写得多嘛，相对定位和绝对定位解释一下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：一般是给父盒子相对定位，然后想要使用绝对定位，需要给父元素设置相对定位才能使用绝对定位，绝对定位是相对于父元素的。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>用过flex布局嘛，flex布局他的容器上有哪些属性呢？</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：比如说常用的<span class="hljs-attribute">justify-content</span>、align-item。<span class="hljs-attribute">flex-wrap</span>可以对子元素进行换行处理。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>算法题：100~999的水仙花数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//原答：</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">100</span>; i &lt; <span class="hljs-number">999</span>; i++)&#123;<br>    <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">let</span> temp = i<br>    <span class="hljs-keyword">while</span> (temp &gt; <span class="hljs-number">0</span>) &#123;<br>        sum += (temp % <span class="hljs-number">10</span>) ** <span class="hljs-number">3</span><br>        temp = <span class="hljs-built_in">parseInt</span>(temp/<span class="hljs-number">10</span>)<br>    &#125;<br>    <span class="hljs-keyword">if</span>(sum === i)<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 

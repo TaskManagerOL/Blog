@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://static.vue-js.com/60825aa0-725e-11eb-85f6-6fac77c0c9b3.png">
 <meta property="article:published_time" content="2024-08-31T08:17:29.000Z">
-<meta property="article:modified_time" content="2024-10-20T14:03:53.161Z">
+<meta property="article:modified_time" content="2024-10-20T15:01:54.854Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -251,7 +251,7 @@
         
         
         
-          89 分钟
+          95 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-10-20T22:03:53+08:00
+                    本文最后更新于 2024-10-20T23:01:54+08:00
                   
                   
 
@@ -660,43 +660,43 @@
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">原答：常用的<span class="hljs-keyword">get</span> post，不常用的push <span class="hljs-keyword">delete</span>之类的<br><br>修正：<span class="hljs-keyword">GET</span>方法用于从服务器获取数据，POST方法用于向服务器发送数据，PUT用于向服务器发送数据用以替换内容，<span class="hljs-keyword">DELETE</span>用于请求服务器删除资源，<span class="hljs-keyword">OPTIONS</span>用于返回服务器支持的HTTP方法及查看服务器性能，TRACE方法用于回显服务器收到的请求，用于调试。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>有了解过get post有什么区别吗？</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stata">原答：getpost平时我们用的时候都是要有请求头的，然后<span class="hljs-keyword">post</span>是可以传一个请求内容的。<br><br>修正：GET主要是向服务器获取数据，在url明文传递内容，不安全，且只能传输ASCII字符。<span class="hljs-keyword">POST</span>主要是向服务器提交数据，在请求体中传递内容，可以传输多种数据类型，比如文本，二进制<br></code></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stata">原答：getpost平时我们用的时候都是要有请求头的，然后<span class="hljs-keyword">post</span>是可以传一个请求内容的。<br><br>修正：GET主要是向服务器获取数据，在url明文传递内容，不安全，且只能传输ASCII字符。<span class="hljs-keyword">POST</span>主要是向服务器提交数据，在请求体中传递内容，可以传输多种数据类型，比如文本，二进制文件。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>有了解过常见的http响应码有哪些吗？</p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mathematica">原答：<span class="hljs-number">200</span>开头的就是服务正常，<span class="hljs-number">300</span>开头没怎么见过，<span class="hljs-number">400</span>开头比如<span class="hljs-number">404</span> <span class="hljs-number">405</span><span class="hljs-built_in">Method</span> <span class="hljs-built_in">Not</span> <span class="hljs-variable">Allow</span>这种一般是前端路由这边的一些问题，<span class="hljs-number">500</span>开头一般是服务器那边的问题。<br></code></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">原答：<span class="hljs-number">200</span>开头的就是服务正常，<span class="hljs-number">300</span>开头没怎么见过，<span class="hljs-number">400</span>开头比如<span class="hljs-number">404</span> <span class="hljs-number">405</span><span class="hljs-keyword">Method</span> <span class="hljs-keyword">Not</span> Allow这种一般是前端路由这边的一些问题，<span class="hljs-number">500</span>开头一般是服务器那边的问题。<br><br>修正：<span class="hljs-number">100</span>是服务器已经接收到请求的一部分；<span class="hljs-number">2</span>xx是成功响应码，例如<span class="hljs-number">200</span>是成功；<span class="hljs-number">3</span>xx是重定向响应码，例如<span class="hljs-number">301</span>表示请求的资源已经被移动到新的url，会返回新的url；<span class="hljs-number">4</span>xx是客户端错误，例如<span class="hljs-number">400</span>bad request错误的参数或地址，服务器理解不了，<span class="hljs-number">403</span>forbidden服务器拒绝请求，<span class="hljs-number">404</span><span class="hljs-keyword">not</span> <span class="hljs-built_in">found</span>找不到资源，<span class="hljs-number">405</span><span class="hljs-keyword">method</span> <span class="hljs-keyword">not</span> allow请求方法服务器不允许；<span class="hljs-number">5</span>xx是服务器错误，例如<span class="hljs-number">500</span>是服务器错误，<span class="hljs-number">503</span>是服务器超载。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>有没有了解Vue中computed和watch有什么区别？</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">原答：计算属性不太了解，watch是用于监听<span class="hljs-built_in">ref</span>属性的改变，如果改变的话就会执行后续的相应函数。<br></code></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">原答：计算属性不太了解，watch是用于监听<span class="hljs-built_in">ref</span>属性的改变，如果改变的话就会执行后续的相应函数。<br><br>修正：computed属性是基于其他其他的响应式数据动态计算并返回一个新的值，有缓存功能，只有当其依赖的数据发生变化时，才会重新计算，通常用于一个属性受到多个属性影响。watch属性是监听某个响应式属性，没有缓存功能，一旦监听的值改变就会发生回调，通常用于一个属性影响多个属性。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>写v-for的时候一般会加一个key，为什么？</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">原答：<span class="hljs-built_in">key</span>是用于和v-<span class="hljs-keyword">for</span>一起去遍历盒子的<br></code></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lsl">原答：<span class="hljs-type">key</span>是用于和v-for一起去遍历盒子的<br><br>修正：<span class="hljs-type">key</span>作为唯一标识，可以帮助vue快速定位到需要更新的DOM元素，提高渲染效率。同时还需要选择稳定的<span class="hljs-type">key</span>去保持每个列表值与其对应的组件实例的稳定关系。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>如果你的vue项目中遇到兄弟组件之间的通信，你会用什么方法呢？</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">原答：用一些相关的插件比如pinia，可以让父传子<span class="hljs-built_in">props</span>再用子传父emit<br></code></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lasso">原答：用一些相关的插件比如pinia，可以让父传子props再用子传父emit<br><br>修正：使用父传子props再用子传父$emit，如果是祖先组件传给后代组件可以用<span class="hljs-keyword">provide</span>和inject，如果是那种没什么关系的组件传值的话，一般用全局总线库或者pinia。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>有部署过项目嘛，用什么Web容器呢？</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：直接把文件传到服务器中，然后用nginx去部署的<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">原答：直接把文件传到服务器中，然后用nginx去部署的<br><br>修正：使用Nginx部署。（常见的还有tomcat，但是没用过就不强答了。）<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>那你改过nginx的配置嘛？</p>
-<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs glsl">原答：改过端口号和<span class="hljs-keyword">index</span>页面和<span class="hljs-keyword">location</span>指向我的文件夹。<br></code></pre></td></tr></table></figure>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs glsl">原答：改过端口号和<span class="hljs-keyword">index</span>页面和<span class="hljs-keyword">location</span>指向我的文件夹。<br><br>修正：监听端口、<span class="hljs-keyword">location</span>块、SSL/TLS证书和密钥。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>平常有接触linux？</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：接触得少<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">原答：接触得少<br><br>（没什么好说的，不是一下子能提升的）<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>听说过docker容器嘛？</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：听说过，相当于我这边写好了，然后用docker把我这边的环境什么的打包给别人。<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">原答：听说过，相当于我这边写好了，然后用docker把我这边的环境什么的打包给别人。<br><br>修正：Docker容器中包含应用程序所需要的一切运行条件，包括代码、系统工具和库等，它可以解决同一个代码放我这里能跑放别人电脑跑不了的情况。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>有没有用过集成持续部署的软件，比如说Jenkins</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：没有用过<br></code></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">原答：没有用过<br><br>修正：用过Gitlab，知道<span class="hljs-keyword">jenkins，Gitlab可以将gitlab仓库的代码持续集成和部署。 </span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>平常CSS写得多嘛，相对定位和绝对定位解释一下</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：一般是给父盒子相对定位，然后想要使用绝对定位，需要给父元素设置相对定位才能使用绝对定位，绝对定位是相对于父元素的。<br></code></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs scss">原答：一般是给父盒子相对定位，然后想要使用绝对定位，需要给父元素设置相对定位才能使用绝对定位，绝对定位是相对于父元素的。<br><br>修正：相对定位的通过<span class="hljs-attribute">position</span> relative设置，设置之后改动偏移量盒子会偏移，但是它还是占据原来的位置。设置绝对定位是<span class="hljs-attribute">position</span> absolute，需要给他父元素设置相对定位，绝对定位就会完全脱离文档流，不再占据原来的空间。根据偏移量移动。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>用过flex布局嘛，flex布局他的容器上有哪些属性呢？</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：比如说常用的<span class="hljs-attribute">justify-content</span>、align-item。<span class="hljs-attribute">flex-wrap</span>可以对子元素进行换行处理。<br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：比如说常用的<span class="hljs-attribute">justify-content</span>、align-item。<span class="hljs-attribute">flex-wrap</span>可以对子元素进行换行处理。<br><br>修正：用过，比如<span class="hljs-attribute">flex-direction</span>决定主轴方向，<span class="hljs-attribute">flex-wrap</span>决定子元素是否换行，<span class="hljs-attribute">justify-content</span>决定主轴的对齐方式，<span class="hljs-attribute">align-items</span>决定和主轴交叉的那个轴的对齐方式。<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>算法题：100~999的水仙花数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//原答：</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">100</span>; i &lt; <span class="hljs-number">999</span>; i++)&#123;<br>    <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">let</span> temp = i<br>    <span class="hljs-keyword">while</span> (temp &gt; <span class="hljs-number">0</span>) &#123;<br>        sum += (temp % <span class="hljs-number">10</span>) ** <span class="hljs-number">3</span><br>        temp = <span class="hljs-built_in">parseInt</span>(temp/<span class="hljs-number">10</span>)<br>    &#125;<br>    <span class="hljs-keyword">if</span>(sum === i)<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//原答：</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">100</span>; i &lt; <span class="hljs-number">999</span>; i++)&#123;<br>    <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">let</span> temp = i<br>    <span class="hljs-keyword">while</span> (temp &gt; <span class="hljs-number">0</span>) &#123;<br>        sum += (temp % <span class="hljs-number">10</span>) ** <span class="hljs-number">3</span><br>        temp = <span class="hljs-built_in">parseInt</span>(temp/<span class="hljs-number">10</span>)<br>    &#125;<br>    <span class="hljs-keyword">if</span>(sum === i)<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);<br>&#125;<br><br><span class="hljs-comment">//（挺好的）</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 

@@ -24,7 +24,7 @@
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-24T10:01:20.000Z">
-<meta property="article:modified_time" content="2024-07-19T08:34:58.074Z">
+<meta property="article:modified_time" content="2024-11-18T12:38:08.289Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.8k 字
+          7.9k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          65 分钟
+          67 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-19T16:34:58+08:00
+                    本文最后更新于 2024-11-18T20:38:08+08:00
                   
                   
 
@@ -388,7 +388,8 @@
 <h2 id="自由图形制作"><a href="#自由图形制作" class="headerlink" title="自由图形制作"></a>自由图形制作</h2><ul>
 <li>方案：使用<code>clip-path</code>属性，搭配figma或者其他工具效果更佳。</li>
 </ul>
-<h1 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h1><h2 id="基本样式"><a href="#基本样式" class="headerlink" title="基本样式"></a>基本样式</h2><p>CSS规则由两个主要的部分构成：选择器及一条或多条声明，属性和属性值以”键值对“的形式出现，属性和属性值之间用英文冒号来分割，多个”键值对“之间用英文分号进行区分。</p>
+<h1 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Organizing">组织CSS</a></p>
+<h2 id="基本样式"><a href="#基本样式" class="headerlink" title="基本样式"></a>基本样式</h2><p>CSS规则由两个主要的部分构成：选择器及一条或多条声明，属性和属性值以”键值对“的形式出现，属性和属性值之间用英文冒号来分割，多个”键值对“之间用英文分号进行区分。</p>
 <h2 id="书写顺序"><a href="#书写顺序" class="headerlink" title="书写顺序"></a>书写顺序</h2><p>无论是原子类还是原始CSS写法，为了方便后期维护，也是为了让代码更加优雅。我们遵循下面书写顺序：</p>
 <ul>
 <li>位置属性(position, top, right, z-index, display, float等)</li>
@@ -400,6 +401,12 @@
 <blockquote>
 <p>尽量缩写，例如margin-left、margin-right可以合并成一句margin-inline。</p>
 </blockquote>
+<p>CSS规范不是必须的，而是为了让你代码更具有条理性。如果按照一个已经由很多人使用过，诸多项目检测过的代码编写习惯去编写代码，那么团队中的其他成员有可能会更容易理解你的代码。</p>
+<h2 id="注释跳转"><a href="#注释跳转" class="headerlink" title="注释跳转"></a>注释跳转</h2><p>写CSS的时候（特别是大项目）会发现CSS越堆越多。可以考虑使用以下方法划区：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* ☁️:part1 */</span><br>...<br><span class="hljs-comment">/* ☁️:part2 */</span><br>...<br></code></pre></td></tr></table></figure>
+
+<p>好处是可以用<code>ctrl+F</code>搜索<code>☁️:</code>在多个块中快速跳转。</p>
+<h2 id="OOCSS"><a href="#OOCSS" class="headerlink" title="OOCSS"></a>OOCSS</h2><p>OOCSS（面向对象的CSS）基本理念是将CSS分解成可复用的对象，然后在一个div中使用多个类。</p>
 <h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 群组选择器：同时编写多个选择器 */</span><br><span class="hljs-selector-tag">p</span>,<span class="hljs-selector-class">.nav</span> &#123;<span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>&#125;<br><br><span class="hljs-comment">/* 后代选择器：用于命中某一块选择器,注意后代选择器是可以跨盒子的，如</span><br><span class="hljs-comment">&lt;h1&gt;</span><br><span class="hljs-comment">	&lt;p&gt;样式生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;div&gt;</span><br><span class="hljs-comment">		&lt;p&gt;样式生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;/div&gt;</span><br><span class="hljs-comment">&lt;/h1&gt;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-selector-tag">h1</span> <span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br><br><span class="hljs-comment">/* 子代选择器：用于精确命中某一块选择器,后代选择器不可跨盒子，如</span><br><span class="hljs-comment">&lt;h1&gt;</span><br><span class="hljs-comment">	&lt;p&gt;样式生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;div&gt;</span><br><span class="hljs-comment">		&lt;p&gt;样式不生效&lt;/p&gt;</span><br><span class="hljs-comment">	&lt;/div&gt;</span><br><span class="hljs-comment">&lt;/h1&gt;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-selector-tag">h1</span>&gt;<span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br><br><span class="hljs-comment">/* 兄弟选择器：同时选中所有兄弟盒子 */</span><br><span class="hljs-selector-tag">h1</span>~<span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br><br><span class="hljs-comment">/* 相邻兄弟选择器：同时选中两个兄弟盒子,只选择h1后紧挨着的p标签 */</span><br><span class="hljs-selector-tag">h1</span>+<span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.5rem</span>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="选择器权重"><a href="#选择器权重" class="headerlink" title="选择器权重"></a>选择器权重</h2><table>
@@ -498,7 +505,8 @@
 <li><p>复合选择器有权重叠加的问题，如子元素选择器就会相当于两个标签选择器的叠加。</p>
 </li>
 </ul>
-<h1 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h1><h2 id="常见网页布局"><a href="#常见网页布局" class="headerlink" title="常见网页布局"></a>常见网页布局</h2><p>常见布局有 流式布局&#x2F;网格布局&#x2F;弹性布局.</p>
+<h1 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Layout_cookbook">CSS 布局手册</a></p>
+<h2 id="常见网页布局"><a href="#常见网页布局" class="headerlink" title="常见网页布局"></a>常见网页布局</h2><p>常见布局有 流式布局&#x2F;网格布局&#x2F;弹性布局.</p>
 <blockquote>
 <p>流式布局中 行&#x2F;块&#x2F;行内块级元素的区别：</p>
 <p>行级元素可以与其他元素保持在同一行，不可以自动换行，但是不能设置他的宽高(例如a\span\strong\u\em\i\sub\sup)；</p>

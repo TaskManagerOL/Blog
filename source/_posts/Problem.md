@@ -533,4 +533,4 @@ jobs:
     url = [使用主题的链接]
 ```
 
-很奇怪 好像不行
+最后还要打开`Setting`->`Actions`->`General`->`Workflow permissions`->`R&W permissions`

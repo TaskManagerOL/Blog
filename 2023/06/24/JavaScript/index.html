@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="Don&#39;t Fall Asleep Now.">
 <meta property="og:description" content="前端三剑客之一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-24T10:01:53.000Z">
-<meta property="article:modified_time" content="2024-04-28T03:30:15.068Z">
+<meta property="article:published_time" content="2023-06-24T18:01:53.000Z">
+<meta property="article:modified_time" content="2025-03-25T08:48:59.940Z">
 <meta property="article:author" content="TaskManagerOL">
-<meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="迁移">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -301,7 +301,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-04-28T11:30:15+08:00
+                    本文最后更新于 2025-03-25T08:48:59+00:00
                   
                   
 
@@ -323,7 +323,7 @@
 <p> 浏览器本身并不会执行JS代码，而是通过内置的JS引擎来执行JS代码，JS引擎执行代码时逐行解释每一句源码，然后由计算机去执行，所以JS语言归为脚本语言，会逐行解释执行。</p>
 </blockquote>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>JS时一种弱类型或者说动态的语言，这意味着不用提前声明变量的类型，在程序运行的过程中，类型会被自动锁定。</p>
-<h2 id="Null-类型-amp-Undefined-类型"><a href="#Null-类型-amp-Undefined-类型" class="headerlink" title="Null 类型 &amp; Undefined 类型"></a>Null 类型 &amp; Undefined 类型</h2><p>这俩都只有本身即 <code>null</code> &amp; <code>underfined</code> 。</p>
+<h2 id="Null-类型-Undefined-类型"><a href="#Null-类型-Undefined-类型" class="headerlink" title="Null 类型 &amp; Undefined 类型"></a>Null 类型 &amp; Undefined 类型</h2><p>这俩都只有本身即 <code>null</code> &amp; <code>underfined</code> 。</p>
 <blockquote>
 <p>从概念上讲，<code>undefined</code> 表示<em>值</em>的缺失，<code>null</code> 表示<em>对象</em>的缺失，当某些东西没有值时，该语言通常默认为 <code>undefined</code>。</p>
 </blockquote>
@@ -339,7 +339,7 @@
 <blockquote>
 <p>函数也是具有可以被调用能力的对象。</p>
 </blockquote>
-<h1 id="JS基础"><a href="#JS基础" class="headerlink" title="JS基础"></a>JS基础</h1><h2 id="Input-x2F-Output"><a href="#Input-x2F-Output" class="headerlink" title="Input&#x2F;Output"></a>Input&#x2F;Output</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-comment">//浏览器弹出警示框</span><br><span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;msg&quot;</span>)<br><span class="hljs-comment">//浏览器控制台打印输出信息----&gt;程序员测试用</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg)<br><span class="hljs-comment">//浏览器弹出输入框，用户可以输入---&gt;取到的值是字符串</span><br><span class="hljs-title function_">prompt</span>(info)<br><span class="hljs-comment">//可以打印我们返回的元素对象 更好的查看里面的属性和方法</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">dir</span>(msg)<br></code></pre></td></tr></table></figure>
+<h1 id="JS基础"><a href="#JS基础" class="headerlink" title="JS基础"></a>JS基础</h1><h2 id="Input-Output"><a href="#Input-Output" class="headerlink" title="Input&#x2F;Output"></a>Input&#x2F;Output</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-comment">//浏览器弹出警示框</span><br><span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;msg&quot;</span>)<br><span class="hljs-comment">//浏览器控制台打印输出信息----&gt;程序员测试用</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg)<br><span class="hljs-comment">//浏览器弹出输入框，用户可以输入---&gt;取到的值是字符串</span><br><span class="hljs-title function_">prompt</span>(info)<br><span class="hljs-comment">//可以打印我们返回的元素对象 更好的查看里面的属性和方法</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">dir</span>(msg)<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>有趣的是，Hacker有一种方法也是通过I&#x2F;O，内嵌JS语句对网站或者对主机进行骇入。</p>
@@ -760,7 +760,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//举个异步例子</span><br><span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;https://....&quot;</span>)<br>.<span class="hljs-title function_">then</span>( <span class="hljs-function">()=&gt;</span> &#123; <span class="hljs-comment">//获取到数据之后做什么</span><br>&#125;)<br>.<span class="hljs-title function_">catch</span>(<span class="hljs-function">()=&gt;</span> &#123; <span class="hljs-comment">//抛出错误后做什么</span><br>&#125;)<br>.<span class="hljs-title function_">finally</span>(<span class="hljs-function">()=&gt;</span> &#123; <span class="hljs-comment">//异步结束后做什么</span><br>&#125;)<br><span class="hljs-comment">//异步中的错误使用.catch() then不会执行。</span><br><span class="hljs-comment">//.finally()是Promise结束时调用无论失败与否，可以做清除工作。</span><br></code></pre></td></tr></table></figure>
 
 <p>async和await是ES17的语法糖。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//举个例子</span><br><span class="hljs-comment">//async 可以直接用在 function前面用于标记 ,await 只能在 async函数中使用。</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">//可以用await直接获得异步函数的返回值，await过程中还是异步</span><br>	<span class="hljs-keyword">const</span> res1 = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;https://....&quot;</span>)<br>    <span class="hljs-keyword">const</span> res2 = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;https://....&quot;</span>)<br>    <span class="hljs-comment">//如果需要同时异步多个，不然像上面这样就是同步</span><br>    <span class="hljs-keyword">const</span> [a,b] = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>([res1,res2])<br>    <span class="hljs-comment">//如果在循环中执行异步操作，是不可以直接调用forEach和map这类方法，还是用for，如果需要循环中每个步骤都异步执行，使用for await</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">let</span> test <span class="hljs-keyword">of</span> tests)&#123; &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//举个例子</span><br><span class="hljs-comment">//async 可以直接用在 function前面用于标记 ,await 只能在 async函数中使用。</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">//可以用await直接获得异步函数的返回值，await过程中还是异步</span><br>	<span class="hljs-keyword">const</span> res1 = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;https://....&quot;</span>)<br>    <span class="hljs-keyword">const</span> res2 = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;https://....&quot;</span>)<br>    <span class="hljs-comment">//如果需要同时异步多个，不然像上面这样就是同步</span><br>    <span class="hljs-keyword">const</span> [a,b] = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>([res1,res2])<br>    <span class="hljs-comment">//如果在循环中执行异步操作，是不可以直接调用forEach和map这类方法，还是用for，如果需要循环中每个步骤都异步执行，使用for await</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-title function_">await</span> (<span class="hljs-keyword">let</span> test <span class="hljs-keyword">of</span> tests)&#123; &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="执行机制"><a href="#执行机制" class="headerlink" title="执行机制"></a>执行机制</h3><p>1.先执行执行栈中的同步任务</p>
 <p>2.异步任务放入任务队列</p>
@@ -836,11 +836,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
-      
         <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
         <a href="/tags/%E8%BF%81%E7%A7%BB/" class="print-no-link">#迁移</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
       
     </div>
   

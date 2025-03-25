@@ -23,8 +23,8 @@
 <meta property="og:site_name" content="Don&#39;t Fall Asleep Now.">
 <meta property="og:description" content="这里是一些我遇到的问题集合">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-30T12:05:30.000Z">
-<meta property="article:modified_time" content="2025-02-19T12:51:28.175Z">
+<meta property="article:published_time" content="2024-01-30T20:05:30.000Z">
+<meta property="article:modified_time" content="2025-03-25T08:48:59.940Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          3.4k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          27 分钟
+          29 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-02-19T20:51:28+08:00
+                    本文最后更新于 2025-03-25T08:48:59+00:00
                   
                   
 
@@ -309,7 +309,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Git-gt-Time-out"><a href="#Git-gt-Time-out" class="headerlink" title="Git -&gt; Time out"></a>Git -&gt; Time out</h1><ul>
+                <h1 id="Git-Time-out"><a href="#Git-Time-out" class="headerlink" title="Git -&gt; Time out"></a>Git -&gt; Time out</h1><ul>
 <li><p>背景：</p>
 <p>用于解决git上传Time out的情况。<br>无论是用git的push还是hexo的deploy，经常会出现Time out的情况。</p>
 </li>
@@ -331,7 +331,7 @@
 <p>那不妨直接用git自己内置的update flies，即拖动上传。</p>
 </li>
 </ul>
-<h1 id="TypeScript-gt-“Could-not-find-a-declaration-file-for-module-‘xxx-js’-‘xxx-js’-implicitly-has-an-‘any’-type"><a href="#TypeScript-gt-“Could-not-find-a-declaration-file-for-module-‘xxx-js’-‘xxx-js’-implicitly-has-an-‘any’-type" class="headerlink" title="TypeScript -&gt; “Could not find a declaration file for module ‘xxx.js’. ‘xxx.js’ implicitly has an ‘any’ type."></a>TypeScript -&gt; “Could not find a declaration file for module ‘xxx.js’. ‘xxx.js’ implicitly has an ‘any’ type.</h1><ul>
+<h1 id="TypeScript-“Could-not-find-a-declaration-file-for-module-‘xxx-js’-‘xxx-js’-implicitly-has-an-‘any’-type"><a href="#TypeScript-“Could-not-find-a-declaration-file-for-module-‘xxx-js’-‘xxx-js’-implicitly-has-an-‘any’-type" class="headerlink" title="TypeScript -&gt; “Could not find a declaration file for module ‘xxx.js’. ‘xxx.js’ implicitly has an ‘any’ type."></a>TypeScript -&gt; “Could not find a declaration file for module ‘xxx.js’. ‘xxx.js’ implicitly has an ‘any’ type.</h1><ul>
 <li><p>背景：</p>
 <p>尝试使用TS的时候呢，遇到了一些问题，在main.ts中引用已经写好的js文件时(旧版本已经写好的配置文件，详见blog中的vue.config)发生报错，错误代码为ts(7016)，一眼ts和原生起冲突了。</p>
 </li>
@@ -356,7 +356,7 @@
 <p>推荐使用的方法，无论是你自己的Js文件还是引的依赖包都可以从这里引入到main.ts中，如果引依赖。</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">//modules.d.ts</span><br><span class="hljs-keyword">declare</span> <span class="hljs-variable language_">module</span> <span class="hljs-string">&#x27;依赖名&#x27;</span>;<br><br><span class="hljs-comment">//main.ts</span><br><span class="hljs-keyword">import</span> xxx <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;依赖名&#x27;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="TypeScript-gt-代码未错误但出现错误提醒（编辑器为vscode）"><a href="#TypeScript-gt-代码未错误但出现错误提醒（编辑器为vscode）" class="headerlink" title="TypeScript  -&gt; 代码未错误但出现错误提醒（编辑器为vscode）"></a>TypeScript  -&gt; 代码未错误但出现错误提醒（编辑器为vscode）</h1><ul>
+<h1 id="TypeScript-代码未错误但出现错误提醒（编辑器为vscode）"><a href="#TypeScript-代码未错误但出现错误提醒（编辑器为vscode）" class="headerlink" title="TypeScript  -&gt; 代码未错误但出现错误提醒（编辑器为vscode）"></a>TypeScript  -&gt; 代码未错误但出现错误提醒（编辑器为vscode）</h1><ul>
 <li><p>背景：</p>
 <p>在写TS项目的时候发现出了报错提示，但是我是直接粘的element-plus的代码，报的错也很奇怪，网上搜也解决不彻底，最抽象的是项目能跑。</p>
 </li>
@@ -383,7 +383,7 @@
 <p>没有三了，按道理来说网上是有某种关于eslint配置可行的，但是我配了两个都不行。我以后找到了再来更新吧🤕</p>
 </li>
 </ul>
-<h1 id="IPv4-amp-IPv6-gt-“http-proxy-error”"><a href="#IPv4-amp-IPv6-gt-“http-proxy-error”" class="headerlink" title="IPv4&amp;IPv6 -&gt; “http proxy error”"></a>IPv4&amp;IPv6 -&gt; “http proxy error”</h1><p>之前在打ICT的时候就遇到过类似的问题，当时以为是es6的fetch哪里没配置好，后面换成axios就可以了，但实际不是这样。今天在打服创的时候又遇到这玩意了。</p>
+<h1 id="IPv4-IPv6-“http-proxy-error”"><a href="#IPv4-IPv6-“http-proxy-error”" class="headerlink" title="IPv4&amp;IPv6 -&gt; “http proxy error”"></a>IPv4&amp;IPv6 -&gt; “http proxy error”</h1><p>之前在打ICT的时候就遇到过类似的问题，当时以为是es6的fetch哪里没配置好，后面换成axios就可以了，但实际不是这样。今天在打服创的时候又遇到这玩意了。</p>
 <ul>
 <li><p>背景</p>
 <p>跨域，localhost但是不同端口跨域。</p>
@@ -393,7 +393,7 @@
 <p>我遇到的问题实际上是后端允许的网络协议和前端发出来的网络协议不同，用的python后端，那边是给的一个IPv4接口，前端用的是IPv6，结果接不上，解决方法就是更改后端接口使用的网络协议。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#此处就放后端部分代码了，语言是python</span><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    app.run(host = <span class="hljs-string">&#x27;0.0.0.0&#x27;</span>,port = <span class="hljs-number">5000</span>)<br>    <span class="hljs-comment">#在本地的端口5000运行，配置IPv4 IPv6都可以使用，不然前端报错http proxy error</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="Headers-gt-400-Bad-REQUEST-文件上传"><a href="#Headers-gt-400-Bad-REQUEST-文件上传" class="headerlink" title="Headers -&gt; 400(Bad REQUEST)文件上传"></a>Headers -&gt; 400(Bad REQUEST)<code>文件上传</code></h1><ul>
+<h1 id="Headers-400-Bad-REQUEST-文件上传"><a href="#Headers-400-Bad-REQUEST-文件上传" class="headerlink" title="Headers -&gt; 400(Bad REQUEST)文件上传"></a>Headers -&gt; 400(Bad REQUEST)<code>文件上传</code></h1><ul>
 <li><p>背景：</p>
 <p>是需要上传一个文件，又是经典的Postman可以前端不行。</p>
 </li>
@@ -409,7 +409,7 @@
 <p>原来<code>POST</code>请求上传文件的时候是不需要自己设置 Content-Type，会自动给你添加一个 boundary ，用来分割消息主体中的每个字段，如果这个时候自己设置了 Content-Type， 服务器反而不知道怎么分割各个字段。</p>
 </li>
 </ul>
-<h1 id="Javascript-amp-CSS-gt-label点击事件阻止"><a href="#Javascript-amp-CSS-gt-label点击事件阻止" class="headerlink" title="Javascript&amp;CSS -&gt; label点击事件阻止"></a>Javascript&amp;CSS -&gt; label点击事件阻止</h1><ul>
+<h1 id="Javascript-CSS-label点击事件阻止"><a href="#Javascript-CSS-label点击事件阻止" class="headerlink" title="Javascript&amp;CSS -&gt; label点击事件阻止"></a>Javascript&amp;CSS -&gt; label点击事件阻止</h1><ul>
 <li><p>背景：</p>
 <p>以下HTML：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;console.log(1)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -430,7 +430,7 @@
 </blockquote>
 </li>
 </ul>
-<h1 id="HTML-amp-Javascript-gt-“input标签使用”"><a href="#HTML-amp-Javascript-gt-“input标签使用”" class="headerlink" title="HTML&amp;Javascript -&gt; “input标签使用”"></a>HTML&amp;Javascript -&gt; “input标签使用”</h1><ul>
+<h1 id="HTML-Javascript-“input标签使用”"><a href="#HTML-Javascript-“input标签使用”" class="headerlink" title="HTML&amp;Javascript -&gt; “input标签使用”"></a>HTML&amp;Javascript -&gt; “input标签使用”</h1><ul>
 <li><p>背景：</p>
 <p>需求是上传图片、显示、点icon删除、点icon预览。</p>
 <p>但是卡在删除上面了，有一个小bug——每次点击icon删除后就会没办法上传之前上传的那一张图片。</p>
@@ -441,7 +441,7 @@
 <p>因为我发现input里图片删除也很有意思：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>	&lt;input ref=&quot;inputRef&quot;&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>    const inputRef = ref(&#x27;&#x27;)<br>    //inputRef.value 对应的是他的页面标签<br>    //inputRef.value.value 对应的是他的图片(路径)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="Vue-gt-“addEventListener-is-not-a-function”"><a href="#Vue-gt-“addEventListener-is-not-a-function”" class="headerlink" title="Vue -&gt; “addEventListener is not a function”"></a>Vue -&gt; “addEventListener is not a function”</h1><ul>
+<h1 id="Vue-“addEventListener-is-not-a-function”"><a href="#Vue-“addEventListener-is-not-a-function”" class="headerlink" title="Vue -&gt; “addEventListener is not a function”"></a>Vue -&gt; “addEventListener is not a function”</h1><ul>
 <li><p>背景：</p>
 <p>在引一个3d canvas库，但是一直报这个错误，后面找到是vue的ref问题，其实报这个错误是因为一直都获取不到标签。</p>
 </li>
@@ -455,7 +455,7 @@
 <p>因为定义的ref在script中还未访问到DOM元素，就自然还为空，为空的话后续函数就没办法执行咯。</p>
 </li>
 </ul>
-<h1 id="MITT-gt-onAPI使用问题"><a href="#MITT-gt-onAPI使用问题" class="headerlink" title="MITT -&gt; onAPI使用问题"></a>MITT -&gt; onAPI使用问题</h1><ul>
+<h1 id="MITT-onAPI使用问题"><a href="#MITT-onAPI使用问题" class="headerlink" title="MITT -&gt; onAPI使用问题"></a>MITT -&gt; onAPI使用问题</h1><ul>
 <li><p>背景：</p>
 <p>在兄弟组件中调用全局事件总线MITT的时候，emit和on都是可以使用的，但是：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> test = <span class="hljs-title function_">ref</span>()<br>event.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">val</span>)=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(val);<span class="hljs-comment">//可以得到值</span><br>    test.<span class="hljs-property">value</span> = val;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(test.<span class="hljs-property">value</span>);<span class="hljs-comment">//可以得到值</span><br>&#125;)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(test.<span class="hljs-property">value</span>);<span class="hljs-comment">//不可以得到值</span><br></code></pre></td></tr></table></figure>
@@ -474,7 +474,7 @@
 <p>先用emit传到父组件中，然后再用defineprops传到目的组件中。</p>
 </li>
 </ul>
-<h1 id="HTML-amp-CSS-gt-fixed状态盒子消失"><a href="#HTML-amp-CSS-gt-fixed状态盒子消失" class="headerlink" title="HTML&amp;CSS -&gt; fixed状态盒子消失"></a>HTML&amp;CSS -&gt; fixed状态盒子消失</h1><ul>
+<h1 id="HTML-CSS-fixed状态盒子消失"><a href="#HTML-CSS-fixed状态盒子消失" class="headerlink" title="HTML&amp;CSS -&gt; fixed状态盒子消失"></a>HTML&amp;CSS -&gt; fixed状态盒子消失</h1><ul>
 <li><p>背景：</p>
 <p>Header盒子加了一个fixed样式，但是不见了。</p>
 </li>
@@ -482,7 +482,7 @@
 <p>加一下z-index。</p>
 </li>
 </ul>
-<h1 id="Pack-gt-打包的时候index-html无法打开"><a href="#Pack-gt-打包的时候index-html无法打开" class="headerlink" title="Pack -&gt; 打包的时候index.html无法打开"></a>Pack -&gt; 打包的时候index.html无法打开</h1><ul>
+<h1 id="Pack-打包的时候index-html无法打开"><a href="#Pack-打包的时候index-html无法打开" class="headerlink" title="Pack -&gt; 打包的时候index.html无法打开"></a>Pack -&gt; 打包的时候index.html无法打开</h1><ul>
 <li><p>背景：</p>
 <p>需要把写好的文件给队友调试，但是发现index.html无法打开。</p>
 </li>
@@ -493,7 +493,7 @@
 <p>然后index.html不要直接打开，会有跨域问题，使用vscode 的<code>Live Server</code>插件打开。</p>
 </li>
 </ul>
-<h1 id="CSS-gt-高度非固定造成的样式错误"><a href="#CSS-gt-高度非固定造成的样式错误" class="headerlink" title="CSS -&gt; 高度非固定造成的样式错误"></a>CSS -&gt; 高度非固定造成的样式错误</h1><ul>
+<h1 id="CSS-高度非固定造成的样式错误"><a href="#CSS-高度非固定造成的样式错误" class="headerlink" title="CSS -&gt; 高度非固定造成的样式错误"></a>CSS -&gt; 高度非固定造成的样式错误</h1><ul>
 <li><p>背景：</p>
 <p>比如一个for循环渲染div，然后造成的高度比预设值多，那就会多出来一些白色的。</p>
 </li>
@@ -501,7 +501,7 @@
 <p>可以包两层div，外层heightauto，内层height100vh，然后在写。</p>
 </li>
 </ul>
-<h1 id="文件传输-gt-发送文件服务器报500"><a href="#文件传输-gt-发送文件服务器报500" class="headerlink" title="文件传输 -&gt; 发送文件服务器报500"></a>文件传输 -&gt; 发送文件服务器报500</h1><ul>
+<h1 id="文件传输-发送文件服务器报500"><a href="#文件传输-发送文件服务器报500" class="headerlink" title="文件传输 -&gt; 发送文件服务器报500"></a>文件传输 -&gt; 发送文件服务器报500</h1><ul>
 <li><p>背景：</p>
 <p>在打比赛的时候发送为JSON格式的文件不行，服务器报500，Postman也不行</p>
 </li>
@@ -509,7 +509,7 @@
 <p>JSON的key设置为files。</p>
 </li>
 </ul>
-<h1 id="服务器搭建-gt-如何快速开始搭建一个服务器"><a href="#服务器搭建-gt-如何快速开始搭建一个服务器" class="headerlink" title="服务器搭建 -&gt; 如何快速开始搭建一个服务器"></a>服务器搭建 -&gt; 如何快速开始搭建一个服务器</h1><p>还不是很熟悉服务器相关的操作，所以写一下拿到一个新的服务器相关的操作。</p>
+<h1 id="服务器搭建-如何快速开始搭建一个服务器"><a href="#服务器搭建-如何快速开始搭建一个服务器" class="headerlink" title="服务器搭建 -&gt; 如何快速开始搭建一个服务器"></a>服务器搭建 -&gt; 如何快速开始搭建一个服务器</h1><p>还不是很熟悉服务器相关的操作，所以写一下拿到一个新的服务器相关的操作。</p>
 <p>先进root，拿到最高权限。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo passwd root<br></code></pre></td></tr></table></figure>
 
@@ -536,7 +536,7 @@
 
 
 
-<h1 id="服务器搭建-gt-如何部署SSL证书"><a href="#服务器搭建-gt-如何部署SSL证书" class="headerlink" title="服务器搭建 -&gt; 如何部署SSL证书"></a>服务器搭建 -&gt; 如何部署SSL证书</h1><p>经过备案，获取到SSL证书之后，下载到本地。</p>
+<h1 id="服务器搭建-如何部署SSL证书"><a href="#服务器搭建-如何部署SSL证书" class="headerlink" title="服务器搭建 -&gt; 如何部署SSL证书"></a>服务器搭建 -&gt; 如何部署SSL证书</h1><p>经过备案，获取到SSL证书之后，下载到本地。</p>
 <p>先通过ssh传文件到服务器：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh root@&lt;ip&gt;<br></code></pre></td></tr></table></figure>
 
@@ -549,6 +549,13 @@
 <p>再运行一次</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">nginx -t<br>nginx -s reload<br></code></pre></td></tr></table></figure>
 
+<h1 id="CI-CD-Github-Page"><a href="#CI-CD-Github-Page" class="headerlink" title="CI&#x2F;CD -&gt; Github Page"></a>CI&#x2F;CD -&gt; Github Page</h1><p>github action+page 同仓库不同分支集成部署<br>在<code>.github</code>文件下添加<code>workflows</code>添加<code>hexo-deploy.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Deploy</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build-and-deploy:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Node</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v2</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">node-version:</span> <span class="hljs-string">&#x27;14&#x27;</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">dependencies</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Initialize</span> <span class="hljs-string">submodules</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">git</span> <span class="hljs-string">submodule</span> <span class="hljs-string">init</span><br>      <br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Update</span> <span class="hljs-string">submodules</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">git</span> <span class="hljs-string">submodule</span> <span class="hljs-string">update</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">Hexo</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">build</span> <br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Pages</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./public</span> <br>        <span class="hljs-attr">publish_branch:</span> [<span class="hljs-string">仓库分支</span>]<br></code></pre></td></tr></table></figure>
+
+<p>然后如果使用主题的话还得在根目录下添加一个<code>.gitmodules</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[submodule &quot;themes/typo&quot;]</span><br>    <span class="hljs-attr">path</span> = themes/typo<br>    <span class="hljs-attr">url</span> = [使用主题的链接]<br></code></pre></td></tr></table></figure>
+
+<p>很奇怪 好像不行</p>
 
                 
               </div>

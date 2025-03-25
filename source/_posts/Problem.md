@@ -480,3 +480,57 @@ nginx -t
 nginx -s reload
 ```
 
+# CI/CD -> Github Page
+
+github action+page 同仓库不同分支集成部署
+在`.github`文件下添加`workflows`添加`hexo-deploy.yml`
+
+```yml
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Initialize submodules
+      run: git submodule init
+      
+    - name: Update submodules
+      run: git submodule update
+
+    - name: Build Hexo
+      run: npm run build 
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public 
+        publish_branch: [仓库分支]
+```
+
+然后如果使用主题的话还得在`.git`下添加一个`.gitmodules`
+
+```
+[submodule "themes/typo"]
+    path = themes/typo
+    url = [使用主题的链接]
+```
+
+## 

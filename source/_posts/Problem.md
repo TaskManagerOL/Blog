@@ -525,12 +525,10 @@ jobs:
         publish_branch: [仓库分支]
 ```
 
-然后如果使用主题的话还得在`.git`下添加一个`.gitmodules`
+然后如果使用主题的话还得在根目录下添加一个`.gitmodules`
 
 ```
 [submodule "themes/typo"]
     path = themes/typo
     url = [使用主题的链接]
 ```
-
-## 

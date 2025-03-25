@@ -532,3 +532,5 @@ jobs:
     path = themes/typo
     url = [使用主题的链接]
 ```
+
+很奇怪 好像不行

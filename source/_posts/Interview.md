@@ -76,7 +76,7 @@ HR一般会在上午9点半左右以及下午两点左右打开邮箱，在上�
 
 ---
 
-> ### public和assets区别：
+> **public和assets区别：**
 >
 > ​	同样用于存放静态文件的文件夹。由于vue-cli、vite等工具打包时，public下的文件会原封不动的添加到dist中，而assets下的文件会被合并压缩。
 >
@@ -84,7 +84,7 @@ HR一般会在上午9点半左右以及下午两点左右打开邮箱，在上�
 
 ---
 
-> ### 有了package.json为什么还需要package-lock.json：
+> **有了package.json为什么还需要package-lock.json：**
 >
 > ​	前者声明依赖的种类而后者决定实际安装的版本，使用`npm install`时就是根据package-lock.json进行安装。
 
@@ -167,109 +167,109 @@ ES15（2024年）symbol描述、匹配字符串索引
 
 ### 数据类型
 
-> ### 基本类型：
->
-> 基本类型有六种。
->
-> ```js
-> //Number
-> let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
-> let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
-> log(0/0) //返回NaN 意思是本来返回数值的操作失败
-> ```
->
-> ---
->
-> ```js
-> //Undefined
-> let message,log(message)//返回undefined，变量声明过但未被初始化。
-> ```
->
-> ---
->
-> ```js
-> //String
-> let AStr = "1",aStr = '1',someStr = `1`//字符串一旦被创建，值就不可以再被改变，如果执行改变的操作，会先销毁再创建。
-> ```
->
-> ---
->
-> ```js
-> //Null
-> let nullOne = null,log(typeof nullOne)//null是一个空对象指针，输出为Object，如果变量要保存对象，但是当时又没有对象可以保存，就用null填充。
-> log(null==undefined)//undefined是由null派生来的，返回为真
-> ```
->
-> ---
->
-> ```js
-> //Boolean
-> //对于非空字符串、数值、对象、N/A 转为布尔值为true
-> //对于""、0、NaN、null、undefined 转为布尔值为false
-> ```
->
-> ---
->
-> ```js
-> //Symbol
-> let aSymbol = Symbol('1'),bSymbol = Symbol('1'),log(aSymbol==bSymbol)//返回false，symbol是原始值，symbol实例是唯一且不可变的，symbol的作用是确保对象属性使用唯一标识符。
-> ```
+#### 基本类型
+
+基本类型有六种。
+
+ ```js
+//Number
+ let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
+let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
+ log(0/0) //返回NaN 意思是本来返回数值的操作失败
+ ```
 
 ---
 
-> ### 引用类型：
->
-> 引用类型统称为`object`，包括`object` `array` `function` `Date` `RegExp` `Map` `Set` 
->
-> ```js
-> //Object对象
-> let man = { // 属性名可以是字符串或者数值
-> 	name:"zero",
-> 	"age":1,
-> 	1:true
-> }
-> ```
->
-> ---
->
-> ```js
-> //Array
-> let colors = ["red", 2, {age: 20 }] //JS数组是动态大小的，每个槽位可以存储任意类型数据的。
-> ```
->
-> ---
->
-> ```js
-> //Function
-> let sum = (num1, num2) => {
->     return num1 + num2;
-> };
-> ```
+```js
+//Undefined
+ let message,log(message)//返回undefined，变量声明过但未被初始化。
+```
 
 ---
 
-> ### 区别：
->
-> 基本数据类型和引用数据类型存储在内存中的位置不同：
->
-> - 基本数据类型存储在栈中
-> - 引用类型的对象存储于堆中
->
-> ```js
-> let a = 10;
-> let b = a; // 赋值操作
-> b = 20;
-> console.log(a); // 10值
-> 
-> var obj1 = {}
-> var obj2 = obj1;//这个操作让obj1和2的引用地址相同了。
-> obj2.name = "1";
-> console.log(obj1.name); // 1
-> ```
+ ```js
+//String
+ let AStr = "1",aStr = '1',someStr = `1`//字符串一旦被创建，值就不可以再被改变，如果执行改变的操作，会先销毁再创建。
+ ```
+
+---
+
+ ```js
+//Null
+ let nullOne = null,log(typeof nullOne)//null是一个空对象指针，输出为Object，如果变量要保存对象，但是当时又没有对象可以保存，就用null填充。
+log(null==undefined)//undefined是由null派生来的，返回为真
+ ```
+
+---
+
+ ```js
+//Boolean
+ //对于非空字符串、数值、对象、N/A 转为布尔值为true
+//对于""、0、NaN、null、undefined 转为布尔值为false
+ ```
+
+---
+
+```js
+//Symbol
+ let aSymbol = Symbol('1'),bSymbol = Symbol('1'),log(aSymbol==bSymbol)//返回false，symbol是原始值，symbol实例是唯一且不可变的，symbol的作用是确保对象属性使用唯一标识符。
+```
+
+---
+
+#### 引用类型
+
+引用类型统称为`object`，包括`object` `array` `function` `Date` `RegExp` `Map` `Set` 
+
+ ```js
+//Object对象
+ let man = { // 属性名可以是字符串或者数值
+	name:"zero",
+ 	"age":1,
+ 	1:true
+ }
+ ```
+
+---
+
+ ```js
+//Array
+ let colors = ["red", 2, {age: 20 }] //JS数组是动态大小的，每个槽位可以存储任意类型数据的。
+ ```
+
+---
+
+ ```js
+//Function
+ let sum = (num1, num2) => {
+ return num1 + num2;
+ };
+ ```
+
+---
+
+####  区别
+
+ 基本数据类型和引用数据类型存储在内存中的位置不同：
+
+ - 基本数据类型存储在栈中
+ - 引用类型的对象存储于堆中
+
+ ```js
+ let a = 10;
+ let b = a; // 赋值操作
+ b = 20;
+ console.log(a); // 10值
+ 
+ var obj1 = {}
+ var obj2 = obj1;//这个操作让obj1和2的引用地址相同了。
+ obj2.name = "1";
+ console.log(obj1.name); // 1
+ ```
 
 ### Iterator相关知识
 
-> ### 迭代器生成方式及使用方式：
+> **迭代器生成方式及使用方式：**
 >
 > 某些方法会返回一个迭代器，如`arr.entries()`返回一个带有全部键值对的迭代器，使用`next()`方法返回迭代器结果对象。
 >
@@ -287,7 +287,7 @@ ES15（2024年）symbol描述、匹配字符串索引
 
 ### Array相关知识
 
-> ### 数组长度与空槽：
+> **数组长度与空槽：**
 >
 > `arr.length`可以输出数组长度，甚至可以更改`arr.length`去改变数组长度，如果用此法扩展数组长度，没有被赋值的地方会产生`空槽`，`空槽`无法输出，对于不同数组方法，`空槽`也有不同的行为。
 >
@@ -295,7 +295,7 @@ ES15（2024年）symbol描述、匹配字符串索引
 
 ---
 
-> ### 常用的数组方法：
+> **常用的数组方法：**
 >
 > + `every()/some()`-对数组内所有元素执行括号内函数，全部通过/有一个通过返回布尔值。
 > + `fill(target,start,end)`-对数组内指定索引覆盖target值，超出范围不会扩展数组。
@@ -314,7 +314,7 @@ ES15（2024年）symbol描述、匹配字符串索引
 
 ---
 
-> ### forEach、filter、map、reduce的区别:
+> **forEach、filter、map、reduce的区别:**
 >
 > 三者都是ES5的新特性，均用于数组。
 >
@@ -383,7 +383,7 @@ typeof b; // "string"
 
 ---
 
-> ### 常用的字符串方法：
+> **常用的字符串方法：**
 >
 > + `concat(value,str)`-以value值拼接两个字符串。
 > + `endsWith(value,index)/endsWith()`-查找字符串是否以value结尾/开头，index为查找的末尾索引+1，返回布尔值。
@@ -400,7 +400,7 @@ typeof b; // "string"
 
 Map对象保存键值对，并且可以记住键的原始插入顺序，任何值都可以作为键或者值。
 
-> ### Object和Map的区别：
+> **Object和Map的区别：**
 >
 > |   区别   |                     Map                      |                      Object                       |
 > | :------: | :------------------------------------------: | :-----------------------------------------------: |
@@ -411,7 +411,7 @@ Map对象保存键值对，并且可以记住键的原始插入顺序，任何�
 
 ---
 
-> ### 常用的map方法：
+> **常用的map方法：**
 >
 > + `clear()`-清除所有元素
 > + `delete()`-删除指定键的值
@@ -467,7 +467,7 @@ undefined == false //false
 
 ---
 
-> ### 手写深拷贝：
+> **手写深拷贝：**
 >
 > ```js
 > function deepClone(obj,hash = new WeakMap()){//用weakmap是因为垃圾回收策略，避免内存泄漏
@@ -639,7 +639,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function Parent(name) {  
 >       this.name = name; // 设置name属性  
 >   }  
->                           
+>                                       
 >   function Child(name, age) {  
 >       // 调用父类构造函数，初始化name属性  
 >       Parent.call(this, name);  
@@ -726,7 +726,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function test() {
 >   　console.log(this.x);
 >   }
->                         
+>                                     
 >   var obj = {};
 >   obj.x = 1;
 >   obj.m = test;
@@ -883,7 +883,7 @@ JS中所有任务都可以分为同步任务和异步任务。其中异步任务
 
 2. 第二步：文件转化为Base64编码，按照数量或者大小进行分片
 
-   > 如果文件比较小或服务器需要控制并发量就按照数量切分；如果文件比较大或者网络带宽有限的时候就按照大小来切分（因为如果文件很大，切分之后还是很大，那就没啥用）；还有，不是分片分得越小越好，分片分得小说明需要高并发和多次网络请求。
+> 如果文件比较小或服务器需要控制并发量就按照数量切分；如果文件比较大或者网络带宽有限的时候就按照大小来切分（因为如果文件很大，切分之后还是很大，那就没啥用）；还有，不是分片分得越小越好，分片分得小说明需要高并发和多次网络请求。
 
 3. 异步并发，带上唯一标识和此片的索引上传
 
@@ -893,11 +893,78 @@ JS中所有任务都可以分为同步任务和异步任务。其中异步任务
 
 > 如果上传过程中关闭网页了，可以使用断点续传技术，前端在初始化的时候发现有这个任务的前半截，那就返回索引，继续上传。
 
+---
+
 > 怎么才能不影响主线程工作上传文件？
 >
 > 可以使用Web Worker，`new Worker('js程序')`然后再用`postMessage()`去给他发送消息。
 >
 > Web Worker可以允许网页在后台执行一些耗时的操作，而不会阻塞主线程，他允许开发者在JS主线程之外单开一个线程。
+
+### SSG、SSR、CRG
+
+首先我们来了解一下页面渲染的全流程：
+
+首先浏览器会将用户输入的域名解析找到服务器的位置 > 然后浏览器和服务器建立TCP连接 > 浏览器向服务器发送HTTP请求，请求指定的资源 > 服务器收到请求之后对请求进行处理 > 返回资源 > **解析HTML文件 > 解析CSS文件 > 执行JS文件 > 构建渲染树（DOM和CSSOM结合） > 布局 > 绘制 > 事件循环处理交互和页面更新**
+
+好了我们再来说上面三个是啥。
+
+#### SSG
+
+SSG是静态站点生成的意思，像我们一开始学习前端的时候直接写的三剑客（不加以其他东西）就属于静态站点，常见的还有博客之类的，这些都属于SSG，优点是服务器返回的资源不会再进行更改。
+
+#### CRG
+
+CRG是客户端渲染的意思，我们可以看到页面渲染中会解析HTML文件、JS文件，之后构建渲染树，使用CRG的时候会先返回一个基础的HTML，只包含结构和对JS的引用，等到JS下载解析好之后会更新DOM树。这种方法比较常见，一般用于交互性强的应用，比如单页应用等。
+
+> 单页应用是一种现代的Web应用架构，会使用路由在单个HTML页面中动态的更新内容。我们常见的网站基本都是单页应用。
+
+#### SSR
+
+SSR是服务端渲染的意思，前面我们提到使用CRG的时候会先返回一个基础的HTML，只包含结构和JS的引用。而对于SSR来说，服务器会返回一个带有完整数据的HTML，后续就不会需要更新一轮DOM树了。因为他是完整的数据，且省了一轮DOM更新，所以首屏加载快，SEO友好（容易爬取内容），如下是一个SSR实现的简易代码：
+
+```js
+const express = require('express');
+const app = express();
+
+// 模拟数据获取函数
+function fetchData() {
+  return { title: 'SSR 页面', content: '这是服务器端渲染的内容' };
+}
+
+// 页面模板
+function renderTemplate(data) {
+  return `
+    <html>
+      <head>
+        <title>${data.title}</title>
+      </head>
+      <body>
+        <div id="root">${data.content}</div>
+        <script>
+          // 客户端代码（可选）
+          console.log('页面已通过 SSR 渲染');
+        </script>
+      </body>
+    </html>
+  `;
+}
+
+// SSR 路由
+app.get('/ssr', (req, res) => {
+  // 获取数据
+  const data = fetchData();
+  // 渲染页面
+  const html = renderTemplate(data);
+  // 返回 HTML 给客户端
+  res.send(html);
+});
+
+// 启动服务器
+app.listen(3000, () => {
+  console.log('服务器已启动：http://localhost:3000/ssr');
+});
+```
 
 # 杂项
 

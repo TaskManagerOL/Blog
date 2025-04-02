@@ -88,7 +88,7 @@ HR一般会在上午9点半左右以及下午两点左右打开邮箱，在上�
 >
 > ​	前者声明依赖的种类而后者决定实际安装的版本，使用`npm install`时就是根据package-lock.json进行安装。
 
-## Javascript
+## JavaScript
 
 ### ECMA-262标准化语言规范
 
@@ -164,262 +164,6 @@ ES15（2024年）symbol描述、匹配字符串索引
 + RegExp Match Indices：提供匹配子字符串的索引。
 + Symbol.prototype.description：返回Symbol的描述。
 ```
-
-### 数据类型
-
-#### 基本类型
-
-基本类型有六种。
-
- ```js
-//Number
- let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
-let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
- log(0/0) //返回NaN 意思是本来返回数值的操作失败
- ```
-
----
-
-```js
-//Undefined
- let message,log(message)//返回undefined，变量声明过但未被初始化。
-```
-
----
-
- ```js
-//String
- let AStr = "1",aStr = '1',someStr = `1`//字符串一旦被创建，值就不可以再被改变，如果执行改变的操作，会先销毁再创建。
- ```
-
----
-
- ```js
-//Null
- let nullOne = null,log(typeof nullOne)//null是一个空对象指针，输出为Object，如果变量要保存对象，但是当时又没有对象可以保存，就用null填充。
-log(null==undefined)//undefined是由null派生来的，返回为真
- ```
-
----
-
- ```js
-//Boolean
- //对于非空字符串、数值、对象、N/A 转为布尔值为true
-//对于""、0、NaN、null、undefined 转为布尔值为false
- ```
-
----
-
-```js
-//Symbol
- let aSymbol = Symbol('1'),bSymbol = Symbol('1'),log(aSymbol==bSymbol)//返回false，symbol是原始值，symbol实例是唯一且不可变的，symbol的作用是确保对象属性使用唯一标识符。
-```
-
----
-
-#### 引用类型
-
-引用类型统称为`object`，包括`object` `array` `function` `Date` `RegExp` `Map` `Set` 
-
- ```js
-//Object对象
- let man = { // 属性名可以是字符串或者数值
-	name:"zero",
- 	"age":1,
- 	1:true
- }
- ```
-
----
-
- ```js
-//Array
- let colors = ["red", 2, {age: 20 }] //JS数组是动态大小的，每个槽位可以存储任意类型数据的。
- ```
-
----
-
- ```js
-//Function
- let sum = (num1, num2) => {
- return num1 + num2;
- };
- ```
-
----
-
-####  区别
-
- 基本数据类型和引用数据类型存储在内存中的位置不同：
-
- - 基本数据类型存储在栈中
- - 引用类型的对象存储于堆中
-
- ```js
- let a = 10;
- let b = a; // 赋值操作
- b = 20;
- console.log(a); // 10值
- 
- var obj1 = {}
- var obj2 = obj1;//这个操作让obj1和2的引用地址相同了。
- obj2.name = "1";
- console.log(obj1.name); // 1
- ```
-
-### Iterator相关知识
-
-> **迭代器生成方式及使用方式：**
->
-> 某些方法会返回一个迭代器，如`arr.entries()`返回一个带有全部键值对的迭代器，使用`next()`方法返回迭代器结果对象。
->
-> ```js
-> const array1 = ['a', 'b', 'c'];
-> 
-> const iterator1 = array1.entries();
-> 
-> console.log(iterator1.next().value);
-> // Expected output: Array [0, "a"]
-> 
-> console.log(iterator1.next().value);
-> // Expected output: Array [1, "b"]
-> ```
-
-### Array相关知识
-
-> **数组长度与空槽：**
->
-> `arr.length`可以输出数组长度，甚至可以更改`arr.length`去改变数组长度，如果用此法扩展数组长度，没有被赋值的地方会产生`空槽`，`空槽`无法输出，对于不同数组方法，`空槽`也有不同的行为。
->
-> 如`forEach`等迭代方法根本不会访问空槽。而其他的拼接复制方法如`concat`则会保留空槽。一些较新的方法会视其为undefined 如`splice()`拼接数组，`join()`等。
-
----
-
-> **常用的数组方法：**
->
-> + `every()/some()`-对数组内所有元素执行括号内函数，全部通过/有一个通过返回布尔值。
-> + `fill(target,start,end)`-对数组内指定索引覆盖target值，超出范围不会扩展数组。
-> + `find()/findLast()`-返回括号内函数符合条件的第一个/最后一个值，否则返回undefined。
-> + `findIndex()/findLastIndex()`-返回括号内函数符合条件的第一个/最后一个索引，否则返回undefined。
-> + `indexOf()/lastIndexOf()`-返回括号内值符合条件的第一个值/最后一个值的索引，否则返回-1。
-> + `flat()`-扁平化数组，括号内为深度，ES10新语法
-> + `includes()`-判断数组是否包含一个值，返回布尔值，ES7新语法
-> + `join()`-将一个数组更改为其各元素以括号内字符串连接的字符串，默认使用逗号，如目标数组不是纯数组，报错。
-> + `pop()/push()`-移除/添加数组末尾一个元素并返回该值，如果push的是一个数组则会在末尾添加数组，push自身会导致循环引用。
-> + `shift()/unshift()`-移除/添加数组第一个元素并返回该值
-> + `reverse()/toReversed()`-转置原数组改变原数组/转置原数组不改变原数组，`toReversed()`ES14新语法
-> + `slice(start,end)`-浅拷贝一个由start开始end结束的数组，不改变原数组。
-> + `sort()/toSorted()`-对数组按照元素第一个字符的ascii码排序改变原数组/不改变原数组
-> + `splice(start,num,value...)/toSpliced()`-删除由start开始的num个数值，并在start索引下添加value值，改变原数组/不改变原数组。
-
----
-
-> **forEach、filter、map、reduce的区别:**
->
-> 三者都是ES5的新特性，均用于数组。
->
-> `forEach`遍历数组全部元素并对数组进行操作，不返回新数组，return用于跳出循环，返回undefined。
->
-> `filter`遍历数组全部元素并使用判断语句返回新数组，return值为假的时候过滤。
->
-> `map`遍历数组全部元素并操作数组产生新数组，不改变原数组。
->
-> `reduce((accumulator, currentValue)=>...,initialValue)`-遍历数组，若initialValue设置则为初始accumulator值，若没设置则currentValue为数组第一个值，不可处理数组对象。
->
-> ```js
-> //设分别执行三种函数
-> let arr = [
->  {name:'小明', age: 14},
->  {name:'小华', age: 11},
->  {name:'小红', age: 15},
->  {name:'小黄', age: 17},
-> ]
-> 
-> let forEachBack = arr.forEach(item => {
->  item.name = "学生"+item.name
-> })
-> console.log(forEachBack)//undefined
-> console.log(arr)//name前都加上学生
-> 
-> let filterBack = arr.filter(item => {
->  return item.age>10
-> })
-> console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
-> console.log(arr)//arr不变
-> 
-> let filterBack = arr.filter(item => {
->  return item.age>10
-> })
-> console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
-> console.log(arr)//arr不变
-> 
-> let mapBack = arr.map(item => {
->  return item.age + 1
-> })
-> console.log(mapBack)//不包含有name属性的，每一项age加1的新一维数组：[15,12,16,18]
-> console.log(arr)//arr不变
-> 
-> let initialValue = -1;
-> let reduceBack = mapBack.reduce(
-> (accumulator, currentValue) => accumulator + currentValue,
-> initialValue
-> );
-> console.log(reduceBack)//60 = -1 + 15 + 12 + 16 +18
-> console.log(arr)//arr不变
-> ```
-
-### String相关知识
-
-`String()`作为函数调用时，返回字面量原始值。`String()`作为构造函数（使用`new`）被调用时，会创建一个String对象，该对象不是原始类型。
-
-```js
-const a = new String("Hello world"); // a === "Hello world" 为 false
-const b = String("Hello world"); // b === "Hello world" 为 true
-a instanceof String; // 为 true
-b instanceof String; // 为 false
-typeof a; // "object"
-typeof b; // "string"
-```
-
----
-
-> **常用的字符串方法：**
->
-> + `concat(value,str)`-以value值拼接两个字符串。
-> + `endsWith(value,index)/endsWith()`-查找字符串是否以value结尾/开头，index为查找的末尾索引+1，返回布尔值。
-> + `includes(value)`-查找value值，返回布尔值。
-> + `indexOf(searchString, position)/lastIndexOf()`-查找第一次/最后一次出现searchString的索引，position为查找开始的索引，默认为0。
-> + `match()/search()`-匹配正则表达式，返回匹配的字符的数组/索引。
-> + `replace(value,origin)/replaceAll()`-匹配字符串value替换origin，返回替换后的字符串。
-> + `slice(start,end)`-提取字符串的一部分返回新字符串，不改变原字符串。
-> + `split(rule)`-按照rule模式将字符串分割成一个数组，返回该数组。
-> + `toLowerCase()/toUpperCase()`-全部换成小写/大写
-> + `trim()`-从字符串两端移除空白字符，返回新字符，不修改原来的字符。
-
-### Map相关知识
-
-Map对象保存键值对，并且可以记住键的原始插入顺序，任何值都可以作为键或者值。
-
-> **Object和Map的区别：**
->
-> |   区别   |                     Map                      |                      Object                       |
-> | :------: | :------------------------------------------: | :-----------------------------------------------: |
-> | 键的类型 |             Map的键可以是任何值              |         Object的键必须为字符串或者Symbol          |
-> | 键的顺序 |         Map的对象按照插入的顺序迭代          | Object的排序就很混乱，ES6之后按照属性创建顺序迭代 |
-> |   迭代   |          可迭代对象，可以使用for of          |            不可迭代，默认只能用for in             |
-> |   性能   | 在涉及频繁添加和删除键值对的场景中表现更好。 |   在涉及频繁添加和删除键值对的场景中表现更好。    |
-
----
-
-> **常用的map方法：**
->
-> + `clear()`-清除所有元素
-> + `delete()`-删除指定键的值
-> + `forEach()`-对每一个键/值进行一次操作
-> + `get()`-获取指定键的值，一般并对其进行后续处理。
-> + `has()`-检查指定键是否存在，返回布尔值。
-> + `keys()/values()`-返回一个迭代器对象，该对象包含了此map中每个元素的键/值
-> + `set()`-向map中添加一个指定的键值对。
 
 ### for in和for of
 
@@ -639,7 +383,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function Parent(name) {  
 >       this.name = name; // 设置name属性  
 >   }  
->                                         
+>                                                 
 >   function Child(name, age) {  
 >       // 调用父类构造函数，初始化name属性  
 >       Parent.call(this, name);  
@@ -726,7 +470,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function test() {
 >   　console.log(this.x);
 >   }
->                                       
+>                                               
 >   var obj = {};
 >   obj.x = 1;
 >   obj.m = test;
@@ -965,6 +709,280 @@ app.listen(3000, () => {
   console.log('服务器已启动：http://localhost:3000/ssr');
 });
 ```
+
+## JavaScript - Type
+
+### 数据类型
+
+#### 基本类型
+
+基本类型有六种。
+
+ ```js
+//Number
+ let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
+let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
+ log(0/0) //返回NaN 意思是本来返回数值的操作失败
+ ```
+
+---
+
+```js
+//Undefined
+ let message,log(message)//返回undefined，变量声明过但未被初始化。
+```
+
+---
+
+ ```js
+//String
+ let AStr = "1",aStr = '1',someStr = `1`//字符串一旦被创建，值就不可以再被改变，如果执行改变的操作，会先销毁再创建。
+ ```
+
+---
+
+ ```js
+//Null
+ let nullOne = null,log(typeof nullOne)//null是一个空对象指针，输出为Object，如果变量要保存对象，但是当时又没有对象可以保存，就用null填充。
+log(null==undefined)//undefined是由null派生来的，返回为真
+ ```
+
+---
+
+ ```js
+//Boolean
+ //对于非空字符串、数值、对象、N/A 转为布尔值为true
+//对于""、0、NaN、null、undefined 转为布尔值为false
+ ```
+
+---
+
+```js
+//Symbol
+ let aSymbol = Symbol('1'),bSymbol = Symbol('1'),log(aSymbol==bSymbol)//返回false，symbol是原始值，symbol实例是唯一且不可变的，symbol的作用是确保对象属性使用唯一标识符。
+```
+
+---
+
+#### 引用类型
+
+引用类型统称为`object`，包括`object` `array` `function` `Date` `RegExp` `Map` `Set` 
+
+ ```js
+//Object对象
+ let man = { // 属性名可以是字符串或者数值
+	name:"zero",
+ 	"age":1,
+ 	1:true
+ }
+ ```
+
+---
+
+ ```js
+//Array
+ let colors = ["red", 2, {age: 20 }] //JS数组是动态大小的，每个槽位可以存储任意类型数据的。
+ ```
+
+---
+
+ ```js
+//Function
+ let sum = (num1, num2) => {
+ return num1 + num2;
+ };
+ ```
+
+---
+
+####  区别
+
+ 基本数据类型和引用数据类型存储在内存中的位置不同：
+
+ - 基本数据类型存储在栈中
+ - 引用类型的对象存储于堆中
+
+ ```js
+let a = 10;
+let b = a; // 赋值操作
+b = 20;
+console.log(a); // 10值
+
+var obj1 = {}
+var obj2 = obj1;//这个操作让obj1和2的引用地址相同了。
+obj2.name = "1";
+console.log(obj1.name); // 1
+ ```
+
+### Iterator
+
+#### 迭代器生成方式及使用方式
+
+某些方法会返回一个迭代器，如`arr.entries()`返回一个带有全部键值对的迭代器，使用`next()`方法返回迭代器结果对象。
+
+ ```js
+ const array1 = ['a', 'b', 'c'];
+ 
+ const iterator1 = array1.entries();
+ 
+ console.log(iterator1.next().value);
+ // Expected output: Array [0, "a"]
+ 
+ console.log(iterator1.next().value);
+ // Expected output: Array [1, "b"]
+ ```
+
+### Array
+
+#### 数组长度与空槽
+
+`arr.length`可以输出数组长度，甚至可以更改`arr.length`去改变数组长度，如果用此法扩展数组长度，没有被赋值的地方会产生`空槽`，`空槽`无法输出，对于不同数组方法，`空槽`也有不同的行为。
+
+如`forEach`等迭代方法根本不会访问空槽。而其他的拼接复制方法如`concat`则会保留空槽。一些较新的方法会视其为undefined 如`splice()`拼接数组，`join()`等。
+
+---
+
+####  常用的数组方法
+
+ + `every()/some()`-对数组内所有元素执行括号内函数，全部通过/有一个通过返回布尔值。
+ + `fill(target,start,end)`-对数组内指定索引覆盖target值，超出范围不会扩展数组。
+ + `find()/findLast()`-返回括号内函数符合条件的第一个/最后一个值，否则返回undefined。
+ + `findIndex()/findLastIndex()`-返回括号内函数符合条件的第一个/最后一个索引，否则返回undefined。
+ + `indexOf()/lastIndexOf()`-返回括号内值符合条件的第一个值/最后一个值的索引，否则返回-1。
+ + `flat()`-扁平化数组，括号内为深度，ES10新语法
+ + `includes()`-判断数组是否包含一个值，返回布尔值，ES7新语法
+ + `join()`-将一个数组更改为其各元素以括号内字符串连接的字符串，默认使用逗号，如目标数组不是纯数组，报错。
+ + `pop()/push()`-移除/添加数组末尾一个元素并返回该值，如果push的是一个数组则会在末尾添加数组，push自身会导致循环引用。
+ + `shift()/unshift()`-移除/添加数组第一个元素并返回该值
+ + `reverse()/toReversed()`-转置原数组改变原数组/转置原数组不改变原数组，`toReversed()`ES14新语法
+ + `slice(start,end)`-浅拷贝一个由start开始end结束的数组，不改变原数组。
+ + `sort()/toSorted()`-对数组按照元素第一个字符的ascii码排序改变原数组/不改变原数组
+ + `splice(start,num,value...)/toSpliced()`-删除由start开始的num个数值，并在start索引下添加value值，改变原数组/不改变原数组。
+
+---
+
+> **forEach、filter、map、reduce的区别:**
+>
+> 三者都是ES5的新特性，均用于数组。
+>
+> `forEach`遍历数组全部元素并对数组进行操作，不返回新数组，return用于跳出循环，返回undefined。
+>
+> `filter`遍历数组全部元素并使用判断语句返回新数组，return值为假的时候过滤。
+>
+> `map`遍历数组全部元素并操作数组产生新数组，不改变原数组。
+>
+> `reduce((accumulator, currentValue)=>...,initialValue)`-遍历数组，若initialValue设置则为初始accumulator值，若没设置则currentValue为数组第一个值，不可处理数组对象。
+
+ ```js
+ //设分别执行三种函数
+ let arr = [
+ {name:'小明', age: 14},
+ {name:'小华', age: 11},
+ {name:'小红', age: 15},
+ {name:'小黄', age: 17},
+ ]
+ 
+ let forEachBack = arr.forEach(item => {
+ item.name = "学生"+item.name
+ })
+ console.log(forEachBack)//undefined
+ console.log(arr)//name前都加上学生
+ 
+ let filterBack = arr.filter(item => {
+ return item.age>10
+ })
+ console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
+ console.log(arr)//arr不变
+ 
+ let filterBack = arr.filter(item => {
+ return item.age>10
+ })
+ console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
+ console.log(arr)//arr不变
+ 
+ let mapBack = arr.map(item => {
+ return item.age + 1
+ })
+ console.log(mapBack)//不包含有name属性的，每一项age加1的新一维数组：[15,12,16,18]
+ console.log(arr)//arr不变
+ 
+ let initialValue = -1;
+ let reduceBack = mapBack.reduce(
+ (accumulator, currentValue) => accumulator + currentValue,
+ initialValue
+ );
+ console.log(reduceBack)//60 = -1 + 15 + 12 + 16 +18
+ console.log(arr)//arr不变
+ ```
+
+### String
+
+`String()`作为函数调用时，返回字面量原始值。`String()`作为构造函数（使用`new`）被调用时，会创建一个String对象，该对象不是原始类型。
+
+```js
+const a = new String("Hello world"); // a === "Hello world" 为 false
+const b = String("Hello world"); // b === "Hello world" 为 true
+a instanceof String; // 为 true
+b instanceof String; // 为 false
+typeof a; // "object"
+typeof b; // "string"
+```
+
+---
+
+####  常用的字符串方法
+
+ + `concat(value,str)`-以value值拼接两个字符串。
+ + `endsWith(value,index)/endsWith()`-查找字符串是否以value结尾/开头，index为查找的末尾索引+1，返回布尔值。
+ + `includes(value)`-查找value值，返回布尔值。
+ + `indexOf(searchString, position)/lastIndexOf()`-查找第一次/最后一次出现searchString的索引，position为查找开始的索引，默认为0。
+ + `match()/search()`-匹配正则表达式，返回匹配的字符的数组/索引。
+ + `replace(value,origin)/replaceAll()`-匹配字符串value替换origin，返回替换后的字符串。
+ + `slice(start,end)`-提取字符串的一部分返回新字符串，不改变原字符串。
+ + `split(rule)`-按照rule模式将字符串分割成一个数组，返回该数组。
+ + `toLowerCase()/toUpperCase()`-全部换成小写/大写
+ + `trim()`-从字符串两端移除空白字符，返回新字符，不修改原来的字符。
+
+### Map
+
+Map对象保存键值对，并且可以记住键的原始插入顺序，任何值都可以作为键或者值。比较适合多次查找的情况。
+
+>  **Object和Map的区别：**
+>
+>  |   区别   |                     Map                      |                      Object                       |
+>  | :------: | :------------------------------------------: | :-----------------------------------------------: |
+>  | 键的类型 |             Map的键可以是任何值              |         Object的键必须为字符串或者Symbol          |
+>  | 键的顺序 |         Map的对象按照插入的顺序迭代          | Object的排序就很混乱，ES6之后按照属性创建顺序迭代 |
+>  |   迭代   |          可迭代对象，可以使用for of          |            不可迭代，默认只能用for in             |
+>  |   性能   | 在涉及频繁添加和删除键值对的场景中表现更好。 |   在涉及频繁添加和删除键值对的场景中表现更好。    |
+
+---
+
+####  常用的map方法
+
+ + `clear()`-清除所有元素
+ + `delete()`-删除指定键的值
+ + `forEach()`-对每一个键/值进行一次操作
+ + `get()`-获取指定键的值，一般并对其进行后续处理。
+ + `has()`-检查指定键是否存在，返回布尔值。
+ + `keys()/values()`-返回一个迭代器对象，该对象包含了此map中每个元素的键/值
+ + `set()`-向map中添加一个指定的键值对。
+
+### Promise
+
+表示对异步操作的完成或者失败及其结果。
+
+#### 常用的Promise方法
+
++ `all()`-同时执行所有的异步任务，如果有一个执行失败，那么失败。（用于异步并发上传文件）
++ `allSettled()`-同时测试执行所有的异步任务，返回测试结果
++ `race()`-只要有一个promise完成，无论成功与否返回结果。
++ `any()`-只要有一个promise成功，返回成功结果，否则等待所有失败返回错误。
++ `resolve()`-将promise对象以成功标志返回。
++ `then()`-promise对象以成功标志返回时，执行then中的语句
++ `reject()`-将promise对象以失败标志返回。
++ `catch()`-promise对象以失败标志返回时，执行catch中的语句
++ `finally()`-promise对象最终一定执行此代码块中的语句
 
 # 杂项
 

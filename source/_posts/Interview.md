@@ -171,7 +171,7 @@ for in用于循环一个对象的可枚举属性，可以用来遍历对象的�
 
 for of用于循环一个可迭代对象的值。
 
-> 对象不能直接用for of遍历，因为他不是一个可迭代对象，可以用Object.values转化为数组再用for..of循环
+> 对象不能直接用for of遍历，因为他不是一个可迭代对象，可以用Object.values转化为数组再用for..of循环，或者用Object.entries将对象转化为可迭代对象再用for..of循环
 
 ### == 和 ===的区别
 
@@ -383,7 +383,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function Parent(name) {  
 >       this.name = name; // 设置name属性  
 >   }  
->                                                 
+>                                                     
 >   function Child(name, age) {  
 >       // 调用父类构造函数，初始化name属性  
 >       Parent.call(this, name);  
@@ -470,7 +470,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function test() {
 >   　console.log(this.x);
 >   }
->                                               
+>                                                   
 >   var obj = {};
 >   obj.x = 1;
 >   obj.m = test;
@@ -610,6 +610,8 @@ JS中所有任务都可以分为同步任务和异步任务。其中异步任务
 > async函数会返回一个promise对象，await会将其后的代码化为微任务。
 
 ### 防抖和节流
+
+
 
 ### 大文件上传
 

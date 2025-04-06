@@ -182,7 +182,7 @@ null和undefined只能彼此相等，其他情况均不相等。
 ```JS
 null == undefined // true
 null == false // false
-undefined == false //false
+undefined == false //false 
 ```
 
 ### 静态方法与实例方法
@@ -391,7 +391,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function Parent(name) {  
 >       this.name = name; // 设置name属性  
 >   }  
->                                                       
+>                                                         
 >   function Child(name, age) {  
 >       // 调用父类构造函数，初始化name属性  
 >       Parent.call(this, name);  
@@ -478,7 +478,7 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 >   function test() {
 >   　console.log(this.x);
 >   }
->                                                     
+>                                                       
 >   var obj = {};
 >   obj.x = 1;
 >   obj.m = test;

@@ -185,76 +185,6 @@ null == false // false
 undefined == false //false 
 ```
 
-### 静态方法与实例方法
-
-> 我们总是能看见一些方法是形如`Array.isArray(obj)`，另一些方法是形如`obj.splice()`，有啥区别呢？
-
-前者是静态方法，定义在`Array`**类**上，不依赖于实例的状态，不需要创建实例。
-
-后者是实例方法，定义在类的原型链上，用来处理类的实例对象。
-
-```js
-Array.prototype.test = () => {//创建实例方法
-    console.log('test1');
-}
-
-Object.defineProperty(Array, 'test', {//创建静态方法
-    value: function (e) {
-        console.log(e);
-    }
-})
-
-const testArr = new Array()
-testArr.test()
-Array.test('test2')
-```
-
-### 深拷贝和浅拷贝的区别
-
-浅拷贝指创建新的数据，如果属性是基本类型，则为其字面量；如果属性为引用类型，拷贝的就是内存地址。即浅拷贝出来的对象还是指向同一个内存地址。
-
-> eg.`slice()`、`concat()`
-
-深拷贝则是开一个新的栈，基本类型的值也是拷贝字面量；但是如果是引用类型，值相同但是会有不同的内存地址。即深拷贝出来的对象不指向同一个内存地址。
-
-> eg.`JSON.stringify()`
->
-> ```js
-> //深拷贝
-> let obj1 = {name: 'A'}
-> const obj2 = JSON.parse(JSON.stringify(obj1));
-> obj1.name = 'B'
-> console.log(obj2); // {name: "A"}
-> 
-> //浅拷贝
-> var obj1 = {}
-> var obj2 = obj1;
-> obj2.name = 'B';
-> console.log(obj1.name); // "B"
-> ```
-
----
-
-> **手写深拷贝：**
->
-> ```js
-> function deepClone(obj,hash = new WeakMap()){//用weakmap是因为垃圾回收策略，避免内存泄漏
->  if(typeof obj !== 'object'||obj === null)return obj//不是对象直接返回即可，深拷贝是对于对象而言的
->  if(obj instanceof Date)return new Date(obj)
->  if(obj instanceof RegExp)return new RegExp(obj)//日期、正则对象可以使用他们内置的拷贝构造函数
->  
->  if(hash.has(obj))return hash.get(obj)//有了就返回
->  let cloneObj = new obj.constructor()//拿某个对象的原型对象构造出来的对象
->  hash.set(obj, cloneObj);//加到hash中
->  for (let key in obj) {//一层一层向下找
->  	if (obj.hasOwnProperty(key)) {//如果不是继承的就进if
->    		cloneObj[key] = deepClone(obj[key], hash);//递归拿到不是继承的属性的键
->         }
->     }
->  return cloneObj;
-> }
-> ```
-
 ### 闭包（Closure）
 
 > 不说废话，出个实战题目：写一个函数，每调用一次输出的数字比上一次加一。
@@ -339,8 +269,6 @@ console.log(Counter.value()); /* 输出0 */
 console.log(Counter.add()); /* 输出2 */
 ```
 
-
-
 ### 作用域及作用域链
 
 作用域决定了代码区块中变量及其他资源的可见性，一般将作用域分为`全局作用域`、`函数作用域`、`块级作用域`，作用域在变量被创建好的时候就确定了，不会随着执行的时候改变。
@@ -370,50 +298,6 @@ console.log(Counter.add()); /* 输出2 */
 > log(functionValue)// 报错
 > log(blockValue)//报错
 > ```
-
-### 原型及原型链
-
-JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
-
-> **什么是对象的属性：**
->
-> 对象的属性是用来描述对象状态或者特征的，属性可以包含各种各样的数据，可以是基本数据也可以是函数、对象等，每个属性都有一个键值对。
-
-也就是说，这些属性和方法是定义在object的构造函数的`prototype`而非实例本身。
-
-实例通过`_proto_`属性上溯原型链，每个原型都有`prototype`，而`prototype`又有`constructor`属性来指向该原型（`constructor`主要就是用于指向确认该原型）
-
-### 继承
-
-继承是面向对象中的一个概念，继承可以让子类具有父类的各种属性和方法，不需要再编写相同的代码，并且在子类别继承父类别的同时，可以重新定义某些属性、方法，获得不同的功能。
-
-> **JS常见的继承方式：**
->
-> + 原型链继承（继承方法） 
->
->   ```js
->   //写法一 每一个new Child，创建出来的每一个实例改变父类属性时都会影响到父类。
->   Child.prototype = new Parent();
->   //写法二 创建原型链继承的现代方法
->   Child.prototype = Object.create(Parent.prototype)
->   Child.prototype.constructor = Child
->   ```
->
-> + 构造函数继承（继承属性）
->
->   ```JS
->   function Parent(name) {  
->       this.name = name; // 设置name属性  
->   }  
->                                                             
->   function Child(name, age) {  
->       // 调用父类构造函数，初始化name属性  
->       Parent.call(this, name);  
->       this.age = age; // 设置子类特有的age属性  
->   }  
->   ```
-
-
 
 ### this
 
@@ -597,25 +481,6 @@ str instanceof String // false
 
 如果我们有一个列表，列表之中有大量的列表项，我们需要在点击列表项的时候响应一个事件，如果给每个列表项一一都绑定一个函数，那对于内存消耗是非常大的，这时候就可以事件委托，把点击事件绑定在父级元素`ul`上面，然后执行事件的时候再去匹配目标元素。
 
-### New
-
-我们使用new将一个给定的构造函数创建一个实例对象。new做了如下事情：
-
-+ 创建一个新的对象
-+ 将对象与构造函数用原型链连起来
-+ 将构造函数的this指向对象（改变this指向的方法之一）
-
-> **手写new：**
->
-> ```js
-> function mynew(Fun,...args){
-> 	const obj = {}
->     obj._proto_ = Fun.prototype
->     let result = Fun.apply(obj,args)
->     return result instanceof Object?result:obj;
-> }
-> ```
-
 ### 事件循环
 
 JS中所有任务都可以分为同步任务和异步任务。其中异步任务还可以分为微任务和宏任务。
@@ -733,6 +598,143 @@ app.listen(3000, () => {
   console.log('服务器已启动：http://localhost:3000/ssr');
 });
 ```
+
+## JavaScript - Prototype
+
+
+
+### 静态方法与实例方法
+
+> 我们总是能看见一些方法是形如`Array.isArray(obj)`，另一些方法是形如`obj.splice()`，有啥区别呢？
+
+前者是静态方法，定义在`Array`**类**上，不依赖于实例的状态，不需要创建实例。
+
+后者是实例方法，定义在类的原型链上，用来处理类的实例对象。
+
+```js
+Array.prototype.test = () => {//创建实例方法
+    console.log('test1');
+}
+
+Object.defineProperty(Array, 'test', {//创建静态方法
+    value: function (e) {
+        console.log(e);
+    }
+})
+
+const testArr = new Array()
+testArr.test()
+Array.test('test2')
+```
+
+### 深拷贝和浅拷贝的区别
+
+浅拷贝指创建新的数据，如果属性是基本类型，则为其字面量；如果属性为引用类型，拷贝的就是内存地址。即浅拷贝出来的对象还是指向同一个内存地址。
+
+> eg.`slice()`、`concat()`
+
+深拷贝则是开一个新的栈，基本类型的值也是拷贝字面量；但是如果是引用类型，值相同但是会有不同的内存地址。即深拷贝出来的对象不指向同一个内存地址。
+
+> eg.`JSON.stringify()`
+>
+> ```js
+> //深拷贝
+> let obj1 = {name: 'A'}
+> const obj2 = JSON.parse(JSON.stringify(obj1));
+> obj1.name = 'B'
+> console.log(obj2); // {name: "A"}
+> 
+> //浅拷贝
+> var obj1 = {}
+> var obj2 = obj1;
+> obj2.name = 'B';
+> console.log(obj1.name); // "B"
+> ```
+
+---
+
+> **手写深拷贝：**
+>
+> ```js
+> function deepClone(obj,hash = new WeakMap()){//用weakmap是因为垃圾回收策略，避免内存泄漏
+> if(typeof obj !== 'object'||obj === null)return obj//不是对象直接返回即可，深拷贝是对于对象而言的
+> if(obj instanceof Date)return new Date(obj)
+> if(obj instanceof RegExp)return new RegExp(obj)//日期、正则对象可以使用他们内置的拷贝构造函数
+> 
+> if(hash.has(obj))return hash.get(obj)//有了就返回
+> let cloneObj = new obj.constructor()//拿某个对象的原型对象构造出来的对象
+> hash.set(obj, cloneObj);//加到hash中
+> for (let key in obj) {//一层一层向下找
+> 	if (obj.hasOwnProperty(key)) {//如果不是继承的就进if
+> 		cloneObj[key] = deepClone(obj[key], hash);//递归拿到不是继承的属性的键
+>      }
+>  }
+> return cloneObj;
+> }
+> ```
+
+### New
+
+我们使用new将一个给定的构造函数创建一个实例对象。new做了如下事情：
+
++ 创建一个新的对象
++ 将对象与构造函数用原型链连起来
++ 将构造函数的this指向对象（改变this指向的方法之一）
+
+> **手写new：**
+>
+> ```js
+> function mynew(Fun,...args){
+> 	const obj = {}
+>  obj._proto_ = Fun.prototype
+>  let result = Fun.apply(obj,args)
+>  return result instanceof Object?result:obj;
+> }
+> ```
+
+### 原型及原型链
+
+JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
+
+> **什么是对象的属性：**
+>
+> 对象的属性是用来描述对象状态或者特征的，属性可以包含各种各样的数据，可以是基本数据也可以是函数、对象等，每个属性都有一个键值对。
+
+也就是说，这些属性和方法是定义在object的构造函数的`prototype`而非实例本身。
+
+实例通过`_proto_`属性上溯原型链，每个原型都有`prototype`，而`prototype`又有`constructor`属性来指向该原型（`constructor`主要就是用于指向确认该原型）
+
+### 继承
+
+继承是面向对象中的一个概念，继承可以让子类具有父类的各种属性和方法，不需要再编写相同的代码，并且在子类别继承父类别的同时，可以重新定义某些属性、方法，获得不同的功能。
+
+> **JS常见的继承方式：**
+>
+> + 原型链继承（继承方法） 
+>
+>   ```js
+>   //写法一 每一个new Child，创建出来的每一个实例改变父类属性时都会影响到父类。
+>   Child.prototype = new Parent();
+>   //写法二 创建原型链继承的现代方法
+>   Child.prototype = Object.create(Parent.prototype)
+>   Child.prototype.constructor = Child
+>   ```
+>
+> + 构造函数继承（继承属性）
+>
+>   ```JS
+>   function Parent(name) {  
+>       this.name = name; // 设置name属性  
+>   }  
+>   
+>   function Child(name, age) {  
+>       // 调用父类构造函数，初始化name属性  
+>       Parent.call(this, name);  
+>       this.age = age; // 设置子类特有的age属性  
+>   }  
+>   ```
+
+
 
 ## JavaScript - Type
 

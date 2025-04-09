@@ -376,7 +376,7 @@ console.log(Counter.add()); /* 输出2 */
 >   function test() {
 >   　console.log(this.x);
 >   }
->                                                           
+>                                                             
 >   var obj = {};
 >   obj.x = 1;
 >   obj.m = test;
@@ -601,7 +601,57 @@ app.listen(3000, () => {
 
 ## JavaScript - Prototype
 
+我特别将原型这个部分分了出来，因为我觉得有些概念理解需要渐进的，上面的比较分散，而这一章则是有顺序的，你可以从上往下读，我会带你逐渐了解这些复杂的概念。
 
+### 构造函数
+
+我们先从一切的源头开始看起，什么是构造函数？
+
+首先构造函数是一个函数，那他肯定是形如`function fn (){}`这样的。
+
+第二，它是用于构造东西的，构造函数通常返回一个对象。我们使用`new`关键字来让构造函数创建对象，至于`new`到底干了什么，我们稍晚些再说。
+
+我们常见的数据类型比如`Array` `String` 他们本身就是一个构造函数。当然我们也可以自己制造一个构造函数。
+
+> 字符串对象和普通字符串是不一样的，普通字符串的性能更优。
+
+构造函数到底是拿来干什么的，一言蔽之就是用来创建包含相同属性、方法的对象实例的。
+
+> 后面会用到`instanceof`，你如果没见过就理解为：如果是由这个构造函数构造出来的就为true 否则为false(当然这个是不准确的说法，只是为了理解)
+
+```js
+function Cup(name){
+    this.name = name
+    this.size = 10
+    this.use = function(){
+        console.log('use')
+    }
+}
+const cup = new Cup('kitty')
+const arr = new Array()
+console.log(cup instanceof Cup,cup.size,arr instanceof Array)//true 10 true
+cup.use()//use
+```
+
+关键的东西来了：
+
+构造函数有一个`prototype`属性，指向一个对象，这个对象上的方法和属性会被所有用这个构造函数创建的实例共享。
+
+```js
+function Cup(){}
+Cup.prototype.value = 1
+Cup.prototype.fn = function(){
+    console.log('fn')
+}
+
+const cup = new Cup()
+const bottle = new Cup()
+console.log(cup.value,bottle.value)//1 1
+cup.fn()//fn
+cup.value = 3
+Cup.prototype.value = 2
+console.log(cup.value,bottle.value)//3 2
+```
 
 ### 静态方法与实例方法
 
@@ -616,16 +666,118 @@ Array.prototype.test = () => {//创建实例方法
     console.log('test1');
 }
 
-Object.defineProperty(Array, 'test', {//创建静态方法
+Object.defineProperty(Array, 'test', {//创建静态方法——可配置版
     value: function (e) {
         console.log(e);
-    }
+    },
+    writable: true, //可写
+    configurable: true, //可配置
+    enumerable: false //不可枚举
 })
+//或者
+Array.value = function(e){//创建静态方法——快速不可配置版
+    console.log(e)
+}
 
 const testArr = new Array()
-testArr.test()
-Array.test('test2')
+testArr.test()//test1
+Array.test('test2')//test2
 ```
+
+###  New
+
+好的，接下来我们来讲讲`new`到底干了啥玩意。
+
+首先我们之前提到构造函数返回的一般是一个新创建的对象，但是也有特殊情况，若构造函数返回一个普通对象，那么new不再返回新构造的对象，而是返回这个普通对象。
+
+有点绕对吧，来看例子：
+
+```js
+function Special(){
+    return {
+        a:0,
+        f1:function(){
+            console.log(1)
+        }
+    }
+}
+
+function Normal(){}
+
+const special = new Special()
+const normal = new Normal()
+console.log(special,normal)//{a:0,f1:function(){console.log(1)}}  Normal
+console.log(special instanceof Special,normal instanceof Normal)//false true
+```
+
+我们使用`new`将一个给定的构造函数创建一个实例对象。`new`做了如下事情：
+
+- 创建一个新的对象
+
+- 将对象指向构造函数
+
+  > 所有对象都有一个`__proto__`专门用来指向构造函数，用于实现构造函数的属性和方法的继承
+
+- 将构造函数的this指向对象
+
+  > 使用`apply`函数实现换绑，同时调用Fun拿到一个返回值
+
+可以写成下面这样：
+
+```js
+function mynew(Fun,...args){//args用于接收构造函数的参数
+	const obj = {}
+    obj._proto_ = Fun.prototype
+    let result = Fun.apply(obj,args)
+    return result instanceof Object?result:obj;//用来处理特殊情况,如果返回普通函数就返回
+}
+```
+
+很好你已经学会什么是构造函数，构造函数的结构，如何用构造函数创建一个实例对象了，接下来学点难的。
+
+### 继承
+
+继承是面向对象中的一个概念，继承可以让子类具有父类的各种属性和方法，不需要再编写相同的代码，并且在子类别继承父类别的同时，可以重新定义某些属性、方法，获得不同的功能。
+
+属性和方法有不同的继承方式：
+
+构造函数继承（继承属性）
+
+```js
+function Parent(name) {  
+    this.name = name; // 设置name属性  
+}  
+
+function Child(name, age) {  
+    // 调用父类构造函数，初始化name属性  
+    Parent.call(this, name);  
+    this.age = age; // 设置子类特有的age属性  
+}  
+```
+
+
+
+> + 原型链继承（继承方法） 
+>
+>   ```js
+>   //写法一 每一个new Child，创建出来的每一个实例改变父类属性时都会影响到父类。
+>   Child.prototype = new Parent();
+>   //写法二 创建原型链继承的现代方法
+>   Child.prototype = Object.create(Parent.prototype)
+>   Child.prototype.constructor = Child
+>   ```
+
+### 原型及原型链
+
+JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
+
+> **什么是对象的属性：**
+>
+> 对象的属性是用来描述对象状态或者特征的，属性可以包含各种各样的数据，可以是基本数据也可以是函数、对象等，每个属性都有一个键值对。
+
+也就是说，这些属性和方法是定义在object的构造函数的`prototype`而非实例本身。
+
+实例通过`_proto_`属性上溯原型链，每个原型都有`prototype`，而`prototype`又有`constructor`属性来指向该原型（`constructor`主要就是用于指向确认该原型）
 
 ### 深拷贝和浅拷贝的区别
 
@@ -672,69 +824,6 @@ Array.test('test2')
 > return cloneObj;
 > }
 > ```
-
-### New
-
-我们使用new将一个给定的构造函数创建一个实例对象。new做了如下事情：
-
-+ 创建一个新的对象
-+ 将对象与构造函数用原型链连起来
-+ 将构造函数的this指向对象（改变this指向的方法之一）
-
-> **手写new：**
->
-> ```js
-> function mynew(Fun,...args){
-> 	const obj = {}
->  obj._proto_ = Fun.prototype
->  let result = Fun.apply(obj,args)
->  return result instanceof Object?result:obj;
-> }
-> ```
-
-### 原型及原型链
-
-JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
-
-> **什么是对象的属性：**
->
-> 对象的属性是用来描述对象状态或者特征的，属性可以包含各种各样的数据，可以是基本数据也可以是函数、对象等，每个属性都有一个键值对。
-
-也就是说，这些属性和方法是定义在object的构造函数的`prototype`而非实例本身。
-
-实例通过`_proto_`属性上溯原型链，每个原型都有`prototype`，而`prototype`又有`constructor`属性来指向该原型（`constructor`主要就是用于指向确认该原型）
-
-### 继承
-
-继承是面向对象中的一个概念，继承可以让子类具有父类的各种属性和方法，不需要再编写相同的代码，并且在子类别继承父类别的同时，可以重新定义某些属性、方法，获得不同的功能。
-
-> **JS常见的继承方式：**
->
-> + 原型链继承（继承方法） 
->
->   ```js
->   //写法一 每一个new Child，创建出来的每一个实例改变父类属性时都会影响到父类。
->   Child.prototype = new Parent();
->   //写法二 创建原型链继承的现代方法
->   Child.prototype = Object.create(Parent.prototype)
->   Child.prototype.constructor = Child
->   ```
->
-> + 构造函数继承（继承属性）
->
->   ```JS
->   function Parent(name) {  
->       this.name = name; // 设置name属性  
->   }  
->   
->   function Child(name, age) {  
->       // 调用父类构造函数，初始化name属性  
->       Parent.call(this, name);  
->       this.age = age; // 设置子类特有的age属性  
->   }  
->   ```
-
-
 
 ## JavaScript - Type
 

@@ -5,6 +5,7 @@ tags:
 categories: 随笔
 excerpt: 面试问题集合
 date: 2024-08-31 16:17:29
+sticky: 100
 ---
 
 # 面试技巧

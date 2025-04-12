@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://taskmanagerol.github.io/Blog/2024/04/30/MiniProgram/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2024/04/22/Network/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2024/01/30/Nginx/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2024/03/25/Pinia/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Postman/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taskmanagerol.github.io/Blog/2024/01/30/Problem/</loc>
     
     <lastmod>2025-04-12</lastmod>
@@ -29,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/11/13/Vue.Config/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://taskmanagerol.github.io/Blog/2024/01/30/TypeScript/</loc>
     
     <lastmod>2025-04-12</lastmod>
@@ -47,7 +83,52 @@
   </url>
   
   <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/11/13/Vue.Config/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Vue/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/ES6/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2024/07/01/Eventstorm/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Git/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/HTML/</loc>
     
     <lastmod>2025-04-12</lastmod>
     
@@ -110,61 +191,7 @@
   </url>
   
   <url>
-    <loc>https://taskmanagerol.github.io/Blog/2024/04/30/MiniProgram/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2024/04/22/Network/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2024/01/30/Nginx/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2024/03/25/Pinia/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Postman/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Ajax/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2024/04/08/Amap/</loc>
     
     <lastmod>2025-04-12</lastmod>
     
@@ -191,43 +218,16 @@
   </url>
   
   <url>
+    <loc>https://taskmanagerol.github.io/Blog/2024/04/08/Amap/</loc>
+    
+    <lastmod>2025-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taskmanagerol.github.io/Blog/2023/07/21/Canvas/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/ES6/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2024/07/01/Eventstorm/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Git/</loc>
-    
-    <lastmod>2025-04-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/HTML/</loc>
     
     <lastmod>2025-04-12</lastmod>
     

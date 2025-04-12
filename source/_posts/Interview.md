@@ -511,7 +511,17 @@ JS中所有任务都可以分为同步任务和异步任务。其中异步任务
 
 ### 防抖和节流
 
-
+```js
+var debounce = function(fn, t) {
+    let timer = setTimeout(()=>{},t)
+    return async function(...args) {
+        clearTimeout(timer)
+        timer = setTimeout(()=>{
+            return fn(...args)
+        },t)
+    }
+};
+```
 
 ### 大文件上传
 
@@ -752,21 +762,24 @@ function mynew(Fun,...args){//args用于接收构造函数的参数
 
 继承是面向对象中的一个概念，继承可以让子类具有父类的各种属性和方法，不需要再编写相同的代码，并且在子类别继承父类别的同时，可以重新定义某些属性、方法，获得不同的功能。
 
-属性和方法有不同的继承方式：
+属性和方法有不同的继承方式（原因下面会解释）：
 
 构造函数继承（继承属性）
 
 ```js
-function Parent(name) {  
-    this.name = name; // 设置name属性  
-}  
-
-function Child(name, age) {  
-    // 调用父类构造函数，初始化name属性  
-    Parent.call(this, name);  
-    this.age = age; // 设置子类特有的age属性  
-}  
+function Parent() {
+    this.name = 'P'
+}
+function Children() {
+    Parent.call(this)
+    this.value = 'C'
+}
+const test = new Children()
+const test2 = new Parent()
+console.log(test,test2);//Children {name: 'P', value: 'C'} Parent {name: 'P'}
 ```
+
+> 不知道你会不会好奇`call`改变了`this`的指向，为什么还能获取到`Parent`的`name`，因为`call`只是临时改变了`Parent`的上下文，不改变他的定义。
 
 原型链继承（继承方法） 
 
@@ -778,19 +791,35 @@ Child.prototype = Object.create(Parent.prototype)
 Child.prototype.constructor = Child
 ```
 
-### 原型及原型链
+对于写法一：
 
-> 不要使用call()来链式调用构造函数（例如，实现继承）。这会将构造函数作为普通函数调用，这意味着new.target的值为undefined，而类会抛出错误，因为它们不能在没有new的情况下被调用。请改用Reflect.construct()或extends。
+如果 `Parent `的构造函数中有依赖于 `this`的逻辑，可能会导致意外行为。
 
-JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
+当构造函数的 `prototype `和实例自身的属性有同名属性时，实例对象会优先访问自身的属性，而不是原型链上的属性。这是因为`JavaScript`的属性查找机制会先在实例对象上查找，如果找不到才会沿着原型链向上查找。（这也是为什么属性和方法要分开继承）
 
-> **什么是对象的属性：**
->
-> 对象的属性是用来描述对象状态或者特征的，属性可以包含各种各样的数据，可以是基本数据也可以是函数、对象等，每个属性都有一个键值对。
+所以，当使用`Child.prototype = new Parent()`时，Parent的属性会被存入到Child的prototype中，但是如果Child构造函数自身拥有同名属性时，Child构造出来的实例会优先继承Child中的属性，但是Parent在构造原型链的时候已经被调用一次，这就有可能导致一些问题。
 
-也就是说，这些属性和方法是定义在object的构造函数的`prototype`而非实例本身。
+```js
+function Parent() {
+  console.log("Parent 构造函数被调用");
+  this.count = 0;
+}
+function Child() {
+  console.log("Child 构造函数被调用");
+}
+Child.prototype = new Parent();//Parent 构造函数被调用
+const childInstance = new Child();
+console.log(childInstance.count); // 输出 0
+//这里只是调用了一个log如果里面写入一些抽象逻辑，就会出bug。
+```
 
-实例通过`_proto_`属性上溯原型链，每个原型都有`prototype`，而`prototype`又有`constructor`属性来指向该原型（`constructor`主要就是用于指向确认该原型）
+对于写法二：
+
+首先构造函数的`prototype`中除了拥有继承的属性、方法之外还拥有一个特殊的属性`constructor`，这个函数用于指向其本身。这个属性的键为`constructor`，值为构造函数本身。
+
+`Child.prototype = Object.create(Parent.prototype)`目的是创建一个和Parent一模一样的构造函数Child。
+
+以上这一步做到了复制构造函数的原型对象，但是我们把constructor也给复制过来了，这时候就要改一下指向，将constructor指向构造函数本身，这么做的目的是为了防止后续的指向性问题。
 
 ### 深拷贝和浅拷贝的区别
 
@@ -801,42 +830,53 @@ JS中 每一个对象都有一个原型对象，当访问一个对象的属性�
 深拷贝则是开一个新的栈，基本类型的值也是拷贝字面量；但是如果是引用类型，值相同但是会有不同的内存地址。即深拷贝出来的对象不指向同一个内存地址。
 
 > eg.`JSON.stringify()`
->
-> ```js
-> //深拷贝
-> let obj1 = {name: 'A'}
-> const obj2 = JSON.parse(JSON.stringify(obj1));
-> obj1.name = 'B'
-> console.log(obj2); // {name: "A"}
-> 
-> //浅拷贝
-> var obj1 = {}
-> var obj2 = obj1;
-> obj2.name = 'B';
-> console.log(obj1.name); // "B"
-> ```
 
----
+简而言之：浅拷贝只复制其字面量不改变新值的内存地址（还是指向旧的值），深拷贝则会改变赋予一个新的内存地址。因为浅拷贝只会复制其字面量而不更改地址，当对新值进行修改时，旧的值也会被修改。但是由于基本数据类型是存在栈中的，而对象是存在堆中的。所以深拷贝是对于对象而言的。
 
-> **手写深拷贝：**
->
-> ```js
-> function deepClone(obj,hash = new WeakMap()){//用weakmap是因为垃圾回收策略，避免内存泄漏
-> if(typeof obj !== 'object'||obj === null)return obj//不是对象直接返回即可，深拷贝是对于对象而言的
-> if(obj instanceof Date)return new Date(obj)
-> if(obj instanceof RegExp)return new RegExp(obj)//日期、正则对象可以使用他们内置的拷贝构造函数
-> 
-> if(hash.has(obj))return hash.get(obj)//有了就返回
-> let cloneObj = new obj.constructor()//拿某个对象的原型对象构造出来的对象
-> hash.set(obj, cloneObj);//加到hash中
-> for (let key in obj) {//一层一层向下找
-> 	if (obj.hasOwnProperty(key)) {//如果不是继承的就进if
-> 		cloneObj[key] = deepClone(obj[key], hash);//递归拿到不是继承的属性的键
->      }
->  }
-> return cloneObj;
-> }
-> ```
+> 堆和栈的区别：栈`Stack`是一种后进先出的数据结构，栈中的内存由编译器自动分配和释放，不需要程序员手动管理。堆`Heap`是一种动态内存分配的区域，堆中的内存需要程序员手动分配。
+
+```js
+//深拷贝
+let obj1 = {name: 'A'}
+const obj2 = JSON.parse(JSON.stringify(obj1));
+obj1.name = 'B'
+console.log(obj2); // {name: "A"}
+
+//浅拷贝
+var obj1 = {}
+var obj2 = obj1;
+obj2.name = 'B';
+console.log(obj1.name); // "B"
+```
+
+**手写深拷贝：**
+
+```js
+function deepClone(obj,hash = new WeakMap()){//用weakmap是因为垃圾回收策略，避免内存泄漏
+    if(typeof obj !== 'object'||obj === null)return obj//不是对象直接返回即可，深拷贝是对于对象而言的
+    if(obj instanceof Date)return new Date(obj)
+    if(obj instanceof RegExp)return new RegExp(obj)//日期、正则对象可以使用他们内置的拷贝构造函数
+    if(hash.has(obj))return hash.get(obj)//有了就返回
+    let cloneObj = new obj.constructor()//拿某个对象的原型对象构造出来的对象
+    hash.set(obj, cloneObj);//加到hash中
+    for (let key in obj) {//一层一层向下找
+        if (obj.hasOwnProperty(key)) {//如果不是继承的就进if
+            cloneObj[key] = deepClone(obj[key], hash);//递归拿到不是继承的属性的键
+        }
+    }
+    return cloneObj;
+}
+```
+
+### 原型及原型链
+
+JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
+
+> 什么是对象的属性：对象的属性是用来描述对象状态或者特征的，属性可以包含各种各样的数据，可以是基本数据也可以是函数、对象等，每个属性都有一个键值对。
+
+也就是说，这些属性和方法是定义在object的构造函数的`prototype`而非实例本身。
+
+实例通过`_proto_`属性上溯原型链，每个原型都有`prototype`，而`prototype`又有`constructor`属性来指向该原型（`constructor`主要就是用于指向确认该原型）
 
 ## JavaScript - Type
 
@@ -1112,7 +1152,7 @@ Map对象保存键值对，并且可以记住键的原始插入顺序，任何�
 + `catch()`-promise对象以失败标志返回时，执行catch中的语句
 + `finally()`-promise对象最终一定执行此代码块中的语句
 
-# 杂项
+# 算法
 
 ## Hash算法
 

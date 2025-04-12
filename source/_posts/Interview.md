@@ -232,23 +232,23 @@ const getTwentyWidthArea = getArea(20)
 
 #### 创建私有变量
 
-> 立即调用函数表达式：一种编程模式，定义一个函数后立刻执行他。格式如下：
->
-> ```JS
-> (function () {
->   // 函数体
-> })(/* 传入的值 */);
-> 
-> (function () {
->   // 函数体
-> }(/* 传入的值 */));
-> 
-> (() => {
->   // 函数体
-> })(/* 传入的值 */);
-> ```
->
-> 私有方法/变量：面向对象编程的概念，指只能在定义它的类或者对象内部访问的方法。目的是封装代码逻辑（防止从外部直接调用或修改），提高代码安全性。就好像你要点火才能运行汽车，点火是公用方法，而里面的齿轮动是私有方法。
+立即调用函数表达式：一种编程模式，定义一个函数后立刻执行他。格式如下：
+
+```js
+(function () {
+// 函数体
+})(/* 传入的值 */);
+
+(function () {
+// 函数体
+}(/* 传入的值 */));
+
+(() => {
+// 函数体
+})(/* 传入的值 */);
+```
+
+私有方法/变量：面向对象编程的概念，指只能在定义它的类或者对象内部访问的方法。目的是封装代码逻辑（防止从外部直接调用或修改），提高代码安全性。就好像你要点火才能运行汽车，点火是公用方法，而里面的齿轮动是私有方法。
 
 ```JS
 const Counter = (() => {
@@ -275,115 +275,128 @@ console.log(Counter.add()); /* 输出2 */
 
 作用域链是指你需要调用变量的时候，会先从局部作用域寻找，一直往上直到全局作用域。
 
-> ### 全局作用域、函数作用域及块级作用域：
->
-> 全局作用域：不在任何函数或者大括号中声明的变量，可以在程序的任何位置访问。
->
-> 函数作用域：也叫局部作用域，是在函数内部声明的，不能在函数之外访问（除了闭包）
->
-> 块级作用域：ES6中引入了`let`&`const`，这两者只能在大括号内访问，大括号外不可以访问。
->
-> ```js
-> var globalValue = "1"
-> function test() {
->     var functionValue = "2"
-> }
-> test()
-> {
->     let blockValue = "3"
->  	log(blockValue)//"3"
-> }
-> 
-> log(globalValue)//"1"
-> log(functionValue)// 报错
-> log(blockValue)//报错
-> ```
+全局作用域：不在任何函数或者大括号中声明的变量，可以在程序的任何位置访问。
+
+函数作用域：也叫局部作用域，是在函数内部声明的，不能在函数之外访问（除了闭包）
+
+块级作用域：ES6中引入了`let`&`const`，这两者只能在大括号内访问，大括号外不可以访问。
+
+```js
+var globalValue = "1"
+function test() {
+ var functionValue = "2"
+}
+test()
+{
+ let blockValue = "3"
+	log(blockValue)//"3"
+}
+
+log(globalValue)//"1"
+log(functionValue)// 报错
+log(blockValue)//报错
+```
 
 ### this
 
 `this`是函数的一个运行时自动生成的内部对象，只能在函数内使用，指向最后调用它的对象。
 
-> **绑定规则：**
->
-> 优先级：new绑定优先级 > 显示绑定优先级 > 隐式绑定优先级 > 默认绑定优先级
->
-> + 默认绑定：全局对象会默认绑定，如果严格模式下，`this`会绑定到undefined。
->
->   ```js
->   window.name = 'Jenny';
->   function person() {
->       return this.name;
->   }
->   console.log(person());  //Jenny,调用函数的对象
->   ```
->
-> + 隐式绑定：函数作为对象的某个方法调用，`this`就指向这个对象
->
->   ```js
->   var o = {
->       a:10,
->       b:{
->           a:7,
->           fn:function(){
->               console.log(this.a); //undefined
->           }
->       }
->   }
->   o.b.fn();//7
->   var j = o.b.fn;
->   j();//this指向window
->   ```
->
-> + new绑定：如果用`new`构造函数生成一个实例对象，`this`指向此对象。
->
->   ```js
->   function test() {
->   　this.x = 1;
->   }
->   
->   var obj = new test();
->   obj.x // 1
->   //new过程遇到return一个对象，此时this指向为返回的对象
->   function fn()  
->   {  
->       this.user = 'xxx';  
->       return {};  
->   }
->   var a = new fn();  
->   console.log(a.user); //undefined
->   //如果返回一个简单类型的时候，则this指向实例对象
->   function fn()  
->   {  
->       this.user = 'xxx';  
->       return 1;
->   }
->   var a = new fn;  
->   console.log(a.user); //xxx
->   //注意的是null虽然也是对象，但是此时new仍然指向实例对象
->   function fn()  
->   {  
->       this.user = 'xxx';  
->       return null;
->   }
->   var a = new fn;  
->   console.log(a.user); //xxx
->   ```
->
-> + 显示修改：`apply` `call` `bind`这些方法作用是改变函数的调用方法。
->
->   ```js
->   var x = 0;
->   function test() {
->   　console.log(this.x);
->   }
->                                                             
->   var obj = {};
->   obj.x = 1;
->   obj.m = test;
->   obj.m.apply(obj) // 1
->   ```
+#### 绑定规则
+
+优先级：new绑定优先级 > 显示绑定优先级 > 隐式绑定优先级 > 默认绑定优先级
+
++ 默认绑定：全局对象会默认绑定，如果严格模式下，`this`会绑定到undefined。
+
+```js
+window.name = 'Jenny';
+function person() {
+    return this.name;
+}
+console.log(person());  //Jenny,调用函数的对象
+```
+
++ 隐式绑定：函数作为对象的某个方法调用，`this`就指向这个对象
+
+```js
+var o = {
+    a:10,
+    b:{
+        a:7,
+        fn:function(){
+            console.log(this.a); //undefined
+        }
+    }
+}
+o.b.fn();//7
+var j = o.b.fn;
+j();//this指向window
+```
+
++ new绑定：如果用`new`构造函数生成一个实例对象，`this`指向此对象。
+
+```js
+function test() {
+　this.x = 1;
+}
+
+var obj = new test();
+obj.x // 1
+//new过程遇到return一个对象，此时this指向为返回的对象
+function fn()  
+{  
+    this.user = 'xxx';  
+    return {};  
+}
+var a = new fn();  
+console.log(a.user); //undefined
+//如果返回一个简单类型的时候，则this指向实例对象
+function fn()  
+{  
+    this.user = 'xxx';  
+    return 1;
+}
+var a = new fn;  
+console.log(a.user); //xxx
+//注意的是null虽然也是对象，但是此时new仍然指向实例对象
+function fn()  
+{  
+    this.user = 'xxx';  
+    return null;
+}
+var a = new fn;  
+console.log(a.user); //xxx
+```
+
+显示修改：`apply` `call` `bind`这些方法作用是改变函数的调用方法。
+
+```js
+var x = 0;
+function test() {
+　console.log(this.x);
+}
+
+var obj = {};
+obj.x = 1;
+obj.m = test;
+obj.m.apply(obj) // 1
+```
 
 箭头函数的`this`在代码书写编译时就已经绑定，会捕获其定义时的词法作用域中的 `this`
+
+### apply&call&bind
+
+都是改变this的指向的方法，位于`Function`构造函数的`prototype`属性上，用法都是`Fn1.apply(Fn2,...args)`,其中Fn1&Fn2均为构造函数，但是也有些许不同：
+
+```js
+apply(thisArg, argsArray)
+call(thisArg, arg1, arg2,/* …, */ argN)
+bind(thisArg, arg1, arg2,/* …, */ argN)
+```
+
+apply作用于args接收数组同时给构造函数中传入数组，call的args接收的是值，这两个方法都返回Fn1执行后的返回值。
+bind在函数接收方面和call一样，但是他会返回被绑定的函数Fn1，而且不执行Fn1
+
+怎么记忆呢：apply的开头是a 记成array；call和bind都是四个字符 接受一样的；bind有绑定的有意思，就是先绑定不用。
 
 ### 事件与事件模型
 
@@ -755,19 +768,19 @@ function Child(name, age) {
 }  
 ```
 
+原型链继承（继承方法） 
 
-
-> + 原型链继承（继承方法） 
->
->   ```js
->   //写法一 每一个new Child，创建出来的每一个实例改变父类属性时都会影响到父类。
->   Child.prototype = new Parent();
->   //写法二 创建原型链继承的现代方法
->   Child.prototype = Object.create(Parent.prototype)
->   Child.prototype.constructor = Child
->   ```
+```js
+//写法一 每一个new Child，创建出来的每一个实例改变父类属性时都会影响到父类。
+Child.prototype = new Parent();
+//写法二 创建原型链继承的现代方法
+Child.prototype = Object.create(Parent.prototype)
+Child.prototype.constructor = Child
+```
 
 ### 原型及原型链
+
+> 不要使用call()来链式调用构造函数（例如，实现继承）。这会将构造函数作为普通函数调用，这意味着new.target的值为undefined，而类会抛出错误，因为它们不能在没有new的情况下被调用。请改用Reflect.construct()或extends。
 
 JS中 每一个对象都有一个原型对象，当访问一个对象的属性的时候，JS不仅会在对象上寻找，还会搜索该对象的原型，以及该对象原型的原型（这叫做原型链）直到匹配或者到达原型链的末尾。
 

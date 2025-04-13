@@ -497,18 +497,86 @@ str instanceof String // false
 
 ### 事件循环
 
-JS中所有任务都可以分为同步任务和异步任务。其中异步任务还可以分为微任务和宏任务。
+JS运行时需要执行同步和异步的任务，而事件循环是管理异步任务执行的核心机制。
 
-> **微任务和宏任务：**
+> 栈与队列：栈结构遵循后进先出，队列结构遵循先进先出。
+
+对于同步任务，JS调用栈；而对于异步任务，JS执行任务队列。
+
+异步任务中包含着微任务和宏任务，接下来我们做一些简单的介绍。
+
+**宏任务**在事件循环中的每一轮按照顺序进行，而**微任务**则是在当前宏任务执行完毕后，下一个宏任务开始前立即执行。
+
+> 当前宏任务是指微任务被包裹的那个宏任务：
 >
-> + 微任务：一个需要异步执行的函数，执行时机是在当前主函数执行结束后，宏任务结束之前。例如：Promise.then、Process.nextTick
-> + 宏任务：常见的宏任务有：setTimeout/setInterval、I/O
+> ```js
+> setTimeout(()=>{
+>     Promise.resolve().then(()=>console.log(1))
+> })
+> ```
 
 ---
 
-> **async和await：**
+> 宏任务常见API：`setTimeout/setInterval`、`I/O 操作(比如文件的读写&网络的请求)`、`DOM 事件(点击/滚动事件等)`，另外值得一提的是，主线程也是一个宏任务！
 >
-> async函数会返回一个promise对象，await会将其后的代码化为微任务。
+> 微任务常见API：`Promise.then/catch/finally`、`process.nextTick(Node环境)`、`queueMicrotask手动添加微任务`
+
+```js
+console.log(1)
+setTimeout(() => {
+    console.log(2);
+    Promise.resolve().then(() => console.log(3))
+    setTimeout(() => {
+        console.log(4);
+    });
+});
+setTimeout(() => {
+    console.log(5);
+});
+Promise.resolve().then(()=>console.log(6))
+//1 6 2 3 5 4
+```
+
+以上例子可以理解为：
+
+先进入主线程遇到一个log语句，是同步任务，压入栈中并执行输出1然后弹出。然后遇到一个宏任务setTimeout，压入任务队列，又遇到一个宏任务setTimeout，再压入任务队列，遇到一个微任务压入微任务的任务队列。然后执行微任务队列输出6。
+
+第一个循环结束。
+
+读取宏任务队列，读到第一个setTimeout，开始执行其内部语句，遇到同步任务，压入栈中并执行输出2然后弹出。遇到一个微任务压入微任务的任务队列。遇到一个宏任务setTimeout，压入任务队列，然后执行微任务队列输出3。
+
+第二个循环结束。
+
+读取宏任务队列，读到第二个setTimeout，开始执行其内部语句，遇到同步任务，压入栈中并执行输出5然后弹出。
+
+第三个循环结束。
+
+读取宏任务队列，读到第三个setTimeout，开始执行其内部语句，遇到同步任务，压入栈中并执行输出4然后弹出。
+
+> 同步任务不是栈结构吗，为什么不是从下到上输出呢？
+>
+> 是这样的，栈结构的后进先出的出是指函数被执行完后就出栈。我们举个例子：
+>
+> ```js
+> function a() {
+>   console.log('In function a');
+>   b();  // 调用函数 b
+>   console.log('Back to function a');
+> }
+> function b() {
+>   console.log('In function b');
+> }
+> a();  // 调用函数 a
+> //In function a
+> //In function b
+> //Back to function a
+> ```
+>
+> 这个例子中a先进栈，然后执行调用b的时候b进栈，然后执行，b执行完了b出栈，这时候栈顶又变成了a，继续执行a，a出栈。（栈结构可以通过执行栈和函数调用上下文、返回地址记录执行b后应该返回到哪里，而不会重新执行a）
+
+async和await：
+
+async函数会返回一个promise对象，await会将其后的代码化为微任务。 
 
 ### 防抖和节流
 

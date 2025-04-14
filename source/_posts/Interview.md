@@ -574,23 +574,103 @@ Promise.resolve().then(()=>console.log(6))
 >
 > 这个例子中a先进栈，然后执行调用b的时候b进栈，然后执行，b执行完了b出栈，这时候栈顶又变成了a，继续执行a，a出栈。（栈结构可以通过执行栈和函数调用上下文、返回地址记录执行b后应该返回到哪里，而不会重新执行a）
 
-async和await：
+### async和await
+`async`和`await`是es8的语法糖，作用是让异步代码看起来更像是同步代码，从而提高代码可读性。
+`async`可以将一个函数标记为异步函数，异步函数返回一个`Promise`对象。值得一提的是，这个异步函数本身不是异步的。
+`await`用于暂停异步函数的执行，等待一个`Promise`解析完成。只能在`async`关键字中使用。
 
-async函数会返回一个promise对象，await会将其后的代码化为微任务。 
-
-### 防抖和节流
+> 在传统的代码中，异步操作会让代码有很多层嵌套，这样会非常难以维护。（这被称为回调地狱）`Promise`对象可以链式调用，从一定程度上解决了这个问题，但是如果很多异步任务的话，很多的`then`还是会让代码变得冗长。这个时候`async`语法糖就有用了。
 
 ```js
-var debounce = function(fn, t) {
-    let timer = setTimeout(()=>{},t)
-    return async function(...args) {
-        clearTimeout(timer)
-        timer = setTimeout(()=>{
-            return fn(...args)
-        },t)
-    }
-};
+function fetchData(callback) {
+  setTimeout(() => {
+    callback(null, "Data fetched successfully!");
+  }, 1000);
+}
+
+function processData(data, callback) {
+  setTimeout(() => {
+    callback(null, `Processed: ${data}`);
+  }, 1000);
+}
+
+function displayData(data, callback) {
+  setTimeout(() => {
+    callback(null, `Displaying: ${data}`);
+  }, 1000);
+}
+// 回调地狱示例
+fetchData((err, result) => {
+  if (err) return console.error(err);
+  console.log(result); // 输出: "Data fetched successfully!"
+
+  processData(result, (err, processedResult) => {
+    if (err) return console.error(err);
+    console.log(processedResult); // 输出: "Processed: Data fetched successfully!"
+
+    displayData(processedResult, (err, displayedResult) => {
+      if (err) return console.error(err);
+      console.log(displayedResult); // 输出: "Displaying: Processed: Data fetched successfully!"
+    });
+
+  });
+});
+// Promise 链式调用示例
+fetchData()
+  .then(result => {
+    console.log(result); // 输出: "Data fetched successfully!"
+    return processData(result);
+  })
+  .then(processedResult => {
+    console.log(processedResult); // 输出: "Processed: Data fetched successfully!"
+    return displayData(processedResult);
+  })
+  .then(displayedResult => {
+    console.log(displayedResult); // 输出: "Displaying: Processed: Data fetched successfully!"
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+// 使用 async/await 示例
+async function run() {
+  try {
+    const result = await fetchData();
+    console.log(result); // 输出: "Data fetched successfully!"
+    
+
+    const processedResult = await processData(result);
+    console.log(processedResult); // 输出: "Processed: Data fetched successfully!"
+    
+    const displayedResult = await displayData(processedResult);
+    console.log(displayedResult); // 输出: "Displaying: Processed: Data fetched successfully!"
+
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+run();
 ```
+
+### 防抖与节流
+防抖`debounce`和节流`throttle`是两种常见的优化技术，用于处理高频触发的事件。
+如果一个按钮同时有单双击事件，我们就会发现需要用到防抖。防抖的核心思想是：在最后一次触发事件后等待一定时间才执行函数，如果在等待时间内再次触发函数则重新等待。
+"""
+function debounce(func, delay) {
+  let timer;
+  return function(...args) {
+    const context = this; // 保存当前的 this 值
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(context, args); // 使用 apply 或 call 绑定 this
+    }, delay);
+  };
+}
+const button = document.getElementById('myButton');
+button.addEventListener('click', debounce(function() {
+  console.log('按钮被点击了', this); // this 指向 button 元素
+}, 300));
+
+"""
 
 ### 大文件上传
 

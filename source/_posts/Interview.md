@@ -653,24 +653,35 @@ run();
 
 ### 防抖与节流
 防抖`debounce`和节流`throttle`是两种常见的优化技术，用于处理高频触发的事件。
-如果一个按钮同时有单双击事件，我们就会发现需要用到防抖。防抖的核心思想是：在最后一次触发事件后等待一定时间才执行函数，如果在等待时间内再次触发函数则重新等待。
-"""
+如果一个按钮同时有单双击事件，我们就会发现需要用到防抖。
+
+防抖的核心思想是：在最后一次触发事件后等待一定时间才执行函数，如果在等待时间内再次触发函数则重新等待。
+
+节流的核心思想是在规定时间间隔内，函数最多只执行一次，无论事件触发了多少次。
+
+```js
+//防抖
 function debounce(func, delay) {
   let timer;
   return function(...args) {
-    const context = this; // 保存当前的 this 值
     clearTimeout(timer);
     timer = setTimeout(() => {
-      func.apply(context, args); // 使用 apply 或 call 绑定 this
+      func.apply(this, args); // 使用 apply 或 call 绑定 this
     }, delay);
   };
 }
-const button = document.getElementById('myButton');
-button.addEventListener('click', debounce(function() {
-  console.log('按钮被点击了', this); // this 指向 button 元素
-}, 300));
-
-"""
+//节流
+function throttle(func, delay) {
+  let lastTime = 0;
+  return function(...args) {
+    const now = Date.now();
+    if (now - lastTime >= delay) {
+      func.apply(this, args);
+      lastTime = now;
+    }
+  };
+}
+```
 
 ### 大文件上传
 

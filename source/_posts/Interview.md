@@ -1179,6 +1179,19 @@ obj2.name = "1";
 console.log(obj1.name); // 1
  ```
 
+### BigInt
+
+JS为了处理大整数，提供了一个原生的数据类型`BigInt`。
+
+下面是创建的两个方法：
+
+```js
+let bigInt1 = BigInt(123456789123456789)//用BigInt包裹
+let bigInt2 = 1234567981324697n //在末尾加n
+```
+
+`BigInt`类型只能和同类型做运算。
+
 ### Iterator
 
 #### 迭代器生成方式及使用方式

@@ -89,6 +89,8 @@ HR一般会在上午9点半左右以及下午两点左右打开邮箱，在上�
 >
 > ​	前者声明依赖的种类而后者决定实际安装的版本，使用`npm install`时就是根据package-lock.json进行安装。
 
+### MVVM
+
 ## JavaScript
 
 ### ECMA-262标准化语言规范

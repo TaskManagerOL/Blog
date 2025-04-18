@@ -24,7 +24,7 @@
 <meta property="og:description" content="面试问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-31T16:17:29.000Z">
-<meta property="article:modified_time" content="2025-04-18T09:11:41.778Z">
+<meta property="article:modified_time" content="2025-04-18T13:35:31.859Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          18k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          142 分钟
+          151 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-04-18T09:11:41+00:00
+                    本文最后更新于 2025-04-18T13:35:31+00:00
                   
                   
 
@@ -329,6 +329,33 @@
 <p>最近的项目是我自己写的一个TODO平台，前后端UI设计服务器部署都是我自己做的。之前有团队协作做过小程序项目，用过uniapp但最后在微信开发者平台开发的。</p>
 <p>大学期间也还做过不少其他项目，大部分是在比赛中做的，也拿到了例如网挑国奖的成绩。在学院里担任科技协会主席，逻辑清晰，善于沟通。</p>
 <p>以上就是我的大致情况，谢谢。</p>
+<h1 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="操作系统简介"><a href="#操作系统简介" class="headerlink" title="操作系统简介"></a>操作系统简介</h3><p>我接下来分点且尽可能简明介绍。</p>
+<p>操作系统是什么：他是一个管家，用来管理计算机的软硬件资源。</p>
+<p>操作系统的核心功能：</p>
+<ul>
+<li>处理器(CPU)管理：操作系统合理安排任务的执行顺序，让CPU能够高效地处理各种任务，避免冲突。</li>
+<li>内存管理：程序运行的时候需要操作系统分配合理的内存空间，也会回收内存。</li>
+<li>设备管理：管理外部设备。</li>
+<li>文件系统管理：操作系统提供了文件系统来存储和读取文件。</li>
+</ul>
+<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><p>举个例子吧：</p>
+<p>有一个商场，商场里有很多店，有麦当劳，有书店。但是商场里的店有限，因为一个店要占很大的位置。有一天书店跳闸了，但是麦当劳还有电做麦旋风。第二天书店被抢劫了，但是麦当劳还是能做麦旋风。</p>
+<p>上面这个例子中，店铺就是进程，他是资源分配的单位。店铺要占很大位置对应资源消耗大的特点，书店跳闸麦当劳不受影响对应隔离性的特点，抢劫对应安全性的特点。</p>
+<p>接着举例子：</p>
+<p>有一天，麦当劳收到一个麦旋风的订单，专送外卖员已经准备好了，但是麦旋风还没有做出来。我就吃不到麦旋风！！！</p>
+<p>这里的制作麦旋风、送外卖就是线程，他是程序的具体执行。从上面例子可以看出，线程之间是相互影响的。</p>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="OSI七层协议与TCP-IP四层协议"><a href="#OSI七层协议与TCP-IP四层协议" class="headerlink" title="OSI七层协议与TCP&#x2F;IP四层协议"></a>OSI七层协议与TCP&#x2F;IP四层协议</h3><p>OSI是开放系统互连参考模型，只是一个很常用的参考。</p>
+<p>OSI有应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。</p>
+<p>物理层：负责实际运输数据的物理媒介，确保数据信号能够在物理介质（如电线、光纤等）上传输。</p>
+<p>数据链路层：将物理层接收到的原始信号转换为数据帧，并进行错误检测和纠正，确保数据在相邻节点之间可靠地传输，同时利用 MAC 地址来标识不同的设备。</p>
+<p>网络层：通过 IP 地址来标识不同的网络和设备，选择合适的路径将数据包从源节点发送到目标节点，并进行路由选择和寻址。</p>
+<p>传输层：将数据分割成合适大小的段，并为每个段添加源端口和目的端口信息，以确保数据能够准确地发送到目标设备上的正确应用程序。同时，它还负责对数据进行错误检测和重传，保证端到端的可靠通信。</p>
+<p>会话层：负责建立、维护和管理通信双方之间的会话连接。它允许不同的应用程序之间进行对话，并确保会话的正常进行和有序结束。</p>
+<p>表示层：对数据进行加密、解密、压缩和解压缩等操作，确保数据在传输过程中的安全性和高效性，并将数据转换为适合应用程序使用的格式。</p>
+<p>应用层：为用户和应用程序提供各种网络服务和接口，如电子邮件、文件传输、网页浏览等。它是用户与网络进行交互的最直接的一层。</p>
+<p>有点麻烦，举个例子吧：</p>
+<p>你网购了一个墩墩鸡抱枕，客服**(应用层)<strong>收到你的你的订单，对产品进行打包</strong>(表示层)<strong>，客服和快递员沟通</strong>(会话层)<strong>要寄出你的墩墩鸡，快递驿站对收到的好多包裹进行打包贴标签</strong>(传输层)<strong>，确保不会弄混，接着通过当地的转运站寄出</strong>(网络层)<strong>，当地转运站到下一个转运站要走系统规划好的路</strong>(数据链路层)<strong>，都确定好之后你的货车开始发车</strong>(物理层)**。</p>
+<h3 id="HTTP-HTTPS"><a href="#HTTP-HTTPS" class="headerlink" title="HTTP HTTPS"></a>HTTP HTTPS</h3><p>HTTP是超文本传输协议</p>
 <h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><h3 id="VUE3项目目录结构"><a href="#VUE3项目目录结构" class="headerlink" title="VUE3项目目录结构"></a>VUE3项目目录结构</h3><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">| node_modules					</span><span class="hljs-literal">--</span><span class="hljs-comment">项目依赖</span><br><span class="hljs-comment">| public      					</span><span class="hljs-literal">--</span><span class="hljs-comment">公共文件夹</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| favicon</span><span class="hljs-string">.</span><span class="hljs-comment">ico				</span><span class="hljs-literal">--</span><span class="hljs-comment">网站图标</span><br><span class="hljs-comment">| src         	    			</span><span class="hljs-literal">--</span><span class="hljs-comment">源文件目录</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| assets					</span>    <span class="hljs-literal">--</span><span class="hljs-comment">静态文件</span><br><span class="hljs-comment">	</span><span class="hljs-literal">---</span><span class="hljs-comment">| utils				</span>    <span class="hljs-literal">--</span><span class="hljs-comment">工具类JS</span><br><span class="hljs-comment">	</span><span class="hljs-literal">---</span><span class="hljs-comment">| api				</span>    <span class="hljs-literal">--</span><span class="hljs-comment">接口类JS</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| components					</span><span class="hljs-literal">--</span><span class="hljs-comment">组件</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| router						</span><span class="hljs-literal">--</span><span class="hljs-comment">路由配置</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| store						</span><span class="hljs-literal">--</span><span class="hljs-comment">状态管理器</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| views						</span><span class="hljs-literal">--</span><span class="hljs-comment">视图文件，与路由结构对应</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| App</span><span class="hljs-string">.</span><span class="hljs-comment">vue					</span><span class="hljs-literal">--</span><span class="hljs-comment">根组件</span><br><span class="hljs-literal">---</span><span class="hljs-comment">| main</span><span class="hljs-string">.</span><span class="hljs-comment">js 					</span><span class="hljs-literal">--</span><span class="hljs-comment">入口文件</span><br><span class="hljs-comment">| index</span><span class="hljs-string">.</span><span class="hljs-comment">html					</span><span class="hljs-literal">--</span><span class="hljs-comment">入口html</span><br><span class="hljs-comment">| package</span><span class="hljs-string">.</span><span class="hljs-comment">json					</span><span class="hljs-literal">--</span><span class="hljs-comment">命令配置及依赖管理</span><br><span class="hljs-comment">| package</span><span class="hljs-literal">-</span><span class="hljs-comment">lock</span><span class="hljs-string">.</span><span class="hljs-comment">json				</span><span class="hljs-literal">--</span><span class="hljs-comment">依赖版本及更完整的依赖树</span><br><span class="hljs-comment">| README</span><span class="hljs-string">.</span><span class="hljs-comment">md						</span><span class="hljs-literal">--</span><span class="hljs-comment">说明文件</span><br><span class="hljs-comment">| vue</span><span class="hljs-string">.</span><span class="hljs-comment">config</span><span class="hljs-string">.</span><span class="hljs-comment">json 				</span> <span class="hljs-literal">--</span><span class="hljs-comment">代理、打包等配置文件</span><br></code></pre></td></tr></table></figure>
 
 <hr>

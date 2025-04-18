@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/JavaScript/</loc>
-    
-    <lastmod>2025-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/11/13/MITT/</loc>
-    
-    <lastmod>2025-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://taskmanagerol.github.io/Blog/2024/04/30/MiniProgram/</loc>
     
     <lastmod>2025-04-18</lastmod>
@@ -119,33 +101,6 @@
   </url>
   
   <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/CSS/</loc>
-    
-    <lastmod>2025-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/07/21/Canvas/</loc>
-    
-    <lastmod>2025-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/ES6/</loc>
-    
-    <lastmod>2025-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://taskmanagerol.github.io/Blog/2025/04/12/Electron/</loc>
     
     <lastmod>2025-04-18</lastmod>
@@ -218,6 +173,15 @@
   </url>
   
   <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/JavaScript/</loc>
+    
+    <lastmod>2025-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taskmanagerol.github.io/Blog/2023/06/24/Ajax/</loc>
     
     <lastmod>2025-04-18</lastmod>
@@ -237,6 +201,33 @@
   
   <url>
     <loc>https://taskmanagerol.github.io/Blog/2024/03/01/AutoHotKey/</loc>
+    
+    <lastmod>2025-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/CSS/</loc>
+    
+    <lastmod>2025-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/07/21/Canvas/</loc>
+    
+    <lastmod>2025-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taskmanagerol.github.io/Blog/2023/06/24/ES6/</loc>
     
     <lastmod>2025-04-18</lastmod>
     

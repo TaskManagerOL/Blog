@@ -91,6 +91,38 @@ HR一般会在上午9点半左右以及下午两点左右打开邮箱，在上�
 
 ### MVVM
 
+MVVM是啥意思捏。展开就是Model-View-ViewModel。我这里分别介绍一下：
+
+Model表示应用的数据存储、检索、操作。
+
+View负责显示用户的页面。
+
+ViewModel作为Model与View之间的桥梁。
+
+```vue
+<template>
+  <!-- 视图（View）层：展示用户界面并处理用户交互 -->
+  <div>
+    <h2>{{ counter }}</h2>
+    <button @click="incrementCounter">点击增加计数器</button>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+// 模型（Model）层：存储和管理数据
+const counter = ref(0);
+
+// 视图模型（ViewModel）层：处理数据和业务逻辑
+const incrementCounter = () => {
+  counter.value++;
+};
+</script>
+```
+
+
+
 ## JavaScript
 
 ### ECMA-262标准化语言规范
@@ -783,6 +815,26 @@ app.listen(3000, () => {
   console.log('服务器已启动：http://localhost:3000/ssr');
 });
 ```
+
+### Web中常见的攻击方式有哪些
+
+常见的一些攻击方式包括`XSS`、`CSRF`、`SQL注入`
+
++ `XSS`(跨脚本攻击)：浏览器无法区分input输入框中的是正常的用户输入还是代码，这就会造成一些特殊的输入被当作代码执行。
+
+  解决方法：正则限制、转义字符等...
+
++ `CSRF`(跨站请求伪造)：用户在访问a网站后，被诱导点击攻击网站，攻击网站向a网站发送请求，默认携带a的登录凭证，然后a就会以为用户在执行操作。
+
+  解决方法：双Token认证，同源检测...
+
++ `SQL注入`：将恶意的sql查询或添加语句添加到应用的输入参数中，入侵和破坏数据库。
+
+  解决方法：正则限制、转义字符等...
+
++ `ddos攻击`：向莫表服务器发送大量无意义的数据包，挤占网络带宽。
+
+  解决方法：对同IP限制请求速率等
 
 ## JavaScript - Prototype
 

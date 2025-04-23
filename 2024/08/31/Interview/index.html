@@ -24,7 +24,7 @@
 <meta property="og:description" content="面试问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-31T16:17:29.000Z">
-<meta property="article:modified_time" content="2025-04-22T14:17:53.629Z">
+<meta property="article:modified_time" content="2025-04-23T08:16:05.588Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          22k 字
+          23k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          187 分钟
+          193 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-04-22T14:17:53+00:00
+                    本文最后更新于 2025-04-23T08:16:05+00:00
                   
                   
 
@@ -512,6 +512,8 @@
 <td></td>
 </tr>
 </tbody></table>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="生命周期-1"><a href="#生命周期-1" class="headerlink" title="生命周期"></a>生命周期</h3><p>React的生命周期包含三个阶段：创建、更新、卸载。</p>
+<h4 id="创建阶段"><a href="#创建阶段" class="headerlink" title="创建阶段"></a>创建阶段</h4><p>- </p>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="ECMA-262标准化语言规范"><a href="#ECMA-262标准化语言规范" class="headerlink" title="ECMA-262标准化语言规范"></a>ECMA-262标准化语言规范</h3><blockquote>
 <h3 id="ECMAScript和Javascript的区别"><a href="#ECMAScript和Javascript的区别" class="headerlink" title="ECMAScript和Javascript的区别:"></a>ECMAScript和Javascript的区别:</h3><p>​	ECMAScript是JavaScript的核心语言规范，而JavaScript则是基于这些规范的具体实现，包含了更多的功能和API，以便在浏览器和其他环境中运行。</p>
 </blockquote>
@@ -1115,6 +1117,20 @@
 </li>
 <li><p>nexttick有没有了解？</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">原答：在执行生命周期的时候，他不是会根据数据的改变而反复渲染页面吗，如果有一个循环让他一直更新，那DOM是受不了的。nextTick是让他在更新好之后再进行渲染的。<br><br>修正：我们先把<span class="hljs-built_in">tick</span>是什么了解一下，事件循环中每一个循环就称为一个<span class="hljs-built_in">tick</span>，一个<span class="hljs-built_in">tick</span>结束后，vue会把更改的数据渲染到页面上，如果我们需要在DOM渲染后执行一个回调函数，那么就用nexttick。<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2025-4-23迈步科技"><a href="#2025-4-23迈步科技" class="headerlink" title="2025.4.23迈步科技"></a>2025.4.23迈步科技</h2><p>因为我忘记录音了，只记得一些我稍微答得含糊或没答到面试官期望点上的问题。</p>
+<ul>
+<li><p>懒加载是怎么实现的？</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs arcade">原答：比如我们有六十条数据，每一次都先和服务端拿一定数量的数据比如五条，然后每次我们滑动到页面底部的时候就再和服务端拿五条数据。<br><br>修正：延迟加载 + 视口监听<br>	首先每次都渲染少量数据，每次进入视口的时候就再加载。<br>	视口监听一般用下面两种方法去做：<br>		使用 <span class="hljs-built_in">Intersection</span> Observer API（现代化解决方案）<br>		使用滚动监听，获取元素距离顶部高度、滚动距离、视口高度、元素高度，计算判断是否进入视口。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>前端存储用那些？</p>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig">原答：我用过<span class="hljs-string">cookie</span>、<span class="hljs-string">localstorage</span>、<span class="hljs-string">sessionstorage</span>。<span class="hljs-string">cookie</span>是服务端返回数据的时候请求头带有一个<span class="hljs-built_in">set-cookie，浏览器会自动存储带有的cookie。localstorage在前端设定会存储到浏览器中，如果刷新页面也不会消失。sessionstorage则是刷新页面会消失。</span><br><br>修正：（面试官觉得我存储用得少了）除了以上存储，还有一些，以下列举：<br>	<span class="hljs-string">IndexedDB</span>：持存储大量结构化数据，容量通常为 <span class="hljs-string">50MB</span> 以上，甚至可以存储几乎无限量的数据。它是一个低级 <span class="hljs-string">API</span>，提供了更强大的功能，如事务处理和索引，支持异步操作，不会阻塞用户界面，可存储和检索几乎任何类型的 <span class="hljs-string">JavaScript</span> 对象。适合存储大规模的结构化数据，如用户文件、离线数据、上万条数据等，适用于需要离线访问和复杂查询的 <span class="hljs-string">Web</span> 应用。<br>	<span class="hljs-string">Cache</span> <span class="hljs-string">Storage</span>：是一种在浏览器中缓存资源文件的存储方式，允许开发者将网站所需的资源（如 <span class="hljs-string">HTML</span>、<span class="hljs-string">CSS</span>、<span class="hljs-string">JavaScript</span>、图像等）保存在客户端的缓存中，以便在离线时仍然能够访问网站，并提供更快的加载速度和更好的用户体验。在 <span class="hljs-string">PWA</span>（<span class="hljs-string">Progressive</span> <span class="hljs-string">Web</span> <span class="hljs-string">App</span>）中应用广泛，适合用于缓存资源文件，实现离线访问和提高页面加载速度。<br>	<span class="hljs-string">File</span> <span class="hljs-string">System</span> <span class="hljs-string">API</span>：允许 <span class="hljs-string">Web</span> 应用直接操作浏览器的文件系统，适合存储大量二进制文件，如图像、音频、视频等。可用于文件管理器、离线文件编辑器等应用，但目前仅支持部分浏览器，如 <span class="hljs-string">Chrome</span>，且需要用户授权才能使用。<br>	更多的我就不列举了。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Vue你使用的pinia，react有类似的库吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：redux库是用于组件间传值的，但是具体我不是很了解。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>前端的加密有哪些？</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">原答：用过JWT实现<span class="hljs-built_in">token</span>加密。<br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 

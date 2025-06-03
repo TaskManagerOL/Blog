@@ -319,7 +319,7 @@ React的生命周期包含三个阶段：创建、更新、卸载。
 
 #### 创建阶段
 
-- 
+
 
 
 
@@ -2115,12 +2115,16 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
 
   ```
   原答：redux库是用于组件间传值的，但是具体我不是很了解。
+  
+  修正：redux是一种用于构建用户界面状态管理的开源 JavaScript 库，主要用于管理应用程序中的全局状态。其中使用createStore传入一个reducer函数（可传入初始state和action），内置相关判断逻辑（比如switch case 判断action.type后执行操作）。提供两个钩子函数，通过调用useSelector读取state，通过调用useDispatch传入action类别进行操作。
   ```
 
 + 前端的加密有哪些？
 
   ```
   原答：用过JWT实现token加密。
+  
+  修正：对称加密AES，非对称加密RSA（证书），SSL/TLS（HTTPS协议）。
   ```
-
+  
   

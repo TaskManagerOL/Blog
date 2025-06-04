@@ -24,7 +24,7 @@
 <meta property="og:description" content="面试问题集合">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-31T16:17:29.000Z">
-<meta property="article:modified_time" content="2025-06-03T14:19:19.235Z">
+<meta property="article:modified_time" content="2025-06-04T14:45:23.935Z">
 <meta property="article:author" content="TaskManagerOL">
 <meta property="article:tag" content="😶‍🌫️">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          23k 字
+          25k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          194 分钟
+          206 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-06-03T14:19:19+00:00
+                    本文最后更新于 2025-06-04T14:45:23+00:00
                   
                   
 
@@ -322,13 +322,6 @@
 <p>（发送微信和电话）</p>
 </blockquote>
 <p>若还是已读不回，应该是不合适了，如果还是很想投的话可以考虑找到HR电话致电。</p>
-<h2 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h2><p>面试官您好，很荣幸参加本次面试。</p>
-<p>我叫xxx，今天来面试贵司的前端开发实习生岗位，接下来我做一个简单的自我介绍。</p>
-<p>我是xx届的毕业生，就读xx大学的计算机与信息安全学院，在大学期间自学了Web前端及其相关技能。大一下学期的时候在xxxxx找到一份前端开发的线上实习。</p>
-<p>在实习的时候，主要使用的技术栈和工具就是vue3+element plus，工作内容就是和其他前端一起写前端页面，我是负责写数据管理等页面或者组件，然后通过git平台上传整合，周期交任务写报告之类的，积攒了不少经验。</p>
-<p>最近的项目是我自己写的一个TODO平台，前后端UI设计服务器部署都是我自己做的。之前有团队协作做过小程序项目，用过uniapp但最后在微信开发者平台开发的。</p>
-<p>大学期间也还做过不少其他项目，大部分是在比赛中做的，也拿到了例如网挑国奖的成绩。在学院里担任科技协会主席，逻辑清晰，善于沟通。</p>
-<p>以上就是我的大致情况，谢谢。</p>
 <h1 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="操作系统简介"><a href="#操作系统简介" class="headerlink" title="操作系统简介"></a>操作系统简介</h3><p>我接下来分点且尽可能简明介绍。</p>
 <p>操作系统是什么：他是一个管家，用来管理计算机的软硬件资源。</p>
 <p>操作系统的核心功能：</p>
@@ -1130,6 +1123,102 @@
 </li>
 <li><p>前端的加密有哪些？</p>
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gauss">原答：用过JWT实现<span class="hljs-built_in">token</span>加密。<br><br>修正：对称加密AES，非对称加密RSA（证书），SSL/TLS（HTTPS协议）。<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2025-4-25钛动"><a href="#2025-4-25钛动" class="headerlink" title="2025.4.25钛动"></a>2025.4.25钛动</h2><ul>
+<li><p>个人介绍</p>
+</li>
+<li><p>问我在上家公司解决什么比较突出的问题。</p>
+<ul>
+<li><p>Antv库年久失修是什么问题还有印象吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">原答：好像是某个图表的问题，记不清了。<br><br>修正：他的文档有很多不清晰的地方，它本身给出的一些比如画布，有一些属性是没有写清晰的。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>按钮同时可以单击双击，防抖是怎么实现的？</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：对单击进行类似防抖的操作，<span class="hljs-attribute">Gap</span>之后触发单击事件，<span class="hljs-attribute">Gap</span>内点了两次，则触发双击事件。<br><br>修正：（确实，这应该不属于防抖，防抖是同一个操作<span class="hljs-attribute">Gap</span>内被执行了则会重置。）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>log文件进行大文件上传？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：（参考大文件上传，同样回答，挺好的）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Promise.all 100个分片可以同时上传100个吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">原答：好像不行吧，没试过传这么多的。<br><br>修正：浏览器通常会对并发网络请求的数量进行限制。例如，大多数现代浏览器会限制同一个域名下的最大并发网络请求数量，通常在6到8个左右。如果超出这个限制，超出的任务会被放入队列等待，而不是真正并行执行。网络带宽和服务器的处理能力也会影响实际的并发能力。如果服务器端的并发处理能力有限，可能会导致部分请求被拒绝。<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>TaskList相关问题</p>
+<ul>
+<li><p>响应式怎么做的？</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs aspectj">原答：简单的响应式用<span class="hljs-meta">@media</span>，复杂一点的就写JS。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>主题是怎么做的？</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：CSS里面可以使用<span class="hljs-selector-pseudo">:root</span>伪类选择器中命名CSS变量，然后对应的元素可以使用<span class="hljs-selector-tag">var</span>(变量名)进行引用，每次只需要改变root里面的样式就可以了。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>如果主题色中的颜色是碰撞的，比如背景主题同时有两种颜色你该怎么解决呢？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：不太懂怎么解决。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>你了解过策略模式吗，其他的设计模式了解过吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：不了解。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>登录全流程？</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gauss">原答：首先注册，前端输入邮箱发送验证码，后端使用SMTP协议发送邮件，验证码生成一个随机六位数字。验证码有<span class="hljs-number">60</span>s的冷却，前后端都有<span class="hljs-number">60</span>s的计时禁止点击/发送。然后到登录，输入密码账号登录，服务端会返回一个cookie表示现在已经暂时登录了，如果这是你第一次登录的话还会返回一个<span class="hljs-built_in">token</span>用于获取用户的信息，cookie是用来持久化登录的，<span class="hljs-built_in">token</span>是用来获取用的信息。下一次登录用户浏览器cookie会表明用户最近已经登录，实现持久化登录，<span class="hljs-built_in">token</span>使用JWT加密。<br><br><span class="hljs-comment">//听过token自动刷新吗？</span><br><br>原答：好像不太了解<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>有做权限控制吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：有一点点，有做路由守卫，拿一下用户的邮箱就可以控制进不去了。<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Perfect Studio相关问题</p>
+<ul>
+<li><p>白屏优化怎么实现的？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：因为是摄影的，有很多图片。首页进去先路由到一个骨架图，同时等待一定时间之后再把页面图片显示出来。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>懒加载怎么实现？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：原本要显示的图片可能有100多张200多张，我窗口就只显示7 8张，然后每次监测到滑动到窗口底部就触发加载并到数组中。<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>CSS</p>
+<ul>
+<li><p>小程序样式上的问题，适配？</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：有某种机型不适配某种圆角按钮，苹果机的<span class="hljs-selector-tag">input</span>属性好像监测不到keydown和keyup。大概就这么多。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>CSS垂直居中？</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">原答：一般<span class="hljs-attribute">flex</span>解决，还有就是给这个元素的父元素设置绝对，这个元素设置相对，<span class="hljs-attribute">top</span>、<span class="hljs-attribute">left</span>、<span class="hljs-attribute">bottom</span>、<span class="hljs-attribute">right</span>设置为<span class="hljs-number">0</span>即可。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>flex有对某个子项进行特别处理的，你有了解过吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：之前用过但是现在忘了。<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>JS</p>
+<ul>
+<li><p>数据类型？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">原答：（详见数据类型）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>判断数据类型？</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs typescript">原答：可以使用<span class="hljs-keyword">type</span> <span class="hljs-keyword">of</span><br><br><span class="hljs-comment">//有什么类型他判断不了吗</span><br><br>原答：<span class="hljs-literal">null</span>和<span class="hljs-literal">undefined</span>吧<br><br><span class="hljs-comment">//可以再看看，还有什么？</span><br><br>原答：<span class="hljs-keyword">instanceof</span> 吧<br><br><span class="hljs-comment">//这边要回去再看一下哈</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>TS使用过他的一些什么特性？</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs 1c">原答：用过尖括号判断类型<br><br><span class="hljs-comment">//泛型你知道吗，类型工具你知道吗</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>异步编程了解吗？</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arduino">原答：JS是单线程的，比如我们有时候需要定时器之类的，就是异步了。异步是通过事件循环去实现的，我们平时写的常见代码是同步类型的，异步任务中又分微任务和宏任务，promise.then就是微任务，setTimeout就是宏任务，微任务会在下一个宏任务执行之前执行。微任务和宏任务要进队列的，普通的同步任务是进堆的。<br><br><span class="hljs-comment">//为啥JS是单线程的？</span><br><br>原答：不太了解<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>异步任务我们一般使用什么去捕捉状态？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">原答：一般使用promise去捕捉，使用resolve和reject确定成功失败，然后用.then和.<span class="hljs-keyword">catch</span>去执行成功和失败后的操作。<br><br><span class="hljs-comment">//除了reject 还有什么情况会进catch？</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>还了解Promise的什么静态方法？</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arcade">原答：Promise.<span class="hljs-built_in">all</span>吧，并发执行里面的所有任务，全部成功执行then，返回顺序是里面数组的顺序。<br><br><span class="hljs-comment">//和allSatter有什么区别？</span><br><br>原答：记不太清了。<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Vue</p>
+<ul>
+<li><p>响应式原理？</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">原答：里面是<span class="hljs-built_in">ref</span> reactive去实现响应式的，原理是使用proxy去构造<span class="hljs-built_in">ref</span>和reative的，一般会进行双向绑定，如果视图更新的话，模型也会更新的，双向更新。<br><br><span class="hljs-comment">//视图是怎么追踪的</span><br><br>原答：视图对每个需要追踪的元素都有监视器，如果有改变的话就会触发一个中间的工具，去通知响应式数据更新。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>$nexttick了解吗？</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">原答：vue有生命周期嘛，然后我们对某些数据进行更改嘛，有些东西我们可能需要渲染之后再去拿，这时候就用nexttick。<br><span class="hljs-comment"></span><br><span class="hljs-comment">//为什么会有这个间隔呢？</span><br><br>原答：因为每次dom渲染都会有个<span class="hljs-built_in">tick</span>，如果我们一更新数据就更新页面的话，消耗量会特别大。vue有一个虚拟dom，每次改变数据都会改变虚拟dom，等你更新完了再通过虚拟dom改变真实dom，所以有<span class="hljs-built_in">tick</span>。<br><span class="hljs-comment"></span><br><span class="hljs-comment">//nexttick的底层，怎么实现知道吗？</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>v-if和v-show的区别？</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dart">原答：（详见v-<span class="hljs-keyword">if</span>和v-<span class="hljs-keyword">show</span>）<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>反问环节：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">建议？<br><br>从我问的问题来看，你有些原理还要去了解清楚，就差一点点。（🤕）项目还是有点单薄，很多都是工具上的应用，没有提了多少效之类的。得突出一些重难点，尤其现在对前端的要求不只是工具了，还要有原理和理解，比如你用某些工具具体量化出来提效多少。<br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 

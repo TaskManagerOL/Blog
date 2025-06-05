@@ -200,6 +200,217 @@ WebSocket，是一种网络传输协议，位于`OSI`模型的应用层。可在
 
 客户端和服务器只需要完成一次握手，两者之间就可以创建持久性的连接，并进行双向数据传输。
 
+# 设计模式
+
+设计模式是用于解决不同问题的方案，所以如果掌握设计模式，可以在遇到不同问题的时候，拿出对应的解决方案。
+
+## MVC
+
+## 模块模式
+
+## 工厂模式
+
+工厂模式是一种创建型设计模式，它提供了一种创建对象的最佳方式。在工厂模式中，创建对象的过程被抽象出来，使得我们在创建对象时不需要指定具体的类，而是通过一个共同的接口或者抽象类来实现。这种模式主要关注对象的创建逻辑，将对象的创建过程封装起来，使得客户端可以在不指定具体类的情况下创建对象。
+
+```js
+// 定义产品接口
+class Product {
+  constructor() {
+    this.name = 'Product';
+  }
+
+  getName() {
+    return this.name;
+  }
+}
+
+// 定义具体产品类
+class ConcreteProductA extends Product {
+  constructor() {
+    super();
+    this.name = 'ConcreteProductA';
+  }
+}
+
+class ConcreteProductB extends Product {
+  constructor() {
+    super();
+    this.name = 'ConcreteProductB';
+  }
+}
+
+// 定义工厂类
+class SimpleFactory {
+  static createProduct(type) {
+    let product;
+    switch (type) {
+      case 'A':
+        product = new ConcreteProductA();
+        break;
+      case 'B':
+        product = new ConcreteProductB();
+        break;
+      default:
+        product = new Product();
+    }
+    return product;
+  }
+}
+
+// 使用示例
+const productA = SimpleFactory.createProduct('A');
+console.log(productA.getName()); // 输出：ConcreteProductA
+
+const productB = SimpleFactory.createProduct('B');
+console.log(productB.getName()); // 输出：ConcreteProductB
+```
+
+优点是封装性好，扩展性高，复用性也好；缺点是需要添加新的产品对象的时候需要修改工厂类的代码。
+
+常见的实例：`写UI库的时候，创建不同类型的 UI 组件` `创建不同类型的对象实例`
+
+## 单例模式
+
+一种常见的设计模式，确保一个类只有一个实例，并提供一个全局访问点，这个唯一的实例共享给所有需要使用它的组件。
+
+在需要全局共享状态或资源的场景中。它确保一个类只有一个实例，并提供一个全局访问点。大部分场景还是很有用的。
+
+```js
+class Logger {
+  constructor() {
+    if (Logger.instance) {
+      return Logger.instance;
+    }
+    this.logs = [];
+    Logger.instance = this;
+  }
+
+  log(message) {
+    this.logs.push({ message, timestamp: new Date().toISOString() });
+    console.log(message);
+  }
+
+  getLogs() {
+    return this.logs;
+  }
+}
+
+// 使用单例
+const logger1 = new Logger();
+logger1.log('Application started');
+
+const logger2 = new Logger();
+logger2.log('User logged in');
+
+console.log(logger2.getLogs());
+// 输出：[{ message: 'Application started', timestamp: ... }, { message: 'User logged in', timestamp: ... }]
+```
+
+可见优点是：资源消耗低，状态一致；缺点是：单例对象被赋予太多了职责，代码可能难以维护、测试。
+
+常见的实例：`全局配置管理器` `日志记录器`
+
+## 观察者模式
+
+## 策略模式
+
+策略模式是一种行为设计模式，它允许在运行时选择算法或行为。它将各种算法封装成独立的类（称为策略类），这些策略类具有相同的接口。客户端可以根据需要选择不同的策略来实现特定的行为，而无需修改原有代码。
+
+```js
+// 定义策略接口
+class SortStrategy {
+  sort(data) {
+    throw new Error('sort() must be implemented.');
+  }
+}
+
+// 定义具体策略类
+class BubbleSortStrategy extends SortStrategy {
+  sort(data) {
+    const arr = [...data];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+      }
+    }
+    return arr;
+  }
+}
+
+class QuickSortStrategy extends SortStrategy {
+  sort(data) {
+    const arr = [...data];
+    if (arr.length <= 1) return arr;
+    const pivot = arr[Math.floor(arr.length / 2)];
+    const left = arr.filter(x => x < pivot);
+    const middle = arr.filter(x => x === pivot);
+    const right = arr.filter(x => x > pivot);
+    return [...this.sort(left), ...middle, ...this.sort(right)];
+  }
+}
+
+class SelectionSortStrategy extends SortStrategy {
+  sort(data) {
+    const arr = [...data];
+    for (let i = 0; i < arr.length; i++) {
+      let minIndex = i;
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[j] < arr[minIndex]) {
+          minIndex = j;
+        }
+      }
+      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    }
+    return arr;
+  }
+}
+
+// 定义上下文类
+class SortContext {
+  constructor() {
+    this.sortStrategy = null;
+  }
+
+  setSortStrategy(strategy) {
+    this.sortStrategy = strategy;
+  }
+
+  sortData(data) {
+    if (this.sortStrategy) {
+      return this.sortStrategy.sort(data);
+    }
+    return data;
+  }
+}
+
+// 使用示例
+const context = new SortContext();
+const data = [5, 3, 8, 4, 2, 7, 1, 6];
+
+context.setSortStrategy(new BubbleSortStrategy());
+console.log('冒泡排序:', context.sortData(data));
+
+context.setSortStrategy(new QuickSortStrategy());
+console.log('快速排序:', context.sortData(data));
+
+context.setSortStrategy(new SelectionSortStrategy());
+console.log('选择排序:', context.sortData(data));
+```
+
+优点：低耦合、易于拓展、灵活多变。缺点：系统复杂性可能增加。
+
+常见的实例：`全局配置管理器` `日志记录器`
+
+## 装饰者模式
+
+## 发布订阅模式
+
+## 命令模式
+
+## 组合模式
+
 # 技术栈
 
 ## Vue
@@ -2152,12 +2363,16 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
 
     ```
     原答：简单的响应式用@media，复杂一点的就写JS。
+    
+    修正：媒体查询、流式布局、flex布局、网格布局、JS。
     ```
 
   + 主题是怎么做的？
 
     ```
     原答：CSS里面可以使用:root伪类选择器中命名CSS变量，然后对应的元素可以使用var(变量名)进行引用，每次只需要改变root里面的样式就可以了。
+    
+    补充：使用伪类选择器root命名CSS变量，通过切换body的类名来激活不同的主题。
     ```
 
   + 如果主题色中的颜色是碰撞的，比如背景主题同时有两种颜色你该怎么解决呢？

@@ -206,7 +206,15 @@ WebSocket，是一种网络传输协议，位于`OSI`模型的应用层。可在
 
 ## MVC
 
+MVC是一种分层架构模式，广泛应用于前端和后端开发中，用于将应用程序的逻辑、数据和用户界面分离，以实现更好的代码组织和可维护性。
+
+优点：可维护可复用，便于调试。
+
 ## 模块模式
+
+模块模式是一种在 JavaScript 中实现代码封装和模块化的技术，常用于避免全局变量污染和实现私有化。它通过闭包来创建私有变量和方法，并提供一个公共接口以便外部访问模块的功能。模块模式的核心是将代码封装在一个独立的作用域中，同时允许外部访问模块的公共部分。
+
+优点：封装性好、可维护性高。
 
 ## 工厂模式
 
@@ -312,6 +320,58 @@ console.log(logger2.getLogs());
 
 ## 观察者模式
 
+观察者/发布订阅模式是一种行为设计模式，它定义了对象之间的一对多依赖关系，使得当一个对象（主题）的状态发生改变时，其所有依赖者（观察者）都会收到通知并自动更新。
+
+```js
+class Subject {
+    constructor() {
+        this.observers = [];
+    }
+
+    addObserver(observer) {
+        this.observers.push(observer);
+    }
+
+    removeObserver(observer) {
+        const index = this.observers.indexOf(observer);
+        if (index > -1) {
+            this.observers.splice(index, 1);
+        }
+    }
+
+    notify(data) {
+        this.observers.forEach(observer => {
+            observer.update(data);
+        });
+    }
+}
+
+class Observer {
+    update(data) {
+        throw new Error('update() must be implemented.');
+    }
+}
+
+class ConcreteObserver extends Observer {
+    update(data) {
+        console.log(`Observer received data: ${data}`);
+        // 执行具体的操作
+    }
+}
+
+// 使用示例
+const subject = new Subject();
+const observer1 = new ConcreteObserver();
+const observer2 = new ConcreteObserver();
+
+subject.addObserver(observer1);
+subject.addObserver(observer2);
+
+subject.notify('Hello, Observers!'); // 输出：Observer received data: Hello, Observers!
+```
+
+常见的实例：`任务管理应用`
+
 ## 策略模式
 
 策略模式是一种行为设计模式，它允许在运行时选择算法或行为。它将各种算法封装成独立的类（称为策略类），这些策略类具有相同的接口。客户端可以根据需要选择不同的策略来实现特定的行为，而无需修改原有代码。
@@ -405,11 +465,263 @@ console.log('选择排序:', context.sortData(data));
 
 ## 装饰者模式
 
-## 发布订阅模式
+装饰者模式是一种结构型设计模式，它允许在运行时动态地给对象添加额外的功能或责任。这种模式提供了一种灵活的替代方案，替代了传统的继承方式来扩展对象功能。装饰者模式的核心思想是将每个功能封装在独立的装饰者类中，这些装饰者类包装了被装饰的组件，并在需要时添加新的行为。
+
+```js
+// 组件接口
+class TextEditor {
+  constructor(content) {
+    this.content = content;
+  }
+
+  display() {
+    return this.content;
+  }
+}
+
+// 具体组件
+class BasicTextEditor extends TextEditor {
+  constructor(content) {
+    super(content);
+  }
+}
+
+// 装饰者类
+class TextEditorDecorator {
+  constructor(editor) {
+    this.editor = editor;
+  }
+
+  display() {
+    return this.editor.display();
+  }
+}
+
+// 具体装饰者：加粗
+class BoldDecorator extends TextEditorDecorator {
+  display() {
+    return `<b>${this.editor.display()}</b>`;
+  }
+}
+
+// 具体装饰者：斜体
+class ItalicDecorator extends TextEditorDecorator {
+  display() {
+    return `<i>${this.editor.display()}</i>`;
+  }
+}
+
+// 具体装饰者：下划线
+class UnderlineDecorator extends TextEditorDecorator {
+  display() {
+    return `<u>${this.editor.display()}</u>`;
+  }
+}
+
+// 使用示例
+const basicEditor = new BasicTextEditor('Hello, World!');
+const boldEditor = new BoldDecorator(basicEditor);
+const italicEditor = new ItalicDecorator(boldEditor);
+const underlineEditor = new UnderlineDecorator(italicEditor);
+
+console.log(underlineEditor.display());
+// 输出：<u><i><b>Hello, World!</b></i></u>
+```
+
+优点：可以自由组合自由扩展；缺点：调试繁琐
+
+常见的实例：`动态添加按钮功能` `文字样式功能编辑`
 
 ## 命令模式
 
+命令模式是一种行为设计模式，它将请求封装为对象，从而允许你参数化客户端、排队或记录请求，并支持可撤销的操作。
+
+```js
+// 定义命令接口
+class Command {
+    execute() {
+        throw new Error('execute() must be implemented.');
+    }
+
+    undo() {
+        throw new Error('undo() must be implemented.');
+    }
+}
+
+// 定义接收者
+class Receiver {
+    actionA() {
+        console.log('执行操作 A');
+    }
+
+    actionB() {
+        console.log('执行操作 B');
+    }
+}
+
+// 定义具体命令
+class ConcreteCommandA extends Command {
+    constructor(receiver) {
+        super();
+        this.receiver = receiver;
+    }
+
+    execute() {
+        this.receiver.actionA();
+    }
+
+    undo() {
+        console.log('撤销操作 A');
+    }
+}
+
+class ConcreteCommandB extends Command {
+    constructor(receiver) {
+        super();
+        this.receiver = receiver;
+    }
+
+    execute() {
+        this.receiver.actionB();
+    }
+
+    undo() {
+        console.log('撤销操作 B');
+    }
+}
+
+// 定义调用者
+class Invoker {
+    constructor() {
+        this.history = [];
+    }
+
+    executeCommand(command) {
+        command.execute();
+        this.history.push(command);
+    }
+
+    undoLastCommand() {
+        if (this.history.length > 0) {
+            const command = this.history.pop();
+            command.undo();
+        }
+    }
+}
+
+// 使用示例
+const receiver = new Receiver();
+const invoker = new Invoker();
+
+const commandA = new ConcreteCommandA(receiver);
+const commandB = new ConcreteCommandB(receiver);
+
+invoker.executeCommand(commandA);
+invoker.executeCommand(commandB);
+
+console.log('撤销最后一条命令');
+invoker.undoLastCommand();
+
+console.log('撤销前一条命令');
+invoker.undoLastCommand();
+```
+
+优点：支持命令的保存；
+
+常见的实例：`撤销操作` `宏命令` `日志记录`
+
 ## 组合模式
+
+组合模式是一种结构型设计模式，它允许你将对象组合成树形结构，以表示“部分-整体”的层次结构。组合模式使得用户可以以统一的方式处理单个对象和组合对象，而无需关心其具体类型。
+
+```js
+// 定义组件接口
+class Component {
+    constructor(name) {
+        this.name = name;
+    }
+
+    add(child) {
+        throw new Error('add() must be implemented.');
+    }
+
+    remove(child) {
+        throw new Error('remove() must be implemented.');
+    }
+
+    display(indent) {
+        throw new Error('display() must be implemented.');
+    }
+}
+
+// 定义叶子节点
+class Leaf extends Component {
+    constructor(name) {
+        super(name);
+    }
+
+    add(child) {
+        console.log('叶子节点不能添加子节点');
+    }
+
+    remove(child) {
+        console.log('叶子节点不能移除子节点');
+    }
+
+    display(indent) {
+        console.log(`${indent}${this.name}`);
+    }
+}
+
+// 定义组合节点
+class Composite extends Component {
+    constructor(name) {
+        super(name);
+        this.children = [];
+    }
+
+    add(child) {
+        this.children.push(child);
+    }
+
+    remove(child) {
+        const index = this.children.indexOf(child);
+        if (index > -1) {
+            this.children.splice(index, 1);
+        }
+    }
+
+    display(indent) {
+        console.log(`${indent}${this.name}`);
+        const newIndent = indent + '  ';
+        this.children.forEach(child => {
+            child.display(newIndent);
+        });
+    }
+}
+
+// 使用示例
+const root = new Composite('根目录');
+const folder1 = new Composite('文件夹1');
+const folder2 = new Composite('文件夹2');
+const file1 = new Leaf('文件1.txt');
+const file2 = new Leaf('文件2.txt');
+const file3 = new Leaf('文件3.txt');
+
+root.add(folder1);
+root.add(folder2);
+folder1.add(file1);
+folder1.add(file2);
+folder2.add(file3);
+
+root.display('');
+```
+
+优点：树形表示比较清晰，递归操作。
+
+缺点：系统比较复杂。
+
+常见的实例：`菜单系统`
 
 # 技术栈
 
@@ -1537,6 +1849,7 @@ console.log(Object.getPrototypeOf(Object.getPrototypeOf(c)),c.__proto__.__proto_
  let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
 let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
  log(0/0) //返回NaN 意思是本来返回数值的操作失败
+//另外NaN===NaN 返回false
  ```
 
 ---
@@ -1802,7 +2115,7 @@ Map对象保存键值对，并且可以记住键的原始插入顺序，任何�
 #### 常用的Promise方法
 
 + `all()`-同时执行所有的异步任务，如果有一个执行失败，那么失败。（用于异步并发上传文件）
-+ `allSettled()`-同时测试执行所有的异步任务，返回测试结果
++ `allSettled()`-同时测试执行所有的异步任务，返回一个描述promise状态的数组。
 + `race()`-只要有一个promise完成，无论成功与否返回结果。
 + `any()`-只要有一个promise成功，返回成功结果，否则等待所有失败返回错误。
 + `resolve()`-将promise对象以成功标志返回。
@@ -1820,6 +2133,8 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
 >  eg.[两数之和](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 
 # 实际面试环节
+
+这里只记录一些我录音了或者有意义的面试。
 
 ## 2024.10.15海康威视
 
@@ -2379,12 +2694,16 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
 
     ```
     原答：不太懂怎么解决。
+    
+    修正：可以使用策略模式按需修改背景的样式。
     ```
 
   + 你了解过策略模式吗，其他的设计模式了解过吗？
 
     ```
     原答：不了解。
+    
+    修正：（详见设计模式）
     ```
 
   + 登录全流程？
@@ -2395,6 +2714,12 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
     //听过token自动刷新吗？
     
     原答：好像不太了解
+    
+    修正：Token 自动刷新是一种机制，用于在用户不知情的情况下自动更新身份验证令牌（Token），以避免因 Token 过期而导致用户被迫重新登录。这种机制的核心目标是提升用户体验、保障安全性以及优化性能。
+    Token 自动刷新通常依赖于双 Token 机制：
+    Access Token：用于直接访问受保护的资源，通常具有较短的有效期（如 30 分钟）。
+    Refresh Token：用于获取新的 Access Token，通常具有较长的有效期（如 7 天）
+    （和我上面讲的双token不一样这个是用来刷新Access Token的）
     ```
 
   + 有做权限控制吗？
@@ -2422,7 +2747,9 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
   + 小程序样式上的问题，适配？
 
     ```
-    原答：有某种机型不适配某种圆角按钮，苹果机的input属性好像监测不到keydown和keyup。大概就这么多。
+    原答：有某种机型不适配某种圆角按钮，苹果机的input属性好像监测不到keydown和keyup。大概就这么多。 
+    
+    修正：基本是一些屏幕宽高适配问题。IOS的fixed元素会因为软键盘而弹起，其本质是IOS没有将页面高度变为视口高度，如果机型是IOS可以获取该元素当前可见区域作为其高度。
     ```
 
   + CSS垂直居中？
@@ -2435,6 +2762,8 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
 
     ```
     原答：之前用过但是现在忘了。
+    
+    修正：align-self可以控制单个子项。
     ```
 
 + JS
@@ -2454,9 +2783,13 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
     
     原答：null和undefined吧
     
+    修正：它会将所有的对象判定为object包括数组、Date、正则，甚至null都会被判定为object。
+    
     //可以再看看，还有什么？
     
     原答：instanceof 吧
+    
+    修正：type of判断基本类型，instanceof判断对象类型，===null判断null，Array.isArray判断数组，Number.isNaN判断NaN。
     
     //这边要回去再看一下哈
     ```
@@ -2465,6 +2798,8 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
 
     ```
     原答：用过尖括号判断类型
+    
+    修正：（详见TS）
     
     //泛型你知道吗，类型工具你知道吗
     ```
@@ -2477,6 +2812,8 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
     //为啥JS是单线程的？
     
     原答：不太了解
+    
+    修正：JS一开始是作为浏览器的脚本语言去设计的，为了不和浏览器主线程抢资源，所以选择是用了单线程模型。
     ```
 
   + 异步任务我们一般使用什么去捕捉状态？
@@ -2484,7 +2821,11 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
     ```
     原答：一般使用promise去捕捉，使用resolve和reject确定成功失败，然后用.then和.catch去执行成功和失败后的操作。
     
+    修正：使用Promise、async/await、事件监听，回调函数。
+    
     //除了reject 还有什么情况会进catch？
+    
+    修正：直接在promise里面及.then() throw new Error、try catch、Promise.all/race被拒绝。
     ```
 
   + 还了解Promise的什么静态方法？
@@ -2492,9 +2833,13 @@ hash(哈希)算法是把任意长度的输入，通过算法变换成固定长�
     ```
     原答：Promise.all吧，并发执行里面的所有任务，全部成功执行then，返回顺序是里面数组的顺序。
     
-    //和allSatter有什么区别？
+    修正：四个 all、allSettled、any、race。（详见Promise常用方法）
+    
+    //和allSettled有什么区别？
     
     原答：记不太清了。
+    
+    修正：all是有一个失败就返回失败，allSettled是全部都会执行。
     ```
 
 + Vue

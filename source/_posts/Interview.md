@@ -308,6 +308,8 @@ console.log(logger2.getLogs());
 
 观察者/发布订阅模式是一种行为设计模式，它定义了对象之间的一对多依赖关系，使得当一个对象（主题）的状态发生改变时，其所有依赖者（观察者）都会收到通知并自动更新。
 
+关键点就是在于要声明一个函数数组，每次有需要的时候进行forEach执行里面的函数。
+
 ```js
 class Subject {
     constructor() {
@@ -937,6 +939,62 @@ ES15（2024年）symbol描述、匹配字符串索引
 + RegExp Match Indices：提供匹配子字符串的索引。
 + Symbol.prototype.description：返回Symbol的描述。
 ```
+
+### ESM
+
+ESM是将 javascript 程序拆分成多个单独模块，并能按需导入的标准。
+
+我们先来看道题吧：
+
+```js
+//a.js
+import { value } from './c.js';
+console.log('A:', value);
+
+export let counter = 0;
+
+//b.js
+import { counter } from './a.js';
+import { increment } from './c.js';
+
+console.log('B:', counter);
+
+setTimeout(() => {
+    console.log('B setTimeout:', counter);
+}, 0);
+
+increment();
+
+//c.js
+import { counter } from './a.js';
+console.log('C');
+let value = 'initial';
+export { value };
+
+export function increment() {
+    counter++;
+    console.log('C increment:', counter);
+}
+
+//main.js
+import './a.js';
+import './b.js';
+```
+
+执行`main.js`会发生什么呢？
+
+首先我们要搞明白一些概念，模块化的引入是分初始化和执行的，初始化的时候会运行全部代码，初始化之后就可以执行了，执行只返回需要的export。还有如果两个模块相互引入，会先执行循环中第一个引入的，完成初始化后再向下执行。
+
+```js
+//答案如下：
+//C
+//A:initial
+//B:0
+//C increment:1
+//B setTimeout:1 
+```
+
+运行`main.js`，首先就要引入`a.js`，这时候就运行`a.js`，结果他一开头又引入了`c.js`，这时候就运行`c.js`，结果发现进循环了。那这个时候就先初始化循环中第一个引用的，也就是`c.js`，输出`C`。然后返回到`a.js`，这时候`c.js`已经被部分初始化，那么就可以得到value，输出`A:initial`，`a.js`完全初始化了，这时候会把`c.js`剩下的`counter`也赋值。接下来回到`main.js`，引入`b.js`，`b.js`引入`a.js`和`c.js`都已经初始化完毕了，可以直接拿到值，按照事件循环`setTimeout`进宏队列，然后先执行log然后执行increment，同步队列完成执行就执行宏队列（详见事件循环）。
 
 ### for in和for of
 

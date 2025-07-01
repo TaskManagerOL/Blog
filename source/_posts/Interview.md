@@ -1661,7 +1661,7 @@ app.listen(3000, () => {
 });
 ```
 
-### Web中常见的攻击方式有哪些
+### Web常见攻击
 
 常见的一些攻击方式包括`XSS`、`CSRF`、`SQL注入`
 
@@ -1680,6 +1680,12 @@ app.listen(3000, () => {
 + `ddos攻击`：向莫表服务器发送大量无意义的数据包，挤占网络带宽。
 
   解决方法：对同IP限制请求速率等
+
+### SSO单点登录
+
+**核心目标：** 用户只需**登录一次**，即可访问多个相互信任的应用系统。
+
+如果多个应用系统在同一个域名中，那么Cookie可以全域名的子域名共享，这时候用户在A应用登录后定向到C，B应用同样向C验证，就可以获取到相同的cookie，节省手续。
 
 ## TypeScript
 
@@ -2323,6 +2329,64 @@ const sum = (a,b) => {
         }
     }
 }
+```
+
+## 快速排序
+
+目前平均速度最快的排序方法。
+
+核心思想是对数组每次取一个基准值，然后对当前数组两端设置指针进行比较，将小于基准值的放基准值左侧并移动左指针，大于的放右侧并移动右指针。然后对左右两侧递归实现。平均时间复杂度为O(NlogN)。
+
+下面的实例代码是采用了空间复杂度高的方法，但是稍微清晰。
+
+```js
+const quickSort = (arr) => {
+  if(arr.length <= 1)return arr
+  let basic = arr[0]
+  let leftArr = []
+  let rightArr = []
+  for (let i = 1; i < arr.length; i++){
+    if (arr[i] <= basic) leftArr.push(arr[i])
+    else rightArr.push(arr[i])
+  }
+  leftArr = quickSort(leftArr)
+  rightArr = quickSort(rightArr)
+  return [...leftArr,basic,...rightArr]
+}
+```
+
+### 题目
+
+https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-100-liked
+
+### 思路
+
+先遍历确定一个值，然后对剩下值采用类似快排双指针的做法。
+
+### 答案
+
+```js
+var threeSum = function (nums) {
+    let ret = []
+    for(let i = 0;i<nums.length-1;i++){
+        if(nums[i]===nums[i+1])continue
+        let left = i+1
+        let right = nums.length-1
+        while(left<right){
+            let sum = nums[i]+nums[left]+nums[right]
+            if(sum<0){
+                left++
+            }else if(sum>0){
+                right--
+            }else{
+                ret.push([nums[i],nums[left],nums[right]])
+                left++
+                right--
+            }
+        }
+    }
+    return ret
+};
 ```
 
 ## 带并发限制的异步调用器
@@ -3345,5 +3409,180 @@ addPromise(1,2)
   ```
   原答：flex 网格 vh vw @media 再难就JS
   ```
+
+
+## 2025.6.29柠檬微趣
+
+笔试
+
++ 单选第一题
+
+  ```cpp
+  //求下面函数的时间复杂度
+  int pow(int x, unsigned int n){
+    if (n == 0)
+      return 1
+    if (n & 1)
+      return pow(x, n / 2) * pow(x, n / 2) * x
+    else
+      return pow(x, n / 2) * pow(x, n / 2)
+  }
+  
+  修正：答案是O(N)，我错选成O(logN)了。主要问题在于判断奇偶之后调用了两次递归函数。如果用一个变量把pow(x, n / 2)存起来，那就是O(logN)
+  ```
+
++ 单选第二题
+
+  ```js
+  //执行完后myList.head.next.value为多少
+  function LinkedList() {
+    this.head = null
+  }
+  LinkedList.prototype.push = function (val) {
+    var node = {
+      value: val,
+      next: null
+    }
+    if (!this.head) {
+      this.head = node
+    } else {
+      var current = this.head
+      while (current.next) {
+        current = current.next
+      }
+      current.next = node
+    }
+  }
+  
+  var myList = new LinkedList()
+  
+  myList.push(2)
+  myList.push(3)
+  myList.push(4)
+  
+  修正：答案为3，没什么好说的。
+  ```
+
++ 单选题第三题
+
+  ```js
+  //执行完后result为多少
+  function mystery(input) {
+    var secret = 4
+    input += 2
+    function mystery2(multiplier) {
+      multiplier *= input
+      return secret * multiplier
+    }
+    return mystery2
+  }
+  
+  function mystery3(param) {
+    function mystery4(bonus) {
+      return param(6)+bonus
+    }
+    return mystery4
+  }
+  
+  var hidden = mystery(3)
+  var jumble = mystery3(hidden)
+  var result = jumble(2)
+  
+  修正：答案为122，考的闭包相关。
+  ```
+
++ 单选题第四题
+
+  ```js
+  //求下面函数的时间复杂度
+  function example(arr) {
+    arr.sort((a, b) => a - b)
+    return arr
+  }
+  
+  修正：答了O(N)，答案应该是O(NlogN)。sort算法默认NlogN，原因是N：需要给每一个数排序，logN：二分比较过程
+  ```
+
++ 手搓第一题
+
+  ```js
+  给定一个字符串数组A，字符串由小写英文字母组成，每个字符串长度相同。
+  现在，对于每个字符串，我们需要删除几个相同索引的字符，假定删除字符的索引集合为D，使得删除字符后的字符串数组按照字典序排序，并且我们希望删除的字符数量最小，请你给出相应的最小值。
+  输入：["xc","yb",'za'] 输出：0
+  输入：["ca","bb",'ac'] 输出：1
+  输入：["zyx","wvu",'tsr'] 输出：3
+  
+  修正：
+  const test = (arr) => {
+    let newArr = Array.from(arr[0], () => [])
+    arr.forEach((element) => {
+      Array.from(element).forEach((item, index) => {
+        newArr[index].push(item)
+      })
+    });
+    let result = 0
+    newArr.forEach((item) => {
+      if (item.join() != item.sort().join()) result++
+      else return
+    })
+    return result
+  }
+  //写的时候忘记Array.from怎么用了，然后又记错成sort排序就会返回1，导致一直没写出来。
+  ```
+
++ 手搓第二题
+
+  ```js
+  //力扣原题：https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/?envType=study-plan-v2&envId=top-100-liked
+  
+  修正：
+  var flatten = function(root) {
+      if(root==null)return
+      let saver1 = root.right
+      root.right = root.left
+      root.left = null
+      let saver2 = root
+      while(saver2?.right!=null){
+          saver2 = saver2.right
+      }
+      saver2.right = saver1
+      flatten(root.right)
+  };
+  //当时卡第一题太久了，而且又不给调试，第二题没心思写了。晚上力扣找到这道题，半小时不到写完0ms运行时间。
+  //还是面太少了，紧张。
+  ```
+
+## 2025.6.30七牛云
+
+笔试
+
++ 单选第一题
+
+  ```cpp
+  //求n=1输出值
+  int grow(int n){
+    	print("%d",n)
+      if(n<4){
+          grow(n+1)
+      }
+      print("%d",n)
+  }
+  
+  修正：1234431，没什么好说的
+  ```
+
++ 单选第二题
+
+  ```js
+  //如果想要在10s后调用check函数，哪个是对的？
+  A.setTimeout(check,10000)
+  B.setTimeout(check,10)
+  C.setTimeout(check(),10000)
+  D.setTimeout(check(),10)
+  
+  xiu'e
+  ```
+
+  
 
   

@@ -18,6 +18,14 @@ Boss是不能先发送简历附件的，要填写线上简历+打招呼内容。
 
 主要围绕在讲项目实习的经历，讲一些稍微有技术亮点且你会的东西。
 
+```
+	面试官您好，我是秦松云，就读桂林电子科技大学计算机信息安全学院，很高兴能参加贵司面试。
+	我的核心技术栈包括Vue/React，同时也有过React-Native/UniApp/Electron开发经验，熟悉常见的响应式设计和前端性能优化。
+	我有过两段实习经历：在中国科学院软件研究所实习中，我主要参与项目页面与组件编写，实现如大文件上传等功能；在云合智网实习中，实现AntvG6图表化网络层，参与部分代码重构与前端优化，达到处理时间减少80%。
+	我有自己写过若干项目：在Tasklist项目中，我担任全栈开发者角色，项目使用Vue+fastApi，实现主题切换、双token认证登录等。在Perfect Studio项目中，主要使用微信小程序开发工具+微信云后端，实现白屏优化、首页加载优化、懒加载等。在智能灌溉项目中，项目使用RN+express，完成数据图表可视化和部分移动端适配。
+	以上就是我的个人介绍，期待后续详细交流。
+```
+
 # 计算机基础
 
 ## 操作系统
@@ -1689,7 +1697,173 @@ app.listen(3000, () => {
 
 ## TypeScript
 
+### 常见数据类型
 
+TS的常见数据类型有11种：
+
+```ts
+//Boolean类型
+let flag:boolean = true;
+```
+
+---
+
+```ts
+//Number类型
+let num:number = 123
+```
+
+---
+
+```ts
+//String类型
+let str:string = '123'
+```
+
+---
+
+```ts
+//Array类型
+let arr:string[] = ['123','123']
+let arr:Array<number> = [1,2]
+```
+
+---
+
+```ts
+//Tuple类型
+let tupleArr:[number,string] = [12,'34']
+```
+
+---
+
+```ts
+//Enum类型，用于枚举一个变量可能出现的所有数据常量
+enum Status {
+	fulfilled,
+	pending,
+	rejected
+}
+let status:Status = Status.pending
+```
+
+---
+
+```ts
+//any类型，可以指定为任意值
+let num:any = 123;
+num = 'str';
+num = true;
+```
+
+---
+
+```ts
+//null和undefined，是所有类型的子集，可以被赋值到所有类型
+let num:number | undefined; 
+```
+
+---
+
+```ts
+//void类型，用于表示函数返回值为空
+function hello(): void {
+    alert("Hello Runoob");
+}
+```
+
+---
+
+```ts
+//never类型，用于表示一个设计为不会发生的情况，never是所有类型的子集，但是never类型只能赋值为never
+
+function error(message: string): never {
+    throw new Error(message);
+}//这个函数永远不会正常返回
+```
+
+---
+
+```ts
+//object类型
+let obj:object;
+obj = {name: 'Wang', age: 25};
+```
+
+### 常见工具类
+
+`Partial<Type>`：将Type所有属性变为可选的。
+
+```ts
+interface User {
+  id: number;
+  name: string;
+}
+type PartialUser = Partial<User>; // { id?: number; name?: string }
+```
+
+---
+
+`Required<Type>`：将Type所有属性变为必填的。
+
+```ts
+type RequiredUser = Required<PartialUser>; // { id: number; name: string }
+```
+
+---
+
+`Readonly<Type>`：将Type所有属性变为只读的。
+
+```ts
+type ReadonlyUser = Readonly<User>; // { readonly id: number; readonly name: string }
+```
+
+---
+
+`Record<Keys,Type>`：创建键为keys，值为type的对象类。
+
+```ts
+type UserMap = Record<"admin" | "guest", User>; 
+// { admin: User; guest: User }
+```
+
+---
+
+`Pick<Type,Keys>`：从Type中选举指定keys。
+
+```ts
+type UserName = Pick<User, "name">; // { name: string }
+```
+
+---
+
+`Omit<Type,Keys>`：从Type中排除指定keys。
+
+```ts
+type UserWithoutId = Omit<User, "id">; // { name: string }
+```
+
+### 泛型基础用法
+
+泛型是 TypeScript 中最强大的类型工具之一，它允许我们创建**可复用的类型抽象**，在保持类型安全的同时避免代码重复。
+
+泛型是类型系统中的"类型参数"，类似于函数参数，但作用在类型层面：
+
+```ts
+// T 是类型变量（类型参数）
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+// 声明类型参数
+function reverse<T>(items: T[]): T[] {
+  return items.reverse();
+}
+
+// 使用
+const nums = reverse<number>([1, 2, 3]); // 显式指定
+const strs = reverse(["a", "b"]);         // 自动推断为 string[]
+```
 
 ## JavaScript - Prototype
 
@@ -3568,7 +3742,7 @@ addPromise(1,2)
       print("%d",n)
   }
   
-  修正：1234431，没什么好说的
+  解析：1234431，没什么好说的
   ```
 
 + 单选第二题
@@ -3580,9 +3754,275 @@ addPromise(1,2)
   C.setTimeout(check(),10000)
   D.setTimeout(check(),10)
   
-  xiu'e
+  解析：有括号就是执行返回值，没括号就是该函数，后面的单位是毫秒。
   ```
 
+
++ 单选第三题
+
+  ```js
+  //判断哪个算法排序不是升序
+  arr.sort((a,b)=>b-a)
   
+  解析：返回值如果小于一就是[a,b]，大于一就是[b,a]
+  ```
+
++ 单选第四题
+
+  ```js
+  //选择错误的一项
+  A.TCP协议需要进行3次握手
+  B.双方有一方关闭连接，TCP结束连接。
+  C.TCP传输必须要在连接的情况下实现。
+  D.TCP是面向连接的全双工协议。
+  
+  解析：这题我就记了个大概，应该是B错，关闭连接需要四次挥手。
+  ```
+
++ 单选第五题
+
+  ```markdown
+  有一棵树度为5，有14个度为5的节点，15个度为4的节点，14个度为3的节点，5个度为2的节点，10个度为1的节点。求这棵树的叶节点有多少？
+  
+  解析：
+  	总节点数N为：14 + 15 + 14 + 5 + 10 + L(叶节点)
+  	总连接数E为：N - 1
+  	总出度和S为：(14*5) + (15*4) + (14*3) + (5*2) + (10*1) + (L*0)
+  	总出度和与总连接数相同：192 = (58+L) − 1
+  	L = 135
+  ```
+
++ 单选第六题
+
+  ```markdown
+  同源政策是指什么？
+  
+  解析：同协议、同域名、同端口。
+  ```
+
++ 单选第七题
+
+  ```markdown
+  如何运算IP是否在同一网段下？
+  A.IP或运算子网
+  B.IP与运算子网
+  C.IP模2运算加子网
+  D.IP非运算子网
+  
+  解析：答案是B。
+  	示例：
+  		IP地址1：192.168.1.10
+  		IP地址2：192.168.1.20
+  		子网掩码：255.255.255.0
+  
+  	运算过程：
+  		192.168.1.10 AND 255.255.255.0 = 192.168.1.0
+  		192.168.1.20 AND 255.255.255.0 = 192.168.1.0
+  		结果相同 → 在同一网段
+  ```
+
++ 单选第八题：
+
+  ```
+  这道题没记下来，但是我选错了：
+  	数组的索引会降低数据库写入性能
+  	这是对的。但具体影响程度取决于数组大小、索引类型和数据操作模式。
+  	索引为何降低写入性能？
+  	每次写入（INSERT/UPDATE/DELETE）涉及索引列时，数据库需同步更新索引结构（如B+树分裂、GIN倒排列表修改），增加额外I/O和CPU开销。
+  	索引更新可能引发锁竞争（如页级锁、行级锁），在高并发写入场景下加剧阻塞风险。
+  	索引变更需写入WAL日志（如PostgreSQL的WAL、MySQL的redo log），数组索引的频繁更新会导致日志量激增，影响磁盘I/O。
+  ```
+
++ 单选第九题
+
+  ```
+  这题考个数据类型的选择，选JS没有的数据类型 很简单就不写了
+  ```
+
++ 单选第十题
+
+  ```
+  有50个红球和50个蓝球，两个框，请问怎么放随机拿一个红球的概率最高？
+  A.1不放球、2全放完
+  B.1放一个红球、2放49红球50蓝球
+  C.1放一个红球50个蓝球、2放49个红球
+  D.1放50个红球、2放50个蓝球
+  
+  解析：B，概率论相关知识。
+  ```
+
++ 多选第一题
+
+  ```
+  单向链表哪些操作不受队列长度影响？
+  A.删尾元素
+  B.头插元素
+  C.尾插元素
+  D.删头元素
+  
+  解析：BD，尾相关的操作都是需要遍历找尾巴的。
+  ```
+
++ 多选第二题
+
+  ```
+  下列说法哪些是对的？
+  A.线程和进程都可以并发
+  B.线程粒度小于进程，线程的并发性更好
+  C.线程是资源分配的单位
+  D.不同线程有同样的栈空间
+  
+  解析：AB，进程是资源分配的最小单位（详见进程和线程），不同的线程有自己的栈空间。
+  ```
+
++ 多选第三题
+
+  ```
+  下面哪些说法是对的？
+  A.CDN是良性DNS劫持
+  B.CDN缩短响应时间
+  C.CDN用全局负载指向最近缓存服务器
+  D.CDN可以降低DDOS影响
+  
+  解析：BCD，CDN（内容分发网络） 是一种分布式服务器网络，核心目标是通过就近缓存和智能调度，加速用户访问网站/应用内容的速度，同时提升稳定性和安全性。CDN的DNS调度是授权行为，所以A错误，其他都对。
+  ```
+
++ 多选第四题：
+
+  ```
+  154个数据，使用二分比较法，可能比较几次？
+  
+  解析：2^8 = 256 2^7 = 128 ，所以低于等于8次都是有可能的。
+  ```
+
++ 多选第五题：
+
+  ```
+  下面说法哪些是对的？
+  A.正向代理适用于客户端
+  B.反向代理适用于服务端
+  C.Nginx只可以进行反向代理
+  （有个选项记不清了）
+  
+  解析：Nginx可以正向也可以反向。AB。
+  ```
+
++ 手搓第一题
+
+  ```js
+  //二进制化一个数，长度固定为八位，不够补0
+  
+  修正：
+  const Binary = (num) => {
+    return String(num.toString(2)).padStart(8,"0")
+  }
+  //没有细看怎么转，我硬写的，实在是有点蠢
+  ```
+
++ 手搓第二题
+
+  ```js
+  //输入n 输出n*n的蛇形矩阵
+  
+  修正：
+  const snake = (n) => {
+    let flag = 0
+    let result = Array.from({ length: n },()=> Array.from({length:n},()=>0))
+    let x = 0
+    let y = 0
+    result[0][0] = 1
+    for (let i = 1; i < n*n; i++){
+      if (!flag) {
+        if (y == 0 || x == n - 1) {
+          x == n - 1 ? y++:x++
+          flag = !flag
+        } else {
+          y--
+          x++
+        }
+      } else if (flag) {
+        if (x == 0 || y == n - 1) {
+          y == n - 1 ? x++:y++
+          flag = !flag
+        } else {
+          x--
+          y++
+        }
+      }
+      result[y][x] = i+1
+    }
+    return result
+  }
+  //当时一直在想有没有特殊规律，但是和环节聊了之后，写算法题应该先确定暴力的时间复杂度，这里暴力也是n^2，不暴力填数也要n^2，不如直接暴力。
+  ```
+
++ 手搓第三题
+
+  ```js
+  //设计LRU
+  
+  ```
+
+
+## 2025.7.4杭州亿格云科技
+
++ 来杭州方不方便 + 个人介绍
+
++ 聊项目
+
++ NodeJS有哪些部署方式
+
+  ```
+  原答：PM2部署
+  
+  修正：本地服务器部署、云服务托管、Docker、进程管理器守护（PM2）、Nginx反向代理集成。
+  ```
+
++ TailwindCSS中想要封装类怎么做
+
+  ```css
+  修正：
+  /* 在全局 CSS 文件中 (如: styles.css) */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  @layer components {
+    /* 封装默认按钮样式 */
+    .btn-default {
+      @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+    }
+  }
+  ```
+
++ 事件捕获和事件冒泡
+
++ 场景题：React 嵌套了一个组件，想要这个组件在触发某个事件的时候通知他的所有父组件，怎么实现？
+
+  ```
+  修正：
+  	方法一：外部传入一个函数，目标组件触发事件时往里传入参数，事件冒泡就会触发回调。
+  	方法二：使用 Context API。createContext后用该变量.Provider包裹需要通知的组件，目标组件使用useContext触发。
+  ```
+
++ TS类型中的never和enum常用在哪？
+
+  ```
+  修正：详见TS数据类型
+  ```
+
++ TS内置的工具类有哪些？
+
+  ```
+  修正：
+  ```
+
++ 高斯模糊见过吗？
+
++ 将一个背景图变成黑白色怎么做？
+
+  ```
+  修正：使用filter:grayscale(100%)
+  ```
 
   

@@ -724,6 +724,92 @@ root.display('');
 
 ## CSS
 
+### 盒模型
+
+任何一个元素都遵循盒模型
+
+> 元素 = content（内容） + padding（内边距） + border（边框） + margin（外边距）
+
+但是盒模型有两种：**标准盒模型**、**IE盒模型**
+
+有什么区别呢？
+
++ 标准盒模型：宽/高 =  content + padding + border + margin
++ IE盒模型：宽/高 =  (content - padding - border) + padding + border  + margin
+
+这样可以做到怎么修改padding都不会改变盒子宽高，因为浏览器会自动计算，缩小原来context的值。
+
+怎么切换模型呢？
+
+使用`box-sizing:context-box/border-box`对应标准盒模型和IE盒模型。
+
+### 选择器
+
+基础选择器：
+
+```css
+//通用选择器
+* {}
+
+//元素选择器
+h1 {}
+
+//类选择器
+.btn {}
+
+//id选择器
+#header {}
+
+//属性选择器
+[type="submit"] {}
+[disabled] {}
+```
+
+组合选择器（值得一提的是浏览器是从右往左解析的）
+
+```css
+//后代选择器
+nav ul li {}
+
+//子元素选择器
+section > h2 {}
+
+//相邻兄弟选择器（只选择紧邻的下一个元素）
+h2 + p {}
+
+//通用兄弟选择器
+h2 ~ p {}
+```
+
+伪类选择器
+
+```css
+//状态伪类
+a:hover {}
+input:disabled {}
+
+//结构伪类
+li:first-child {}
+div:has(p) { } 
+
+//伪元素选择器
+input::placeholder {}
+blockquote::before {}
+```
+
+选择器的优先级规则：
+
++ **ID选择器**：每个+100
++ **类/属性/伪类选择器**：每个+10
++ **元素/伪元素选择器**：每个+1
++ **通用选择器/组合器**：0
+
+```css
+#header .nav li.active a:hover  /* 1(id) + 3(class) + 2(element) = 132 */
+#sidebar .widget h2            /* 1(id) + 1(class) + 1(element) = 111 */
+body.home .main-content        /* 2(class) + 1(element) = 21 */
+```
+
 ### CSS3硬件加速
 
 原理是用GPU来处理特定的CSS操作，GPU 是专门为处理图形和数学密集型任务（如矩阵计算、透明度混合）而设计的，在处理像素操作上比 CPU 高效得多。
@@ -1695,6 +1781,144 @@ app.listen(3000, () => {
 **核心目标：** 用户只需**登录一次**，即可访问多个相互信任的应用系统。
 
 如果多个应用系统在同一个域名中，那么Cookie可以全域名的子域名共享，这时候用户在A应用登录后定向到C，B应用同样向C验证，就可以获取到相同的cookie，节省手续。
+
+### 全局变量
+
+JS中有很多可以使用的全局变量：
+
+> 在全局作用域中，这些可以使用的全局变量都是window的属性
+
+接下来说一下这些全局变量常用的方法。
+
+#### window
+
+浏览器窗口对象，可以控制浏览器窗口、获取窗口信息。
+
+```js
+// 作为全局作用域
+var globalVar = "全局变量";
+console.log(window.globalVar); // "全局变量"
+
+// 控制浏览器窗口
+window.open("https://example.com"); // 打开新窗口
+window.resizeTo(800, 600); // 调整窗口大小
+
+// 获取窗口信息
+console.log("窗口尺寸:", window.innerWidth, "x", window.innerHeight);
+console.log("屏幕尺寸:", window.screen.width, "x", window.screen.height);
+```
+
+#### document
+
+文档对象，可以处理元素、事件。
+
+```js
+// 获取元素
+const header = document.getElementById("header");
+const buttons = document.querySelectorAll(".btn");
+
+// 修改内容
+document.title = "新标题"; // 修改页面标题
+document.body.style.backgroundColor = "#f0f0f0"; // 修改背景色
+
+// 创建新元素
+const newDiv = document.createElement("div");
+newDiv.textContent = "动态创建的元素";
+document.body.appendChild(newDiv);
+
+// 事件处理
+document.addEventListener("click", (e) => {
+  console.log("点击了:", e.target.tagName);
+});
+```
+
+#### console
+
+```js
+// 基本输出
+console.log("普通消息"); // 白色文本
+console.info("信息消息"); // 蓝色文本
+console.warn("警告消息"); // 黄色文本
+console.error("错误消息"); // 红色文本
+
+// 高级用法
+console.table([
+  { name: "Alice", age: 28, city: "New York" },
+  { name: "Bob", age: 32, city: "London" }
+]);
+
+console.group("用户详情");
+console.log("姓名: Alice");
+console.log("年龄: 28");
+console.groupEnd();
+
+// 性能测试
+console.time("数据计算");
+// 复杂计算...
+console.timeEnd("数据计算"); // 输出执行时间
+```
+
+#### navigator
+
+可以处理浏览器相关信息，甚至可以处理剪贴板相关API
+
+```js
+// 浏览器识别
+console.log("浏览器:", navigator.userAgent);
+console.log("语言:", navigator.language);
+console.log("在线状态:", navigator.onLine ? "在线" : "离线");
+
+// 硬件信息
+console.log("CPU核心数:", navigator.hardwareConcurrency);
+console.log("设备内存:", navigator.deviceMemory || "未知", "GB");
+
+// 高级功能检测
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(position => {
+    console.log("位置:", position.coords.latitude, position.coords.longitude);
+  });
+}
+
+// 剪贴板API
+navigator.clipboard.writeText("复制到剪贴板的内容");
+```
+
+#### location
+
+处理URL相关信息
+
+```js
+// 解析URL
+console.log("完整URL:", location.href);
+console.log("协议:", location.protocol); // https:
+console.log("主机:", location.host); // example.com:8080
+console.log("路径:", location.pathname); // /path/page.html
+console.log("查询参数:", location.search); // ?id=123
+console.log("哈希:", location.hash); // #section
+
+// 操作URL
+location.assign("https://newurl.com"); // 导航到新页面
+location.reload(); // 重新加载页面
+```
+
+#### history
+
+浏览历史
+
+```js
+// 导航历史
+history.back(); // 返回上一页
+history.forward(); // 前进下一页
+history.go(-2); // 后退两页
+
+// 添加历史记录(现代SPA应用核心)
+history.pushState({ page: 1 }, "Page 1", "/page1"); // 添加新记录
+history.replaceState({ page: 2 }, "Page 2", "/page2"); // 替换当前记录
+```
+
+除了以上的全局变量之外还有localStorage、sessionStorage、Math、Date
+
+
 
 ## TypeScript
 
@@ -4026,4 +4250,197 @@ addPromise(1,2)
   修正：使用filter:grayscale(100%)
   ```
 
+
+## 2025.7.7腾讯
+
++ 自我介绍
+
++ 平时怎么学习前端的，有看书吗？
+
+  ```
+  原答：github找项目，掘金参与讨论，书看得相对少。
   
+  修正：
+  ```
+
++ 浏览器提供的前端开发工具你平时用得多的有哪些？
+
+  ```
+  原答：审查元素找一些布局元素、网络请求的发送、storage的存储。
+  
+  修正：元素检查器（查看DOM、调试样式）、控制台（执行JS代码）、网络监测（分析资源加载时间）、性能分析（识别渲染卡顿）、存储管理、设备模拟。
+  ```
+
++ 盒子的相关属性有哪些？
+
+  ```
+  原答：宽高padding、margin......
+  ```
+
++ 有没有了解过IE盒模型？
+
+  ```
+  原答：没有了解
+  ```
+
++ 我们平时在控制padding的时候会把盒子撑大，有没有办法不让盒子变大
+
+  ```
+  原答：暂时没想到
+  ```
+
++ border-sizing你有了解过吗？
+
+  ```
+  原答：没有了解
+  
+  修正：(以上三个问题详见CSS盒模型）
+  ```
+
++ 控制台提供很多全局变量用过哪些？
+
+  ```
+  原答：window、document
+  ```
+
++ 怎么拿到当前的URL
+
+  ```
+  原答：忘记了
+  
+  修正：(以上三个问题详见JS全局变量）
+  ```
+
++ CSS有哪些选择器
+
+  ```
+  原答：类选择器、伪类选择器、id选择器
+  ```
+
++ 如果我想要选择某个元素的下一代的全部的p，怎么做？
+
+  ```
+  原答：可以用后代选择器
+  
+  //只要一代不是全部
+  
+  原答：暂时没想到
+  ```
+
++ 选择器的优先级？
+
+  ```
+  原答：忘记了
+  
+  修正：（以上三个问题详见CSS选择器）
+  ```
+
++ Vue中我们对一个组件写p的属性，不会对后代影响，这是为什么？
+
+  ```
+  原答：不太清楚
+  
+  修正：我操了，scoped机制，一直在用但是没想起来。添加scoped之后vue会给当前的组件的所有DOM添加一个唯一的data-值，然后通过属性选择器选择这些组件。
+  ```
+
++ 网页里想要进行文件上传怎么做？
+
+  ```
+  原答：使用input type=file去做，用双向绑定拿到文件。
+  
+  修正：使用input type=file，获取该input元素的files属性，会返回一个文件的数组。再传递给后端即可。
+  ```
+
++ 10张图片的轮播图怎么做？
+
+  ```
+  原答：十张图片首尾相接，添加一张到第十张后面，通过绝对定位控制移动。
+  ```
+
++ 添加动画效果怎么做？
+
+  ```
+  原答：使用animation。
+  ```
+
++ 点一下实现图片全屏怎么做？
+
+  ```
+  原答：想不起具体函数了
+  
+  修正：Element.requestFullscreen()/.exitFullscreen()
+  ```
+
++ positon有什么属性？
+
+  ```
+  原答：fixed、reactive、absolute
+  ```
+
++ 怎么居中？
+
+  ```
+  原答：flex布局，或绝对定位上下左右都设置0
+  ```
+
++ 想让滚轮控制图片大小？
+
+  ```
+  原答：JS监听滚轮事件，用scale()放大缩小图片。
+  ```
+
++ CSS你是怎么学习的？
+
+  ```
+  原答：有需求就去找MDN，搜索。
+  ```
+
++ 闭包是什么概念，怎么实现？
+
+  ```
+  原答：（详见闭包）
+  ```
+
++ 怎么用闭包实现一个单例模式？
+
+  ```
+  原答：先定义一个类，外面的函数创建一个实例，里面的函数对实例进行操作。
+  ```
+
++ 原型链？
+
+  ```
+  原答：（没办法整合成一整段话，糅杂混乱）
+  ```
+
++ 原型对象和实例有什么区别？
+
+  ```
+  原答：（我忘记原型对象是啥了😭）
+  ```
+
++ vue有什么生命周期？
+
+  ```
+  原答：（详见vue生命周期）
+  ```
+
++ 分别在什么时候调用？
+
+  ```
+  原答：（详见vue生命周期）
+  ```
+
++ 什么时候用created什么时候用mounted？
+
+  ```
+  原答：（太久不写vue了，忘记完了😭）
+  ```
+
++ 父子组件的生命周期是怎么调用的？
+
+  ```
+  原答：先创建子组件，再创建父组件
+  ```
+
++ 手写：无重复最长字串（应该用滑动窗口，我用哈希表了，没做出来）

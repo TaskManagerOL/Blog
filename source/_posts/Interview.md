@@ -133,11 +133,11 @@ HTTP 响应的内容包括响应行、响应头和响应体。
   + 添加POST方法等
   + 添加版本号、请求头、响应头、状态码
   + 连接不能复用，效率低。
-+ `HTTP/1.1`：1997年发布
++ `HTTP/1.1`：1997年发布（记成持久(持久连接)关(管道化)注(主机头字段)）
   + **持久连接** ：默认情况下，TCP 连接在一次请求 / 响应后不会立即关闭，可以被多个请求 / 响应复用，减少了建立和关闭连接的开销。
   + **管道化** ：客户端可以在同一个连接上发送多个请求，而不用等待每个请求的响应返回，提高了效率，但服务器端仍需按顺序处理这些请求。
   + **主机头字段** ：支持虚拟主机，通过 Host 请求头字段来区分不同的域名，使得在同一个 IP 地址上可以部署多个网站。
-+ `HTTP/2`：2015年发布
++ `HTTP/2`：2015年发布（记成耳(二进制协议)朵(多路复用)押(头部压缩)送(服务器推送)）
   + **二进制协议** ：对数据传输进行了优化，将原本的文本形式改为二进制形式，减少了解析的开销。
   + **多路复用** ：允许多个请求和响应可以同时在一个连接上交错传输，避免了 HTTP/1.1 中的队头阻塞问题，大大提高了传输效率。
   + **头部压缩** ：采用 HPACK 压缩算法对请求和响应的头部进行压缩，减少了头部信息所占用的网络带宽。
@@ -194,6 +194,25 @@ DNS（Domain Name System，域名系统）协议是一种用于将域名转换�
 WebSocket，是一种网络传输协议，位于`OSI`模型的应用层。可在单个`TCP`连接上进行全双工通信，能更好的节省服务器资源和带宽并达到实时通迅。
 
 客户端和服务器只需要完成一次握手，两者之间就可以创建持久性的连接，并进行双向数据传输。
+
++ WS首次握手是一个标准的HTTP GET请求，但是带上了`Upgrade:websocket`和`Connection:Upgrade`头，返回101后协议升级为WS，走WS自己的二进制帧格式。
++ WS鉴权靠握手时带 `Cookie/Token` 或后续消息验证，没有统一的标准。
++ WS实现SSL协议的安全连接就是WS over TLS，证书+443端口即可，实现与HTTPS相同。
+
+### 跨域
+
+浏览器中有一个重要的安全策略，叫做同源策略，**同源策略是指，若页面的源和页面运行过程中加载的源不一致时，出于安全考虑，浏览器会对跨域的资源访问进行一些限制**
+
+> 源 = 协议 + 主机 + 端口，如果源相同就叫同源，否则称为跨域。
+
+常见的解决方法有三种：
+
++ 代理：（使用场景：生产环境不跨域，开发环境跨域。）对开发服务器进行proxy配置即可。
++ CORS：`http1.1`适用
+  + 当请求方法属于GET/POST/HEAD、请求头仅包含安全的字段、Content-type中仅为限定值时，视为简单请求，请求头会添加`Origin`字段，响应头会添加``Access-Control-Allow-Origin``字段，以确定该源可不可以访问。
+  + 如果浏览器不认为这是一种简单请求，则会发送一个预检请求，包含请求相关信息（没有请求体），服务器返回对应允许的响应头，没问题就可以发送真实请求了。
+  + 如果是一个需要附带cookie的请求，请求需要附带上一定的配置，服务器响应时也会添加上响应头告知服务器是否允许。
++ JSONP：只能支持GET请求，大致做法是，使用一个`script`元素去请求服务器，同时准备好一个函数。服务器接收到请求后，响应一段JS代码调用原先准备好的函数，间接的把数据传递给客户端。
 
 # 设计模式
 
@@ -818,6 +837,8 @@ body.home .main-content        /* 2(class) + 1(element) = 21 */
 
 CSS3硬件加速的核心在于**创建一个独立的合成层**，当对元素应用特定的 CSS 属性时（如：fixed定位、translate3d、opacity加过渡、filter blur、canvas、video、iframe），浏览器会识别该元素需要特殊处理，并将其 **提升（Promote）** 为一个独立的合成层，此时GPU只需要对这个合成层进行操作即可实现加速。
 
+
+
 ## Vue
 
 ### VUE3项目目录结构
@@ -1337,6 +1358,38 @@ obj.m.apply(obj) // 1
 
 箭头函数的`this`在代码书写编译时就已经绑定，会捕获其定义时的词法作用域中的 `this`
 
+#### 类与构造函数
+
+```js
+window.name = 'bytedance'
+class A {
+    constructor(parameters) {
+       this.name = '123' 
+    }
+    getA() {
+        console.log(this);
+        return this.name + 1
+    }
+}
+let a = new A()
+let funcA = a.getA
+funcA()
+//返回值为报错，类中默认使用严格模式，this没有具体指向的情况下指向undefined。
+
+window.name = 'bytedance'
+function A(){
+    this.name = '123'
+}
+A.prototype.getA() {
+    console.log(this);
+    return this.name + 1
+}
+let a = new A()
+let funcA = a.getA
+funcA()
+//返回值为bytedance1，构造函数的原型对象的方法作为普通函数使用时，遵循正常的this准则。
+```
+
 ### apply&call&bind
 
 都是改变this的指向的方法，位于`Function`构造函数的`prototype`属性上，用法都是`Fn1.apply(Fn2,...args)`,其中Fn1&Fn2均为构造函数，但是也有些许不同：
@@ -1772,7 +1825,7 @@ app.listen(3000, () => {
 
   解决方法：正则限制、转义字符等...
 
-+ `ddos攻击`：向莫表服务器发送大量无意义的数据包，挤占网络带宽。
++ `ddos攻击`：向服务器发送大量无意义的数据包，挤占网络带宽。
 
   解决方法：对同IP限制请求速率等
 
@@ -1918,7 +1971,9 @@ history.replaceState({ page: 2 }, "Page 2", "/page2"); // 替换当前记录
 
 除了以上的全局变量之外还有localStorage、sessionStorage、Math、Date
 
+### 扫码登录
 
+扫码登录页面会生成一个全局唯一的id，当用户扫码登录时，会从二维码中拿到这个id，客户端就会把用户信息和id一起给到服务器，服务器就会通知对应id的页面加载用户的信息（扫码后发送请求，连接暂时不断，能查到对应id的信息就加载）。
 
 ## TypeScript
 
@@ -2671,7 +2726,7 @@ Map对象保存键值对，并且可以记住键的原始插入顺序，任何�
 + `catch()`-promise对象以失败标志返回时，执行catch中的语句
 + `finally()`-promise对象最终一定执行此代码块中的语句
 
-# 算法
+# 算法及JS功能实现
 
 ## 双指针
 
@@ -2788,6 +2843,175 @@ var threeSum = function (nums) {
 };
 ```
 
+## 滑动窗口
+
+### 题目
+
+[3. 无重复字符的最长子串 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-substring-without-repeating-characters/?envType=study-plan-v2&envId=top-100-liked)
+
+### 思路
+
+就如这种题目的类型名字一样，整一个可以滑动的窗口，动态控制窗口大小。
+
+### 答案
+
+```js
+var lengthOfLongestSubstring = function(s) {
+    let result = 0
+    let saver = ''
+    for(let i = 0;i<s.length;i++){
+        while(saver.indexOf(s[i])!=-1){
+            saver = saver.slice(1)
+        }
+        saver = saver + s[i]
+        result = Math.max(result,saver.length)
+    }
+    return result
+};
+```
+
+## 二叉树遍历
+
+```mermaid
+graph TD
+    A[二叉树遍历] --> B[广度优先 BFS]
+    A --> C[深度优先 DFS]
+    B --> D[层序遍历]
+    C --> E[前序遍历]
+    C --> F[中序遍历]
+    C --> G[后序遍历]
+```
+
+### 广度遍历
+
+原理：从根节点开始，按层级从上到下、从左到右遍历。
+
+```mermaid
+graph TD
+    A((1)) --> B((2))
+    A --> C((3))
+    B --> D((4))
+    B --> E((5))
+    C --> F((6))
+
+    classDef current fill:#f9f,stroke:#333;
+    classDef visited fill:#cff,stroke:#333;
+    
+    step1[访问1] --> step2[访问2] --> step3[访问3] --> step4[访问4] --> step5[访问5] --> step6[访问6]
+```
+
+```js
+function bfs(root) {
+  if (!root) return [];
+  
+  const result = [];
+  const queue = [root];
+  
+  while (queue.length) {
+    const node = queue.shift();
+    result.push(node.val);
+    
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+  
+  return result;
+}
+```
+
+### 深度遍历
+
+| 遍历方式 | 访问顺序     | 应用场景                   |
+| :------- | :----------- | :------------------------- |
+| 前序遍历 | 根 → 左 → 右 | 复制二叉树、前缀表达式     |
+| 中序遍历 | 左 → 根 → 右 | 二叉搜索树排序、中缀表达式 |
+| 后序遍历 | 左 → 右 → 根 | 删除二叉树、后缀表达式     |
+
+#### 前序遍历
+
+```mermaid
+graph TD
+    A((1)) --> B((2))
+    A --> C((3))
+    B --> D((4))
+    B --> E((5))
+    C --> F((6))
+
+    classDef current fill:#f9f,stroke:#333;
+    classDef visited fill:#cff,stroke:#333;
+    
+    step1[访问1] --> step2[访问2] --> step4[访问4] --> step5[访问5] --> step3[访问3] --> step6[访问6]
+```
+
+```js
+function preorder(root, result = []) {
+  if (root) {
+    result.push(root.val);
+    preorder(root.left, result);
+    preorder(root.right, result);
+  }
+  return result;
+}
+```
+
+#### 中序遍历
+
+```mermaid
+graph TD
+    A((1)) --> B((2))
+    A --> C((3))
+    B --> D((4))
+    B --> E((5))
+    C --> F((6))
+
+    classDef current fill:#f9f,stroke:#333;
+    classDef visited fill:#cff,stroke:#333;
+    
+    step4[访问4] --> step2[访问2] --> step5[访问5] --> step1[访问1] --> step3[访问3] --> step6[访问6]
+```
+
+```js
+function inorder(root, result = []) {
+  if (root) {
+    inorder(root.left, result);
+    result.push(root.val);
+    inorder(root.right, result);
+  }
+  return result;
+}
+```
+
+#### 后序遍历
+
+```mermaid
+graph TD
+    A((1)) --> B((2))
+    A --> C((3))
+    B --> D((4))
+    B --> E((5))
+    C --> F((6))
+
+    classDef current fill:#f9f,stroke:#333;
+    classDef visited fill:#cff,stroke:#333;
+    
+    step4[访问4] --> step5[访问5] --> step2[访问2] --> step6[访问6] --> step3[访问3] --> step1[访问1]
+```
+
+```js
+function postorder(root, result = []) {
+  if (root) {
+    postorder(root.left, result);
+    postorder(root.right, result);
+    result.push(root.val);
+  }
+  return result;
+}
+```
+
+## 动态规划
+
+
+
 ## 带并发限制的异步调用器
 
 ```js
@@ -2803,7 +3027,7 @@ class Scheduler {
 
     add(Task) {
         if (this.queue.size >= this.limit) {
-            return Promise.race(Array.from(this.queue).map((i)=>i)).finally(()=>this.add(Task))
+            return Promise.race(Array.from(this.queue)).finally(()=>this.add(Task))
         }
         else {
             const task = Task()
@@ -2859,6 +3083,78 @@ addPromise(1,2)
 ```
 
 将一个普通函数promise化。
+
+## 手写PromiseALL
+
+```js
+Promise.prototype.myAll = (arr) => {
+    return new Promise((resolve, reject) => {
+        let result = []
+        let counter = 0
+        arr.forEach((item,index) => {
+            Promise.resolve(item)
+                .then((value) => {
+                    result[index] = value
+                    counter++
+                    if (counter == arr.length) {
+                        resolve(result)
+                    }
+                })
+                .catch((value) => {reject(value)})
+        });
+    })
+}
+```
+
+轮流执行arr里面的promise，并按顺序填充到结果数组中。
+
+## 实现Events类
+
+```js
+class EventEmitter {     
+    constructor () {         
+        this.events = {}     
+    }
+    on (event, cb) {
+        if (!this.events[event]) {
+            this.events[event] = []
+        }
+        this.events[event].push(cb)
+        return this
+    }
+    off (event, cb) {
+        if (!cb) { 
+            this.events[event] = null 
+        } else {
+            this.events[event].some((fn, i) => {
+                if (cb === fn) {
+                    this.events[event].splice(i, 1)
+                    return true
+                }
+            })
+        }  
+        return this
+    }
+    once (event, cb) {
+        const func = (...args) => {
+            this.off(event, func)
+            cb.apply(this, args)
+        }
+        this.on(event, func)
+        return this
+    }
+    emit (event, ...args) {
+        const cbs = this.events[event]
+        if (!cbs) {
+            throw new Error(`${event} event is not registered.`)
+        }
+        cbs.forEach(cb => cb.apply(this, args))
+        return this
+    }
+}
+```
+
+
 
 # 实际面试环节
 
@@ -4417,6 +4713,8 @@ addPromise(1,2)
 
   ```
   原答：（我忘记原型对象是啥了😭）
+  
+  修正：（以上两个问题详见JS.Prototype）
   ```
 
 + vue有什么生命周期？
@@ -4435,12 +4733,36 @@ addPromise(1,2)
 
   ```
   原答：（太久不写vue了，忘记完了😭）
+  
+  修正：（以上三个问题详见Vue-生命周期）
   ```
 
 + 父子组件的生命周期是怎么调用的？
 
   ```
   原答：先创建子组件，再创建父组件
+  
+  修正：
+  	父 beforeCreate
+      父 created
+      父 beforeMount
+      --子 beforeCreate
+      --子 created
+      --子 beforeMount
+      --子 mounted      // 子组件先挂载
+      父 mounted       // 父组件后挂载
+  
+      // 更新时（父组件状态变化）：
+      父 beforeUpdate
+      --子 beforeUpdate
+      --子 updated     // 子组件先更新完成
+      父 updated      // 父组件后更新完成
+  
+      // 卸载时：
+      父 beforeDestroy
+      --子 beforeDestroy
+      --子 destroyed   // 子组件先销毁
+      父 destroyed    // 父组件后销毁
   ```
 
 + 手写：无重复最长字串（应该用滑动窗口，我用哈希表了，没做出来）

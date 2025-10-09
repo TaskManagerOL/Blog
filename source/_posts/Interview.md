@@ -6,7 +6,7 @@ categories: 随笔
 excerpt: 面试问题集合
 date: 2024-08-31 16:17:29
 sticky: 100
-password: ☁️☁️
+password: 
 ---
 
 # 面试技巧
@@ -20,11 +20,11 @@ Boss是不能先发送简历附件的，要填写线上简历+打招呼内容。
 主要围绕在讲项目实习的经历，讲一些稍微有技术亮点且你会的东西。
 
 ```
-	面试官您好，我是秦松云，就读桂林电子科技大学计算机信息安全学院，很高兴能参加贵司面试。
-	我的核心技术栈包括Vue/React，同时也有过React-Native/UniApp/Electron开发经验，熟悉常见的响应式设计和前端性能优化。
-	我有过两段实习经历：在中国科学院软件研究所实习中，我主要参与项目页面与组件编写，实现如大文件上传等功能；在云合智网实习中，实现AntvG6图表化网络层，参与部分代码重构与前端优化，达到处理时间减少80%。
-	我有自己写过若干项目：在Tasklist项目中，我担任全栈开发者角色，项目使用Vue+fastApi，实现主题切换、双token认证登录等。在Perfect Studio项目中，主要使用微信小程序开发工具+微信云后端，实现白屏优化、首页加载优化、懒加载等。在智能灌溉项目中，项目使用RN+express，完成数据图表可视化和部分移动端适配。
-	以上就是我的个人介绍，期待后续详细交流。
+    面试官您好，我是秦松云，就读桂林电子科技大学计算机信息安全学院，很高兴能参加贵司面试。
+    我的核心技术栈包括Vue/React，同时也有过React-Native/UniApp/Electron开发经验，熟悉常见的响应式设计和前端性能优化。
+    我有过两段实习经历：在中国科学院软件研究所实习中，我主要参与项目页面与组件编写，实现如大文件上传等功能；在云合智网实习中，实现AntvG6图表化网络层，参与部分代码重构与前端优化，达到处理时间减少80%。
+    我有自己写过若干项目：在Tasklist项目中，我担任全栈开发者角色，项目使用Vue+fastApi，实现主题切换、双token认证登录等。在Perfect Studio项目中，主要使用微信小程序开发工具+微信云后端，实现白屏优化、首页加载优化、懒加载等。在智能灌溉项目中，项目使用RN+express，完成数据图表可视化和部分移动端适配。
+    以上就是我的个人介绍，期待后续详细交流。
 ```
 
 # 计算机基础
@@ -174,15 +174,15 @@ TCP，传输控制协议，是一种可靠、**面向字节流的通信协议**�
 三次握手（Three-way Handshake）其实就是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。主要作用就是为了确认双方的接收能力和发送能力是否正常、指定自己的初始化序列号为后面的可靠性传送做准备。
 
 + 第一次握手：客户端发送网络包，服务端收到了。
-
+  
   这样服务端就能得出结论：客户端的发送能力、服务端的接收能力是正常的
 
 + 第二次握手：服务端发包，客户端收到了。
-
+  
   这样客户端就能得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。不过此时服务器并不能确认客户端的接收能力是否正常
 
 + 第三次握手：客户端发包，服务端收到了。
-
+  
   这样服务端就能得出结论：客户端的接收、发送能力正常，服务器自己的发送、接收能力也正常。
 
 ### DNS协议
@@ -837,46 +837,44 @@ body.home .main-content        /* 2(class) + 1(element) = 21 */
 
 CSS3硬件加速的核心在于**创建一个独立的合成层**，当对元素应用特定的 CSS 属性时（如：fixed定位、translate3d、opacity加过渡、filter blur、canvas、video、iframe），浏览器会识别该元素需要特殊处理，并将其 **提升（Promote）** 为一个独立的合成层，此时GPU只需要对这个合成层进行操作即可实现加速。
 
-
-
 ## Vue
 
 ### VUE3项目目录结构
 
 ```
-| node_modules					--项目依赖
-| public      					--公共文件夹
----| favicon.ico				--网站图标
-| src         	    			--源文件目录
----| assets					    --静态文件
-	---| utils				    --工具类JS
-	---| api				    --接口类JS
----| components					--组件
----| router						--路由配置
----| store						--状态管理器
----| views						--视图文件，与路由结构对应
----| App.vue					--根组件
----| main.js 					--入口文件
-| index.html					--入口html
-| package.json					--命令配置及依赖管理
-| package-lock.json				--依赖版本及更完整的依赖树
-| README.md						--说明文件
-| vue.config.json 				 --代理、打包等配置文件
+| node_modules                    --项目依赖
+| public                          --公共文件夹
+---| favicon.ico                --网站图标
+| src                             --源文件目录
+---| assets                        --静态文件
+    ---| utils                    --工具类JS
+    ---| api                    --接口类JS
+---| components                    --组件
+---| router                        --路由配置
+---| store                        --状态管理器
+---| views                        --视图文件，与路由结构对应
+---| App.vue                    --根组件
+---| main.js                     --入口文件
+| index.html                    --入口html
+| package.json                    --命令配置及依赖管理
+| package-lock.json                --依赖版本及更完整的依赖树
+| README.md                        --说明文件
+| vue.config.json                  --代理、打包等配置文件
 ```
 
 ---
 
 > **public和assets区别：**
->
-> ​	同样用于存放静态文件的文件夹。由于vue-cli、vite等工具打包时，public下的文件会原封不动的添加到dist中，而assets下的文件会被合并压缩。
->
-> ​	两者的区别是public下一般用于放有更新需求的第三方插件、图片且需要使用绝对路径来引用(否则会warning)，而assets下适合用于存放项目中所必须的图标、JS文件只支持相对路径。[相关文档](https://vitejs.cn/vite3-cn/guide/assets.html#importing-asset-as-url)
+> 
+> ​    同样用于存放静态文件的文件夹。由于vue-cli、vite等工具打包时，public下的文件会原封不动的添加到dist中，而assets下的文件会被合并压缩。
+> 
+> ​    两者的区别是public下一般用于放有更新需求的第三方插件、图片且需要使用绝对路径来引用(否则会warning)，而assets下适合用于存放项目中所必须的图标、JS文件只支持相对路径。[相关文档](https://vitejs.cn/vite3-cn/guide/assets.html#importing-asset-as-url)
 
 ---
 
 > **有了package.json为什么还需要package-lock.json：**
->
-> ​	前者声明依赖的种类而后者决定实际安装的版本，使用`npm install`时就是根据package-lock.json进行安装。
+> 
+> ​    前者声明依赖的种类而后者决定实际安装的版本，使用`npm install`时就是根据package-lock.json进行安装。
 
 ### MVVM
 
@@ -918,19 +916,19 @@ const incrementCounter = () => {
 
 ### 生命周期
 
-| 生命周期      | 描述                               | 使用场景                                                     |
-| ------------- | ---------------------------------- | ------------------------------------------------------------ |
-| beforeCreate  | 组件实例被创建之初                 | 执行时组件实例还未创建，通常用于插件开发中执行一些初始化任务 |
-| created       | 组件实例已经完全创建               | 组件初始化完毕，各种数据可以使用，常用于异步数据获取         |
-| beforeMount   | 组件挂载之前                       | 未执行渲染、更新，dom未创建                                  |
-| mounted       | 组件挂载到实例上去之后             | 初始化结束，dom已创建，可用于获取访问数据和dom元素           |
-| beforeUpdate  | 组件数据发生变化，更新之前         | 更新前，可用于获取更新前各种状态                             |
-| updated       | 组件数据更新之后                   | 更新后，所有状态已是最新                                     |
-| beforeDestroy | 组件实例销毁之前                   | 销毁前，可用于一些定时器或订阅的取消                         |
-| destroyed     | 组件实例销毁之后                   | 组件已销毁，作用同上                                         |
-| activated     | keep-alive 缓存的组件激活时        |                                                              |
-| deactivated   | keep-alive 缓存的组件停用时调用    |                                                              |
-| errorCaptured | 捕获一个来自子孙组件的错误时被调用 |                                                              |
+| 生命周期          | 描述                    | 使用场景                           |
+| ------------- | --------------------- | ------------------------------ |
+| beforeCreate  | 组件实例被创建之初             | 执行时组件实例还未创建，通常用于插件开发中执行一些初始化任务 |
+| created       | 组件实例已经完全创建            | 组件初始化完毕，各种数据可以使用，常用于异步数据获取     |
+| beforeMount   | 组件挂载之前                | 未执行渲染、更新，dom未创建                |
+| mounted       | 组件挂载到实例上去之后           | 初始化结束，dom已创建，可用于获取访问数据和dom元素   |
+| beforeUpdate  | 组件数据发生变化，更新之前         | 更新前，可用于获取更新前各种状态               |
+| updated       | 组件数据更新之后              | 更新后，所有状态已是最新                   |
+| beforeDestroy | 组件实例销毁之前              | 销毁前，可用于一些定时器或订阅的取消             |
+| destroyed     | 组件实例销毁之后              | 组件已销毁，作用同上                     |
+| activated     | keep-alive 缓存的组件激活时   |                                |
+| deactivated   | keep-alive 缓存的组件停用时调用 |                                |
+| errorCaptured | 捕获一个来自子孙组件的错误时被调用     |                                |
 
 ### Diff算法
 
@@ -961,20 +959,27 @@ React16中引入的核心重写，核心在于将**原本庞大、同步不可�
 + **Fiber 节点：**Fiber结构不再仅仅依赖树形的虚拟 DOM 数据结构。它引入了 **`Fiber`** 这个**新的数据结构**来表示一个工作单元。每个 React 元素（组件实例、DOM 节点等）对应一个 Fiber 节点。它包含了该组件/节点所需的所有信息（类型、props、state、关联的 DOM 节点、子节点、兄弟节点、父节点等）。
 
 + **增量渲染（时间切片）：**
+  
   + React 将整个渲染/更新过程分解成多个以 **Fiber 节点为单位的工作单元**。 
   + React 不再一次性完成整个树的 diff 和更新。它一次处理一个（或一小批）Fiber 节点。 
   + 在处理完一个 Fiber 节点后，React 会检查当前帧**剩余的时间**（使用类似 `requestIdleCallback` 的机制，但 React 实现了自己更强大的 `Scheduler` 调度器）。 
   + 如果当前帧时间快用完了（或者有更高优先级的任务到达），React 会**暂停**当前渲染工作，将控制权交还给浏览器，让浏览器去处理用户交互、动画绘制等高优先级任务。
   + 当浏览器空闲时（下一帧或者更晚），React 会**恢复**渲染工作，从上次暂停的 Fiber 节点继续处理后续节点。
+
 + **优先级调度：**
+  
   + React 为不同的更新来源赋予了不同的优先级（例如，用户输入 > 交互动画 > 数据加载 > 后台任务）。
   + 如果一个低优先级的渲染任务正在进行中（例如渲染一个大型列表），此时用户触发了高优先级更新（例如输入框输入）。React 可以**中断**正在进行的低优先级渲染。优先去处理高优先级的更新（例如快速响应输入，更新输入框状态和 UI）。等处理完高优先级更新后，再回过头来继续处理、重新开始或者丢弃之前的低优先级渲染。
+
 + **双缓存（Fiber 树）：**
+  
   + 屏幕上当前显示内容对应的 Fiber 树称为 `current` 树。
   + 当开始一次新的渲染（更新）时，React 会基于 `current` 树克隆（或新建）一棵新的 Fiber 树，称为 `workInProgress` (WIP) 树。所有的更新工作（diff, 副作用标记）都在这棵 WIP 树上进行。
   + 当 WIP 树完整地构建完成（所有工作单元都处理完），并且所有的副作用（DOM 更新）都计算好后，React 会**一次性将 WIP 树的根节点指针指向 `current`**。这个切换操作非常快，保证了 UI 更新的原子性，避免出现“半成品”状态。
-  +  切换后，之前的 WIP 树就变成了新的 `current` 树，而之前的 `current` 树则成为下一次更新的基准（或可以被回收）。
+  + 切换后，之前的 WIP 树就变成了新的 `current` 树，而之前的 `current` 树则成为下一次更新的基准（或可以被回收）。
+
 + **渲染阶段与提交阶段：**
+  
   + **Render Phase (协调/渲染阶段):**
     + 此阶段是**可中断、可重启、可做优先级调度**的。
     + 主要工作：遍历 Fiber 树，进行 diff 比较，找出需要更新的地方。
@@ -1012,8 +1017,8 @@ Vue这么做的好处是效率快，React这么做的好处是不阻塞用户交
 ### ECMA-262标准化语言规范
 
 > ### ECMAScript和Javascript的区别:
->
-> ​	ECMAScript是JavaScript的核心语言规范，而JavaScript则是基于这些规范的具体实现，包含了更多的功能和API，以便在浏览器和其他环境中运行。
+> 
+> ​    ECMAScript是JavaScript的核心语言规范，而JavaScript则是基于这些规范的具体实现，包含了更多的功能和API，以便在浏览器和其他环境中运行。
 
 ```markdown
 ES1（1997年）
@@ -1185,7 +1190,7 @@ const Counter = () => {
     return () => {
         num++
         console.log(num);
-        
+
     }
 }
 
@@ -1264,7 +1269,7 @@ function test() {
 test()
 {
  let blockValue = "3"
-	log(blockValue)//"3"
+    log(blockValue)//"3"
 }
 
 log(globalValue)//"1"
@@ -1482,7 +1487,7 @@ str instanceof String // false
 ```
 
 > **手写instanceof：**
->
+> 
 > ```js
 > function myInstanceOf(left,right){
 >     if(typeof left !== 'object'||typeof left === null)return false
@@ -1491,7 +1496,7 @@ str instanceof String // false
 >         if(proto === null) return false;//防止不是使用构造函数创建的实例
 >         if(proto === right.prototype)return true
 >         proto = Object.getPrototypeOf(proto)
-> 	}
+>     }
 > }
 > ```
 
@@ -1514,7 +1519,7 @@ JS运行时需要执行同步和异步的任务，而事件循环是管理异步
 **宏任务**在事件循环中的每一轮按照顺序进行，而**微任务**则是在当前宏任务执行完毕后，下一个宏任务开始前立即执行。
 
 > 当前宏任务是指微任务被包裹的那个宏任务：
->
+> 
 > ```js
 > setTimeout(()=>{
 >     Promise.resolve().then(()=>console.log(1))
@@ -1524,7 +1529,7 @@ JS运行时需要执行同步和异步的任务，而事件循环是管理异步
 ---
 
 > 宏任务常见API：`setTimeout/setInterval`、`I/O 操作(比如文件的读写&网络的请求)`、`DOM 事件(点击/滚动事件等)`，另外值得一提的是，主线程也是一个宏任务！
->
+> 
 > 微任务常见API：`Promise.then/catch/finally`、`process.nextTick(Node环境)`、`queueMicrotask手动添加微任务`
 
 ```js
@@ -1560,9 +1565,9 @@ Promise.resolve().then(()=>console.log(6))
 读取宏任务队列，读到第三个setTimeout，开始执行其内部语句，遇到同步任务，压入栈中并执行输出4然后弹出。
 
 > 同步任务不是栈结构吗，为什么不是从下到上输出呢？
->
+> 
 > 是这样的，栈结构的后进先出的出是指函数被执行完后就出栈。我们举个例子：
->
+> 
 > ```js
 > function a() {
 >   console.log('In function a');
@@ -1577,7 +1582,7 @@ Promise.resolve().then(()=>console.log(6))
 > //In function b
 > //Back to function a
 > ```
->
+> 
 > 这个例子中a先进栈，然后执行调用b的时候b进栈，然后执行，b执行完了b出栈，这时候栈顶又变成了a，继续执行a，a出栈。（栈结构可以通过执行栈和函数调用上下文、返回地址记录执行b后应该返回到哪里，而不会重新执行a）
 
 ### 事件捕获与事件冒泡
@@ -1661,11 +1666,11 @@ async function run() {
   try {
     const result = await fetchData();
     console.log(result); // 输出: "Data fetched successfully!"
-    
+
 
     const processedResult = await processData(result);
     console.log(processedResult); // 输出: "Processed: Data fetched successfully!"
-    
+
     const displayedResult = await displayData(processedResult);
     console.log(displayedResult); // 输出: "Displaying: Processed: Data fetched successfully!"
 
@@ -1677,6 +1682,7 @@ run();
 ```
 
 ### 防抖与节流
+
 防抖`debounce`和节流`throttle`是两种常见的优化技术，用于处理高频触发的事件。
 如果一个按钮同时有单双击事件，我们就会发现需要用到防抖。
 
@@ -1737,9 +1743,9 @@ function throttle(func, delay) {
 ---
 
 > 怎么才能不影响主线程工作上传文件？
->
+> 
 > 可以使用Web Worker，`new Worker('js程序')`然后再用`postMessage()`去给他发送消息。
->
+> 
 > Web Worker可以允许网页在后台执行一些耗时的操作，而不会阻塞主线程，他允许开发者在JS主线程之外单开一个线程。
 
 ### SSG、SSR、CRG
@@ -1814,19 +1820,19 @@ app.listen(3000, () => {
 常见的一些攻击方式包括`XSS`、`CSRF`、`SQL注入`
 
 + `XSS`(跨脚本攻击)：浏览器无法区分input输入框中的是正常的用户输入还是代码，这就会造成一些特殊的输入被当作代码执行。
-
+  
   解决方法：正则限制、转义字符等...
 
 + `CSRF`(跨站请求伪造)：用户在访问a网站后，被诱导点击攻击网站，攻击网站向a网站发送请求，默认携带a的登录凭证，然后a就会以为用户在执行操作。
-
+  
   解决方法：双Token认证，同源检测...
 
 + `SQL注入`：将恶意的sql查询或添加语句添加到应用的输入参数中，入侵和破坏数据库。
-
+  
   解决方法：正则限制、转义字符等...
 
 + `ddos攻击`：向服务器发送大量无意义的数据包，挤占网络带宽。
-
+  
   解决方法：对同IP限制请求速率等
 
 ### SSO单点登录
@@ -2020,9 +2026,9 @@ let tupleArr:[number,string] = [12,'34']
 ```ts
 //Enum类型，用于枚举一个变量可能出现的所有数据常量
 enum Status {
-	fulfilled,
-	pending,
-	rejected
+    fulfilled,
+    pending,
+    rejected
 }
 let status:Status = Status.pending
 ```
@@ -2230,7 +2236,7 @@ testArr.test()//test1
 Array.test('test2')//test2
 ```
 
-###  New
+### New
 
 好的，接下来我们来讲讲`new`到底干了啥玩意。
 
@@ -2261,18 +2267,18 @@ console.log(special instanceof Special,normal instanceof Normal)//false true
 - 创建一个新的对象
 
 - 将对象指向构造函数
-
+  
   > 所有对象都有一个`__proto__`专门用来指向构造函数，用于实现构造函数的属性和方法的继承
 
 - 将构造函数的this指向对象
-
+  
   > 使用`apply`函数实现换绑，同时调用Fun拿到一个返回值
 
 可以写成下面这样：
 
 ```js
 function mynew(Fun,...args){//args用于接收构造函数的参数
-	const obj = {}
+    const obj = {}
     obj._proto_ = Fun.prototype
     let result = Fun.apply(obj,args)
     return result instanceof Object?result:obj;//用来处理特殊情况,如果返回普通函数就返回
@@ -2353,7 +2359,7 @@ console.log(childInstance.count); // 输出 0
 深拷贝则是开一个新的栈，基本类型的值也是拷贝字面量；但是如果是引用类型，值相同但是会有不同的内存地址。即深拷贝出来的对象不指向同一个内存地址。
 
 > eg.`JSON.stringify()`、`structuredClone()`
->
+> 
 > `structuredClone()`在Node17后支持，而且相较于传统的`stringify`而言，此函数可以保留对象的类型和结构，传统方法无法处理特殊的对象。
 
 简而言之：浅拷贝只复制其字面量不改变新值的内存地址（还是指向旧的值），深拷贝则会改变赋予一个新的内存地址。因为浅拷贝只会复制其字面量而不更改地址，当对新值进行修改时，旧的值也会被修改。但是由于基本数据类型是存在栈中的，而对象是存在堆中的。所以深拷贝是对于对象而言的。
@@ -2394,7 +2400,7 @@ function deepClone(obj,hash = new WeakMap()){//用weakmap是因为垃圾回收�
 ```
 
 > 为什么是`new obj.constructor()`而不是`new obj.__proto__.constructor()`？
->
+> 
 > 其实都可以，每一个对象都有`constructor`和`__proto__`，前者指向这个对象的构造函数，后者指向这个对象的构造函数的`prototype`
 
 ### 原型及原型链
@@ -2446,13 +2452,13 @@ console.log(Object.getPrototypeOf(Object.getPrototypeOf(c)),c.__proto__.__proto_
 
 基本类型有六种。
 
- ```js
+```js
 //Number
- let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
+let intNum = 1,octNum = 001,hexNum = 0x1 //整数，常见十进制、八进制、十六进制
 let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
- log(0/0) //返回NaN 意思是本来返回数值的操作失败
+log(0/0) //返回NaN 意思是本来返回数值的操作失败
 //另外NaN===NaN 返回false
- ```
+```
 
 ---
 
@@ -2463,26 +2469,26 @@ let floatNum = 0.1,eNum = 1.11e7//可以表示科学计数法e后面是幂
 
 ---
 
- ```js
+```js
 //String
- let AStr = "1",aStr = '1',someStr = `1`//字符串一旦被创建，值就不可以再被改变，如果执行改变的操作，会先销毁再创建。
- ```
+let AStr = "1",aStr = '1',someStr = `1`//字符串一旦被创建，值就不可以再被改变，如果执行改变的操作，会先销毁再创建。
+```
 
 ---
 
- ```js
+```js
 //Null
- let nullOne = null,log(typeof nullOne)//null是一个空对象指针，输出为Object，如果变量要保存对象，但是当时又没有对象可以保存，就用null填充。
+let nullOne = null,log(typeof nullOne)//null是一个空对象指针，输出为Object，如果变量要保存对象，但是当时又没有对象可以保存，就用null填充。
 log(null==undefined)//undefined是由null派生来的，返回为真
- ```
+```
 
 ---
 
- ```js
+```js
 //Boolean
- //对于非空字符串、数值、对象、N/A 转为布尔值为true
+//对于非空字符串、数值、对象、N/A 转为布尔值为true
 //对于""、0、NaN、null、undefined 转为布尔值为false
- ```
+```
 
 ---
 
@@ -2497,52 +2503,54 @@ log(null==undefined)//undefined是由null派生来的，返回为真
 
 引用类型统称为`object`，包括`object` `array` `function` `Date` `RegExp` `Map` `Set` 
 
- ```js
+```js
 //Object对象
- let man = { // 属性名可以是字符串或者数值
-	name:"zero",
- 	"age":1,
- 	1:true
- }
- ```
+let man = { // 属性名可以是字符串或者数值
+   name:"zero",
+    "age":1,
+    1:true
+}
+```
 
 ---
 
- ```js
+```js
 //Array
- let colors = ["red", 2, {age: 20 }] //JS数组是动态大小的，每个槽位可以存储任意类型数据的。
- ```
+let colors = ["red", 2, {age: 20 }] //JS数组是动态大小的，每个槽位可以存储任意类型数据的。
+```
 
 ---
 
- ```js
+```js
 //Function
- let sum = (num1, num2) => {
- return num1 + num2;
- };
- ```
+let sum = (num1, num2) => {
+return num1 + num2;
+};
+```
 
 ---
 
-####  区别
+#### 区别
 
  基本数据类型和引用数据类型存储在内存中的位置不同：
 
- - 基本数据类型存储在栈中
- - 引用类型的对象存储于堆中
+- 基本数据类型存储在栈中
 
- ```js
-let a = 10;
-let b = a; // 赋值操作
-b = 20;
-console.log(a); // 10值
+- 引用类型的对象存储于堆中
+  
+  ```js
+  let a = 10;
+  let b = a; // 赋值操作
+  b = 20;
+  console.log(a); // 10值
+  ```
 
 var obj1 = {}
 var obj2 = obj1;//这个操作让obj1和2的引用地址相同了。
 obj2.name = "1";
 console.log(obj1.name); // 1
- ```
 
+```
 ### BigInt
 
 JS为了处理大整数，提供了一个原生的数据类型`BigInt`。
@@ -2562,17 +2570,17 @@ let bigInt2 = 1234567981324697n //在末尾加n
 
 某些方法会返回一个迭代器，如`arr.entries()`返回一个带有全部键值对的迭代器，使用`next()`方法返回迭代器结果对象。
 
- ```js
- const array1 = ['a', 'b', 'c'];
- 
- const iterator1 = array1.entries();
- 
- console.log(iterator1.next().value);
- // Expected output: Array [0, "a"]
- 
- console.log(iterator1.next().value);
- // Expected output: Array [1, "b"]
- ```
+```js
+const array1 = ['a', 'b', 'c'];
+
+const iterator1 = array1.entries();
+
+console.log(iterator1.next().value);
+// Expected output: Array [0, "a"]
+
+console.log(iterator1.next().value);
+// Expected output: Array [1, "b"]
+```
 
 ### Array
 
@@ -2584,78 +2592,78 @@ let bigInt2 = 1234567981324697n //在末尾加n
 
 ---
 
-####  常用的数组方法
+#### 常用的数组方法
 
- + `every()/some()`-对数组内所有元素执行括号内函数，全部通过/有一个通过返回布尔值。
- + `fill(target,start,end)`-对数组内指定索引覆盖target值，超出范围不会扩展数组。
- + `find()/findLast()`-返回括号内函数符合条件的第一个/最后一个值，否则返回undefined。
- + `findIndex()/findLastIndex()`-返回括号内函数符合条件的第一个/最后一个索引，否则返回undefined。
- + `indexOf()/lastIndexOf()`-返回括号内值符合条件的第一个值/最后一个值的索引，否则返回-1。
- + `flat()`-扁平化数组，括号内为深度，ES10新语法
- + `includes()`-判断数组是否包含一个值，返回布尔值，ES7新语法
- + `join()`-将一个数组更改为其各元素以括号内字符串连接的字符串，默认使用逗号，如目标数组不是纯数组，报错。
- + `pop()/push()`-移除/添加数组末尾一个元素并返回该值，如果push的是一个数组则会在末尾添加数组，push自身会导致循环引用。
- + `shift()/unshift()`-移除/添加数组第一个元素并返回该值
- + `reverse()/toReversed()`-转置原数组改变原数组/转置原数组不改变原数组，`toReversed()`ES14新语法
- + `slice(start,end)`-浅拷贝一个由start开始end结束的数组，不改变原数组。
- + `sort()/toSorted()`-对数组按照元素第一个字符的ascii码排序改变原数组/不改变原数组
- + `splice(start,num,value...)/toSpliced()`-删除由start开始的num个数值，并在start索引下添加value值，改变原数组/不改变原数组。
++ `every()/some()`-对数组内所有元素执行括号内函数，全部通过/有一个通过返回布尔值。
++ `fill(target,start,end)`-对数组内指定索引覆盖target值，超出范围不会扩展数组。
++ `find()/findLast()`-返回括号内函数符合条件的第一个/最后一个值，否则返回undefined。
++ `findIndex()/findLastIndex()`-返回括号内函数符合条件的第一个/最后一个索引，否则返回undefined。
++ `indexOf()/lastIndexOf()`-返回括号内值符合条件的第一个值/最后一个值的索引，否则返回-1。
++ `flat()`-扁平化数组，括号内为深度，ES10新语法
++ `includes()`-判断数组是否包含一个值，返回布尔值，ES7新语法
++ `join()`-将一个数组更改为其各元素以括号内字符串连接的字符串，默认使用逗号，如目标数组不是纯数组，报错。
++ `pop()/push()`-移除/添加数组末尾一个元素并返回该值，如果push的是一个数组则会在末尾添加数组，push自身会导致循环引用。
++ `shift()/unshift()`-移除/添加数组第一个元素并返回该值
++ `reverse()/toReversed()`-转置原数组改变原数组/转置原数组不改变原数组，`toReversed()`ES14新语法
++ `slice(start,end)`-浅拷贝一个由start开始end结束的数组，不改变原数组。
++ `sort()/toSorted()`-对数组按照元素第一个字符的ascii码排序改变原数组/不改变原数组
++ `splice(start,num,value...)/toSpliced()`-删除由start开始的num个数值，并在start索引下添加value值，改变原数组/不改变原数组。
 
 ---
 
 > **forEach、filter、map、reduce的区别:**
->
+> 
 > 三者都是ES5的新特性，均用于数组。
->
+> 
 > `forEach`遍历数组全部元素并对数组进行操作，不返回新数组，return用于跳出循环，返回undefined。
->
+> 
 > `filter`遍历数组全部元素并使用判断语句返回新数组，return值为假的时候过滤。
->
+> 
 > `map`遍历数组全部元素并操作数组产生新数组，不改变原数组。
->
+> 
 > `reduce((accumulator, currentValue)=>...,initialValue)`-遍历数组，若initialValue设置则为初始accumulator值，若没设置则currentValue为数组第一个值，不可处理数组对象。
 
- ```js
- //设分别执行三种函数
- let arr = [
- {name:'小明', age: 14},
- {name:'小华', age: 11},
- {name:'小红', age: 15},
- {name:'小黄', age: 17},
- ]
- 
- let forEachBack = arr.forEach(item => {
- item.name = "学生"+item.name
- })
- console.log(forEachBack)//undefined
- console.log(arr)//name前都加上学生
- 
- let filterBack = arr.filter(item => {
- return item.age>10
- })
- console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
- console.log(arr)//arr不变
- 
- let filterBack = arr.filter(item => {
- return item.age>10
- })
- console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
- console.log(arr)//arr不变
- 
- let mapBack = arr.map(item => {
- return item.age + 1
- })
- console.log(mapBack)//不包含有name属性的，每一项age加1的新一维数组：[15,12,16,18]
- console.log(arr)//arr不变
- 
- let initialValue = -1;
- let reduceBack = mapBack.reduce(
- (accumulator, currentValue) => accumulator + currentValue,
- initialValue
- );
- console.log(reduceBack)//60 = -1 + 15 + 12 + 16 +18
- console.log(arr)//arr不变
- ```
+```js
+//设分别执行三种函数
+let arr = [
+{name:'小明', age: 14},
+{name:'小华', age: 11},
+{name:'小红', age: 15},
+{name:'小黄', age: 17},
+]
+
+let forEachBack = arr.forEach(item => {
+item.name = "学生"+item.name
+})
+console.log(forEachBack)//undefined
+console.log(arr)//name前都加上学生
+
+let filterBack = arr.filter(item => {
+return item.age>10
+})
+console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
+console.log(arr)//arr不变
+
+let filterBack = arr.filter(item => {
+return item.age>10
+})
+console.log(filterBack)//包含有name属性的，每一项age大于10的新数组
+console.log(arr)//arr不变
+
+let mapBack = arr.map(item => {
+return item.age + 1
+})
+console.log(mapBack)//不包含有name属性的，每一项age加1的新一维数组：[15,12,16,18]
+console.log(arr)//arr不变
+
+let initialValue = -1;
+let reduceBack = mapBack.reduce(
+(accumulator, currentValue) => accumulator + currentValue,
+initialValue
+);
+console.log(reduceBack)//60 = -1 + 15 + 12 + 16 +18
+console.log(arr)//arr不变
+```
 
 ### String
 
@@ -2672,43 +2680,43 @@ typeof b; // "string"
 
 ---
 
-####  常用的字符串方法
+#### 常用的字符串方法
 
- + `concat(value,str)`-以value值拼接两个字符串。
- + `endsWith(value,index)/endsWith()`-查找字符串是否以value结尾/开头，index为查找的末尾索引+1，返回布尔值。
- + `includes(value)`-查找value值，返回布尔值。
- + `indexOf(searchString, position)/lastIndexOf()`-查找第一次/最后一次出现searchString的索引，position为查找开始的索引，默认为0。
- + `match()/search()`-匹配正则表达式，返回匹配的字符的数组/索引。
- + `replace(value,origin)/replaceAll()`-匹配字符串value替换origin，返回替换后的字符串。
- + `slice(start,end)`-提取字符串的一部分返回新字符串，不改变原字符串。
- + `split(rule)`-按照rule模式将字符串分割成一个数组，返回该数组。
- + `toLowerCase()/toUpperCase()`-全部换成小写/大写
- + `trim()`-从字符串两端移除空白字符，返回新字符，不修改原来的字符。
++ `concat(value,str)`-以value值拼接两个字符串。
++ `endsWith(value,index)/endsWith()`-查找字符串是否以value结尾/开头，index为查找的末尾索引+1，返回布尔值。
++ `includes(value)`-查找value值，返回布尔值。
++ `indexOf(searchString, position)/lastIndexOf()`-查找第一次/最后一次出现searchString的索引，position为查找开始的索引，默认为0。
++ `match()/search()`-匹配正则表达式，返回匹配的字符的数组/索引。
++ `replace(value,origin)/replaceAll()`-匹配字符串value替换origin，返回替换后的字符串。
++ `slice(start,end)`-提取字符串的一部分返回新字符串，不改变原字符串。
++ `split(rule)`-按照rule模式将字符串分割成一个数组，返回该数组。
++ `toLowerCase()/toUpperCase()`-全部换成小写/大写
++ `trim()`-从字符串两端移除空白字符，返回新字符，不修改原来的字符。
 
 ### Map
 
 Map对象保存键值对，并且可以记住键的原始插入顺序，任何值都可以作为键或者值。比较适合多次查找的情况。
 
 >  **Object和Map的区别：**
->
->  |   区别   |                     Map                      |                      Object                       |
->  | :------: | :------------------------------------------: | :-----------------------------------------------: |
->  | 键的类型 |             Map的键可以是任何值              |         Object的键必须为字符串或者Symbol          |
->  | 键的顺序 |         Map的对象按照插入的顺序迭代          | Object的排序就很混乱，ES6之后按照属性创建顺序迭代 |
->  |   迭代   |          可迭代对象，可以使用for of          |            不可迭代，默认只能用for in             |
->  |   性能   | 在涉及频繁添加和删除键值对的场景中表现更好。 |   在涉及频繁添加和删除键值对的场景中表现更好。    |
+> 
+> | 区别   | Map                    | Object                        |
+> |:----:|:----------------------:|:-----------------------------:|
+> | 键的类型 | Map的键可以是任何值            | Object的键必须为字符串或者Symbol        |
+> | 键的顺序 | Map的对象按照插入的顺序迭代        | Object的排序就很混乱，ES6之后按照属性创建顺序迭代 |
+> | 迭代   | 可迭代对象，可以使用for of       | 不可迭代，默认只能用for in              |
+> | 性能   | 在涉及频繁添加和删除键值对的场景中表现更好。 | 在涉及频繁添加和删除键值对的场景中表现更好。        |
 
 ---
 
-####  常用的map方法
+#### 常用的map方法
 
- + `clear()`-清除所有元素
- + `delete()`-删除指定键的值
- + `forEach()`-对每一个键/值进行一次操作
- + `get()`-获取指定键的值，一般并对其进行后续处理。
- + `has()`-检查指定键是否存在，返回布尔值。
- + `keys()/values()`-返回一个迭代器对象，该对象包含了此map中每个元素的键/值
- + `set()`-向map中添加一个指定的键值对。
++ `clear()`-清除所有元素
++ `delete()`-删除指定键的值
++ `forEach()`-对每一个键/值进行一次操作
++ `get()`-获取指定键的值，一般并对其进行后续处理。
++ `has()`-检查指定键是否存在，返回布尔值。
++ `keys()/values()`-返回一个迭代器对象，该对象包含了此map中每个元素的键/值
++ `set()`-向map中添加一个指定的键值对。
 
 ### Promise
 
@@ -2896,36 +2904,36 @@ graph TD
 
     classDef current fill:#f9f,stroke:#333;
     classDef visited fill:#cff,stroke:#333;
-    
+
     step1[访问1] --> step2[访问2] --> step3[访问3] --> step4[访问4] --> step5[访问5] --> step6[访问6]
 ```
 
 ```js
 function bfs(root) {
   if (!root) return [];
-  
+
   const result = [];
   const queue = [root];
-  
+
   while (queue.length) {
     const node = queue.shift();
     result.push(node.val);
-    
+
     if (node.left) queue.push(node.left);
     if (node.right) queue.push(node.right);
   }
-  
+
   return result;
 }
 ```
 
 ### 深度遍历
 
-| 遍历方式 | 访问顺序     | 应用场景                   |
-| :------- | :----------- | :------------------------- |
-| 前序遍历 | 根 → 左 → 右 | 复制二叉树、前缀表达式     |
+| 遍历方式 | 访问顺序      | 应用场景          |
+|:---- |:--------- |:------------- |
+| 前序遍历 | 根 → 左 → 右 | 复制二叉树、前缀表达式   |
 | 中序遍历 | 左 → 根 → 右 | 二叉搜索树排序、中缀表达式 |
-| 后序遍历 | 左 → 右 → 根 | 删除二叉树、后缀表达式     |
+| 后序遍历 | 左 → 右 → 根 | 删除二叉树、后缀表达式   |
 
 #### 前序遍历
 
@@ -2939,7 +2947,7 @@ graph TD
 
     classDef current fill:#f9f,stroke:#333;
     classDef visited fill:#cff,stroke:#333;
-    
+
     step1[访问1] --> step2[访问2] --> step4[访问4] --> step5[访问5] --> step3[访问3] --> step6[访问6]
 ```
 
@@ -2966,7 +2974,7 @@ graph TD
 
     classDef current fill:#f9f,stroke:#333;
     classDef visited fill:#cff,stroke:#333;
-    
+
     step4[访问4] --> step2[访问2] --> step5[访问5] --> step1[访问1] --> step3[访问3] --> step6[访问6]
 ```
 
@@ -2993,7 +3001,7 @@ graph TD
 
     classDef current fill:#f9f,stroke:#333;
     classDef visited fill:#cff,stroke:#333;
-    
+
     step4[访问4] --> step5[访问5] --> step2[访问2] --> step6[访问6] --> step3[访问3] --> step1[访问1]
 ```
 
@@ -3009,8 +3017,6 @@ function postorder(root, result = []) {
 ```
 
 ## 动态规划
-
-
 
 ## 带并发限制的异步调用器
 
@@ -3061,7 +3067,7 @@ function asyncAdd(a, b, callback) {
         callback(a + b);
     }, 1000);
 }
- 
+
 const promisify = (fn) => {
     return (...args) => {
       return new Promise((resolve, reject) => {
@@ -3071,10 +3077,10 @@ const promisify = (fn) => {
       });
     };
   };
- 
+
  // 将 asyncAdd 转换为 Promise 风格的函数
  const addPromise = promisify(asyncAdd);
- 
+
  // 使用转换后的函数
 addPromise(1,2)
 .then((data) => {
@@ -3154,8 +3160,6 @@ class EventEmitter {
 }
 ```
 
-
-
 # 实际面试环节
 
 这里只记录一些我录音了或者有意义的面试。
@@ -3163,7 +3167,7 @@ class EventEmitter {
 ## 2024.10.15海康威视
 
 + 你的上一段实习有什么亮点/难点？
-
+  
   ```markdown
   原答：需要对给过来的一些数据进行处理。
   
@@ -3171,7 +3175,7 @@ class EventEmitter {
   ```
 
 + JS中常用的数据结构类型有哪些？
-
+  
   ```markdown
   原答：7种，number，undefined，string，null，boolean，symbol，其他的类型统称object，object可能包含对象、数组、函数之类的。
   
@@ -3179,7 +3183,7 @@ class EventEmitter {
   ```
 
 + JS怎么处理大整形类型？
-
+  
   ```markdown
   原答：一般是用bigint，对数据转化成大整形类型之后如果需要加加减减的话就要加n，比如加一就是加一n
   
@@ -3187,7 +3191,7 @@ class EventEmitter {
   ```
 
 + JS的Map和对象有什么区别？
-
+  
   ```markdown
   原答：Map和对象的一些方法属性可能不同，比如has、get之类的。
   
@@ -3195,7 +3199,7 @@ class EventEmitter {
   ```
 
 + 怎么获取对象的属性值？返回一个数组，数组是对象的所有值怎么写？
-
+  
   ```
   原答：直接用键获取就可以了，用Object.values()即可返回数组。
   
@@ -3203,7 +3207,7 @@ class EventEmitter {
   ```
 
 + 对象可以直接用for of循环拿这些值吗？
-
+  
   ```
   原答：可以，直接用for of应该就可以拿到。//你知道什么是可迭代对象吗？对象还可以用for of拿这些值吗？
   
@@ -3211,7 +3215,7 @@ class EventEmitter {
   ```
 
 + 讲一下原型链吧
-
+  
   ```markdown
   原答：意思是说每一个对象，每一个对象构建的时候需要用构造函数去构造原型。每一个对象都有一个prototype指向它的属性，里面还有一个constructor指向他自己，如果我需要用一个构造函数去构造一个新的对象的话，新的对象也会有一个_proto_指向原来的构造函数，如果想要获取一开始的构造函数的话，可以用原型链溯源往上找。
   
@@ -3219,7 +3223,7 @@ class EventEmitter {
   ```
 
 + 你有一个实例，怎么通过这个实例拿到他的构造函数？
-
+  
   ```
   原答：可以通过循环访问_proto_去找他的原型，如果寻找到的原型的prototype和实例的相同，那就说明这是他的构造函数。//不对，八股文背得太浅了，没有理解本质
   
@@ -3227,7 +3231,7 @@ class EventEmitter {
   ```
 
 + 什么是构造函数，什么是原型对象？
-
+  
   ```
   原答：构造函数就是用于构造对象的函数，原型对象就是你要创建一个实例的一个对象，比如我new Person()，Person就是他的原型对象。
   
@@ -3235,7 +3239,7 @@ class EventEmitter {
   ```
 
 + 在Vue场景下，让你封装一个Vue组件，组件实现一个登录表单界面，一个name一个password，要求创建一个子组件给别人用，别人通过v-model传进来，你的表单里也是有一个name和password，如果后续你的表单扩了，后续别人也是通过v-model传，你的这个自定义组件的v-model怎么实现？
-
+  
   ```
   原答：不太理解 
   //那你v-model怎么用的？ 
@@ -3251,12 +3255,11 @@ class EventEmitter {
   
   修正：v-model是用于表单输入和应用状态之间创建数据双向绑定，对于自定义组件，可以使用defineModel来简化v-model，接收传入的值和及时返回改变的值。
   ```
-  
 
 ## 2024.10.16云合智网
 
 + ES6有接触过吗，用过里面的哪些东西呢？
-
+  
   ```
   原答：用过Map之类的，和箭头函数。
   
@@ -3264,7 +3267,7 @@ class EventEmitter {
   ```
 
 + 能说一下箭头函数有哪些优势吗？
-
+  
   ```
   原答：箭头函数和普通函数的区别是写法不同，箭头函数的this指向它本身，普通函数的this按照JS规定指向，普通函数可以用new去构造，箭头函数不可以。
   
@@ -3272,7 +3275,7 @@ class EventEmitter {
   ```
 
 + Map的键可以有哪些类型？
-
+  
   ```
   原答：Map的键可以是任何类型，如果是对象就不可以，对象的键只能被读为字符串。
   
@@ -3280,7 +3283,7 @@ class EventEmitter {
   ```
 
 + call、apply和bind的区别？
-
+  
   ```
   原答：这三者都是用于改变this的指向，call传入两个值，第一个值是指向的对象，第二个值传入一个参数。apply第二个值是传入的数组，然后bind就是直接返回指向的对象。
   
@@ -3288,7 +3291,7 @@ class EventEmitter {
   ```
 
 + 有没有了解过let、const和var有什么区别？
-
+  
   ```
   原答：let和const是ES6新增的特性，是块级元素；var一般作用域全局变量。let的值是可变的，const的值是不可变的，如果你想要试图改变它的话会报错。//那如果const定义一个对象，那么我们可以改变这个对象里属性的值吗？
   原答：可以的
@@ -3297,7 +3300,7 @@ class EventEmitter {
   ```
 
 + 你了解过哪些进行深拷贝的方法？
-
+  
   ```
   原答：getPrototypeOf，通过获取某个对象的原型的属性和方法来进行深拷贝。//还有别的吗
   
@@ -3305,7 +3308,7 @@ class EventEmitter {
   ```
 
 + 有没有了解过闭包？
-
+  
   ```
   原答：假如在函数a中定义了一个函数b，b中可以用到a定义的量。//什么时候使用闭包？
   原答：用于构建私有变量，用于...说不出，可以举个例子。...（但是举错了，把延长变量存在时间的例子举成了构建私有变量的了。）
@@ -3314,7 +3317,7 @@ class EventEmitter {
   ```
 
 + 有没有用过splice这个函数？
-
+  
   ```
   原答：用过，splice对数组进行操作，第一个值是指要操作的索引，第二个值是要删除元素的数量，splice会从该索引后删除指定数量的元素，第三个值是值删除后在这个位置添加的数组。
   
@@ -3322,7 +3325,7 @@ class EventEmitter {
   ```
 
 + 有没有了解过事件冒泡？
-
+  
   ```
   原答：在DOM中有三个阶段，第一个是啥来着，会去找那个事件，从最高的window往下找，一直找到那个事件，然后进入处于目标状态，比如click获得这个事件的状态，然后再往上冒泡，再从最小的盒子再冒泡到全局变量。
   
@@ -3330,7 +3333,7 @@ class EventEmitter {
   ```
 
 + 你用过HTML5吗，用过里面什么东西？
-
+  
   ```
   原答：...(不确定是不是HTML5的)
   
@@ -3338,7 +3341,7 @@ class EventEmitter {
   ```
 
 + 有接触过HTML5的websocket吗？
-
+  
   ```
   原答：我拿它和平时我们用的一些协议来对比吧，比如我们平时用的是Http、Https，然后用get、post传请求，这种只能是一次过一次回这样之类的，但是websocket是进行一个长线链接，比如说我要做一个聊天网站，我在这边发，另一台电脑也会马上同步信息过去，这就是平时websocket需要用到的一个场景。
   
@@ -3346,7 +3349,7 @@ class EventEmitter {
   ```
 
 + 你对Http协议了解得多吗？
-
+  
   ```
   原答：只了解一点点//现在最新的版本是多少？
   原答：http2吧好像到3了。
@@ -3355,7 +3358,7 @@ class EventEmitter {
   ```
 
 + 有了解过https和http的区别吗？
-
+  
   ```
   原答：https简单来说就是http+TLS/SSL 因为http本身是不安全的，https相当于在http上进行了一个加密，需要在网站上获取证书啊，去进行一个传来的密文的解密。
   
@@ -3363,7 +3366,7 @@ class EventEmitter {
   ```
 
 + 有没有了解过https加密用的是什么算法呢？
-
+  
   ```
   原答：没有
   
@@ -3371,7 +3374,7 @@ class EventEmitter {
   ```
 
 + 有了解过http请求方法有哪些吗？
-
+  
   ```
   原答：常用的get post，不常用的push delete之类的
   
@@ -3379,7 +3382,7 @@ class EventEmitter {
   ```
 
 + 有了解过get post有什么区别吗？
-
+  
   ```
   原答：getpost平时我们用的时候都是要有请求头的，然后post是可以传一个请求内容的。
   
@@ -3387,7 +3390,7 @@ class EventEmitter {
   ```
 
 + 有了解过常见的http响应码有哪些吗？
-
+  
   ```
   原答：200开头的就是服务正常，300开头没怎么见过，400开头比如404 405Method Not Allow这种一般是前端路由这边的一些问题，500开头一般是服务器那边的问题。
   
@@ -3395,7 +3398,7 @@ class EventEmitter {
   ```
 
 + 有没有了解Vue中computed和watch有什么区别？
-
+  
   ```
   原答：计算属性不太了解，watch是用于监听ref属性的改变，如果改变的话就会执行后续的相应函数。
   
@@ -3403,7 +3406,7 @@ class EventEmitter {
   ```
 
 + 写v-for的时候一般会加一个key，为什么？
-
+  
   ```
   原答：key是用于和v-for一起去遍历盒子的
   
@@ -3411,7 +3414,7 @@ class EventEmitter {
   ```
 
 + 如果你的vue项目中遇到兄弟组件之间的通信，你会用什么方法呢？
-
+  
   ```
   原答：用一些相关的插件比如pinia，可以让父传子props再用子传父emit
   
@@ -3419,7 +3422,7 @@ class EventEmitter {
   ```
 
 + 有部署过项目嘛，用什么Web容器呢？
-
+  
   ```
   原答：直接把文件传到服务器中，然后用nginx去部署的
   
@@ -3427,7 +3430,7 @@ class EventEmitter {
   ```
 
 + 那你改过nginx的配置嘛？
-
+  
   ```
   原答：改过端口号和index页面和location指向我的文件夹。
   
@@ -3435,7 +3438,7 @@ class EventEmitter {
   ```
 
 + 平常有接触linux？
-
+  
   ```
   原答：接触得少
   
@@ -3443,7 +3446,7 @@ class EventEmitter {
   ```
 
 + 听说过docker容器嘛？
-
+  
   ```
   原答：听说过，相当于我这边写好了，然后用docker把我这边的环境什么的打包给别人。
   
@@ -3451,7 +3454,7 @@ class EventEmitter {
   ```
 
 + 有没有用过集成持续部署的软件，比如说Jenkins
-
+  
   ```
   原答：没有用过
   
@@ -3459,7 +3462,7 @@ class EventEmitter {
   ```
 
 + 平常CSS写得多嘛，相对定位和绝对定位解释一下
-
+  
   ```
   原答：一般是给父盒子相对定位，然后想要使用绝对定位，需要给父元素设置相对定位才能使用绝对定位，绝对定位是相对于父元素的。
   
@@ -3467,7 +3470,7 @@ class EventEmitter {
   ```
 
 + 用过flex布局嘛，flex布局他的容器上有哪些属性呢？
-
+  
   ```
   原答：比如说常用的justify-content、align-item。flex-wrap可以对子元素进行换行处理。
   
@@ -3475,7 +3478,7 @@ class EventEmitter {
   ```
 
 + 算法题：100~999的水仙花数
-
+  
   ```js
   //原答：
   for (let i = 100; i < 999; i++){
@@ -3490,14 +3493,13 @@ class EventEmitter {
   
   //（挺好的）
   ```
-  
 
 ## 2025.4.21科守搏
 
 自我介绍需要改进一下，面试官觉得有些简短了。
 
 + 可以说下双向绑定及其操作原理吗？
-
+  
   ```
   原答：使用v-model进行双向绑定，一般是用于input输入框，如果我们在input中改变值，会同样更新到JS中。
   
@@ -3505,28 +3507,28 @@ class EventEmitter {
   ```
 
 + 就是他的原理你有没有了解，比如说他是靠什么东西然后造成双向绑定的？
-
+  
   ```
   原答：因为Vue是MVVM模型嘛，v-model是VM那一块的，通过修改他的值，我们可以实现视图和模型的数据更新。
   
   修正：Vue 中的双向绑定主要是通过其响应式系统实现的，这个系统的核心在于对数据的劫持和依赖收集。
   
   vue2中主要通过三步实现：
-  	1.数据劫持：Vue 会遍历 data 对象中的每一个属性，通过 Object.defineProperty() 来劫持这些属性的 getter 和 setter。当数据被访问（通过 getter）时，Vue 可以追踪到哪些视图元素（依赖）使用了这个数据。当数据被修改（通过 setter）时，Vue 可以立即知晓数据的变化，并通知相关的视图元素进行更新。
-  	2.依赖收集：Vue 中引入了订阅器（Dep）的概念。当一个视图元素（如指令或计算属性）访问某个数据属性时，该视图元素会被添加到该数据属性对应的订阅器（Dep）中。当数据变化时，它会通知所有相关的视图元素进行更新。
-  	3.发布订阅模式：Vue 中的每个视图元素（或指令）都会对应一个观察者（Watcher）对象。观察者对象会监听数据的变化，当数据变化时，观察者会收到通知，并执行相应的更新函数，更新视图。
+      1.数据劫持：Vue 会遍历 data 对象中的每一个属性，通过 Object.defineProperty() 来劫持这些属性的 getter 和 setter。当数据被访问（通过 getter）时，Vue 可以追踪到哪些视图元素（依赖）使用了这个数据。当数据被修改（通过 setter）时，Vue 可以立即知晓数据的变化，并通知相关的视图元素进行更新。
+      2.依赖收集：Vue 中引入了订阅器（Dep）的概念。当一个视图元素（如指令或计算属性）访问某个数据属性时，该视图元素会被添加到该数据属性对应的订阅器（Dep）中。当数据变化时，它会通知所有相关的视图元素进行更新。
+      3.发布订阅模式：Vue 中的每个视图元素（或指令）都会对应一个观察者（Watcher）对象。观察者对象会监听数据的变化，当数据变化时，观察者会收到通知，并执行相应的更新函数，更新视图。
   
   vue3则是使用ES6的Proxy对象代替了Object.defineProperty()，其中ref和reactive的功能都是使用此对象实现的，Proxy 可以直接代理整个对象，拦截对象的读取、写入等多种操作，解决了 Vue 2 中无法检测对象属性的新增和删除等局限性。
   ```
 
 + 同步异步了解吗？
-
+  
   ```
   原答：同步的话因为JS是单线程的，一般我们的代码就是从上往下就是同步的，异步的话就是我们执行一个线程的时候，我们需要格外开一个线程去做，比如说fetch去拿一下参数，就是异步的。
   ```
 
 + 你刚刚说的是一整个下来，你可以说一下异步是怎么实现的吗？
-
+  
   ```
   原答：异步的话一般可以使用Promise去实现，有些比如fetch本身就是异步的，拿到返回值就可以往下执行then了。
   
@@ -3534,7 +3536,7 @@ class EventEmitter {
   ```
 
 + 异步原理是什么呢？
-
+  
   ```
   原答：应该就是再开一个线程，因为本身是单线程的，但是有需要也可以开一个线程。
   
@@ -3542,12 +3544,13 @@ class EventEmitter {
   ```
 
 + 深拷贝浅拷贝了解吗？
-
+  
   ```
   原答：了解，我先讲一下我们常用的数据类型吧，常用的数据我们是存在栈里面的，对象的话是存在堆里面的，浅拷贝的话只是对字面量进行拷贝，深拷贝会对内存地址进行修改。
   ```
-+ computed和watch的区别？
 
++ computed和watch的区别？
+  
   ```
   原答：watched的话一般就是监听一个值的改变，改变了就进行后续操作；computed的话是监测多个值，计算之后再返回一个值。
   
@@ -3555,7 +3558,7 @@ class EventEmitter {
   ```
 
 + 路由守卫了解吗？
-
+  
   ```
   原答：比如我们经常需要实现管理员、用户这种身份。我们会在配置路由的时候写一些判断条件，如果不符合的话就不让他进那个路由。
   
@@ -3567,7 +3570,7 @@ class EventEmitter {
   ```
 
 + 性能优化有没有做过？
-
+  
   ```
   原答：做过CSS和JS的吧，CSS一般是首屏优化、骨架图。JS的话，得看具体情况做优化了。
   
@@ -3575,24 +3578,24 @@ class EventEmitter {
   ```
 
 + 兼容性有没有做过？
-
+  
   ```
   原答：做过 用的媒体查询，如果是比较简单的话，一般使用媒体查询去做。
   ```
 
 + 你在写uniapp的时候有没有了解过，苹果安卓不同机子的出现的不同问题？
-
+  
   ```
   原答：没有
   
   修正:会有样式问题，可以根据不同机型引入特定的样式文件。
-  	IOS中input键盘的keyup、keydown支持不完善，可以用input时间配合监听键盘输入。
-  	iOS 输入框有内阴影，可设置-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 去除。
-  	iOS 下 new Date() 不支持 “-” 字符，会导致日期解析错误。可在创建日期对象时将 “-” 替换为 “/”，如 new Date("2017-08-11 12:00:00".replace(/-/g, "/"));。
+      IOS中input键盘的keyup、keydown支持不完善，可以用input时间配合监听键盘输入。
+      iOS 输入框有内阴影，可设置-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 去除。
+      iOS 下 new Date() 不支持 “-” 字符，会导致日期解析错误。可在创建日期对象时将 “-” 替换为 “/”，如 new Date("2017-08-11 12:00:00".replace(/-/g, "/"));。
   ```
 
 + 现在有一个新项目，要做项目搭建，你会做什么，主题架构设计大概怎么做？
-
+  
   ```
   原答：我会根据要做的项目所需要的技术，去确定协议和技术栈，看看哪个会更加符合这个新项目。
   
@@ -3600,7 +3603,7 @@ class EventEmitter {
   ```
 
 + ws和http的区别是什么？
-
+  
   ```
   原答：http是连接之后 会断开，虽然在1.0版本后保留了长连接，但是还是会断开，每次发送一条或多条请求就会断开。ws不一样，他会进行一个长线连接，他会监听用户有没有更新新的数据。有就会马上更新。
   
@@ -3608,7 +3611,7 @@ class EventEmitter {
   ```
 
 + nexttick有没有了解？
-
+  
   ```
   原答：在执行生命周期的时候，他不是会根据数据的改变而反复渲染页面吗，如果有一个循环让他一直更新，那DOM是受不了的。nextTick是让他在更新好之后再进行渲染的。
   
@@ -3620,31 +3623,31 @@ class EventEmitter {
 因为我忘记录音了，只记得一些我稍微答得含糊或没答到面试官期望点上的问题。
 
 + 懒加载是怎么实现的？
-
+  
   ```
   原答：比如我们有六十条数据，每一次都先和服务端拿一定数量的数据比如五条，然后每次我们滑动到页面底部的时候就再和服务端拿五条数据。
   
   修正：延迟加载 + 视口监听
-  	首先每次都渲染少量数据，每次进入视口的时候就再加载。
-  	视口监听一般用下面两种方法去做：
-  		使用 Intersection Observer API（现代化解决方案）
-  		使用滚动监听，获取元素距离顶部高度、滚动距离、视口高度、元素高度，计算判断是否进入视口。
+      首先每次都渲染少量数据，每次进入视口的时候就再加载。
+      视口监听一般用下面两种方法去做：
+          使用 Intersection Observer API（现代化解决方案）
+          使用滚动监听，获取元素距离顶部高度、滚动距离、视口高度、元素高度，计算判断是否进入视口。
   ```
 
 + 前端存储用那些？
-
+  
   ```
   原答：我用过cookie、localstorage、sessionstorage。cookie是服务端返回数据的时候请求头带有一个set-cookie，浏览器会自动存储带有的cookie。localstorage在前端设定会存储到浏览器中，如果刷新页面也不会消失。sessionstorage则是刷新页面会消失。
   
   修正：（面试官觉得我存储用得少了）除了以上存储，还有一些，以下列举：
-  	IndexedDB：持存储大量结构化数据，容量通常为 50MB 以上，甚至可以存储几乎无限量的数据。它是一个低级 API，提供了更强大的功能，如事务处理和索引，支持异步操作，不会阻塞用户界面，可存储和检索几乎任何类型的 JavaScript 对象。适合存储大规模的结构化数据，如用户文件、离线数据、上万条数据等，适用于需要离线访问和复杂查询的 Web 应用。
-  	Cache Storage：是一种在浏览器中缓存资源文件的存储方式，允许开发者将网站所需的资源（如 HTML、CSS、JavaScript、图像等）保存在客户端的缓存中，以便在离线时仍然能够访问网站，并提供更快的加载速度和更好的用户体验。在 PWA（Progressive Web App）中应用广泛，适合用于缓存资源文件，实现离线访问和提高页面加载速度。
-  	File System API：允许 Web 应用直接操作浏览器的文件系统，适合存储大量二进制文件，如图像、音频、视频等。可用于文件管理器、离线文件编辑器等应用，但目前仅支持部分浏览器，如 Chrome，且需要用户授权才能使用。
-  	更多的我就不列举了。
+      IndexedDB：持存储大量结构化数据，容量通常为 50MB 以上，甚至可以存储几乎无限量的数据。它是一个低级 API，提供了更强大的功能，如事务处理和索引，支持异步操作，不会阻塞用户界面，可存储和检索几乎任何类型的 JavaScript 对象。适合存储大规模的结构化数据，如用户文件、离线数据、上万条数据等，适用于需要离线访问和复杂查询的 Web 应用。
+      Cache Storage：是一种在浏览器中缓存资源文件的存储方式，允许开发者将网站所需的资源（如 HTML、CSS、JavaScript、图像等）保存在客户端的缓存中，以便在离线时仍然能够访问网站，并提供更快的加载速度和更好的用户体验。在 PWA（Progressive Web App）中应用广泛，适合用于缓存资源文件，实现离线访问和提高页面加载速度。
+      File System API：允许 Web 应用直接操作浏览器的文件系统，适合存储大量二进制文件，如图像、音频、视频等。可用于文件管理器、离线文件编辑器等应用，但目前仅支持部分浏览器，如 Chrome，且需要用户授权才能使用。
+      更多的我就不列举了。
   ```
 
 + Vue你使用的pinia，react有类似的库吗？
-
+  
   ```
   原答：redux库是用于组件间传值的，但是具体我不是很了解。
   
@@ -3652,44 +3655,43 @@ class EventEmitter {
   ```
 
 + 前端的加密有哪些？
-
+  
   ```
   原答：用过JWT实现token加密。
   
   修正：对称加密AES，非对称加密RSA（证书），SSL/TLS（HTTPS协议）。
   ```
-  
 
 ## 2025.4.25钛动
 
 + 个人介绍
 
 + 问我在上家公司解决什么比较突出的问题。
-
+  
   + Antv库年久失修是什么问题还有印象吗？
-
+    
     ```
     原答：好像是某个图表的问题，记不清了。
     
     修正：他的文档有很多不清晰的地方，它本身给出的一些比如画布，有一些属性是没有写清晰的。
     ```
-
+  
   + 按钮同时可以单击双击，防抖是怎么实现的？
-
+    
     ```
     原答：对单击进行类似防抖的操作，Gap之后触发单击事件，Gap内点了两次，则触发双击事件。
     
     修正：（确实，这应该不属于防抖，防抖是同一个操作Gap内被执行了则会重置。）
     ```
-
+  
   + log文件进行大文件上传？
-
+    
     ```
     原答：（参考大文件上传，同样回答，挺好的）
     ```
-
+  
   + Promise.all 100个分片可以同时上传100个吗？
-
+    
     ```
     原答：好像不行吧，没试过传这么多的。
     
@@ -3697,41 +3699,41 @@ class EventEmitter {
     ```
 
 + TaskList相关问题
-
+  
   + 响应式怎么做的？
-
+    
     ```
     原答：简单的响应式用@media，复杂一点的就写JS。
     
     修正：媒体查询、流式布局、flex布局、网格布局、JS。
     ```
-
+  
   + 主题是怎么做的？
-
+    
     ```
     原答：CSS里面可以使用:root伪类选择器中命名CSS变量，然后对应的元素可以使用var(变量名)进行引用，每次只需要改变root里面的样式就可以了。
     
     补充：使用伪类选择器root命名CSS变量，通过切换body的类名来激活不同的主题。
     ```
-
+  
   + 如果主题色中的颜色是碰撞的，比如背景主题同时有两种颜色你该怎么解决呢？
-
+    
     ```
     原答：不太懂怎么解决。
     
     修正：可以使用策略模式按需修改背景的样式。
     ```
-
+  
   + 你了解过策略模式吗，其他的设计模式了解过吗？
-
+    
     ```
     原答：不了解。
     
     修正：（详见设计模式）
     ```
-
+  
   + 登录全流程？
-
+    
     ```
     原答：首先注册，前端输入邮箱发送验证码，后端使用SMTP协议发送邮件，验证码生成一个随机六位数字。验证码有60s的冷却，前后端都有60s的计时禁止点击/发送。然后到登录，输入密码账号登录，服务端会返回一个cookie表示现在已经暂时登录了，如果这是你第一次登录的话还会返回一个token用于获取用户的信息，cookie是用来持久化登录的，token是用来获取用的信息。下一次登录用户浏览器cookie会表明用户最近已经登录，实现持久化登录，token使用JWT加密。
     
@@ -3745,45 +3747,45 @@ class EventEmitter {
     Refresh Token：用于获取新的 Access Token，通常具有较长的有效期（如 7 天）
     （和我上面讲的双token不一样这个是用来刷新Access Token的）
     ```
-
+  
   + 有做权限控制吗？
-
+    
     ```
     原答：有一点点，有做路由守卫，拿一下用户的邮箱就可以控制进不去了。
     ```
 
 + Perfect Studio相关问题
-
+  
   + 白屏优化怎么实现的？
-
+    
     ```
     原答：因为是摄影的，有很多图片。首页进去先路由到一个骨架图，同时等待一定时间之后再把页面图片显示出来。
     ```
-
+  
   + 懒加载怎么实现？
-
+    
     ```
     原答：原本要显示的图片可能有100多张200多张，我窗口就只显示7 8张，然后每次监测到滑动到窗口底部就触发加载并到数组中。
     ```
 
 + CSS
-
+  
   + 小程序样式上的问题，适配？
-
+    
     ```
     原答：有某种机型不适配某种圆角按钮，苹果机的input属性好像监测不到keydown和keyup。大概就这么多。 
     
     修正：基本是一些屏幕宽高适配问题。IOS的fixed元素会因为软键盘而弹起，其本质是IOS没有将页面高度变为视口高度，如果机型是IOS可以获取该元素当前可见区域作为其高度。
     ```
-
+  
   + CSS垂直居中？
-
+    
     ```
     原答：一般flex解决，还有就是给这个元素的父元素设置绝对，这个元素设置相对，top、left、bottom、right设置为0即可。
     ```
-
+  
   + flex有对某个子项进行特别处理的，你有了解过吗？
-
+    
     ```
     原答：之前用过但是现在忘了。
     
@@ -3791,15 +3793,15 @@ class EventEmitter {
     ```
 
 + JS
-
+  
   + 数据类型？
-
+    
     ```
     原答：（详见数据类型）
     ```
-
+  
   + 判断数据类型？
-
+    
     ```
     原答：可以使用type of
     
@@ -3817,9 +3819,9 @@ class EventEmitter {
     
     //这边要回去再看一下哈
     ```
-
+  
   + TS使用过他的一些什么特性？
-
+    
     ```
     原答：用过尖括号判断类型
     
@@ -3827,9 +3829,9 @@ class EventEmitter {
     
     //泛型你知道吗，类型工具你知道吗
     ```
-
+  
   + 异步编程了解吗？
-
+    
     ```
     原答：JS是单线程的，比如我们有时候需要定时器之类的，就是异步了。异步是通过事件循环去实现的，我们平时写的常见代码是同步类型的，异步任务中又分微任务和宏任务，promise.then就是微任务，setTimeout就是宏任务，微任务会在下一个宏任务执行之前执行。微任务和宏任务要进队列的，普通的同步任务是进堆的。
     
@@ -3839,9 +3841,9 @@ class EventEmitter {
     
     修正：JS一开始是作为浏览器的脚本语言去设计的，为了不和浏览器主线程抢资源，所以选择是用了单线程模型。
     ```
-
+  
   + 异步任务我们一般使用什么去捕捉状态？
-
+    
     ```
     原答：一般使用promise去捕捉，使用resolve和reject确定成功失败，然后用.then和.catch去执行成功和失败后的操作。
     
@@ -3851,9 +3853,9 @@ class EventEmitter {
     
     修正：直接在promise里面及.then() throw new Error、try catch、Promise.all/race被拒绝。
     ```
-
+  
   + 还了解Promise的什么静态方法？
-
+    
     ```
     原答：Promise.all吧，并发执行里面的所有任务，全部成功执行then，返回顺序是里面数组的顺序。
     
@@ -3867,9 +3869,9 @@ class EventEmitter {
     ```
 
 + Vue
-
+  
   + 响应式原理？
-
+    
     ```
     原答：里面是ref reactive去实现响应式的，原理是使用proxy去构造ref和reative的，一般会进行双向绑定，如果视图更新的话，模型也会更新的，双向更新。
     
@@ -3879,9 +3881,9 @@ class EventEmitter {
     
     修正：一般会有事件监听器绑定在元素上（addEventListener）。
     ```
-
+  
   + $nexttick了解吗？
-
+    
     ```
     原答：vue有生命周期嘛，然后我们对某些数据进行更改嘛，有些东西我们可能需要渲染之后再去拿，这时候就用nexttick。
     
@@ -3894,28 +3896,27 @@ class EventEmitter {
     修正：其实也是基于宏任务微任务去实现的，其实相当于我们执行同步任务，然后执行宏任务再执行微任务，我们业务逻辑的微任务执行完了，vue会在当前的微任务队列末端添加一个渲染真实DOM的微任务，同时再添加一个nexttick
     回调的微任务，这样就可以在下一个tick之前触发nexttick了。（值得一提的是虚拟DOM也是微任务中进行更行）
     ```
-
+  
   + v-if和v-show的区别？
-
+    
     ```
     原答：（详见v-if和v-show）
     ```
 
 + 反问环节：
-
+  
   ```
   建议？
   
   从我问的问题来看，你有些原理还要去了解清楚，就差一点点。（🤕）项目还是有点单薄，很多都是工具上的应用，没有提了多少效之类的。得突出一些重难点，尤其现在对前端的要求不只是工具了，还要有原理和理解，比如你用某些工具具体量化出来提效多少。
   ```
 
-
 ## 2025.4.28趣链
 
 自我介绍这一块还是欠缺，得整理出一个模板
 
 + 实习期间遇到的项目和个人项目的差别在哪？
-
+  
   ```
   原答：统一规划、发版，用专业的CI/CD软件。
   
@@ -3923,13 +3924,13 @@ class EventEmitter {
   ```
 
 + 大文件上传？
-
+  
   ```
   原答：（见之前上面）
   ```
 
 + 小程序只做过微信的对吗，RN做过吗？
-
+  
   ```
   修正：QQ小程序的接口基本和微信的差不太多，只不过需要把 `wx.` 改为 `qq.` 。微信使用的是原生框架，而支付宝小程序框架采用的是类似react框架。
   ```
@@ -3937,7 +3938,7 @@ class EventEmitter {
 + 说一下你们团队的git怎么用？
 
 + 前端工程化了解得多吗？
-
+  
   ```
   原答：直接用的vite和next的默认打包，没有调整过。
   
@@ -3945,13 +3946,13 @@ class EventEmitter {
   ```
 
 + ES6？
-
+  
   ```
   原答：let、cosnt、promise、箭头函数
   ```
 
 + 展开说说promise
-
+  
   ```
   原答：用于处理异步的，带有reject和resolve，正常触发then，异常触发catch。
   
@@ -3963,7 +3964,7 @@ class EventEmitter {
   ```
 
 + Promise静态方法？
-
+  
   ```
   原答：all，race之类的，（解释）
   
@@ -3981,7 +3982,7 @@ class EventEmitter {
 + 服务端渲染做过吗？
 
 + 伪类和伪元素的区别？
-
+  
   ```
   原答：:root好像是伪类、:before这种好像就是伪元素。
   
@@ -3989,7 +3990,7 @@ class EventEmitter {
   ```
 
 + 介绍一下Vue及相关的一些工具？
-
+  
   ```
   原答：我一般用Vite+Pinia+TailwindCSS。
   
@@ -3997,7 +3998,7 @@ class EventEmitter {
   ```
 
 + 如何做全局状态管理？
-
+  
   ```
   原答：应该也可以用闭包的方法实现一个全局状态管理工具。
   
@@ -4007,7 +4008,7 @@ class EventEmitter {
 + 路由有了解吗？
 
 + 场景题：一个表格进入某个详细项，回来怎么不取消筛选项。
-
+  
   ```
   原答：使用localStorage吧
   
@@ -4015,7 +4016,7 @@ class EventEmitter {
   ```
 
 + keep-alive用过吗？
-
+  
   ```
   修正：Vue中用keep-alive标签包裹需要的组件，可以保持切换路由的时候组件不销毁，当使用keep-alive的时候会多出来两个生命周期钩子，组件被缓存时触发deactivate，复用时触发activated。如果想要在react中实现可以使用memo钩子。
   
@@ -4025,7 +4026,7 @@ class EventEmitter {
 + 怎么学习前端的？
 
 + 反问：
-
+  
   ```
   建议？
   
@@ -4035,12 +4036,12 @@ class EventEmitter {
 ## 2025.6.11字节跳动
 
 + 笔试题（都没写出来😫）
-
+  
   + 模块化引用执行顺序
   + 普通函数promise化
 
 + 数组和集合的区别？
-
+  
   ```
   原答：数组和集合的静态方法有所不同，集合自动去重。
   
@@ -4056,13 +4057,13 @@ class EventEmitter {
   ```
 
 + 事件捕获和事件冒泡是什么？
-
+  
   ```
   原答：（都答出来了，但是面试官没听见捕获，又问了我一次，我以为答错了，就说我不会。）
   ```
 
 + HTTPS加密过程？
-
+  
   ```
   原答：通过TLS/SSL进行非对称加密。
   
@@ -4072,7 +4073,7 @@ class EventEmitter {
   ```
 
 + 浏览器的缓存机制？
-
+  
   ```
   原答：cookie、local storage、session storage。....
   
@@ -4080,38 +4081,37 @@ class EventEmitter {
   ```
 
 + 强缓存和协商缓存的协议是怎么样的？
-
+  
   ```
   原答：不太了解
   
   修正：
-  	强缓存和协商缓存是 HTTP 协议中两种不同类型的缓存机制。
-  	发送资源请求后响应头可以携带某些字段。
-  	
-  	强缓存：
-  	就是无论资源有没有更新，只要还没到过期时间就不请求新的资源
-  	依据缓存控制相关指令直接判定是否使用本地缓存资源，无需向服务器验证资源是否更新。
-  	常见的控制指令有Cache-Control: max-age和Expires等。
-  	
-  	协商缓存：
-  	就是每次请求资源都检查相关字段，一旦更新就请求资源。
-  	浏览器携带缓存标识向服务器发起请求，由服务器根据请求中的标识判断资源是否可用。
-  	常见的协商缓存机制有Last-Modified/If-Modified-Since和ETag/If-None-Match等。
+      强缓存和协商缓存是 HTTP 协议中两种不同类型的缓存机制。
+      发送资源请求后响应头可以携带某些字段。
+  
+      强缓存：
+      就是无论资源有没有更新，只要还没到过期时间就不请求新的资源
+      依据缓存控制相关指令直接判定是否使用本地缓存资源，无需向服务器验证资源是否更新。
+      常见的控制指令有Cache-Control: max-age和Expires等。
+  
+      协商缓存：
+      就是每次请求资源都检查相关字段，一旦更新就请求资源。
+      浏览器携带缓存标识向服务器发起请求，由服务器根据请求中的标识判断资源是否可用。
+      常见的协商缓存机制有Last-Modified/If-Modified-Since和ETag/If-None-Match等。
   ```
 
 + 移动端适配方案？
-
+  
   ```
   原答：flex 网格 vh vw @media 再难就JS
   ```
-
 
 ## 2025.6.29柠檬微趣
 
 笔试
 
 + 单选第一题
-
+  
   ```cpp
   //求下面函数的时间复杂度
   int pow(int x, unsigned int n){
@@ -4127,7 +4127,7 @@ class EventEmitter {
   ```
 
 + 单选第二题
-
+  
   ```js
   //执行完后myList.head.next.value为多少
   function LinkedList() {
@@ -4159,7 +4159,7 @@ class EventEmitter {
   ```
 
 + 单选题第三题
-
+  
   ```js
   //执行完后result为多少
   function mystery(input) {
@@ -4187,7 +4187,7 @@ class EventEmitter {
   ```
 
 + 单选题第四题
-
+  
   ```js
   //求下面函数的时间复杂度
   function example(arr) {
@@ -4199,7 +4199,7 @@ class EventEmitter {
   ```
 
 + 手搓第一题
-
+  
   ```js
   给定一个字符串数组A，字符串由小写英文字母组成，每个字符串长度相同。
   现在，对于每个字符串，我们需要删除几个相同索引的字符，假定删除字符的索引集合为D，使得删除字符后的字符串数组按照字典序排序，并且我们希望删除的字符数量最小，请你给出相应的最小值。
@@ -4226,7 +4226,7 @@ class EventEmitter {
   ```
 
 + 手搓第二题
-
+  
   ```js
   //力扣原题：https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/?envType=study-plan-v2&envId=top-100-liked
   
@@ -4252,11 +4252,11 @@ class EventEmitter {
 笔试
 
 + 单选第一题
-
+  
   ```cpp
   //求n=1输出值
   int grow(int n){
-    	print("%d",n)
+        print("%d",n)
       if(n<4){
           grow(n+1)
       }
@@ -4267,7 +4267,7 @@ class EventEmitter {
   ```
 
 + 单选第二题
-
+  
   ```js
   //如果想要在10s后调用check函数，哪个是对的？
   A.setTimeout(check,10000)
@@ -4278,9 +4278,8 @@ class EventEmitter {
   解析：有括号就是执行返回值，没括号就是该函数，后面的单位是毫秒。
   ```
 
-
 + 单选第三题
-
+  
   ```js
   //判断哪个算法排序不是升序
   arr.sort((a,b)=>b-a)
@@ -4289,7 +4288,7 @@ class EventEmitter {
   ```
 
 + 单选第四题
-
+  
   ```js
   //选择错误的一项
   A.TCP协议需要进行3次握手
@@ -4301,20 +4300,20 @@ class EventEmitter {
   ```
 
 + 单选第五题
-
+  
   ```markdown
   有一棵树度为5，有14个度为5的节点，15个度为4的节点，14个度为3的节点，5个度为2的节点，10个度为1的节点。求这棵树的叶节点有多少？
   
   解析：
-  	总节点数N为：14 + 15 + 14 + 5 + 10 + L(叶节点)
-  	总连接数E为：N - 1
-  	总出度和S为：(14*5) + (15*4) + (14*3) + (5*2) + (10*1) + (L*0)
-  	总出度和与总连接数相同：192 = (58+L) − 1
-  	L = 135
+      总节点数N为：14 + 15 + 14 + 5 + 10 + L(叶节点)
+      总连接数E为：N - 1
+      总出度和S为：(14*5) + (15*4) + (14*3) + (5*2) + (10*1) + (L*0)
+      总出度和与总连接数相同：192 = (58+L) − 1
+      L = 135
   ```
 
 + 单选第六题
-
+  
   ```markdown
   同源政策是指什么？
   
@@ -4322,7 +4321,7 @@ class EventEmitter {
   ```
 
 + 单选第七题
-
+  
   ```markdown
   如何运算IP是否在同一网段下？
   A.IP或运算子网
@@ -4331,37 +4330,37 @@ class EventEmitter {
   D.IP非运算子网
   
   解析：答案是B。
-  	示例：
-  		IP地址1：192.168.1.10
-  		IP地址2：192.168.1.20
-  		子网掩码：255.255.255.0
+      示例：
+          IP地址1：192.168.1.10
+          IP地址2：192.168.1.20
+          子网掩码：255.255.255.0
   
-  	运算过程：
-  		192.168.1.10 AND 255.255.255.0 = 192.168.1.0
-  		192.168.1.20 AND 255.255.255.0 = 192.168.1.0
-  		结果相同 → 在同一网段
+      运算过程：
+          192.168.1.10 AND 255.255.255.0 = 192.168.1.0
+          192.168.1.20 AND 255.255.255.0 = 192.168.1.0
+          结果相同 → 在同一网段
   ```
 
 + 单选第八题：
-
+  
   ```
   这道题没记下来，但是我选错了：
-  	数组的索引会降低数据库写入性能
-  	这是对的。但具体影响程度取决于数组大小、索引类型和数据操作模式。
-  	索引为何降低写入性能？
-  	每次写入（INSERT/UPDATE/DELETE）涉及索引列时，数据库需同步更新索引结构（如B+树分裂、GIN倒排列表修改），增加额外I/O和CPU开销。
-  	索引更新可能引发锁竞争（如页级锁、行级锁），在高并发写入场景下加剧阻塞风险。
-  	索引变更需写入WAL日志（如PostgreSQL的WAL、MySQL的redo log），数组索引的频繁更新会导致日志量激增，影响磁盘I/O。
+      数组的索引会降低数据库写入性能
+      这是对的。但具体影响程度取决于数组大小、索引类型和数据操作模式。
+      索引为何降低写入性能？
+      每次写入（INSERT/UPDATE/DELETE）涉及索引列时，数据库需同步更新索引结构（如B+树分裂、GIN倒排列表修改），增加额外I/O和CPU开销。
+      索引更新可能引发锁竞争（如页级锁、行级锁），在高并发写入场景下加剧阻塞风险。
+      索引变更需写入WAL日志（如PostgreSQL的WAL、MySQL的redo log），数组索引的频繁更新会导致日志量激增，影响磁盘I/O。
   ```
 
 + 单选第九题
-
+  
   ```
   这题考个数据类型的选择，选JS没有的数据类型 很简单就不写了
   ```
 
 + 单选第十题
-
+  
   ```
   有50个红球和50个蓝球，两个框，请问怎么放随机拿一个红球的概率最高？
   A.1不放球、2全放完
@@ -4373,7 +4372,7 @@ class EventEmitter {
   ```
 
 + 多选第一题
-
+  
   ```
   单向链表哪些操作不受队列长度影响？
   A.删尾元素
@@ -4385,7 +4384,7 @@ class EventEmitter {
   ```
 
 + 多选第二题
-
+  
   ```
   下列说法哪些是对的？
   A.线程和进程都可以并发
@@ -4397,7 +4396,7 @@ class EventEmitter {
   ```
 
 + 多选第三题
-
+  
   ```
   下面哪些说法是对的？
   A.CDN是良性DNS劫持
@@ -4409,7 +4408,7 @@ class EventEmitter {
   ```
 
 + 多选第四题：
-
+  
   ```
   154个数据，使用二分比较法，可能比较几次？
   
@@ -4417,7 +4416,7 @@ class EventEmitter {
   ```
 
 + 多选第五题：
-
+  
   ```
   下面说法哪些是对的？
   A.正向代理适用于客户端
@@ -4429,7 +4428,7 @@ class EventEmitter {
   ```
 
 + 手搓第一题
-
+  
   ```js
   //二进制化一个数，长度固定为八位，不够补0
   
@@ -4441,7 +4440,7 @@ class EventEmitter {
   ```
 
 + 手搓第二题
-
+  
   ```js
   //输入n 输出n*n的蛇形矩阵
   
@@ -4478,12 +4477,10 @@ class EventEmitter {
   ```
 
 + 手搓第三题
-
+  
   ```js
   //设计LRU
-  
   ```
-
 
 ## 2025.7.4杭州亿格云科技
 
@@ -4492,7 +4489,7 @@ class EventEmitter {
 + 聊项目
 
 + NodeJS有哪些部署方式
-
+  
   ```
   原答：PM2部署
   
@@ -4500,7 +4497,7 @@ class EventEmitter {
   ```
 
 + TailwindCSS中想要封装类怎么做
-
+  
   ```css
   修正：
   /* 在全局 CSS 文件中 (如: styles.css) */
@@ -4519,21 +4516,21 @@ class EventEmitter {
 + 事件捕获和事件冒泡
 
 + 场景题：React 嵌套了一个组件，想要这个组件在触发某个事件的时候通知他的所有父组件，怎么实现？
-
+  
   ```
   修正：
-  	方法一：外部传入一个函数，目标组件触发事件时往里传入参数，事件冒泡就会触发回调。
-  	方法二：使用 Context API。createContext后用该变量.Provider包裹需要通知的组件，目标组件使用useContext触发。
+      方法一：外部传入一个函数，目标组件触发事件时往里传入参数，事件冒泡就会触发回调。
+      方法二：使用 Context API。createContext后用该变量.Provider包裹需要通知的组件，目标组件使用useContext触发。
   ```
 
 + TS类型中的never和enum常用在哪？
-
+  
   ```
   修正：详见TS数据类型
   ```
 
 + TS内置的工具类有哪些？
-
+  
   ```
   修正：
   ```
@@ -4541,18 +4538,17 @@ class EventEmitter {
 + 高斯模糊见过吗？
 
 + 将一个背景图变成黑白色怎么做？
-
+  
   ```
   修正：使用filter:grayscale(100%)
   ```
-
 
 ## 2025.7.7腾讯
 
 + 自我介绍
 
 + 平时怎么学习前端的，有看书吗？
-
+  
   ```
   原答：github找项目，掘金参与讨论，书看得相对少。
   
@@ -4560,7 +4556,7 @@ class EventEmitter {
   ```
 
 + 浏览器提供的前端开发工具你平时用得多的有哪些？
-
+  
   ```
   原答：审查元素找一些布局元素、网络请求的发送、storage的存储。
   
@@ -4568,25 +4564,25 @@ class EventEmitter {
   ```
 
 + 盒子的相关属性有哪些？
-
+  
   ```
   原答：宽高padding、margin......
   ```
 
 + 有没有了解过IE盒模型？
-
+  
   ```
   原答：没有了解
   ```
 
 + 我们平时在控制padding的时候会把盒子撑大，有没有办法不让盒子变大
-
+  
   ```
   原答：暂时没想到
   ```
 
 + border-sizing你有了解过吗？
-
+  
   ```
   原答：没有了解
   
@@ -4594,13 +4590,13 @@ class EventEmitter {
   ```
 
 + 控制台提供很多全局变量用过哪些？
-
+  
   ```
   原答：window、document
   ```
 
 + 怎么拿到当前的URL
-
+  
   ```
   原答：忘记了
   
@@ -4608,13 +4604,13 @@ class EventEmitter {
   ```
 
 + CSS有哪些选择器
-
+  
   ```
   原答：类选择器、伪类选择器、id选择器
   ```
 
 + 如果我想要选择某个元素的下一代的全部的p，怎么做？
-
+  
   ```
   原答：可以用后代选择器
   
@@ -4624,7 +4620,7 @@ class EventEmitter {
   ```
 
 + 选择器的优先级？
-
+  
   ```
   原答：忘记了
   
@@ -4632,7 +4628,7 @@ class EventEmitter {
   ```
 
 + Vue中我们对一个组件写p的属性，不会对后代影响，这是为什么？
-
+  
   ```
   原答：不太清楚
   
@@ -4640,7 +4636,7 @@ class EventEmitter {
   ```
 
 + 网页里想要进行文件上传怎么做？
-
+  
   ```
   原答：使用input type=file去做，用双向绑定拿到文件。
   
@@ -4648,19 +4644,19 @@ class EventEmitter {
   ```
 
 + 10张图片的轮播图怎么做？
-
+  
   ```
   原答：十张图片首尾相接，添加一张到第十张后面，通过绝对定位控制移动。
   ```
 
 + 添加动画效果怎么做？
-
+  
   ```
   原答：使用animation。
   ```
 
 + 点一下实现图片全屏怎么做？
-
+  
   ```
   原答：想不起具体函数了
   
@@ -4668,49 +4664,49 @@ class EventEmitter {
   ```
 
 + positon有什么属性？
-
+  
   ```
   原答：fixed、reactive、absolute
   ```
 
 + 怎么居中？
-
+  
   ```
   原答：flex布局，或绝对定位上下左右都设置0
   ```
 
 + 想让滚轮控制图片大小？
-
+  
   ```
   原答：JS监听滚轮事件，用scale()放大缩小图片。
   ```
 
 + CSS你是怎么学习的？
-
+  
   ```
   原答：有需求就去找MDN，搜索。
   ```
 
 + 闭包是什么概念，怎么实现？
-
+  
   ```
   原答：（详见闭包）
   ```
 
 + 怎么用闭包实现一个单例模式？
-
+  
   ```
   原答：先定义一个类，外面的函数创建一个实例，里面的函数对实例进行操作。
   ```
 
 + 原型链？
-
+  
   ```
   原答：（没办法整合成一整段话，糅杂混乱）
   ```
 
 + 原型对象和实例有什么区别？
-
+  
   ```
   原答：（我忘记原型对象是啥了😭）
   
@@ -4718,19 +4714,19 @@ class EventEmitter {
   ```
 
 + vue有什么生命周期？
-
+  
   ```
   原答：（详见vue生命周期）
   ```
 
 + 分别在什么时候调用？
-
+  
   ```
   原答：（详见vue生命周期）
   ```
 
 + 什么时候用created什么时候用mounted？
-
+  
   ```
   原答：（太久不写vue了，忘记完了😭）
   
@@ -4738,12 +4734,12 @@ class EventEmitter {
   ```
 
 + 父子组件的生命周期是怎么调用的？
-
+  
   ```
   原答：先创建子组件，再创建父组件
   
   修正：
-  	父 beforeCreate
+      父 beforeCreate
       父 created
       父 beforeMount
       --子 beforeCreate
@@ -4766,3 +4762,62 @@ class EventEmitter {
   ```
 
 + 手写：无重复最长字串（应该用滑动窗口，我用哈希表了，没做出来）
+
+## 2025.7.11腾讯
+
+也是一面
+
++ 写两道题（太久了忘记是什么题了）
+
++ 实习干了什么，难点？
+  
+  ```
+  我说了大文件上传但是中间有个地方答错了，文件切片的时候应该是使用Blob.slice()去切，但是我不小心回答了用Base64
+  ```
+
++ 知不知道流式传输？
+  
+  ```
+  原答：不知道
+  
+  修正：流式传输相当于顶替了Promise.all，切片的本质是为了减小内存负载，但是如果使用Promise.all上传负载还是很多，但是如果使用流式传输，每次只传一片，就可以节省内存负载。
+  ```
+
++ v-for的key的含义？
+  
+  ```
+  详见diff算法。但是面试官问了我你觉得使用索引作为key会导致性能问题还是渲染错误。
+  我没答上来。
+  其实是某些场景下会导致渲染问题：包裹表单、传值子组件等，会导致原来传给a的值可能传给b。
+  ```
+
++ v-for、v-if这些是怎么在vue中被执行的？
+  
+  ```
+  没答上来。
+  其实是通过Vue编译成JS/CSS再去执行的。比如v-if是控制JS、v-show是控制CSS
+  ```
+
++ 闭包，闭包中持久化的数据是存在栈里的还是存在堆里的？
+  
+  ```
+  答了栈 其实是堆。栈（Stack）里只保存调用帧和原始值副本，函数执行完就被弹出，不会用来长期存放闭包数据。
+  ```
+
++ 如果没有闭包这种语法了，该怎么实现闭包？
+  
+  ```
+  可以将值赋给一个对象，对象默认存到堆里。或者在函数外定义一些Map、Set作为全局的存储。
+  ```
+
++ 使用Pinia等工具的好处是什么？
+
++ 在引用一个柱状图组件的时候 如果x轴数据量很多 该怎么处理？
+
++ 怎么手写一个词云图？
+  
+  ```
+  获取词语的字符量、比重，确定其矩形有多大。然后再写一个碰撞检测函数，每次随机取点然后检测碰撞，可以嵌入就嵌入。
+  ```
+
+## 2025.7.18字节跳动
